@@ -19,8 +19,19 @@
   <link rel="icon" type="image/png" href="./src/img/icons/Kali_Logo.png">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link rel="stylesheet" href="mode.css">
-  
 
+
+  <script>
+    // Verificar tema ao carregar a página
+    if (localStorage.getItem('theme') === 'dark' || 
+        (!localStorage.getItem('theme') && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+      document.documentElement.classList.add('dark');
+      document.documentElement.classList.remove('light');
+    } else {
+      document.documentElement.classList.add('light');
+      document.documentElement.classList.remove('dark');
+    }
+  </script>
   
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
@@ -293,7 +304,7 @@
             Sou um desenvolvedor fullstack de 20 anos de idade apaixonado por criar aplicações robustas e escaláveis. Por meio de diversas experiências combino habilidades técnicas com uma abordagem centrada no usuário para entregar produtos de alta qualidade.
           </p>
           <p class="text-gray-600 mb-6">
-            Minha jornada começou com desenvolvimento back end em python, porém, logo me apaixonei pela integração entre frontend e backend, o que me levou a me tornar um estudante assiduo em desenvolvimento web tambem. Por meio disso, atualmente estuo construindo meu primeiro negócio pessoal pela startup <strong>DITKO.</strong> 
+            Minha jornada começou com desenvolvimento back end em python, porém, logo me apaixonei pela integração entre frontend e backend, o que me levou a me tornar um estudante assiduo em desenvolvimento web tambem. Por meio disso, atualmente estou construindo meu primeiro negócio pessoal pela startup <strong>DITKO.</strong> 
           </p>
           <div class="flex space-x-4">
             <a href="https://github.com/Ryandikto" class="text-green-600 hover:text-green-800" aria-label="GitHub">

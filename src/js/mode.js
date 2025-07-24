@@ -45,3 +45,23 @@ function toggleTheme() {
       desktopThemeToggle.addEventListener('click', toggleTheme);
     }
   });
+
+  module.exports = {
+    darkMode: 'class',
+    // ... outras configurações
+    theme: {
+      extend: {
+        colors: {
+          // Suas cores personalizadas
+        },
+      },
+    },
+    variants: {
+      extend: {
+        backgroundColor: ['dark'],
+        textColor: ['dark'],
+        borderColor: ['dark'],
+      },
+    },
+    // ... outras configurações
+  }
