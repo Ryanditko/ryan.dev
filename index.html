@@ -6,15 +6,20 @@
   <meta name="description" content="Portfólio de Ryan Rodrigues, Desenvolvedor Fullstack com experiência em DevWeb, RPA, Cloud e Data Analytics">
   <meta name="keywords" content="desenvolvedor fullstack, Ryan Rodrigues, portfólio, desenvolvimento web, RPA, cloud computing">
   <meta name="author" content="Ryan Rodrigues">
+  <meta property="og:image" content="/src/img/icons/Kali_Logo.png">
+  <meta property="og:url" content="https://ryandev-murex.vercel.app">
   <title>Portfólio | Ryan Rodrigues - Desenvolvedor Fullstack</title>
   
   <!-- CDNs -->
   <script src="https://cdn.tailwindcss.com"></script>
+  <script src="/src/js/mode.js"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/devicon.min.css">
   <link rel="icon" type="image/png" href="./src/img/icons/Kali_Logo.png">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="mode.css">
+  
 
   
   <style>
@@ -26,7 +31,7 @@
     }
     
     .gradient-text {
-      background: linear-gradient(90deg, #004b0c, #3bff93);
+      background: linear-gradient(90deg, #01aa1d, #3bff93);
       -webkit-background-clip: text;
       background-clip: text;
       color: transparent;
@@ -113,8 +118,11 @@
           <a href="#" class="text-xl font-bold gradient-text">Fullstack Developer | Ryandikto</a>
         </div>
         <div class="hidden md:flex items-center space-x-8">
+          <button id="theme-toggle" class="dark-mode-toggle" aria-label="Alternar modo escuro">
+            <i class="fas fa-moon" id="theme-icon"></i>
+          </button>
           <a href="#about" class="text-gray-600 hover:text-green-600 transition">Sobre</a>
-          <a href="#skills" class="text-gray-600 hover:text-green-600 transition">Stacks</a>
+          <a href="#skills" class="text-gray-600 hover:text-green-600 transition">Stacks</a> 
           <a href="#projects" class="text-gray-600 hover:text-green-600 transition">Projetos</a>
           <a href="#experience" class="text-gray-600 hover:text-green-600 transition">Experiência</a>
           <a href="#contact" class="px-4 py-2 bg-green-600 text-white rounded-md hover:bg-black-700 transition">Contato</a>
@@ -128,15 +136,32 @@
         </div>
       </div>
     </div>
+    
+    
     <!-- Mobile menu -->
-    <div id="mobile-menu" class="hidden md:hidden bg-white pb-4 px-4 shadow-lg">
-      <a href="#about" class="block py-2 text-gray-600 hover:text-green-600 transition">Sobre</a>
-      <a href="#skills" class="block py-2 text-gray-600 hover:text-green-600 transition">Stacks</a>
-      <a href="#projects" class="block py-2 text-gray-600 hover:text-green-600 transition">Projetos</a>
-      <a href="#experience" class="block py-2 text-gray-600 hover:text-green-600 transition">Experiência</a>
-      <a href="#contact" class="block px-4 py-2 mt-2 bg-green-600 text-white rounded-md hover:bg-blue-700 transition text-center">Contato</a>
+    <!-- Mobile menu -->
+<div id="mobile-menu" class="hidden md:hidden bg-white dark:bg-gray-800 pb-4 px-4 shadow-lg">
+  <button id="mobile-theme-toggle" class="flex items-center py-2 text-left w-full text-gray-600 dark:text-gray-300" aria-label="Alternar modo escuro">
+    <i id="theme-icon" class="fas fa-moon mr-2"></i>
+    <span data-i18n="dark-mode">Alterar Tema</span>
+  </button>
+  <a href="#about" class="block py-2 text-gray-600 hover:text-green-600 transition dark:text-gray-300 dark:hover:text-green-400" data-i18n="about-link">Sobre</a>
+  <a href="#skills" class="block py-2 text-gray-600 hover:text-green-600 transition dark:text-gray-300 dark:hover:text-green-400" data-i18n="skills-link">Stacks</a>
+  <a href="#projects" class="block py-2 text-gray-600 hover:text-green-600 transition dark:text-gray-300 dark:hover:text-green-400" data-i18n="projects-link">Projetos</a>
+  <a href="#experience" class="block py-2 text-gray-600 hover:text-green-600 transition dark:text-gray-300 dark:hover:text-green-400" data-i18n="experience-link">Experiência</a>
+  <a href="#contact" class="block px-4 py-2 mt-2 bg-green-600 text-white rounded-md hover:bg-green-700 transition text-center dark:bg-green-700 dark:hover:bg-green-800" data-i18n="contact-link">Contato</a>
+</div>
+      
     </div>
   </nav>
+  </nav>
+  
+    
+    
+    <button id="mobile-theme-toggle" class="block py-2 text-left w-full" aria-label="Alternar modo escuro">
+      <i class="fas fa-moon mr-2"></i> <span data-i18n="dark-mode">Modo Escuro</span>
+    </button>
+  </div>
 
   <!-- Hero Section -->
   <section class="pt-32 pb-20 px-4 animate-fade-in relative overflow-hidden">
@@ -268,7 +293,7 @@
             Sou um desenvolvedor fullstack de 20 anos de idade apaixonado por criar aplicações robustas e escaláveis. Por meio de diversas experiências combino habilidades técnicas com uma abordagem centrada no usuário para entregar produtos de alta qualidade.
           </p>
           <p class="text-gray-600 mb-6">
-            Minha jornada começou com desenvolvimento back end em python, porém, logo me apaixonei pela integração entre frontend e backend, o que me levou a me tornar um estudante assiduo em desenvolvimento web tambem. Por meio disso, atualmente estou construindo meu primeiro negócio pessoal pela startup <strong>DITKO.</strong> 
+            Minha jornada começou com desenvolvimento back end em python, porém, logo me apaixonei pela integração entre frontend e backend, o que me levou a me tornar um estudante assiduo em desenvolvimento web tambem. Por meio disso, atualmente estuo construindo meu primeiro negócio pessoal pela startup <strong>DITKO.</strong> 
           </p>
           <div class="flex space-x-4">
             <a href="https://github.com/Ryandikto" class="text-green-600 hover:text-green-800" aria-label="GitHub">
@@ -277,20 +302,21 @@
             <a href="https://www.linkedin.com/in/ryan-rodrigues-592a27313" class="text-green-600 hover:text-green-800" aria-label="LinkedIn">
               <i class="fab fa-linkedin fa-lg"></i>
             </a>
-            <a href="https://www.instagram.com/ryan.ditko" class="text-green-600 hover:text-green-800" aria-label="Instagram">
+            <a href="https://www.instagram.com/ditko.dev" class="text-green-600 hover:text-green-800" aria-label="Instagram">
               <i class="fab fa-instagram fa-lg"></i>
             </a>
           </div>
         </div>
         <div class="md:w-1/2">
           <div class="bg-white p-8 rounded-2xl shadow-xl transition hover:shadow-2xl border border-gray-200">
-            <h3 class="text-2xl font-bold text-gray-800 mb-6 text-center">Nível de Proficiência</h3>
+            <h3 class="text-2xl font-bold text-white-800 mb-6 text-center">Nível de Proficiência</h3>
+            
         
             <!-- Skill -->
             <div class="mb-6">
               <div class="flex justify-between mb-1">
-                <span class="text-sm font-semibold text-gray-700">Frontend</span>
-                <span class="text-sm font-semibold text-green-600">80%</span>
+                <span class="text-sm font-semibold text-white-700">Frontend</span>
+                <span class="text-sm font-semibold text-white-600">80%</span>
               </div>
               <div class="w-full h-3 bg-gray-200 rounded-full overflow-hidden">
                 <div class="h-3 bg-gradient-to-r from-green-400 to-green-600 skill-bar" style="width: 80%"></div>
@@ -300,8 +326,8 @@
             <!-- Skill -->
             <div class="mb-6">
               <div class="flex justify-between mb-1">
-                <span class="text-sm font-semibold text-gray-700">Backend</span>
-                <span class="text-sm font-semibold text-green-600">100%</span>
+                <span class="text-sm font-semibold text-white-700">Backend</span>
+                <span class="text-sm font-semibold text-white-600">100%</span>
               </div>
               <div class="w-full h-3 bg-gray-200 rounded-full overflow-hidden">
                 <div class="h-3 bg-gradient-to-r from-green-400 to-green-600 skill-bar" style="width: 100%"></div>
@@ -311,8 +337,8 @@
             <!-- Skill -->
             <div class="mb-6">
               <div class="flex justify-between mb-1">
-                <span class="text-sm font-semibold text-gray-700">Banco de Dados</span>
-                <span class="text-sm font-semibold text-green-600">90%</span>
+                <span class="text-sm font-semibold text-white-700">Banco de Dados</span>
+                <span class="text-sm font-semibold text-white-600">90%</span>
               </div>
               <div class="w-full h-3 bg-gray-200 rounded-full overflow-hidden">
                 <div class="h-3 bg-gradient-to-r from-green-400 to-green-600 skill-bar" style="width: 90%"></div>
@@ -322,8 +348,8 @@
             <!-- Skill -->
             <div class="mb-0">
               <div class="flex justify-between mb-1">
-                <span class="text-sm font-semibold text-gray-700">DevOps</span>
-                <span class="text-sm font-semibold text-green-600">75%</span>
+                <span class="text-sm font-semibold text-white-700">DevOps</span>
+                <span class="text-sm font-semibold text-white-600">75%</span>
               </div>
               <div class="w-full h-3 bg-gray-200 rounded-full overflow-hidden">
                 <div class="h-3 bg-gradient-to-r from-green-400 to-green-600 skill-bar" style="width: 75%"></div>
@@ -332,6 +358,7 @@
           </div>
         </div>
       </div>
+      
     </div>
   </section>
 
@@ -345,7 +372,6 @@
         <div class="bg-white p-6 rounded-lg shadow-sm card-hover transition transform text-center">
           <div class="flex justify-center gap-3 text-3xl text-green-600 mb-4">
             <i class="devicon-javascript-plain" aria-hidden="true"></i>
-            <i class="devicon-react-original" aria-hidden="true"></i>
             <i class="devicon-typescript-plain" aria-hidden="true"></i>
             <i class="devicon-tailwindcss-plain" aria-hidden="true"></i>
             <i class="devicon-bootstrap-plain" aria-hidden="true"></i>
@@ -383,7 +409,6 @@
             <i class="devicon-docker-plain" aria-hidden="true"></i>
             <i class="devicon-kubernetes-plain" aria-hidden="true"></i>
             <i class="devicon-amazonwebservices-plain" aria-hidden="true"></i>
-            <i class="devicon-gitlab-plain" aria-hidden="true"></i>
             <i class="devicon-terraform-plain" aria-hidden="true"></i>
           </div>
           <h3 class="font-semibold mb-2">DevOps</h3>
@@ -613,7 +638,7 @@
         <div class="bg-white p-6 rounded-lg shadow-sm">
             <div class="flex flex-col md:flex-row md:items-center justify-between mb-2">
               <h3 class="font-semibold text-xl">CEO</h3>
-              <span class="text-purple-600">Julho 2025 - Momento Atual</span>
+              <span class="text-green-600">Julho 2025 - Momento Atual</span>
             </div>
             <p class="text-gray-500 mb-4">Ditko</p>
             <ul class="list-disc list-inside text-gray-600 space-y-2">
@@ -621,10 +646,10 @@
               <li>Inovação e inteligência aplicada</li>
               <li>Tools para SaaS e Desenvolvimento de sistemas</li>
               <div class="flex flex-wrap gap-2 mt-3">
-                <span class="bg-purple-100 text-black-800 text-xs px-3 py-1 rounded">Software Enginnering</span>
-                <span class="bg-purple-100 text-black-800 text-xs px-3 py-1 rounded">Gateways</span>
-                <span class="bg-purple-100 text-black-800 text-xs px-3 py-1 rounded">Bussiness</span>
-                <span class="bg-purple-100 text-black-800 text-xs px-3 py-1 rounded">Enterprising</span>
+                <span class="bg-green-100 text-black-800 text-xs px-3 py-1 rounded">Software Enginnering</span>
+                <span class="bg-green-100 text-black-800 text-xs px-3 py-1 rounded">Gateways</span>
+                <span class="bg-green-100 text-black-800 text-xs px-3 py-1 rounded">Bussiness</span>
+                <span class="bg-green-100 text-black-800 text-xs px-3 py-1 rounded">Enterprising</span>
               </div>
             </ul>
           </div>
@@ -633,7 +658,7 @@
           <div class="bg-white p-6 rounded-lg shadow-sm">
               <div class="flex flex-col md:flex-row md:items-center justify-between mb-2">
                 <h3 class="font-semibold text-xl">Desenvolvedor Web Fullstack</h3>
-                <span class="text-purple-600">Novembro 2024- Momento Atual</span>
+                <span class="text-green-600">Novembro 2024- Momento Atual</span>
               </div>
               <p class="text-gray-500 mb-4">Ditko</p>
               <ul class="list-disc list-inside text-gray-600 space-y-2">
@@ -641,21 +666,21 @@
                 <li>Freelancing </li>
                 <li>API e Ferramentas</li>
                 <div class="flex flex-wrap gap-2 mt-3">
-                  <span class="bg-purple-100 text-black-800 text-xs px-3 py-1 rounded">Software Developing</span>
-                  <span class="bg-purple-100 text-black-800 text-xs px-3 py-1 rounded">HTML</span>
-                  <span class="bg-purple-100 text-black-800 text-xs px-3 py-1 rounded">CSS</span>
-                  <span class="bg-purple-100 text-black-800 text-xs px-3 py-1 rounded">JavaScript</span>
-                  <span class="bg-purple-100 text-black-800 text-xs px-3 py-1 rounded">React</span>
-                  <span class="bg-purple-100 text-black-800 text-xs px-3 py-1 rounded">Node.js</span>
-                  <span class="bg-purple-100 text-black-800 text-xs px-3 py-1 rounded">Sqlite</span>
-                  <span class="bg-purple-100 text-black-800 text-xs px-3 py-1 rounded">Express</span>
-                  <span class="bg-purple-100 text-black-800 text-xs px-3 py-1 rounded">Docker</span>
-                  <span class="bg-purple-100 text-black-800 text-xs px-3 py-1 rounded">Git</span>
-                  <span class="bg-purple-100 text-black-800 text-xs px-3 py-1 rounded">GitHub</span>
-                  <span class="bg-purple-100 text-black-800 text-xs px-3 py-1 rounded">Tailwind CSS</span>
-                  <span class="bg-purple-100 text-black-800 text-xs px-3 py-1 rounded">Bootstrap</span>
-                  <span class="bg-purple-100 text-black-800 text-xs px-3 py-1 rounded">Material-UI</span>
-                  <span class="bg-purple-100 text-black-800 text-xs px-3 py-1 rounded"> Figma & Canva</span>
+                  <span class="bg-green-100 text-black-800 text-xs px-3 py-1 rounded">Software Developing</span>
+                  <span class="bg-green-100 text-black-800 text-xs px-3 py-1 rounded">HTML</span>
+                  <span class="bg-green-100 text-black-800 text-xs px-3 py-1 rounded">CSS</span>
+                  <span class="bg-green-100 text-black-800 text-xs px-3 py-1 rounded">JavaScript</span>
+                  <span class="bg-green-100 text-black-800 text-xs px-3 py-1 rounded">React</span>
+                  <span class="bg-green-100 text-black-800 text-xs px-3 py-1 rounded">Node.js</span>
+                  <span class="bg-green-100 text-black-800 text-xs px-3 py-1 rounded">Sqlite</span>
+                  <span class="bg-green-100 text-black-800 text-xs px-3 py-1 rounded">Express</span>
+                  <span class="bg-green-100 text-black-800 text-xs px-3 py-1 rounded">Docker</span>
+                  <span class="bg-green-100 text-black-800 text-xs px-3 py-1 rounded">Git</span>
+                  <span class="bg-green-100 text-black-800 text-xs px-3 py-1 rounded">GitHub</span>
+                  <span class="bg-green-100 text-black-800 text-xs px-3 py-1 rounded">Tailwind CSS</span>
+                  <span class="bg-green-100 text-black-800 text-xs px-3 py-1 rounded">Bootstrap</span>
+                  <span class="bg-green-100 text-black-800 text-xs px-3 py-1 rounded">Material-UI</span>
+                  <span class="bg-green-100 text-black-800 text-xs px-3 py-1 rounded"> Figma & Canva</span>
                 </div>
               </ul>
             </div>
@@ -737,7 +762,7 @@
             <a href="https://www.linkedin.com/in/ryan-rodrigues-592a27313" class="w-10 h-10 bg-black-800 rounded-full flex items-center justify-center hover:bg-green-600 transition" aria-label="LinkedIn">
               <i class="fab fa-linkedin-in"></i>
             </a>
-            <a href="https://www.instagram.com/ryan.ditko" class="w-10 h-10 bg-black-800 rounded-full flex items-center justify-center hover:bg-green-600 transition" aria-label="Instagram">
+            <a href="https://www.instagram.com/ditko.dev" class="w-10 h-10 bg-black-800 rounded-full flex items-center justify-center hover:bg-green-600 transition" aria-label="Instagram">
               <i class="fab fa-instagram"></i>
             </a>
           </div>
@@ -830,7 +855,7 @@
         strings: [
           "Ryan Rodrigues!",
           "Um Fullstack Developer.",
-          "Um Amante da Tecnologia :)",
+          "Um Amante da Tecnologia e da Inovação :)",
         ],
         typeSpeed: 50,
         backSpeed: 30,
@@ -932,5 +957,45 @@
       }
     });
   </script>
+  <script>
+    // Dark/Light Mode Toggle
+    document.addEventListener('DOMContentLoaded', function() {
+      const themeToggle = document.getElementById('theme-toggle');
+      const mobileThemeToggle = document.getElementById('mobile-theme-toggle');
+      const themeIcon = document.getElementById('theme-icon');
+      
+      // Verifica o tema salvo ou preferência do sistema
+      const savedTheme = localStorage.getItem('theme') || 
+                        (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+      
+      // Aplica o tema salvo
+      if (savedTheme === 'dark') {
+        document.documentElement.classList.add('dark-mode');
+        themeIcon.classList.replace('fa-moon', 'fa-sun');
+      }
+      
+      // Alternar tema
+      function toggleTheme() {
+        document.documentElement.classList.toggle('dark-mode');
+        const isDark = document.documentElement.classList.contains('dark-mode');
+        
+        if (isDark) {
+          themeIcon.classList.replace('fa-moon', 'fa-sun');
+          localStorage.setItem('theme', 'dark');
+        } else {
+          themeIcon.classList.replace('fa-sun', 'fa-moon');
+          localStorage.setItem('theme', 'light');
+        }
+      }
+      
+      // Event listeners
+      themeToggle.addEventListener('click', toggleTheme);
+      mobileThemeToggle.addEventListener('click', function() {
+        toggleTheme();
+        document.getElementById('mobile-menu').classList.add('hidden');
+      });
+    });
+  </script>
+
 </body>
 </html>
