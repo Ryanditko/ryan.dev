@@ -1,7 +1,7 @@
 # 💼 Portfólio Pessoal - Ryan
 
 Bem-vindo(a) ao repositório do meu portfólio pessoal!  
-Aqui você encontra o projeto que desenvolvi para apresentar minhas habilidades, experiências e projetos de forma clara e profissional — mas sempre com aquele toque hacker style ⚡.
+Aqui você encontra o projeto que desenvolvi para apresentar minhas habilidades, experiências e projetos de forma clara e profissional ⚡.
 
 🌐 **Acesse o portfólio ao vivo**:  
 👉 [https://ryandev-murex.vercel.app](https://ryandev-murex.vercel.app)
@@ -29,7 +29,7 @@ Aqui você encontra o projeto que desenvolvi para apresentar minhas habilidades,
 
 ## 🖼️ Preview
 
-![Preview do Portfólio](https://i.imgur.com/zGDf2zH.png)
+![Preview do Portfólio](https://i.imgur.com/eSVCs6a.png)
 
 ---
 
@@ -37,4 +37,4 @@ Aqui você encontra o projeto que desenvolvi para apresentar minhas habilidades,
 
 1. Clone o repositório:
 ```bash
-git clone https://github.com/seu-usuario/seu-repositorio.git
+git clone https://github.com/Ryanditko/my-portfolio.git
