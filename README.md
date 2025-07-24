@@ -1,70 +1,40 @@
-https://ryandev-murex.vercel.app/src/img/preview.jpg
+# 💼 Portfólio Pessoal - Ryan
 
-🌟 Sobre o Projeto
-Portfólio profissional de Ryan Rodrigues, desenvolvedor Fullstack com expertise em Data Analytics, RPA e soluções em nuvem. O site apresenta:
+Bem-vindo(a) ao repositório do meu portfólio pessoal!  
+Aqui você encontra o projeto que desenvolvi para apresentar minhas habilidades, experiências e projetos de forma clara e profissional — mas sempre com aquele toque hacker style ⚡.
 
-Projeto realizado
+🌐 **Acesse o portfólio ao vivo**:  
+👉 [https://ryandev-murex.vercel.app](https://ryandev-murex.vercel.app)
 
-Experiência profissional
-Habilidades técnicas
-Formas de contato
+---
 
-🔗 Acesse o site: https://ryandev-murex.vercel.app
+## ✨ Destaques
 
-🚀 Tecnologias Utilizadas
-Frontend
-https://img.shields.io/badge/-HTML5-E34F26?logo=html5&logoColor=white
-https://img.shields.io/badge/-CSS3-1572B6?logo=css3&logoColor=white
-https://img.shields.io/badge/-JavaScript-F7DF1E?logo=javascript&logoColor=black
-https://img.shields.io/badge/-Tailwind_CSS-38B2AC?logo=tailwind-css&logoColor=white
+- Design responsivo, elegante e focado em performance
+- Totalmente construído com **HTML5**, **Tailwind CSS** e **Font Awesome**
+- Animações suaves e interações acessíveis
+- Seções de apresentação, habilidades, projetos, contato e mais
+- Botão de “Voltar ao Topo” com JavaScript dinâmico (feito na unha)
 
-Design
-https://img.shields.io/badge/-Figma-F24E1E?logo=figma&logoColor=white
-https://img.shields.io/badge/-Adobe_Photoshop-31A8FF?logo=adobe-photoshop&logoColor=white
+---
 
-Deployment
-https://img.shields.io/badge/-Vercel-000000?logo=vercel&logoColor=white
+## 🚀 Tecnologias Utilizadas
 
-✨ Destaques
-Design Moderno
-Interface limpa e profissional
-Efeitos visuais impressionantes
-Totalmente responsivo
-Performance Otimizada
-Carregamento rápido
-Imagens otimizadas
-Animações suaves
-Features Interativas
-Efeitos hover dinâmicos
-Animação de digitação
-Galeria de projetos
+![HTML5](https://img.shields.io/badge/-HTML5-E34F26?style=flat&logo=html5&logoColor=fff)
+![Tailwind CSS](https://img.shields.io/badge/-Tailwind%20CSS-06B6D4?style=flat&logo=tailwindcss&logoColor=fff)
+![JavaScript](https://img.shields.io/badge/-JavaScript-F7DF1E?style=flat&logo=javascript&logoColor=000)
+![Font Awesome](https://img.shields.io/badge/-Font%20Awesome-339AF0?style=flat&logo=fontawesome&logoColor=white)
 
-🛠️ Como Executar Localmente
-Clone o repositório:
+---
 
-bash
-git clone https://github.com/seu-usuario/portfolio.git
-Acesse a pasta do projeto:
+## 🖼️ Preview
 
-bash
-cd portfolio
-Abra no navegador:
+![Preview do Portfólio](https://i.imgur.com/zGDf2zH.png)
 
-bash
-# Usando Python
-python -m http.server 8000
-Ou simplesmente abra o arquivo index.html no seu navegador.
+---
 
-📌 Próximas Atualizações
-Seção de blog técnico
+## 📂 Como usar este projeto
 
-Integração com API de projetos do GitHub
-
-Versão em inglês
-
-Modo dark/light
-
-📄 Licença
-Este projeto está licenciado sob a licença MIT - veja o arquivo LICENSE para detalhes.
-
-⭐ Se este projeto te ajudou ou inspirou, considere deixar uma estrela no repositório!
+1. Clone o repositório:
+```bash
+git clone https://github.com/seu-usuario/seu-repositorio.git
