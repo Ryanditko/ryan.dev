@@ -1,58 +1,61 @@
-# Portfolio
+# 🚀 Portfolio - Ryan Rodrigues
 
-[![Deploy with Vercel](https://vercel.com/button)](https://ryandev-dun.vercel.app)
+[![Deploy with Vercel](https://img.shields.io/badge/Deploy%20with-Vercel-000000?style=for-the-badge&logo=vercel)](https://ryandev-dun.vercel.app)
+[![License](https://img.shields.io/github/license/ryanrodrigues/portfolio?color=blue&style=for-the-badge)](LICENSE)
+[![Last Commit](https://img.shields.io/github/last-commit/ryanrodrigues/portfolio?style=for-the-badge)](https://github.com/ryanrodrigues/portfolio/commits/main)
 
-> Portfolio profissional desenvolvido com **HTML5**, **CSS3** e **JavaScript puro**. Design responsivo com tema dark/light e cursor customizado.
+Portfolio profissional desenvolvido com tecnologias modernas para mostrar meus projetos e habilidades como desenvolvedor.
 
-## ✨ Características
+![Preview do Portfolio](assets/img/preview.jpg)
 
-- � **Design Responsivo** - Funciona em todos os dispositivos
-- 🌓 **Tema Dark/Light** - Alternância suave entre temas  
-- ⚡ **Performance Otimizada** - Carregamento rápido
-- 🎯 **Cursor Customizado** - Interações visuais avançadas
-- 📱 **Mobile First** - Otimizado para dispositivos móveis
+## ✨ Features Principais
 
-## 🚀 Deploy na Vercel
+| Funcionalidade          | Descrição                                                                 |
+|-------------------------|---------------------------------------------------------------------------|
+| 🌓 Tema Dark/Light      | Alternância suave com persistência de preferência                         |
+| 📱 Design Responsivo    | Adaptável a todos os dispositivos (mobile-first)                          |
+| ⚡ Performance Otimizada| Score 90+ no Lighthouse                                                   |
+| 🎨 Micro-interações     | Animações CSS fluidas e efeitos visuais                                   |
+| 🖱️ Cursor Customizado   | Efeitos especiais no cursor com JavaScript                                |
+| 📧 Formulário de Contato| Integração com serviço de e-mails                                         |
 
-### Opção 1: Deploy Automático
-1. Clique no botão **Deploy with Vercel** acima
-2. Conecte sua conta GitHub
-3. Confirme o repositório
-4. **Pronto!** Seu site estará online!
+## 🛠 Tecnologias Utilizadas
 
-### Opção 2: Via Dashboard Vercel
-1. Acesse [vercel.com](https://vercel.com)
-2. Clique em **"New Project"**
-3. Importe este repositório
-4. Clique em **"Deploy"**
-
-## 🛠️ Tecnologias
-
-- **HTML5** - Estrutura semântica
-- **CSS3** - Grid, Flexbox, Animações
-- **JavaScript** - Vanilla JS para performance
-- **Tailwind CSS** - Classes utilitárias
-- **DevIcons** - Ícones de tecnologias
-
-## 📁 Estrutura
-
-```
-portfolio/
-├── index.html              # Página principal
-├── vercel.json             # Configuração Vercel
-├── assets/                 # Assets otimizados
-│   ├── css/               # Estilos
-│   ├── js/                # Scripts
-│   └── img/               # Imagens
-└── README.md              # Documentação
-```
----
-
-<div align="center">
-  <p>Feito com ❤️ por <strong>Ryan Rodrigues</strong></p>
-  <p>
-    <a href="https://ryandev-dun.vercel.app">🌐 Ver Portfolio</a> •
-    <a href="mailto:yryurodriguess@gmail.com">📧 Contato</a> •
-    <a href="https://linkedin.com/in/ryan-rodrigues">💼 LinkedIn</a>
-  </p>
+### Frontend Principal
+<div style="display: flex; gap: 10px; flex-wrap: wrap;">
+  <img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white" alt="HTML5">
+  <img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white" alt="CSS3">
+  <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black" alt="JavaScript">
+  <img src="https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white" alt="Tailwind CSS">
 </div>
+
+### Ferramentas e Plataformas
+<div style="display: flex; gap: 10px; flex-wrap: wrap; margin-top: 10px;">
+  <img src="https://img.shields.io/badge/Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white" alt="Vercel">
+  <img src="https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white" alt="Git">
+  <img src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white" alt="GitHub">
+  <img src="https://img.shields.io/badge/Figma-F24E1E?style=for-the-badge&logo=figma&logoColor=white" alt="Figma">
+</div>
+
+## 🚀 Como Executar Localmente
+
+1. Clone o repositório:
+```bash
+git clone https://github.com/ryanrodrigues/my-portfolio.git
+
+portfolio/
+├── index.html
+├── vercel.json
+├── assets/
+│   ├── css/
+│   │   ├── main.css
+│   │   └── themes.css
+│   ├── js/
+│   │   ├── main.js
+│   │   ├── theme.js
+│   │   └── cursor.js
+│   └── img/
+│       ├── projects/
+│       └── icons/
+├── LICENSE
+└── README.md
