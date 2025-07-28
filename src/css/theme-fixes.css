@@ -1,0 +1,368 @@
+/* =========================================
+   CORREÇÕES DE TEMA - STACKS CARDS
+   ========================================= */
+
+/* Base para todos os skill cards - TEMA CLARO */
+.skill-cards > div {
+  background-color: #ffffff !important;
+  border: 1px solid #e5e7eb !important;
+  color: #111827 !important;
+  transition: all 0.3s ease !important;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06) !important;
+}
+
+/* Hover para tema claro */
+.skill-cards > div:hover {
+  background-color: #f9fafb !important;
+  transform: translateY(-8px) scale(1.02) !important;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04) !important;
+  border-color: #22c55e !important;
+}
+
+/* Texto dos cards no tema claro */
+.skill-cards > div h3 {
+  color: #111827 !important;
+}
+
+.skill-cards > div p {
+  color: #6b7280 !important;
+}
+
+/* ========================================= 
+   TEMA ESCURO - STACKS CARDS
+   ========================================= */
+
+/* Base para skill cards no tema escuro */
+[data-theme="dark"] .skill-cards > div {
+  background-color: #0f172a !important;
+  border: 1px solid #334155 !important;
+  color: #f8fafc !important;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.5), 0 2px 4px -1px rgba(0, 0, 0, 0.4) !important;
+}
+
+/* Hover para tema escuro */
+[data-theme="dark"] .skill-cards > div:hover {
+  background-color: #1e293b !important;
+  transform: translateY(-8px) scale(1.02) !important;
+  box-shadow: 
+    0 25px 50px rgba(34, 197, 94, 0.4),
+    0 15px 35px rgba(0, 0, 0, 0.6),
+    inset 0 1px 0 rgba(255, 255, 255, 0.15) !important;
+  border-color: #22c55e !important;
+}
+
+/* Texto dos cards no tema escuro */
+[data-theme="dark"] .skill-cards > div h3 {
+  color: #f8fafc !important;
+}
+
+[data-theme="dark"] .skill-cards > div p {
+  color: #cbd5e1 !important;
+}
+
+/* Ícones das stacks no tema escuro */
+[data-theme="dark"] .skill-cards > div i {
+  color: #22c55e !important;
+  filter: brightness(1.2) !important;
+  text-shadow: 0 0 8px rgba(34, 197, 94, 0.3) !important;
+}
+
+[data-theme="dark"] .skill-cards > div:hover i {
+  color: #16a34a !important;
+  filter: brightness(1.4) !important;
+  text-shadow: 0 0 12px rgba(34, 197, 94, 0.5) !important;
+  transform: scale(1.15) !important;
+}
+
+/* ========================================= 
+   SISTEMA AUTO DARK THEME
+   ========================================= */
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .skill-cards > div {
+    background-color: #0f172a !important;
+    border: 1px solid #334155 !important;
+    color: #f8fafc !important;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.5), 0 2px 4px -1px rgba(0, 0, 0, 0.4) !important;
+  }
+
+  :root:not([data-theme="light"]) .skill-cards > div:hover {
+    background-color: #1e293b !important;
+    transform: translateY(-8px) scale(1.02) !important;
+    box-shadow: 
+      0 25px 50px rgba(34, 197, 94, 0.4),
+      0 15px 35px rgba(0, 0, 0, 0.6),
+      inset 0 1px 0 rgba(255, 255, 255, 0.15) !important;
+    border-color: #22c55e !important;
+  }
+
+  :root:not([data-theme="light"]) .skill-cards > div h3 {
+    color: #f8fafc !important;
+  }
+
+  :root:not([data-theme="light"]) .skill-cards > div p {
+    color: #cbd5e1 !important;
+  }
+
+  /* Ícones no sistema auto dark theme */
+  :root:not([data-theme="light"]) .skill-cards > div i {
+    color: #22c55e !important;
+    filter: brightness(1.2) !important;
+    text-shadow: 0 0 8px rgba(34, 197, 94, 0.3) !important;
+  }
+
+  :root:not([data-theme="light"]) .skill-cards > div:hover i {
+    color: #22c55e !important;
+    filter: brightness(1.4) !important;
+    text-shadow: 0 0 12px rgba(34, 197, 94, 0.5) !important;
+    transform: scale(1.15) !important;
+  }
+
+  /* Garantir ícones verdes no auto dark theme */
+  :root:not([data-theme="light"]) .skill-cards > div i[class*="devicon-"] {
+    color: #22c55e !important;
+  }
+
+  :root:not([data-theme="light"]) .skill-cards > div:hover i[class*="devicon-"] {
+    color: #22c55e !important;
+  }
+}
+
+/* ========================================= 
+   ÍCONES DAS STACKS
+   ========================================= */
+
+/* Ícones sempre verdes - tema claro */
+.skill-cards > div i {
+  color: #22c55e !important;
+  transition: all 0.3s ease !important;
+}
+
+.skill-cards > div:hover i {
+  color: #16a34a !important;
+  transform: scale(1.1) !important;
+}
+
+/* Ícones no tema escuro - SEMPRE VERDES */
+[data-theme="dark"] .skill-cards > div i {
+  color: #22c55e !important;
+  filter: brightness(1.2) !important;
+  text-shadow: 0 0 8px rgba(34, 197, 94, 0.3) !important;
+  transition: all 0.3s ease !important;
+}
+
+[data-theme="dark"] .skill-cards > div:hover i {
+  color: #22c55e !important;
+  filter: brightness(1.4) !important;
+  text-shadow: 0 0 12px rgba(34, 197, 94, 0.5) !important;
+  transform: scale(1.15) !important;
+}
+
+/* Garantir que os ícones NUNCA fiquem brancos */
+[data-theme="dark"] .skill-cards > div i.devicon-javascript-plain,
+[data-theme="dark"] .skill-cards > div i.devicon-typescript-plain,
+[data-theme="dark"] .skill-cards > div i.devicon-tailwindcss-plain,
+[data-theme="dark"] .skill-cards > div i.devicon-bootstrap-plain,
+[data-theme="dark"] .skill-cards > div i.devicon-python-plain,
+[data-theme="dark"] .skill-cards > div i.devicon-nodejs-plain,
+[data-theme="dark"] .skill-cards > div i.devicon-kotlin-plain,
+[data-theme="dark"] .skill-cards > div i.devicon-go-plain,
+[data-theme="dark"] .skill-cards > div i.devicon-mysql-plain,
+[data-theme="dark"] .skill-cards > div i.devicon-postgresql-plain,
+[data-theme="dark"] .skill-cards > div i.devicon-microsoftsqlserver-plain,
+[data-theme="dark"] .skill-cards > div i.devicon-docker-plain,
+[data-theme="dark"] .skill-cards > div i.devicon-kubernetes-plain,
+[data-theme="dark"] .skill-cards > div i.devicon-amazonwebservices-plain,
+[data-theme="dark"] .skill-cards > div i.devicon-terraform-plain {
+  color: #22c55e !important;
+}
+
+[data-theme="dark"] .skill-cards > div:hover i.devicon-javascript-plain,
+[data-theme="dark"] .skill-cards > div:hover i.devicon-typescript-plain,
+[data-theme="dark"] .skill-cards > div:hover i.devicon-tailwindcss-plain,
+[data-theme="dark"] .skill-cards > div:hover i.devicon-bootstrap-plain,
+[data-theme="dark"] .skill-cards > div:hover i.devicon-python-plain,
+[data-theme="dark"] .skill-cards > div:hover i.devicon-nodejs-plain,
+[data-theme="dark"] .skill-cards > div:hover i.devicon-kotlin-plain,
+[data-theme="dark"] .skill-cards > div:hover i.devicon-go-plain,
+[data-theme="dark"] .skill-cards > div:hover i.devicon-mysql-plain,
+[data-theme="dark"] .skill-cards > div:hover i.devicon-postgresql-plain,
+[data-theme="dark"] .skill-cards > div:hover i.devicon-microsoftsqlserver-plain,
+[data-theme="dark"] .skill-cards > div:hover i.devicon-docker-plain,
+[data-theme="dark"] .skill-cards > div:hover i.devicon-kubernetes-plain,
+[data-theme="dark"] .skill-cards > div:hover i.devicon-amazonwebservices-plain,
+[data-theme="dark"] .skill-cards > div:hover i.devicon-terraform-plain {
+  color: #22c55e !important;
+}
+
+/* ========================================= 
+   GARANTIR COMPATIBILIDADE E SOBRESCRITA
+   ========================================= */
+
+/* Sobrescrever TODAS as classes possíveis */
+.skill-cards > div.bg-white,
+.skill-cards > div.bg-gray-100,
+.skill-cards > div.interactive-card,
+.skill-cards > div.card-hover {
+  background-color: #ffffff !important;
+}
+
+.skill-cards > div.bg-white:hover,
+.skill-cards > div.bg-gray-100:hover,
+.skill-cards > div.interactive-card:hover,
+.skill-cards > div.card-hover:hover {
+  background-color: #f9fafb !important;
+}
+
+/* Tema escuro - sobrescrever TODAS as classes */
+[data-theme="dark"] .skill-cards > div.bg-white,
+[data-theme="dark"] .skill-cards > div.bg-gray-100,
+[data-theme="dark"] .skill-cards > div.interactive-card,
+[data-theme="dark"] .skill-cards > div.card-hover {
+  background-color: #0f172a !important;
+}
+
+[data-theme="dark"] .skill-cards > div.bg-white:hover,
+[data-theme="dark"] .skill-cards > div.bg-gray-100:hover,
+[data-theme="dark"] .skill-cards > div.interactive-card:hover,
+[data-theme="dark"] .skill-cards > div.card-hover:hover {
+  background-color: #1e293b !important;
+}
+
+/* Remover qualquer background linear-gradient */
+.skill-cards > div:hover {
+  background-image: none !important;
+}
+
+[data-theme="dark"] .skill-cards > div:hover {
+  background-image: none !important;
+}
+
+/* =========================================
+   FORMAÇÃO ACADÊMICA - ESTILO IGUAL ÀS STACKS
+   ========================================= */
+
+/* Base para education cards - TEMA CLARO */
+#education .bg-white {
+  background-color: #ffffff !important;
+  border: 1px solid #e5e7eb !important;
+  color: #111827 !important;
+  transition: all 0.3s ease !important;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06) !important;
+}
+
+/* Hover para education cards - tema claro */
+#education .bg-white:hover {
+  background-color: #f9fafb !important;
+  transform: translateY(-8px) scale(1.02) !important;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04) !important;
+  border-color: #22c55e !important;
+}
+
+/* Texto dos education cards no tema claro */
+#education .bg-white h3 {
+  color: #111827 !important;
+}
+
+#education .bg-white p {
+  color: #6b7280 !important;
+}
+
+/* Ícones dos education cards - sempre verdes */
+#education .bg-white i {
+  color: #22c55e !important;
+  transition: all 0.3s ease !important;
+}
+
+#education .bg-white:hover i {
+  color: #16a34a !important;
+  transform: scale(1.15) !important;
+}
+
+/* ========================================= 
+   EDUCATION CARDS - TEMA ESCURO
+   ========================================= */
+
+/* Base para education cards no tema escuro */
+[data-theme="dark"] #education .bg-white {
+  background-color: #0f172a !important;
+  border: 1px solid #334155 !important;
+  color: #f8fafc !important;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.5), 0 2px 4px -1px rgba(0, 0, 0, 0.4) !important;
+}
+
+/* Hover para education cards - tema escuro */
+[data-theme="dark"] #education .bg-white:hover {
+  background-color: #1e293b !important;
+  transform: translateY(-8px) scale(1.02) !important;
+  box-shadow: 
+    0 25px 50px rgba(34, 197, 94, 0.4),
+    0 15px 35px rgba(0, 0, 0, 0.6),
+    inset 0 1px 0 rgba(255, 255, 255, 0.15) !important;
+  border-color: #22c55e !important;
+}
+
+/* Texto dos education cards no tema escuro */
+[data-theme="dark"] #education .bg-white h3 {
+  color: #f8fafc !important;
+}
+
+[data-theme="dark"] #education .bg-white p {
+  color: #cbd5e1 !important;
+}
+
+/* Ícones dos education cards no tema escuro */
+[data-theme="dark"] #education .bg-white i {
+  color: #22c55e !important;
+  filter: brightness(1.2) !important;
+  text-shadow: 0 0 8px rgba(34, 197, 94, 0.3) !important;
+  transition: all 0.3s ease !important;
+}
+
+[data-theme="dark"] #education .bg-white:hover i {
+  color: #22c55e !important;
+  filter: brightness(1.4) !important;
+  text-shadow: 0 0 12px rgba(34, 197, 94, 0.5) !important;
+  transform: scale(1.15) rotate(12deg) !important;
+}
+
+/* Sistema auto dark theme para education */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) #education .bg-white {
+    background-color: #0f172a !important;
+    border: 1px solid #334155 !important;
+    color: #f8fafc !important;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.5), 0 2px 4px -1px rgba(0, 0, 0, 0.4) !important;
+  }
+
+  :root:not([data-theme="light"]) #education .bg-white:hover {
+    background-color: #1e293b !important;
+    transform: translateY(-8px) scale(1.02) !important;
+    box-shadow: 
+      0 25px 50px rgba(34, 197, 94, 0.4),
+      0 15px 35px rgba(0, 0, 0, 0.6),
+      inset 0 1px 0 rgba(255, 255, 255, 0.15) !important;
+    border-color: #22c55e !important;
+  }
+
+  :root:not([data-theme="light"]) #education .bg-white h3 {
+    color: #f8fafc !important;
+  }
+
+  :root:not([data-theme="light"]) #education .bg-white p {
+    color: #cbd5e1 !important;
+  }
+
+  :root:not([data-theme="light"]) #education .bg-white i {
+    color: #22c55e !important;
+    filter: brightness(1.2) !important;
+    text-shadow: 0 0 8px rgba(34, 197, 94, 0.3) !important;
+  }
+
+  :root:not([data-theme="light"]) #education .bg-white:hover i {
+    color: #22c55e !important;
+    filter: brightness(1.4) !important;
+    text-shadow: 0 0 12px rgba(34, 197, 94, 0.5) !important;
+    transform: scale(1.15) rotate(12deg) !important;
+  }
+}
