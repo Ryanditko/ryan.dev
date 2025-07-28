@@ -1,4 +1,4 @@
-# 🚀 Portfolio Ryan Rodrigues
+# Portfolio
 
 [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/Ryanditko/20Pilla)
 
