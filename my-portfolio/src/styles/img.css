@@ -1,0 +1,8 @@
+.dish-image {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.dish:hover .dish-image {
+    transform: translateY(-10px) scale(1.05);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}

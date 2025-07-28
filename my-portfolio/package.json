@@ -1,0 +1,102 @@
+{
+  "name": "ryan-portfolio",
+  "version": "2.0.0",
+  "description": "Portfolio profissional de Ryan Rodrigues - Desenvolvedor Fullstack",
+  "main": "index.html",
+  "scripts": {
+    "start": "npx serve . -p 3000",
+    "dev": "npx live-server --port=3000 --host=0.0.0.0",
+    "build": "npm run optimize:images && npm run minify:css && npm run minify:js",
+    "preview": "npm run build && npm start",
+    "lint": "npm run lint:html && npm run lint:css && npm run lint:js",
+    "lint:html": "htmlhint **/*.html --config .htmlhintrc",
+    "lint:css": "stylelint **/*.css --config .stylelintrc.json",
+    "lint:js": "eslint **/*.js --config .eslintrc.json",
+    "lint:fix": "npm run lint:css -- --fix && npm run lint:js -- --fix",
+    "optimize:images": "imagemin src/img/**/*.{jpg,jpeg,png} --out-dir=assets/images --plugin=imagemin-mozjpeg --plugin=imagemin-pngquant",
+    "minify:css": "cleancss assets/css/theme.css -o assets/css/theme.min.css",
+    "minify:js": "terser assets/js/theme-manager.js assets/js/utilities.js --compress --mangle -o assets/js/app.min.js",
+    "deploy": "gh-pages -d .",
+    "audit": "lighthouse http://localhost:3000 --output html --output-path ./lighthouse-report.html --chrome-flags='--headless'",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage",
+    "format": "prettier --write **/*.{html,css,js,md}",
+    "check-format": "prettier --check **/*.{html,css,js,md}",
+    "validate": "npm run lint && npm run check-format && npm run audit",
+    "prepare": "husky install",
+    "precommit": "lint-staged"
+  },
+  "keywords": [
+    "portfolio",
+    "frontend",
+    "backend",
+    "fullstack",
+    "developer",
+    "ryan-rodrigues",
+    "javascript",
+    "html",
+    "css",
+    "responsive",
+    "dark-mode",
+    "accessibility"
+  ],
+  "author": "Ryan Rodrigues <contato@ryandev.com> (https://ryandev-murex.vercel.app)",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Ryanditko/my-portfolio.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Ryanditko/my-portfolio/issues"
+  },
+  "homepage": "https://ryandev-murex.vercel.app",
+  "devDependencies": {
+    "@babel/core": "^7.22.0",
+    "@babel/preset-env": "^7.22.0",
+    "clean-css-cli": "^5.6.0",
+    "eslint": "^8.42.0",
+    "gh-pages": "^5.0.0",
+    "htmlhint": "^1.1.4",
+    "husky": "^8.0.3",
+    "imagemin": "^8.0.1",
+    "imagemin-mozjpeg": "^10.0.0",
+    "imagemin-pngquant": "^9.0.2",
+    "imagemin-webp": "^7.0.0",
+    "jest": "^29.5.0",
+    "jest-environment-jsdom": "^29.5.0",
+    "lighthouse": "^10.4.0",
+    "lint-staged": "^13.2.2",
+    "live-server": "^1.2.2",
+    "prettier": "^2.8.8",
+    "serve": "^14.2.0",
+    "stylelint": "^15.7.0",
+    "stylelint-config-standard": "^33.0.0",
+    "terser": "^5.18.1"
+  },
+  "lint-staged": {
+    "*.{html,css,js}": [
+      "prettier --write",
+      "git add"
+    ],
+    "*.css": [
+      "stylelint --fix"
+    ],
+    "*.js": [
+      "eslint --fix"
+    ],
+    "*.html": [
+      "htmlhint"
+    ]
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not dead",
+    "not ie 11"
+  ],
+  "engines": {
+    "node": ">=16.0.0",
+    "npm": ">=8.0.0"
+  }
+}
