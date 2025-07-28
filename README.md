@@ -1,8 +1,7 @@
-# 🚀 Portfolio - Ryan Rodrigues
+# Portfolio - Ryan Rodrigues
 
 [![Deploy with Vercel](https://img.shields.io/badge/Deploy%20with-Vercel-000000?style=for-the-badge&logo=vercel)](https://ryandev-dun.vercel.ap)
-[![License](https://img.shields.io/github/license/ryanrodrigues/portfolio?color=blue&style=for-the-badge)](LICENSE)
-[![Last Commit](https://img.shields.io/github/last-commit/ryanrodrigues/portfolio?style=for-the-badge)](https://github.com/Ryanditko/my-portfolio.git)
+[![License](https://img.shields.io/github/license/ryanditko/my-portfolio?color=blue&style=for-the-badge)](LICENSE)
 
 Portfolio profissional desenvolvido com tecnologias modernas para mostrar meus projetos e habilidades como desenvolvedor.
 
@@ -36,25 +35,8 @@ Portfolio profissional desenvolvido com tecnologias modernas para mostrar meus p
   <img src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white" alt="GitHub">
 </div>
 
-## 🚀 Como Executar Localmente
+## Como Executar Localmente
 
 1. Clone o repositório:
 ```bash
 git clone https://github.com/ryanrodrigues/my-portfolio.git
-
-portfolio/
-├── index.html
-├── vercel.json
-├── assets/
-│   ├── css/
-│   │   ├── main.css
-│   │   └── themes.css
-│   ├── js/
-│   │   ├── main.js
-│   │   ├── theme.js
-│   │   └── cursor.js
-│   └── img/
-│       ├── projects/
-│       └── icons/
-├── LICENSE
-└── README.md
