@@ -1,7 +1,6 @@
 # Portfolio - Ryan Rodrigues
 
 [![Deploy with Vercel](https://img.shields.io/badge/Deploy%20with-Vercel-000000?style=for-the-badge&logo=vercel)](https://ryandev-dun.vercel.ap)
-[![License](https://img.shields.io/github/license/ryanditko/my-portfolio?color=blue&style=for-the-badge)](LICENSE)
 
 Portfolio profissional desenvolvido com tecnologias modernas para mostrar meus projetos e habilidades como desenvolvedor.
 
