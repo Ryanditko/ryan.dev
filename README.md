@@ -1,12 +1,12 @@
 # 🚀 Portfolio - Ryan Rodrigues
 
-[![Deploy with Vercel](https://img.shields.io/badge/Deploy%20with-Vercel-000000?style=for-the-badge&logo=vercel)](https://ryandev-dun.vercel.app)
+[![Deploy with Vercel](https://img.shields.io/badge/Deploy%20with-Vercel-000000?style=for-the-badge&logo=vercel)](https://ryandev-dun.vercel.ap)
 [![License](https://img.shields.io/github/license/ryanrodrigues/portfolio?color=blue&style=for-the-badge)](LICENSE)
-[![Last Commit](https://img.shields.io/github/last-commit/ryanrodrigues/portfolio?style=for-the-badge)](https://github.com/ryanrodrigues/portfolio/commits/main)
+[![Last Commit](https://img.shields.io/github/last-commit/ryanrodrigues/portfolio?style=for-the-badge)](https://github.com/Ryanditko/my-portfolio.git)
 
 Portfolio profissional desenvolvido com tecnologias modernas para mostrar meus projetos e habilidades como desenvolvedor.
 
-![Preview do Portfolio](assets/img/preview.jpg)
+![Preview do Portfolio](https://i.imgur.com/TsaAjpz.png)
 
 ## ✨ Features Principais
 
@@ -34,7 +34,6 @@ Portfolio profissional desenvolvido com tecnologias modernas para mostrar meus p
   <img src="https://img.shields.io/badge/Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white" alt="Vercel">
   <img src="https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white" alt="Git">
   <img src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white" alt="GitHub">
-  <img src="https://img.shields.io/badge/Figma-F24E1E?style=for-the-badge&logo=figma&logoColor=white" alt="Figma">
 </div>
 
 ## 🚀 Como Executar Localmente
