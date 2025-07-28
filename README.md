@@ -1,6 +1,6 @@
 # Portfolio
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/Ryanditko/20Pilla)
+[![Deploy with Vercel](https://vercel.com/button)](https://ryandev-dun.vercel.app)
 
 > Portfolio profissional desenvolvido com **HTML5**, **CSS3** e **JavaScript puro**. Design responsivo com tema dark/light e cursor customizado.
 
@@ -51,8 +51,8 @@ portfolio/
 <div align="center">
   <p>Feito com ❤️ por <strong>Ryan Rodrigues</strong></p>
   <p>
-    <a href="https://ryandev-murex.vercel.app">🌐 Ver Portfolio</a> •
-    <a href="mailto:contato@ryandev.com">📧 Contato</a> •
+    <a href="https://ryandev-dun.vercel.app">🌐 Ver Portfolio</a> •
+    <a href="mailto:yryurodriguess@gmail.com">📧 Contato</a> •
     <a href="https://linkedin.com/in/ryan-rodrigues">💼 LinkedIn</a>
   </p>
 </div>
