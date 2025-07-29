@@ -1,4 +1,4 @@
-# Portfolio - Ryan Rodrigues
+8# Portfolio - Ryan Rodrigues
 
 [![Deploy with Vercel](https://img.shields.io/badge/Deploy%20with-Vercel-000000?style=for-the-badge&logo=vercel)](https://ryandev-dun.vercel.ap)
 
@@ -38,4 +38,4 @@ Portfolio profissional desenvolvido com tecnologias modernas para mostrar meus p
 
 1. Clone o repositório:
 ```bash
-git clone https://github.com/ryanrodrigues/my-portfolio.git
+git clone https://github.com/Ryanditko/ryan.dev.git
