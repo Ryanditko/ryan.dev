@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Formação Acadêmica - Ryan Rodrigues">
+  <meta name="theme-color" content="#84d917">
+  <title>Educação | Ryan Rodrigues</title>
+  
+  <!-- External CDNs -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="icon" type="image/png" href="./src/img/icons/Kali_Logo.png">
+  
+  <!-- Custom Styles -->
+  <link rel="stylesheet" href="./src/css/portfolio.css">
+  <link rel="stylesheet" href="./src/css/custom-cursor.css">
+  <link rel="stylesheet" href="./src/css/ditko-theme.css">
+  <link rel="stylesheet" href="./src/css/navigation.css">
+  <link rel="stylesheet" href="./src/css/theme-universal.css">
+  <link rel="stylesheet" href="./src/css/header-sticky.css">
+  <link rel="stylesheet" href="./src/css/dark-cards-fix.css">
+  <link rel="stylesheet" href="./src/css/button-fix.css">
+  <link rel="stylesheet" href="./src/css/back-to-top-fix.css">
+  <link rel="stylesheet" href="./src/css/mobile-menu-fix.css">
+  <link rel="stylesheet" href="./src/css/cards-black-fix.css">
+  <link rel="stylesheet" href="./src/css/gradient-lima-fix.css">
+  <link rel="stylesheet" href="./src/css/modern-cards-unified.css">
+  
+  <style>
+    .education-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      gap: 2rem;
+      margin-top: 3rem;
+    }
+    
+    .education-card-modern {
+      background: #000000;
+      color: #ffffff;
+      padding: 2.5rem;
+      border-radius: 20px;
+      border: 1px solid rgba(132, 217, 23, 0.3);
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5);
+      transition: all 0.4s ease;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .education-card-modern::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(132, 217, 23, 0.1), transparent);
+      transition: left 0.6s ease;
+    }
+    
+    .education-card-modern:hover::before {
+      left: 100%;
+    }
+    
+    .education-card-modern:hover {
+      transform: translateY(-10px) scale(1.03);
+      border-color: #84d917;
+      box-shadow: 0 20px 50px rgba(132, 217, 23, 0.4);
+    }
+    
+    .education-icon {
+      font-size: 3rem;
+      color: #84d917;
+      margin-bottom: 1.5rem;
+      display: block;
+    }
+    
+    .education-title {
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: #ffffff;
+      margin-bottom: 0.5rem;
+    }
+    
+    .education-institution {
+      color: #84d917;
+      font-weight: 600;
+      font-size: 1.1rem;
+      margin-bottom: 1rem;
+    }
+    
+    .education-period {
+      background: rgba(132, 217, 23, 0.2);
+      color: #84d917;
+      padding: 0.5rem 1rem;
+      border-radius: 20px;
+      font-weight: 600;
+      display: inline-block;
+      margin-bottom: 1.5rem;
+      font-size: 0.9rem;
+    }
+    
+    .education-description {
+      color: #cccccc;
+      line-height: 1.6;
+      margin-bottom: 1.5rem;
+    }
+    
+    .education-highlights {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+    
+    .education-highlight {
+      background: rgba(132, 217, 23, 0.15);
+      color: #84d917;
+      padding: 0.3rem 0.8rem;
+      border-radius: 15px;
+      font-size: 0.8rem;
+      font-weight: 500;
+      border: 1px solid rgba(132, 217, 23, 0.3);
+    }
+    
+    .certifications-section {
+      margin-top: 4rem;
+      padding: 3rem;
+      background: #000000;
+      border-radius: 20px;
+      border: 1px solid rgba(132, 217, 23, 0.3);
+    }
+    
+    .certifications-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+    
+    .certification-item {
+      padding: 1.5rem;
+      background: rgba(132, 217, 23, 0.1);
+      border: 1px solid rgba(132, 217, 23, 0.3);
+      border-radius: 15px;
+      transition: all 0.3s ease;
+    }
+    
+    .certification-item:hover {
+      border-color: #84d917;
+      background: rgba(132, 217, 23, 0.15);
+      transform: scale(1.02);
+    }
+    
+    .certification-name {
+      color: #84d917;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+    }
+    
+    .certification-issuer {
+      color: #ffffff;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+    }
+    
+    .certification-date {
+      color: #cccccc;
+      font-size: 0.9rem;
+    }
+    
+    .page-transition {
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeInUp 0.6s ease forwards;
+    }
+    
+    @keyframes fadeInUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    
+    .section-title {
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: #000000;
+      margin-bottom: 1rem;
+      text-align: center;
+    }
+    
+    .section-subtitle {
+      color: #666666;
+      text-align: center;
+      font-size: 1.1rem;
+      max-width: 600px;
+      margin: 0 auto 3rem;
+    }
+    
+    @media (max-width: 768px) {
+      .education-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .certifications-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Cursor customizado -->
+  <div class="custom-cursor"></div>
+  <div class="cursor-trail"></div>
+  
+  <!-- Navigation -->
+  <nav class="navbar fixed w-full z-50" aria-label="Navegação principal">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between h-16">
+        <div class="flex items-center">
+          <a href="index.html" class="navbar-brand">Software Engineer | Ryandikto</a>
+        </div>
+        <div class="hidden md:flex items-center space-x-8">
+          <button class="theme-toggle" aria-label="Alternar tema">
+            <i class="fas fa-moon" aria-hidden="true"></i>
+          </button>
+          <a href="index.html" class="nav-link">Início</a>
+          <a href="skills.html" class="nav-link">Skills</a>
+          <a href="experiences.html" class="nav-link">Experiências</a>
+          <a href="projects.html" class="nav-link">Projetos</a>
+          <a href="education.html" class="nav-link current-page">Educação</a>
+          <a href="index.html#contact" class="px-6 py-3 bg-green-600 text-white rounded-md hover:bg-green-700 transition transform hover:scale-105">Contato</a>
+        </div>
+        <div class="md:hidden flex items-center">
+          <button class="hamburger" aria-label="Abrir menu" aria-expanded="false">
+            <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Mobile menu -->
+    <div id="mobile-menu" class="mobile-menu hidden md:hidden">
+      <div class="mobile-menu-header">
+        <span class="mobile-brand">Software Engineer | Ryandikto</span>
+      </div>
+      <a href="index.html" class="mobile-menu-item">Início</a>
+      <a href="skills.html" class="mobile-menu-item">Skills</a>
+      <a href="experiences.html" class="mobile-menu-item">Experiências</a>
+      <a href="projects.html" class="mobile-menu-item">Projetos</a>
+      <a href="education.html" class="mobile-menu-item">Educação</a>
+      <a href="index.html#contact" class="mobile-menu-item contact-btn">Contato</a>
+    </div>
+  </nav>
+
+  <!-- Main Content -->
+  <main class="pt-20 min-h-screen bg-white">
+    <div class="container mx-auto px-6 py-12 page-transition">
+      <!-- Header -->
+      <div class="text-center mb-16">
+        <h1 class="text-5xl font-bold text-black mb-4">
+          Formação <span class="text-gradient-ditko">Acadêmica</span>
+        </h1>
+        <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+          Minha jornada educacional e desenvolvimento contínuo em tecnologia
+        </p>
+      </div>
+
+      <!-- Education Grid -->
+      <div class="education-grid">
+        
+        <!-- Current Education -->
+        <div class="education-card-modern">
+          <i class="fas fa-university education-icon"></i>
+          <h3 class="education-title">Tecnólogo em Análise e Desenvolvimento de Sistemas</h3>
+          <div class="education-institution">Impacta Tecnologia - ADS</div>
+          <div class="education-period">Agosto 2024 - Dezembro 2026</div>
+          <p class="education-description">
+            Formação focada em desenvolvimento de software, banco de dados, arquitetura de sistemas e metodologias ágeis.
+          </p>
+          <div class="skill-tech-list">
+            <span class="skill-tech">Desenvolvimento Web</span>
+            <span class="skill-tech">Banco de Dados</span>
+            <span class="skill-tech">Arquitetura</span>
+            <span class="skill-tech">Metodologias Ágeis</span>
+          </div>
+        </div>
+
+        <!-- High School -->
+        <div class="education-card-modern">
+          <i class="fas fa-graduation-cap education-icon"></i>
+          <h3 class="education-title">Ensino Médio</h3>
+          <div class="education-institution">Colégio Gondim</div>
+          <div class="education-period">2020 - 2023</div>
+          <p class="education-description">
+            Ensino médio completo com foco em ciências exatas e desenvolvimento de pensamento lógico.
+          </p>
+          <div class="skill-tech-list">
+            <span class="skill-tech">Matemática</span>
+            <span class="skill-tech">Física</span>
+            <span class="skill-tech">Lógica</span>
+            <span class="skill-tech">Ciências</span>
+          </div>
+        </div>
+            Estudante formado em escola particular na zona norte de São Paulo. 
+            Base sólida em matemática, ciências e desenvolvimento do pensamento lógico.
+          </p>
+          <div class="education-highlights">
+            <span class="education-highlight">Matemática Avançada</span>
+            <span class="education-highlight">Lógica</span>
+            <span class="education-highlight">Ciências</span>
+            <span class="education-highlight">Comunicação</span>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Certifications Section -->
+      <div class="certifications-section">
+        <h2 class="text-3xl font-bold text-white text-center mb-4">
+          <i class="fas fa-certificate text-green-500 mr-3"></i>
+          Certificações
+        </h2>
+        <p class="text-gray-300 text-center mb-8">
+          Certificações e cursos complementares que ampliam meu conhecimento técnico
+        </p>
+        
+        <div class="certifications-grid">
+          
+          <div class="certification-item">
+            <i class="fab fa-aws education-icon"></i>
+            <h3 class="education-title">AWS Academy Graduate</h3>
+            <div class="education-institution">AWS Academy</div>
+            <div class="education-period">2024 - Atual</div>
+            <p class="education-description">Programa completo de cloud computing e arquiteturas AWS.</p>
+          </div>
+          
+          <div class="certification-item">
+            <i class="fas fa-cloud education-icon"></i>
+            <h3 class="education-title">Cloud Foundations</h3>
+            <div class="education-institution">AWS Academy</div>
+            <div class="education-period">2024</div>
+            <p class="education-description">Fundamentos de computação em nuvem e serviços AWS.</p>
+          </div>
+          
+          <div class="certification-item">
+            <i class="fab fa-google education-icon"></i>
+            <h3 class="education-title">Google GEMINI</h3>
+            <div class="education-institution">Google</div>
+            <div class="education-period">2024</div>
+            <p class="education-description">Certificação em inteligência artificial e machine learning.</p>
+          </div>
+          
+          <div class="certification-item">
+            <i class="fas fa-code education-icon"></i>
+            <h3 class="education-title">Devweb Bootcamp</h3>
+            <div class="education-institution">DIO</div>
+            <div class="education-period">2024</div>
+            <p class="education-description">Bootcamp intensivo de desenvolvimento web full-stack.</p>
+          </div>
+          
+          <div class="certification-item">
+            <i class="fas fa-chart-bar education-icon"></i>
+            <h3 class="education-title">Power BI Fundamentals</h3>
+            <div class="education-institution">Microsoft</div>
+            <div class="education-period">2024</div>
+            <p class="education-description">Análise de dados e criação de dashboards interativos.</p>
+          </div>
+          
+          <div class="certification-item">
+            <i class="fab fa-python education-icon"></i>
+            <h3 class="education-title">Python para Data Science</h3>
+            <div class="education-institution">Alura</div>
+            <div class="education-period">2023</div>
+            <p class="education-description">Análise de dados e machine learning com Python.</p>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- CTA Section -->
+      <div class="text-center mt-16">
+        <a href="index.html#contact" class="btn-ditko inline-flex items-center space-x-2">
+          <span>Entre em Contato</span>
+          <i class="fas fa-arrow-right"></i>
+        </a>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-black text-white py-8">
+    <div class="container mx-auto px-6 text-center">
+      <p>&copy; 2025 Ryan Rodrigues. Todos os direitos reservados.</p>
+    </div>
+  </footer>
+
+  <script>
+    // Smooth transitions and scroll animations
+    document.addEventListener('DOMContentLoaded', function() {
+      const educationCards = document.querySelectorAll('.education-card-modern');
+      const certificationItems = document.querySelectorAll('.certification-item');
+      
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry, index) => {
+          if (entry.isIntersecting) {
+            setTimeout(() => {
+              entry.target.style.opacity = '1';
+              entry.target.style.transform = 'translateY(0)';
+            }, index * 150);
+          }
+        });
+      });
+      
+      [...educationCards, ...certificationItems].forEach(item => {
+        item.style.opacity = '0';
+        item.style.transform = 'translateY(30px)';
+        item.style.transition = 'all 0.6s ease';
+        observer.observe(item);
+      });
+    });
+  </script>
+  
+  <!-- Navigation Script -->
+  <script src="./src/js/navigation.js"></script>
+  <script src="./src/js/custom-cursor.js"></script>
+  <script src="./src/js/theme-manager.js"></script>
+  <script src="./src/js/icon-colors.js"></script>
+  <script src="./src/js/header-sticky.js"></script>
+  <script src="./src/js/back-to-top.js"></script>
+  
+  <!-- Botão "Voltar ao Topo" -->
+  <a href="#" id="back-to-top" 
+     class="fixed bottom-6 right-6 w-12 h-12 bg-green-600 rounded-full flex items-center justify-center text-white shadow-lg hover:bg-green-700 transition duration-300 ease-in-out opacity-0 invisible" 
+     aria-label="Voltar ao topo"
+>
+    <i class="fa-solid fa-arrow-up"></i> 
+  </a>
+</body>
+</html>

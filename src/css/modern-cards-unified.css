@@ -1,0 +1,186 @@
+/* Modern Cards Unified - Estilo dos Projetos para Skills e Education */
+
+/* Grid Layout Universal */
+.skill-grid,
+.education-grid {
+  display: grid !important;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)) !important;
+  gap: 2rem !important;
+  margin-top: 3rem !important;
+}
+
+/* Base Card Style - Igual aos Projetos */
+.skill-card-modern,
+.education-card-modern,
+.education-card,
+.certification-item {
+  background: #000000 !important;
+  color: #ffffff !important;
+  border-radius: 20px !important;
+  border: 1px solid rgba(132, 217, 23, 0.3) !important;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5) !important;
+  overflow: hidden !important;
+  transition: all 0.4s ease !important;
+  position: relative !important;
+  padding: 2rem !important;
+}
+
+/* Hover Effects - Igual aos Projetos */
+.skill-card-modern:hover,
+.education-card-modern:hover,
+.education-card:hover,
+.certification-item:hover {
+  transform: translateY(-10px) scale(1.02) !important;
+  border-color: #84d917 !important;
+  box-shadow: 0 20px 50px rgba(132, 217, 23, 0.4) !important;
+}
+
+/* Shimmer Effect - Igual aos Projetos */
+.skill-card-modern::before,
+.education-card-modern::before,
+.education-card::before,
+.certification-item::before {
+  content: '' !important;
+  position: absolute !important;
+  top: 0 !important;
+  left: -100% !important;
+  width: 100% !important;
+  height: 100% !important;
+  background: linear-gradient(90deg, transparent, rgba(132, 217, 23, 0.1), transparent) !important;
+  transition: left 0.6s ease !important;
+}
+
+.skill-card-modern:hover::before,
+.education-card-modern:hover::before,
+.education-card:hover::before,
+.certification-item:hover::before {
+  left: 100% !important;
+}
+
+/* Skills Cards Específico */
+.skill-icon {
+  font-size: 3.5rem !important;
+  color: #84d917 !important;
+  margin-bottom: 1.5rem !important;
+  display: block !important;
+  text-align: center !important;
+}
+
+.skill-title,
+.education-title {
+  font-size: 1.5rem !important;
+  font-weight: 700 !important;
+  color: #ffffff !important;
+  margin-bottom: 0.5rem !important;
+  text-align: center !important;
+}
+
+.skill-subtitle,
+.education-period,
+.education-institution {
+  color: #84d917 !important;
+  font-weight: 600 !important;
+  margin-bottom: 1rem !important;
+  text-align: center !important;
+  font-size: 0.9rem !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.5px !important;
+}
+
+.skill-description,
+.education-description {
+  color: #cccccc !important;
+  line-height: 1.6 !important;
+  margin-bottom: 1.5rem !important;
+  text-align: center !important;
+}
+
+/* Tech Tags - Igual aos Projetos */
+.skill-tech-list {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  gap: 0.5rem !important;
+  justify-content: center !important;
+}
+
+.skill-tech {
+  background: rgba(132, 217, 23, 0.2) !important;
+  color: #84d917 !important;
+  padding: 0.3rem 0.8rem !important;
+  border-radius: 15px !important;
+  font-size: 0.8rem !important;
+  font-weight: 500 !important;
+  border: 1px solid rgba(132, 217, 23, 0.3) !important;
+}
+
+/* Education Cards Específico */
+.education-icon,
+.fas.fa-university,
+.fas.fa-certificate {
+  font-size: 3rem !important;
+  color: #84d917 !important;
+  margin-bottom: 1.5rem !important;
+  display: block !important;
+  text-align: center !important;
+}
+
+/* Certifications */
+.certifications-grid {
+  display: grid !important;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)) !important;
+  gap: 1.5rem !important;
+  margin-top: 2rem !important;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+  .skill-grid,
+  .education-grid,
+  .certifications-grid {
+    grid-template-columns: 1fr !important;
+    gap: 1.5rem !important;
+  }
+  
+  .skill-card-modern,
+  .education-card-modern,
+  .education-card,
+  .certification-item {
+    padding: 1.5rem !important;
+  }
+  
+  .skill-icon,
+  .education-icon {
+    font-size: 2.5rem !important;
+  }
+}
+
+/* Section Titles */
+.section-title {
+  color: #ffffff !important;
+  font-size: 2.5rem !important;
+  font-weight: 700 !important;
+  text-align: center !important;
+  margin-bottom: 1rem !important;
+}
+
+.section-subtitle {
+  color: #84d917 !important;
+  font-size: 1.2rem !important;
+  font-weight: 600 !important;
+  text-align: center !important;
+  margin-bottom: 2rem !important;
+}
+
+/* Background e Container Fixes */
+.skill-category {
+  margin-bottom: 4rem !important;
+}
+
+/* Forçar layout consistente */
+.skill-card-modern > *,
+.education-card-modern > *,
+.education-card > *,
+.certification-item > * {
+  position: relative !important;
+  z-index: 1 !important;
+}

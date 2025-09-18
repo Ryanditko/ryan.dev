@@ -1,0 +1,219 @@
+/* Header Sticky Improvements */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background: rgba(0, 0, 0, 0.95);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(132, 217, 23, 0.2);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Scroll behavior enhancements */
+.navbar.scrolled {
+  background: rgba(0, 0, 0, 0.98);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+  border-bottom: 1px solid rgba(132, 217, 23, 0.3);
+}
+
+/* Light theme navbar */
+[data-theme="light"] .navbar {
+  background: rgba(255, 255, 255, 0.95);
+  border-bottom: 1px solid rgba(132, 217, 23, 0.2);
+}
+
+[data-theme="light"] .navbar.scrolled {
+  background: rgba(255, 255, 255, 0.98);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+/* Navbar brand improvements */
+.navbar-brand {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #84d917;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  background: linear-gradient(45deg, #84d917, #94e327);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.navbar-brand:hover {
+  transform: scale(1.05);
+  filter: brightness(1.2);
+}
+
+/* Navigation links improvements */
+.nav-link {
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 500;
+  position: relative;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+[data-theme="light"] .nav-link {
+  color: #333333;
+}
+
+.nav-link:hover {
+  color: #84d917;
+  background: rgba(132, 217, 23, 0.1);
+  transform: translateY(-2px);
+}
+
+.nav-link.current-page {
+  color: #84d917;
+  background: rgba(132, 217, 23, 0.15);
+  border: 1px solid rgba(132, 217, 23, 0.3);
+}
+
+/* Theme toggle button improvements */
+.theme-toggle {
+  background: rgba(132, 217, 23, 0.2);
+  border: 1px solid rgba(132, 217, 23, 0.3);
+  color: #84d917;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.theme-toggle:hover {
+  background: rgba(132, 217, 23, 0.3);
+  transform: rotate(180deg) scale(1.1);
+  box-shadow: 0 4px 15px rgba(132, 217, 23, 0.4);
+}
+
+/* Mobile menu improvements */
+.mobile-menu {
+  background: rgba(0, 0, 0, 0.98);
+  backdrop-filter: blur(20px);
+  border-top: 1px solid rgba(132, 217, 23, 0.2);
+  padding: 1rem 0;
+}
+
+[data-theme="light"] .mobile-menu {
+  background: rgba(255, 255, 255, 0.98);
+}
+
+.mobile-menu-item {
+  display: block;
+  padding: 0.75rem 1.5rem;
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  border-left: 3px solid transparent;
+}
+
+[data-theme="light"] .mobile-menu-item {
+  color: #333333;
+}
+
+.mobile-menu-item:hover {
+  background: rgba(132, 217, 23, 0.1);
+  border-left-color: #84d917;
+  color: #84d917;
+  transform: translateX(5px);
+}
+
+/* Hamburger menu improvements */
+.hamburger {
+  background: none;
+  border: none;
+  color: #ffffff;
+  cursor: pointer;
+  padding: 0.5rem;
+  transition: all 0.3s ease;
+}
+
+[data-theme="light"] .hamburger {
+  color: #333333;
+}
+
+.hamburger:hover {
+  color: #84d917;
+  transform: scale(1.1);
+}
+
+/* Contact button improvements */
+.contact-btn {
+  background: linear-gradient(135deg, #84d917, #94e327);
+  color: #000000 !important;
+  font-weight: 600;
+  padding: 0.75rem 1.5rem !important;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(132, 217, 23, 0.3);
+}
+
+.contact-btn:hover {
+  transform: translateY(-2px) scale(1.05);
+  box-shadow: 0 8px 25px rgba(132, 217, 23, 0.5);
+  filter: brightness(1.1);
+}
+
+/* Smooth scroll behavior */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Body offset for fixed header */
+body {
+  padding-top: 0;
+}
+
+/* Main content offset */
+main {
+  padding-top: 80px;
+}
+
+/* Animation for navbar appearance */
+@keyframes slideDown {
+  from {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.navbar {
+  animation: slideDown 0.5s ease-out;
+}
+
+/* Responsive improvements */
+@media (max-width: 768px) {
+  .navbar-brand {
+    font-size: 1.1rem;
+  }
+  
+  main {
+    padding-top: 70px;
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar-brand {
+    font-size: 1rem;
+  }
+  
+  main {
+    padding-top: 65px;
+  }
+}

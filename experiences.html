@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Experiências Profissionais - Ryan Rodrigues">
+  <meta name="theme-color" content="#84d917">
+  <title>Experiências | Ryan Rodrigues</title>
+  
+  <!-- External CDNs -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="icon" type="image/png" href="./src/img/icons/Kali_Logo.png">
+  
+  <!-- Custom Styles -->
+  <link rel="stylesheet" href="./src/css/portfolio.css">
+  <link rel="stylesheet" href="./src/css/custom-cursor.css">
+  <link rel="stylesheet" href="./src/css/ditko-theme.css">
+  <link rel="stylesheet" href="./src/css/navigation.css">
+  <link rel="stylesheet" href="./src/css/theme-universal.css">
+  <link rel="stylesheet" href="./src/css/header-sticky.css">
+  <link rel="stylesheet" href="./src/css/button-fix.css">
+  <link rel="stylesheet" href="./src/css/back-to-top-fix.css">
+  <link rel="stylesheet" href="./src/css/mobile-menu-fix.css">
+  <link rel="stylesheet" href="./src/css/cards-black-fix.css">
+  <link rel="stylesheet" href="./src/css/gradient-lima-fix.css">
+  <link rel="stylesheet" href="./src/css/modern-cards-unified.css">
+  
+  <style>
+    /* Timeline específico para experiências */
+    .timeline {
+      position: relative;
+      padding: 20px 0;
+    }
+    
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 50%;
+      top: 0;
+      bottom: 0;
+      width: 4px;
+      background: linear-gradient(to bottom, #84d917, #94e327);
+      transform: translateX(-50%);
+    }
+    
+    .timeline-item {
+      position: relative;
+      margin: 40px 0;
+      width: 45%;
+    }
+    
+    .timeline-item:nth-child(even) {
+      margin-left: 55%;
+    }
+    
+    .timeline-item::before {
+      content: '';
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background: #84d917;
+      border: 4px solid #ffffff;
+      border-radius: 50%;
+      top: 20px;
+      z-index: 10;
+      box-shadow: 0 0 0 4px rgba(132, 217, 23, 0.3);
+    }
+    
+    .timeline-item:nth-child(odd)::before {
+      right: -60px;
+    }
+    
+    .timeline-item:nth-child(even)::before {
+      left: -60px;
+    }
+    
+    .timeline-content {
+      background: #000000;
+      color: #ffffff;
+      padding: 30px;
+      border-radius: 15px;
+      border: 1px solid rgba(132, 217, 23, 0.3);
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5);
+      transition: all 0.3s ease;
+      position: relative;
+    }
+    
+    .timeline-content::before {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 0;
+      top: 30px;
+      border: 15px solid transparent;
+    }
+    
+    .timeline-item:nth-child(odd) .timeline-content::before {
+      right: -30px;
+      border-left-color: #000000;
+    }
+    
+    .timeline-item:nth-child(even) .timeline-content::before {
+      left: -30px;
+      border-right-color: #000000;
+    }
+    
+    .timeline-content:hover {
+      transform: scale(1.02);
+      border-color: #84d917;
+      box-shadow: 0 12px 40px rgba(132, 217, 23, 0.4);
+    }
+    
+    .timeline-date {
+      background: linear-gradient(135deg, #84d917, #94e327);
+      color: #000000;
+      padding: 8px 16px;
+      border-radius: 20px;
+      font-weight: 600;
+      display: inline-block;
+      margin-bottom: 15px;
+      font-size: 0.9rem;
+    }
+    
+    .timeline-title {
+      color: #84d917;
+      font-size: 1.4rem;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+    
+    .timeline-company {
+      color: #ffffff;
+      font-size: 1.1rem;
+      font-weight: 600;
+      margin-bottom: 15px;
+    }
+    
+    .timeline-description {
+      color: #cccccc;
+      line-height: 1.6;
+      margin-bottom: 20px;
+    }
+    
+    .timeline-skills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    
+    .timeline-skill {
+      background: rgba(132, 217, 23, 0.2);
+      color: #84d917;
+      padding: 4px 12px;
+      border-radius: 15px;
+      font-size: 0.8rem;
+      font-weight: 500;
+    }
+    
+    /* Mobile adaptations */
+    @media (max-width: 768px) {
+      .timeline::before {
+        left: 30px;
+      }
+      
+      .timeline-item {
+        width: calc(100% - 80px);
+        margin-left: 80px !important;
+      }
+      
+      .timeline-item::before {
+        left: -60px !important;
+      }
+      
+      .timeline-content::before {
+        left: -30px !important;
+        border-right-color: #000000 !important;
+        border-left-color: transparent !important;
+      }
+    }
+    
+    /* Navigation transitions */
+    .page-transition {
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeInUp 0.6s ease forwards;
+    }
+    
+    @keyframes fadeInUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Cursor customizado -->
+  <div class="custom-cursor"></div>
+  <div class="cursor-trail"></div>
+  
+  <!-- Navigation -->
+  <nav class="navbar fixed w-full z-50" aria-label="Navegação principal">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between h-16">
+        <div class="flex items-center">
+          <a href="index.html" class="navbar-brand">Software Engineer | Ryandikto</a>
+        </div>
+        <div class="hidden md:flex items-center space-x-8">
+          <button class="theme-toggle" aria-label="Alternar tema">
+            <i class="fas fa-moon" aria-hidden="true"></i>
+          </button>
+          <a href="index.html" class="nav-link">Início</a>
+          <a href="skills.html" class="nav-link">Skills</a>
+          <a href="experiences.html" class="nav-link current-page">Experiências</a>
+          <a href="projects.html" class="nav-link">Projetos</a>
+          <a href="education.html" class="nav-link">Educação</a>
+          <a href="index.html#contact" class="px-6 py-3 bg-green-600 text-white rounded-md hover:bg-green-700 transition transform hover:scale-105">Contato</a>
+        </div>
+        <div class="md:hidden flex items-center">
+          <button class="hamburger" aria-label="Abrir menu" aria-expanded="false">
+            <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Mobile menu -->
+    <div id="mobile-menu" class="mobile-menu hidden md:hidden">
+      <div class="mobile-menu-header">
+        <span class="mobile-brand">Software Engineer | Ryandikto</span>
+      </div>
+      <a href="index.html" class="mobile-menu-item">Início</a>
+      <a href="skills.html" class="mobile-menu-item">Skills</a>
+      <a href="experiences.html" class="mobile-menu-item">Experiências</a>
+      <a href="projects.html" class="mobile-menu-item">Projetos</a>
+      <a href="education.html" class="mobile-menu-item">Educação</a>
+      <a href="index.html#contact" class="mobile-menu-item contact-btn">Contato</a>
+    </div>
+  </nav>
+
+  <!-- Main Content -->
+  <main id="main-content" class="pt-32 pb-20 px-4 min-h-screen bg-secondary text-primary">
+    <div class="container mx-auto px-6 py-12 page-transition">
+      <!-- Header -->
+      <div class="text-center mb-16">
+        <h1 class="text-4xl md:text-5xl font-bold mb-4">
+          <span class="gradient-text">Minha</span> <span class="text-primary">Jornada</span>
+        </h1>
+        <p class="text-lg text-secondary max-w-3xl mx-auto">
+          Acompanhe minha trajetória profissional e as experiências que moldaram minha carreira em tecnologia
+        </p>
+      </div>
+
+      <!-- Timeline -->
+      <div class="timeline max-w-6xl mx-auto">
+        
+        <!-- Experience 1 - Atual -->
+        <div class="timeline-item">
+          <div class="timeline-content">
+            <div class="timeline-date">Junho 2025 - Momento Atual</div>
+            <h3 class="timeline-title">Analista de Informações Gerenciais Jr</h3>
+            <h4 class="timeline-company">Leroy Merlin Brasil</h4>
+            <p class="timeline-description">
+              Atuação diretamente no tratamento, análise exploratória e visualização de dados. 
+              Utilização de Python, ferramentas de BI e integração com o Genesys Cloud. 
+              O objetivo é gerar insights estratégicos para a operação, com foco em CX Analytics, 
+              automação de relatórios e construção de dashboards que apoiam a tomada de decisão.
+            </p>
+            <div class="timeline-skills">
+              <span class="timeline-skill">Salesforce</span>
+              <span class="timeline-skill">R</span>
+              <span class="timeline-skill">Power BI</span>
+              <span class="timeline-skill">Exploratory & Operational Data Science</span>
+              <span class="timeline-skill">CX Analytics</span>
+              <span class="timeline-skill">Dashboard Design</span>
+              <span class="timeline-skill">Genesys Cloud</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Experience 2 - CEO Ditko -->
+        <div class="timeline-item">
+          <div class="timeline-content">
+            <div class="timeline-date">Julho 2025 - Momento Atual</div>
+            <h3 class="timeline-title">CEO</h3>
+            <h4 class="timeline-company">Ditko</h4>
+            <p class="timeline-description">
+              Startup de automação e IA. Inovação e inteligência aplicada. 
+              Tools para SaaS e Desenvolvimento de sistemas.
+            </p>
+            <div class="timeline-skills">
+              <span class="timeline-skill">Startup Management</span>
+              <span class="timeline-skill">AI & Automation</span>
+              <span class="timeline-skill">SaaS Development</span>
+              <span class="timeline-skill">Innovation</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Experience 3 - Assistente de Relacionamento -->
+        <div class="timeline-item">
+          <div class="timeline-content">
+            <div class="timeline-date">Março 2025 - Junho 2025</div>
+            <h3 class="timeline-title">Assistente de Relacionamento com o Cliente</h3>
+            <h4 class="timeline-company">Leroy Merlin Brasil</h4>
+            <p class="timeline-description">
+              Imersão prática no setor de Ouvidoria. Atuação no programa "EU PROTAGONISTA" 
+              dentro da diretoria de experiência do cliente. Habilidades em comunicação estratégica, 
+              escuta ativa, resolução de conflitos e atuação consultiva voltada à jornada do cliente.
+            </p>
+            <div class="timeline-skills">
+              <span class="timeline-skill">Customer Experience</span>
+              <span class="timeline-skill">CRM</span>
+              <span class="timeline-skill">Business Research</span>
+              <span class="timeline-skill">Ouvidoria Strategy</span>
+              <span class="timeline-skill">CX Analytics</span>
+              <span class="timeline-skill">Atendimento Consultivo</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Experience 4 - Atendimento ao Cliente -->
+        <div class="timeline-item">
+          <div class="timeline-content">
+            <div class="timeline-date">Junho 2024 - Março 2025</div>
+            <h3 class="timeline-title">Atendimento ao Cliente</h3>
+            <h4 class="timeline-company">Leroy Merlin Brasil</h4>
+            <p class="timeline-description">
+              Atuei diretamente na automação de fluxos com o magical google extension. 
+              Intermediando clientes, transportadoras e lojas para garantir fluidez no processo de entrega. 
+              Suporte completo no pós-venda.
+            </p>
+            <div class="timeline-skills">
+              <span class="timeline-skill">Customer Support</span>
+              <span class="timeline-skill">Process Automation</span>
+              <span class="timeline-skill">Problem Solving</span>
+              <span class="timeline-skill">Logistics Operations</span>
+              <span class="timeline-skill">Insights Operacionais</span>
+              <span class="timeline-skill">Atendimento Consultivo</span>
+            </div>
+          </div>
+        </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- CTA Section -->
+      <div class="text-center mt-16">
+        <a href="projects.html" class="btn-ditko inline-flex items-center space-x-2">
+          <span>Ver Meus Projetos</span>
+          <i class="fas fa-arrow-right"></i>
+        </a>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-black text-white py-8">
+    <div class="container mx-auto px-6 text-center">
+      <p>&copy; 2025 Ryan Rodrigues. Todos os direitos reservados.</p>
+    </div>
+  </footer>
+
+  <script>
+    // Smooth transitions
+    document.addEventListener('DOMContentLoaded', function() {
+      const timelineItems = document.querySelectorAll('.timeline-item');
+      
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.style.opacity = '1';
+            entry.target.style.transform = 'translateY(0)';
+          }
+        });
+      });
+      
+      timelineItems.forEach(item => {
+        item.style.opacity = '0';
+        item.style.transform = 'translateY(30px)';
+        item.style.transition = 'all 0.6s ease';
+        observer.observe(item);
+      });
+    });
+  </script>
+  
+  <!-- Botão "Voltar ao Topo" -->
+  <a href="#" id="back-to-top" 
+     class="fixed bottom-6 right-6 w-12 h-12 bg-green-600 rounded-full flex items-center justify-center text-white shadow-lg hover:bg-green-700 transition duration-300 ease-in-out opacity-0 invisible" 
+     aria-label="Voltar ao topo"
+>
+    <i class="fa-solid fa-arrow-up"></i> 
+  </a>
+
+  <!-- Navigation Script -->
+  <script src="./src/js/navigation.js"></script>
+  <script src="./src/js/custom-cursor.js"></script>
+  <script src="./src/js/theme-manager.js"></script>
+  <script src="./src/js/icon-colors.js"></script>
+  <script src="./src/js/header-sticky.js"></script>
+  <script src="./src/js/back-to-top.js"></script>
+</body>
+</html>

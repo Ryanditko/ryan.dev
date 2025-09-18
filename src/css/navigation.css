@@ -1,0 +1,211 @@
+/* =========================================
+   NAVEGAÇÃO FLUIDA E TRANSIÇÕES ENTRE PÁGINAS
+   ========================================= */
+
+/* Transições suaves para mudança de página */
+body {
+  transition: opacity 0.3s ease-in-out;
+}
+
+/* Efeito de loading para navegação */
+.page-loading {
+  opacity: 0.7;
+  pointer-events: none;
+}
+
+/* Animações de entrada para páginas */
+.page-enter {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: pageEnter 0.6s ease forwards;
+}
+
+@keyframes pageEnter {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Melhorias na navegação principal */
+.nav-link {
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -5px;
+  left: 50%;
+  background: linear-gradient(90deg, #84d917, #94e327);
+  transition: all 0.3s ease;
+  transform: translateX(-50%);
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+  width: 100%;
+}
+
+/* Hover effects para links da navegação */
+.nav-link:hover {
+  color: #84d917;
+  transform: translateY(-2px);
+}
+
+/* Botão de contato melhorado */
+.btn-contact {
+  background: linear-gradient(135deg, #84d917 0%, #94e327 100%);
+  color: #000000;
+  font-weight: 600;
+  border: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(132, 217, 23, 0.3);
+}
+
+.btn-contact:hover {
+  transform: translateY(-2px) scale(1.05);
+  box-shadow: 0 8px 25px rgba(132, 217, 23, 0.4);
+  background: linear-gradient(135deg, #94e327 0%, #84d917 100%);
+}
+
+/* Animações de scroll suaves */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Preloader para mudanças de página */
+.page-preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  opacity: 1;
+  transition: opacity 0.5s ease;
+}
+
+.page-preloader.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.preloader-spinner {
+  width: 50px;
+  height: 50px;
+  border: 3px solid rgba(132, 217, 23, 0.3);
+  border-radius: 50%;
+  border-top: 3px solid #84d917;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Navegação móvel melhorada */
+.mobile-menu {
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  background: rgba(255, 255, 255, 0.95);
+  border-top: 1px solid rgba(132, 217, 23, 0.3);
+}
+
+.mobile-menu-item {
+  transition: all 0.3s ease;
+  border-left: 3px solid transparent;
+}
+
+.mobile-menu-item:hover {
+  background: rgba(132, 217, 23, 0.1);
+  border-left-color: #84d917;
+  padding-left: 1.5rem;
+}
+
+/* Responsividade aprimorada */
+@media (max-width: 768px) {
+  .nav-link::after {
+    display: none;
+  }
+  
+  .page-enter {
+    animation-duration: 0.4s;
+  }
+}
+
+/* Dark mode para navegação */
+[data-theme="dark"] .mobile-menu {
+  background: rgba(0, 0, 0, 0.95);
+}
+
+[data-theme="dark"] .page-preloader {
+  background: #000000;
+}
+
+[data-theme="dark"] .mobile-menu-item:hover {
+  background: rgba(148, 227, 39, 0.15);
+}
+
+/* Indicador de página ativa */
+.nav-link.current-page {
+  color: #84d917;
+  font-weight: 600;
+}
+
+.nav-link.current-page::after {
+  width: 100%;
+}
+
+/* Efeitos de transição para mudança de tema */
+* {
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+/* Parallax suave para elementos */
+.parallax-element {
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  transition: transform 0.1s ease-out;
+}
+
+/* Animações de entrada escalonadas */
+.stagger-animation {
+  opacity: 0;
+  transform: translateY(30px);
+  animation: staggerIn 0.6s ease forwards;
+}
+
+.stagger-animation:nth-child(1) { animation-delay: 0.1s; }
+.stagger-animation:nth-child(2) { animation-delay: 0.2s; }
+.stagger-animation:nth-child(3) { animation-delay: 0.3s; }
+.stagger-animation:nth-child(4) { animation-delay: 0.4s; }
+.stagger-animation:nth-child(5) { animation-delay: 0.5s; }
+.stagger-animation:nth-child(6) { animation-delay: 0.6s; }
+
+@keyframes staggerIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Melhorias de performance */
+.gpu-accelerated {
+  will-change: transform, opacity;
+  transform: translateZ(0);
+}
+
+/* Smooth scroll customizado */
+.smooth-scroll {
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px;
+}

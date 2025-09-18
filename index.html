@@ -8,7 +8,7 @@
   <meta name="author" content="Ryan Rodrigues">
   <meta property="og:image" content="/src/img/icons/Kali_Logo.png">
   <meta property="og:url" content="https://ryandev-murex.vercel.app">
-  <meta name="theme-color" content="#16a34a">
+  <meta name="theme-color" content="#84d917">
   <title>Portfólio | Ryan Rodrigues - Desenvolvedor Fullstack</title>
   
   <!-- PWA Manifest -->
@@ -26,6 +26,15 @@
   <link rel="stylesheet" href="./src/css/mobile-menu-compact.css">
   <link rel="stylesheet" href="./src/css/custom-cursor.css">
   <link rel="stylesheet" href="./src/css/theme-fixes.css">
+  <link rel="stylesheet" href="./src/css/ditko-theme.css">
+  <link rel="stylesheet" href="./src/css/navigation.css">
+  <link rel="stylesheet" href="./src/css/header-sticky.css">
+  <link rel="stylesheet" href="./src/css/back-to-top-fix.css">
+  <link rel="stylesheet" href="./src/css/mobile-menu-fix.css">
+  <link rel="stylesheet" href="./src/css/cards-black-fix.css">
+  <link rel="stylesheet" href="./src/css/gradient-lima-fix.css">
+  <link rel="stylesheet" href="./src/css/modern-cards-unified.css">
+  <link rel="stylesheet" href="./src/css/home-cards-compact.css">
   
   <!-- External Scripts -->
   <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
@@ -68,16 +77,17 @@
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex justify-between h-16">
         <div class="flex items-center">
-          <a href="#" class="navbar-brand">Fullstack Developer | Ryandikto</a>
+          <a href="#" class="navbar-brand">Software Engineer | Ryandikto</a>
         </div>
         <div class="hidden md:flex items-center space-x-8">
           <button class="theme-toggle" aria-label="Alternar tema">
             <i class="fas fa-moon" aria-hidden="true"></i>
           </button>
           <a href="#about" class="nav-link">Sobre</a>
-          <a href="#skills" class="nav-link">Stacks</a> 
-          <a href="#projects" class="nav-link">Projetos</a>
-          <a href="#experience" class="nav-link">Experiência</a>
+          <a href="skills.html" class="nav-link">Skills</a>
+          <a href="experiences.html" class="nav-link">Experiências</a> 
+          <a href="projects.html" class="nav-link">Projetos</a>
+          <a href="education.html" class="nav-link">Educação</a>
           <a href="#contact" class="px-6 py-3 bg-green-600 text-white rounded-md hover:bg-green-700 transition transform hover:scale-105">Contato</a>
         </div>
         <div class="md:hidden flex items-center">
@@ -92,14 +102,11 @@
     
     <!-- Mobile menu -->
     <div id="mobile-menu" class="mobile-menu hidden md:hidden">
-      <button class="mobile-theme-toggle" aria-label="Alternar tema">
-        <i class="fas fa-moon" aria-hidden="true"></i>
-        <span>Alterar Tema</span>
-      </button>
       <a href="#about" class="mobile-menu-item">Sobre</a>
-      <a href="#skills" class="mobile-menu-item">Stacks</a>
-      <a href="#projects" class="mobile-menu-item">Projetos</a>
-      <a href="#experience" class="mobile-menu-item">Experiência</a>
+      <a href="skills.html" class="mobile-menu-item">Skills</a>
+      <a href="experiences.html" class="mobile-menu-item">Experiências</a>
+      <a href="projects.html" class="mobile-menu-item">Projetos</a>
+      <a href="education.html" class="mobile-menu-item">Educação</a>
       <a href="#contact" class="mobile-menu-item contact-btn">Contato</a>
     </div>
   </nav>
@@ -116,7 +123,7 @@
             <span id="typed-text" class="text-black"></span>
           </h1>
           <p class="text-lg text-gray-600 mb-8">
-            Desenvolvedor Fullstack em desenvolvimento com conhecimento em DevWeb, RPA, Cloud e Data Analytics. Estou construindo uma carreira incrível aqui, venha me conhecer!
+            Software Engineer em desenvolvimento com conhecimento em DevWeb, RPA, Cloud e Data Analytics. Estou construindo uma carreira incrível aqui, venha me conhecer!
           </p>
           <div class="flex space-x-4">
             <a href="https://www.linkedin.com/in/ryan-rodrigues-592a27313/details/honors" 
@@ -137,8 +144,8 @@
           
           <!-- Foto de perfil com distorção futurista -->
           <div class="profile-container relative group">
-            <img src="./src/img/pfp/linkedin.png" 
-                 alt="Ryan Rodrigues - Desenvolvedor Fullstack" 
+            <img src="./src/img/pfp/ryan-pfp.jpg" 
+                 alt="Ryan Rodrigues - Software Engineer" 
                  class="rounded-full border-4 border-white shadow-2xl w-64 h-64 md:w-80 md:h-80 object-cover 
                         transform transition duration-700 group-hover:scale-105
                         filter group-hover:brightness-110 group-hover:contrast-110"
@@ -194,7 +201,7 @@
                   <span class="text-sm font-semibold text-white-600">80%</span>
                 </div>
                 <div class="w-full h-3 bg-gray-200 rounded-full overflow-hidden">
-                  <div class="h-3 bg-gradient-to-r from-green-400 to-green-600 skill-bar" style="width: 80%"></div>
+                  <div class="h-3 bg-gradient-to-r from-green-500 to-green-600 skill-bar" style="width: 80%; background: linear-gradient(90deg, #84d917, #94e327) !important;"></div>
                 </div>
               </div>
           
@@ -205,7 +212,7 @@
                   <span class="text-sm font-semibold text-white-600">100%</span>
                 </div>
                 <div class="w-full h-3 bg-gray-200 rounded-full overflow-hidden">
-                  <div class="h-3 bg-gradient-to-r from-green-400 to-green-600 skill-bar" style="width: 100%"></div>
+                  <div class="h-3 bg-gradient-to-r from-green-500 to-green-600 skill-bar" style="width: 100%; background: linear-gradient(90deg, #84d917, #94e327) !important;"></div>
                 </div>
               </div>
           
@@ -216,7 +223,7 @@
                   <span class="text-sm font-semibold text-white-600">90%</span>
                 </div>
                 <div class="w-full h-3 bg-gray-200 rounded-full overflow-hidden">
-                  <div class="h-3 bg-gradient-to-r from-green-400 to-green-600 skill-bar" style="width: 90%"></div>
+                  <div class="h-3 bg-gradient-to-r from-green-500 to-green-600 skill-bar" style="width: 90%; background: linear-gradient(90deg, #84d917, #94e327) !important;"></div>
                 </div>
               </div>
           
@@ -227,7 +234,7 @@
                   <span class="text-sm font-semibold text-white-600">75%</span>
                 </div>
                 <div class="w-full h-3 bg-gray-200 rounded-full overflow-hidden">
-                  <div class="h-3 bg-gradient-to-r from-green-400 to-green-600 skill-bar" style="width: 75%"></div>
+                  <div class="h-3 bg-gradient-to-r from-green-500 to-green-600 skill-bar" style="width: 75%; background: linear-gradient(90deg, #84d917, #94e327) !important;"></div>
                 </div>
               </div>
             </div>
@@ -242,54 +249,96 @@
         <h2 class="text-3xl font-bold text-center mb-12">
           <span>Minhas </span><span class="gradient-text">Stacks</span>
         </h2>
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 skill-cards">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
 
-          <!-- Frontend Skills -->
-          <div class="bg-white p-6 rounded-lg shadow-sm card-hover transition transform text-center interactive-card hover:shadow-lg">
-            <div class="flex justify-center gap-2 sm:gap-3 text-2xl sm:text-3xl text-green-600 mb-4 flex-wrap">
-              <i class="devicon-javascript-plain transform hover:scale-110 transition duration-300" aria-hidden="true"></i>
-              <i class="devicon-typescript-plain transform hover:scale-110 transition duration-300" aria-hidden="true"></i>
-              <i class="devicon-tailwindcss-plain transform hover:scale-110 transition duration-300" aria-hidden="true"></i>
-              <i class="devicon-bootstrap-plain transform hover:scale-110 transition duration-300" aria-hidden="true"></i>
+          <!-- JavaScript -->
+          <div class="skill-card-modern" style="min-height: auto; padding: 1.5rem;">
+            <i class="devicon-javascript-plain skill-icon" style="font-size: 2.5rem; margin-bottom: 1rem;"></i>
+            <h3 class="skill-title" style="font-size: 1.2rem;">JavaScript</h3>
+            <p class="skill-subtitle" style="font-size: 0.8rem;">Linguagem Principal</p>
+            <div class="skill-tech-list" style="margin-top: 1rem;">
+              <span class="skill-tech" style="font-size: 0.7rem;">ES6+</span>
+              <span class="skill-tech" style="font-size: 0.7rem;">Async/Await</span>
             </div>
-            <h3 class="font-semibold mb-2">Frontend</h3>
-            <p class="text-gray-600 text-sm">Desenvolvimento Web</p>
           </div>
 
-          <!-- Backend Skills -->
-          <div class="bg-white p-6 rounded-lg shadow-sm card-hover transition transform text-center interactive-card hover:shadow-lg">
-            <div class="flex justify-center gap-2 sm:gap-3 text-2xl sm:text-3xl text-green-600 mb-4 flex-wrap">
-              <i class="devicon-python-plain transform hover:scale-110 transition duration-300" aria-hidden="true"></i>
-              <i class="devicon-nodejs-plain transform hover:scale-110 transition duration-300" aria-hidden="true"></i>
-              <i class="devicon-kotlin-plain transform hover:scale-110 transition duration-300" aria-hidden="true"></i>
-              <i class="devicon-go-plain transform hover:scale-110 transition duration-300" aria-hidden="true"></i>
+          <!-- TypeScript -->
+          <div class="skill-card-modern" style="min-height: auto; padding: 1.5rem;">
+            <i class="devicon-typescript-plain skill-icon" style="font-size: 2.5rem; margin-bottom: 1rem;"></i>
+            <h3 class="skill-title" style="font-size: 1.2rem;">TypeScript</h3>
+            <p class="skill-subtitle" style="font-size: 0.8rem;">Tipagem Estática</p>
+            <div class="skill-tech-list" style="margin-top: 1rem;">
+              <span class="skill-tech" style="font-size: 0.7rem;">Types</span>
+              <span class="skill-tech" style="font-size: 0.7rem;">Interfaces</span>
             </div>
-            <h3 class="font-semibold mb-2">Backend</h3>
-            <p class="text-gray-600 text-sm">APIS, Microserviços</p>
           </div>
 
-          <!-- Database Skills -->
-          <div class="bg-white p-6 rounded-lg shadow-sm card-hover transition transform text-center interactive-card hover:shadow-lg">
-            <div class="flex justify-center gap-2 sm:gap-3 text-2xl sm:text-3xl text-green-600 mb-4 flex-wrap">
-              <i class="devicon-mysql-plain transform hover:scale-110 transition duration-300" aria-hidden="true"></i>
-              <i class="devicon-postgresql-plain transform hover:scale-110 transition duration-300" aria-hidden="true"></i>
-              <i class="devicon-microsoftsqlserver-plain transform hover:scale-110 transition duration-300" aria-hidden="true"></i>
+          <!-- Python -->
+          <div class="skill-card-modern" style="min-height: auto; padding: 1.5rem;">
+            <i class="devicon-python-plain skill-icon" style="font-size: 2.5rem; margin-bottom: 1rem;"></i>
+            <h3 class="skill-title" style="font-size: 1.2rem;">Python</h3>
+            <p class="skill-subtitle" style="font-size: 0.8rem;">Data Science & Backend</p>
+            <div class="skill-tech-list" style="margin-top: 1rem;">
+              <span class="skill-tech" style="font-size: 0.7rem;">FastAPI</span>
+              <span class="skill-tech" style="font-size: 0.7rem;">Pandas</span>
             </div>
-            <h3 class="font-semibold mb-2">Banco de Dados</h3>
-            <p class="text-gray-600 text-sm">SQL e gerenciamento de dados</p>
           </div>
 
-          <!-- DevOps Skills -->
-          <div class="bg-white p-6 rounded-lg shadow-sm card-hover transition transform text-center interactive-card hover:shadow-lg">
-            <div class="flex justify-center gap-2 sm:gap-3 text-2xl sm:text-3xl text-green-600 mb-4 flex-wrap">
-              <i class="devicon-docker-plain transform hover:scale-110 transition duration-300" aria-hidden="true"></i>
-              <i class="devicon-kubernetes-plain transform hover:scale-110 transition duration-300" aria-hidden="true"></i>
-              <i class="devicon-amazonwebservices-plain transform hover:scale-110 transition duration-300" aria-hidden="true"></i>
-              <i class="devicon-terraform-plain transform hover:scale-110 transition duration-300" aria-hidden="true"></i>
+          <!-- Node.js -->
+          <div class="skill-card-modern" style="min-height: auto; padding: 1.5rem;">
+            <i class="devicon-nodejs-plain skill-icon" style="font-size: 2.5rem; margin-bottom: 1rem;"></i>
+            <h3 class="skill-title" style="font-size: 1.2rem;">Node.js</h3>
+            <p class="skill-subtitle" style="font-size: 0.8rem;">Runtime JavaScript</p>
+            <div class="skill-tech-list" style="margin-top: 1rem;">
+              <span class="skill-tech" style="font-size: 0.7rem;">Express.js</span>
+              <span class="skill-tech" style="font-size: 0.7rem;">REST API</span>
             </div>
-            <h3 class="font-semibold mb-2">DevOps</h3>
-            <p class="text-gray-600 text-sm">Infraestrutura automatizada</p>
           </div>
+
+          <!-- AWS -->
+          <div class="skill-card-modern" style="min-height: auto; padding: 1.5rem;">
+            <i class="devicon-amazonwebservices-plain skill-icon" style="font-size: 2.5rem; margin-bottom: 1rem;"></i>
+            <h3 class="skill-title" style="font-size: 1.2rem;">AWS</h3>
+            <p class="skill-subtitle" style="font-size: 0.8rem;">Cloud Computing</p>
+            <div class="skill-tech-list" style="margin-top: 1rem;">
+              <span class="skill-tech" style="font-size: 0.7rem;">EC2</span>
+              <span class="skill-tech" style="font-size: 0.7rem;">S3</span>
+            </div>
+          </div>
+
+          <!-- Docker -->
+          <div class="skill-card-modern" style="min-height: auto; padding: 1.5rem;">
+            <i class="devicon-docker-plain skill-icon" style="font-size: 2.5rem; margin-bottom: 1rem;"></i>
+            <h3 class="skill-title" style="font-size: 1.2rem;">Docker</h3>
+            <p class="skill-subtitle" style="font-size: 0.8rem;">Containerização</p>
+            <div class="skill-tech-list" style="margin-top: 1rem;">
+              <span class="skill-tech" style="font-size: 0.7rem;">Containers</span>
+              <span class="skill-tech" style="font-size: 0.7rem;">Compose</span>
+            </div>
+          </div>
+
+          <!-- PostgreSQL -->
+          <div class="skill-card-modern" style="min-height: auto; padding: 1.5rem;">
+            <i class="devicon-postgresql-plain skill-icon" style="font-size: 2.5rem; margin-bottom: 1rem;"></i>
+            <h3 class="skill-title" style="font-size: 1.2rem;">PostgreSQL</h3>
+            <p class="skill-subtitle" style="font-size: 0.8rem;">Banco de Dados</p>
+            <div class="skill-tech-list" style="margin-top: 1rem;">
+              <span class="skill-tech" style="font-size: 0.7rem;">SQL</span>
+              <span class="skill-tech" style="font-size: 0.7rem;">Queries</span>
+            </div>
+          </div>
+
+          <!-- Git -->
+          <div class="skill-card-modern" style="min-height: auto; padding: 1.5rem;">
+            <i class="devicon-git-plain skill-icon" style="font-size: 2.5rem; margin-bottom: 1rem;"></i>
+            <h3 class="skill-title" style="font-size: 1.2rem;">Git</h3>
+            <p class="skill-subtitle" style="font-size: 0.8rem;">Controle de Versão</p>
+            <div class="skill-tech-list" style="margin-top: 1rem;">
+              <span class="skill-tech" style="font-size: 0.7rem;">GitHub</span>
+              <span class="skill-tech" style="font-size: 0.7rem;">CI/CD</span>
+            </div>
+          </div>
+
         </div>
       </div>
     </section>
@@ -343,10 +392,9 @@
               <h3 class="font-semibold text-xl mb-2">Landing Page Headshop</h3>
               <p class="text-gray-600 mb-4">Solução completa de landing page para uma marca de HEADSHOP. Newsletter automatizada, atendimento com IA generativa e treinada, com layout moderno e intuitivo.</p>
               <div class="flex flex-wrap gap-2">
-                <span class="project-tag project-tag-purple">HTML5</span>
-                <span class="project-tag project-tag-purple">CSS3</span>
-                <span class="project-tag project-tag-purple">Javascript</span>
-                <span class="project-tag project-tag-purple">GIT & Github</span>
+                <span class="project-tag project-tag-purple">HTML</span>
+                <span class="project-tag project-tag-purple">CSS</span>
+                <span class="project-tag project-tag-purple">JavaScript</span>
                 <span class="project-tag project-tag-purple">Email.js</span>
               </div>
             </div>
@@ -383,59 +431,122 @@
         <div class="text-center mt-10">
           <div id="extra-projects" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-8 hidden">
             
-            <!-- Project 4 - Petlove -->
+            <!-- Project 4 - Ditko -->
             <div class="bg-white rounded-lg overflow-hidden shadow-sm card-hover transition">
               <div class="relative h-48 overflow-hidden">
-                <img src="./src/img/projetos/petlove-dashboard-case.png" 
-                     alt="Dashboard de análise de vendas da Petlove" 
-                     loading="lazy" 
-                     class="w-full h-full object-cover">
-                <div class="project-overlay project-overlay-orange absolute inset-0 flex items-center justify-center opacity-0 transition" aria-hidden="true">
-                  <a href="#" 
-                     class="text-white px-4 py-2 border-2 border-white rounded-md hover:bg-white hover:text-orange-600 transition" 
-                     aria-label="Ver detalhes do projeto Petlove"
->Ver Detalhes</a>
-                </div>
-              </div>
-              <div class="p-6">
-                <h3 class="font-semibold text-xl mb-2">Petlove case dashboard</h3>
-                <p class="text-gray-600 mb-4">Projeto para mapear o desempenho de vendas por estado em um marketplace, identificando: Regiões com maior potencial, oportunidades de crescimento e Distribuição geográfica das vendas.</p>
-                <div class="flex flex-wrap gap-2">
-                  <span class="project-tag project-tag-orange">Power BI</span>
-                  <span class="project-tag project-tag-orange">DAX</span>
-                  <span class="project-tag project-tag-orange">SQL</span>
-                  <span class="project-tag project-tag-orange">Canva UI</span>
-                </div>
-              </div>
-            </div>
-
-            <!-- Project 5 - Discord Bot -->
-            <div class="bg-white rounded-lg overflow-hidden shadow-sm card-hover transition">
-              <div class="relative h-48 overflow-hidden">
-                <img src="./src/img/projetos/bot-discord.jpg" 
-                     alt="Interface do bot de Discord desenvolvido" 
+                <img src="./src/img/projetos/ditko.co-porfolio.jpg" 
+                     alt="Site da startup Ditko" 
                      loading="lazy" 
                      class="w-full h-full object-cover">
                 <div class="project-overlay project-overlay-green absolute inset-0 flex items-center justify-center opacity-0 transition" aria-hidden="true">
-                  <a href="https://discord.com/oauth2/authorize?client_id=1300981248554041344&scope=bot&permissions=8" 
+                  <a href="https://ditkotech.vercel.app" 
                      class="text-white px-4 py-2 border-2 border-white rounded-md hover:bg-white hover:text-green-600 transition" 
-                     aria-label="Adicionar bot ao Discord"
+                     aria-label="Visitar site Ditko"
 >Ver Detalhes</a>
                 </div>
               </div>
               <div class="p-6">
-                <h3 class="font-semibold text-xl mb-2">Discord Bot</h3>
-                <p class="text-gray-600 mb-4">Integração personalizada inspirada pelo bot Mee6 e Kali Linux, permitindo gerenciamento automatizado de permissões, detecção de atividades suspeitas e aplicação de ações moderativas.</p>
+                <h3 class="font-semibold text-xl mb-2">Ditko - Startup</h3>
+                <p class="text-gray-600 mb-4">Minha startup de soluções digitais brasileiras. Plataforma completa para automação, landing pages e produtos SaaS para empresas que querem crescer com tecnologia de qualidade mundial.</p>
                 <div class="flex flex-wrap gap-2">
-                  <span class="project-tag project-tag-green">Python</span>
-                  <span class="project-tag project-tag-green">Discord Developer</span>
-                  <span class="project-tag project-tag-green">Automation</span>
-                  <span class="project-tag project-tag-green">Discord.py</span>
+                  <span class="project-tag project-tag-green">TypeScript</span>
+                  <span class="project-tag project-tag-green">React</span>
+                  <span class="project-tag project-tag-green">Tailwind</span>
+                  <span class="project-tag project-tag-green">SaaS</span>
                 </div>
               </div>
             </div>
 
-            <!-- Project 6 - Machine Learning -->
+            <!-- Project 5 - Portal das Equipes -->
+            <div class="bg-white rounded-lg overflow-hidden shadow-sm card-hover transition">
+              <div class="relative h-48 overflow-hidden">
+                <img src="./src/img/projetos/Portal-Das-Equipes-portfolio.jpg" 
+                     alt="Portal das Equipes - Sistema colaborativo" 
+                     loading="lazy" 
+                     class="w-full h-full object-cover">
+                <div class="project-overlay project-overlay-blue absolute inset-0 flex items-center justify-center opacity-0 transition" aria-hidden="true">
+                  <a href="https://portal-equipes-deac.vercel.app" 
+                     class="text-white px-4 py-2 border-2 border-white rounded-md hover:bg-white hover:text-blue-600 transition" 
+                     aria-label="Visitar Portal das Equipes"
+>Ver Detalhes</a>
+                </div>
+              </div>
+              <div class="p-6">
+                <h3 class="font-semibold text-xl mb-2">Portal das Equipes</h3>
+                <p class="text-gray-600 mb-4">Plataforma colaborativa para gestão de equipes e projetos. Sistema completo com dashboard, comunicação em tempo real e ferramentas de produtividade para times remotos.</p>
+                <div class="flex flex-wrap gap-2">
+                  <span class="project-tag project-tag-blue">HTML</span>
+                  <span class="project-tag project-tag-blue">CSS</span>
+                  <span class="project-tag project-tag-blue">JavaScript</span>
+                  <span class="project-tag project-tag-blue">Teamwork</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Project 6 - Merlin -->
+            <div class="bg-white rounded-lg overflow-hidden shadow-sm card-hover transition">
+              <div class="relative h-48 overflow-hidden">
+                <img src="./src/img/projetos/merlin-portfolio.jpg" 
+                     alt="Aplicação Merlin com IA" 
+                     loading="lazy" 
+                     class="w-full h-full object-cover">
+                <div class="project-overlay project-overlay-purple absolute inset-0 flex items-center justify-center opacity-0 transition" aria-hidden="true">
+                  <span class="text-white px-4 py-2 border-2 border-white rounded-md">Acesso Restrito</span>
+                </div>
+              </div>
+              <div class="p-6">
+                <h3 class="font-semibold text-xl mb-2">Merlin</h3>
+                <p class="text-gray-600 mb-4">Aplicação web inteligente que integra APIs de IA para criar uma experiência personalizada e mágica de apresentação de portfólios profissionais.</p>
+                <div class="flex flex-wrap gap-2">
+                  <span class="project-tag project-tag-purple">Base64</span>
+                  <span class="project-tag project-tag-purple">React</span>
+                  <span class="project-tag project-tag-purple">JavaScript</span>
+                  <span class="project-tag project-tag-purple">AI APIs</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Project 7 - Kernal -->
+            <div class="bg-white rounded-lg overflow-hidden shadow-sm card-hover transition">
+              <div class="relative h-48 overflow-hidden">
+                <img src="./src/img/projetos/kernal-portfolio.jpg" 
+                     alt="Bot Kernal para Discord" 
+                     loading="lazy" 
+                     class="w-full h-full object-cover">
+                <div class="project-overlay project-overlay-orange absolute inset-0 flex items-center justify-center opacity-0 transition" aria-hidden="true">
+                  <a href="https://discordapp.com/oauth2/authorize?client_id=1300981248554041344" 
+                     class="text-white px-4 py-2 border-2 border-white rounded-md hover:bg-white hover:text-orange-600 transition" 
+                     aria-label="Adicionar Kernal ao Discord"
+>Ver Detalhes</a>
+                </div>
+              </div>
+              <div class="p-6">
+                <h3 class="font-semibold text-xl mb-2">Kernal</h3>
+                <p class="text-gray-600 mb-4">Bot Discord desenvolvido para segurança remota, com funcionalidades avançadas de monitoramento, controle de acesso e proteção de servidores. Implementa sistemas de moderação automática e ferramentas de administração remota.</p>
+                <div class="flex flex-wrap gap-2">
+                  <span class="project-tag project-tag-orange">TypeScript</span>
+                  <span class="project-tag project-tag-orange">Discord.js</span>
+                  <span class="project-tag project-tag-orange">Segurança</span>
+                  <span class="project-tag project-tag-orange">Automação</span>
+                </div>
+                <div class="mt-4 flex gap-2">
+                  <a href="https://github.com/Ryanditko/Kernal" 
+                     class="text-gray-600 hover:text-orange-600 transition inline-flex items-center gap-1"
+                     target="_blank" rel="noopener noreferrer">
+                    <i class="fab fa-github"></i>
+                    Código
+                  </a>
+                  <a href="https://discordapp.com/oauth2/authorize?client_id=1300981248554041344" 
+                     class="text-gray-600 hover:text-orange-600 transition inline-flex items-center gap-1"
+                     target="_blank" rel="noopener noreferrer">
+                    <i class="fab fa-discord"></i>
+                    Adicionar Bot
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Project 8 - Machine Learning -->
             <div class="bg-white rounded-lg overflow-hidden shadow-sm card-hover transition">
               <div class="relative h-48 overflow-hidden">
                 <img src="./src/img/projetos/iniciação-cientifica.jpg" 
@@ -450,13 +561,13 @@
                 </div>
               </div>
               <div class="p-6">
-                <h3 class="font-semibold text-xl mb-2">Machine Learning e Aprendizado Federado</h3>
+                <h3 class="font-semibold text-xl mb-2">Iniciação Científica</h3>
                 <p class="text-gray-600 mb-4">Pesquisa aplicada na área de segurança em aprendizado federado, com foco na simulação de cenários de ataque e aplicação de técnicas de defesa como Privacidade Diferencial.</p>
                 <div class="flex flex-wrap gap-2">
                   <span class="project-tag project-tag-pink">Machine Learning</span>
-                  <span class="project-tag project-tag-pink">Federate Learning</span>
                   <span class="project-tag project-tag-pink">Python</span>
-                  <span class="project-tag project-tag-pink">CI</span>
+                  <span class="project-tag project-tag-pink">Scikit-learn</span>
+                  <span class="project-tag project-tag-pink">Jupyter</span>
                 </div>
               </div>
             </div>
@@ -478,7 +589,7 @@
           <!-- Experience 1 -->
           <div class="bg-white p-6 rounded-lg shadow-sm">
             <div class="flex flex-col md:flex-row md:items-center justify-between mb-2">
-              <h3 class="font-semibold text-xl">Estagiário Data Analytics</h3>
+              <h3 class="font-semibold text-xl">Analista de Informações Gerenciais Jr</h3>
               <span class="text-green-600">Junho 2025 - Momento Atual</span>
             </div>
             <p class="text-gray-500 mb-4">Leroy Merlin Brasil</p>
@@ -612,41 +723,74 @@
         <h2 class="text-3xl font-bold text-center mb-12">
           <span>Formação </span><span class="gradient-text">Acadêmica</span>
         </h2>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 education-grid">
-          <!-- Education 1 -->
-          <div class="bg-white p-6 rounded-lg shadow-sm">
-            <div class="text-green-600 mb-4 transform transition duration-300 hover:scale-110 hover:rotate-12">
-              <i class="fas fa-graduation-cap fa-2x"></i>
-            </div>
-            <h3 class="font-semibold text-xl mb-2">Colégio Gondim - Ensino Médio</h3>
-            <p class="text-gray-500 mb-2">Instituição escolar</p>
-            <p class="text-gray-600 text-sm">2020 - 2023</p>
-            <p class="text-gray-600 mt-4">Estudante formado em escola particular na zona norte de São Paulo</p>
-          </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           
-          <!-- Education 2 -->
-          <div class="bg-white p-6 rounded-lg shadow-sm">
-            <div class="text-green-600 mb-4 transform transition duration-300 hover:scale-110 hover:rotate-12">
-              <i class="fas fa-university fa-2x"></i>
-            </div>
-            <h3 class="font-semibold text-xl mb-2">Impacta Tecnologia - ADS</h3>
-            <p class="text-gray-500 mb-2">Faculdade de Tecnologia</p>
-            <p class="text-gray-600 text-sm">Agosto 2024 - Dezembro 2026</p>
-            <p class="text-gray-600 mt-4">Tecnólogo em Análise e Desenvolvimento de Sistemas - Formação focada em desenvolvimento de software, banco de dados, arquitetura de sistemas e metodologias ágeis.</p>
-          </div>
-          
-          <!-- Education 3 -->
-          <div class="bg-white p-6 rounded-lg shadow-sm">
-            <div class="text-green-600 mb-4 transform transition duration-300 hover:scale-110 hover:rotate-12">
-              <i class="fas fa-certificate fa-2x"></i>
-            </div>
-            <h3 class="font-semibold text-xl mb-2">Certificações</h3>
-            <p class="text-gray-500 mb-2">Alura, Dio, Amazon</p>
-            <p class="text-gray-600 text-sm">2024 - Atual Momento</p>
-            <p class="text-gray-600 mt-4">
-              AWS Academy Graduate - AWS Academy Cloud Foundations, Google GEMINI, Devweb Bootcamp etc.
+          <!-- Current Education -->
+          <div class="education-card-modern" style="min-height: auto; padding: 1.5rem;">
+            <i class="fas fa-university education-icon" style="font-size: 2.5rem; margin-bottom: 1rem;"></i>
+            <h3 class="education-title" style="font-size: 1.2rem;">Tecnólogo em ADS</h3>
+            <div class="education-institution" style="font-size: 0.8rem;">Impacta Tecnologia</div>
+            <div class="education-period" style="font-size: 0.8rem;">2024 - 2026</div>
+            <p class="education-description" style="font-size: 0.85rem; margin-top: 1rem;">
+              Formação focada em desenvolvimento de software e metodologias ágeis.
             </p>
           </div>
+
+          <!-- High School -->
+          <div class="education-card-modern" style="min-height: auto; padding: 1.5rem;">
+            <i class="fas fa-graduation-cap education-icon" style="font-size: 2.5rem; margin-bottom: 1rem;"></i>
+            <h3 class="education-title" style="font-size: 1.2rem;">Ensino Médio</h3>
+            <div class="education-institution" style="font-size: 0.8rem;">Colégio Gondim</div>
+            <div class="education-period" style="font-size: 0.8rem;">2020 - 2023</div>
+            <p class="education-description" style="font-size: 0.85rem; margin-top: 1rem;">
+              Ensino médio com foco em ciências exatas e pensamento lógico.
+            </p>
+          </div>
+
+          <!-- AWS Certification -->
+          <div class="education-card-modern" style="min-height: auto; padding: 1.5rem;">
+            <i class="fab fa-aws education-icon" style="font-size: 2.5rem; margin-bottom: 1rem;"></i>
+            <h3 class="education-title" style="font-size: 1.2rem;">AWS Academy Graduate</h3>
+            <div class="education-institution" style="font-size: 0.8rem;">AWS Academy</div>
+            <div class="education-period" style="font-size: 0.8rem;">2024</div>
+            <p class="education-description" style="font-size: 0.85rem; margin-top: 1rem;">
+              Programa completo de cloud computing e arquiteturas AWS.
+            </p>
+          </div>
+
+          <!-- Google GEMINI -->
+          <div class="education-card-modern" style="min-height: auto; padding: 1.5rem;">
+            <i class="fab fa-google education-icon" style="font-size: 2.5rem; margin-bottom: 1rem;"></i>
+            <h3 class="education-title" style="font-size: 1.2rem;">Google GEMINI</h3>
+            <div class="education-institution" style="font-size: 0.8rem;">Google</div>
+            <div class="education-period" style="font-size: 0.8rem;">2024</div>
+            <p class="education-description" style="font-size: 0.85rem; margin-top: 1rem;">
+              Certificação em inteligência artificial e machine learning.
+            </p>
+          </div>
+
+          <!-- Devweb Bootcamp -->
+          <div class="education-card-modern" style="min-height: auto; padding: 1.5rem;">
+            <i class="fas fa-code education-icon" style="font-size: 2.5rem; margin-bottom: 1rem;"></i>
+            <h3 class="education-title" style="font-size: 1.2rem;">Devweb Bootcamp</h3>
+            <div class="education-institution" style="font-size: 0.8rem;">DIO</div>
+            <div class="education-period" style="font-size: 0.8rem;">2024</div>
+            <p class="education-description" style="font-size: 0.85rem; margin-top: 1rem;">
+              Bootcamp intensivo de desenvolvimento web full-stack.
+            </p>
+          </div>
+
+          <!-- Power BI -->
+          <div class="education-card-modern" style="min-height: auto; padding: 1.5rem;">
+            <i class="fas fa-chart-bar education-icon" style="font-size: 2.5rem; margin-bottom: 1rem;"></i>
+            <h3 class="education-title" style="font-size: 1.2rem;">Power BI Fundamentals</h3>
+            <div class="education-institution" style="font-size: 0.8rem;">Microsoft</div>
+            <div class="education-period" style="font-size: 0.8rem;">2024</div>
+            <p class="education-description" style="font-size: 0.85rem; margin-top: 1rem;">
+              Análise de dados e criação de dashboards interativos.
+            </p>
+          </div>
+
         </div>
       </div>
     </section>
@@ -745,6 +889,12 @@
 
   <!-- Custom JavaScript -->
   <script src="./src/js/portfolio.js"></script>
+  <script src="./src/js/navigation.js"></script>
+  <script src="./src/js/custom-cursor.js"></script>
+  <script src="./src/js/theme-manager.js"></script>
+  <script src="./src/js/icon-colors.js"></script>
+  <script src="./src/js/header-sticky.js"></script>
+  <script src="./src/js/back-to-top.js"></script>
 
 </body>
 </html>

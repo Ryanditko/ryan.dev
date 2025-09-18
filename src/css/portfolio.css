@@ -10,27 +10,27 @@
    ========================================= */
 
 :root {
-  /* Light Theme Colors */
+  /* Light Theme Colors - Ditko Style */
   --bg-primary: #ffffff;
-  --bg-secondary: #f9fafb;
-  --bg-tertiary: #f3f4f6;
-  --text-primary: #111827;
-  --text-secondary: #6b7280;
-  --text-tertiary: #9ca3af;
-  --border-color: #e5e7eb;
+  --bg-secondary: #fafafa;
+  --bg-tertiary: #f5f5f5;
+  --text-primary: #000000;
+  --text-secondary: #333333;
+  --text-tertiary: #666666;
+  --border-color: #e0e0e0;
   --shadow-light: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
   --shadow-medium: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
   --shadow-large: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
   
-  /* Brand Colors */
-  --primary-green: #16a34a;
-  --primary-green-hover: #15803d;
-  --primary-green-light: #22c55e;
-  --gradient-start: #01aa1d;
-  --gradient-end: #3bff93;
+  /* Brand Colors - Verde Lima Ditko */
+  --primary-green: #84d917;
+  --primary-green-hover: #75c413;
+  --primary-green-light: #94e327;
+  --gradient-start: #84d917;
+  --gradient-end: #94e327;
   
   /* Component Colors */
-  --nav-bg: rgba(255, 255, 255, 0.95);
+  --nav-bg: rgba(255, 255, 255, 0.98);
   --card-bg: var(--bg-primary);
   --input-bg: var(--bg-primary);
   --button-primary: var(--primary-green);
@@ -39,7 +39,38 @@
   /* Contact Section */
   --contact-bg: #000000;
   --contact-text: #ffffff;
-  --contact-text-secondary: #d1d5db;
+  --contact-text-secondary: #e5e5e5;
+  
+  /* Transitions */
+  --transition-fast: 0.15s ease-in-out;
+  --transition-normal: 0.3s ease-in-out;
+  --transition-slow: 0.5s ease-in-out;
+}
+
+/* Dark Theme Override */
+[data-theme="dark"] {
+  --bg-primary: #000000;
+  --bg-secondary: #111111;
+  --bg-tertiary: #1a1a1a;
+  --text-primary: #ffffff;
+  --text-secondary: #cccccc;
+  --text-tertiary: #999999;
+  --border-color: rgba(132, 217, 23, 0.3);
+  --shadow-light: 0 1px 3px 0 rgba(132, 217, 23, 0.1);
+  --shadow-medium: 0 4px 6px -1px rgba(132, 217, 23, 0.1);
+  --shadow-large: 0 10px 15px -3px rgba(132, 217, 23, 0.1);
+  
+  /* Component Colors */
+  --nav-bg: rgba(0, 0, 0, 0.98);
+  --card-bg: var(--bg-secondary);
+  --input-bg: var(--bg-secondary);
+  --button-primary: var(--primary-green);
+  --button-primary-hover: var(--primary-green-hover);
+  
+  /* Contact Section */
+  --contact-bg: #111111;
+  --contact-text: #ffffff;
+  --contact-text-secondary: #e5e5e5;
   
   /* Transitions */
   --transition-fast: 0.15s ease-in-out;
@@ -49,48 +80,48 @@
 
 /* Dark Theme Colors */
 [data-theme="dark"] {
-  --bg-primary: #0f172a;
-  --bg-secondary: #1e293b;
-  --bg-tertiary: #334155;
-  --text-primary: #f8fafc;
-  --text-secondary: #cbd5e1;
-  --text-tertiary: #94a3b8;
-  --border-color: #475569;
+  --bg-primary: #000000;
+  --bg-secondary: #1a1a1a;
+  --bg-tertiary: #2a2a2a;
+  --text-primary: #ffffff;
+  --text-secondary: #e5e5e5;
+  --text-tertiary: #cccccc;
+  --border-color: #404040;
   --shadow-light: 0 1px 3px 0 rgba(0, 0, 0, 0.3), 0 1px 2px 0 rgba(0, 0, 0, 0.2);
   --shadow-medium: 0 4px 6px -1px rgba(0, 0, 0, 0.3), 0 2px 4px -1px rgba(0, 0, 0, 0.2);
   --shadow-large: 0 10px 15px -3px rgba(0, 0, 0, 0.3), 0 4px 6px -2px rgba(0, 0, 0, 0.2);
   
-  --nav-bg: rgba(15, 23, 42, 0.95);
+  --nav-bg: rgba(0, 0, 0, 0.98);
   --card-bg: var(--bg-secondary);
   --input-bg: var(--bg-tertiary);
-  --button-primary: var(--primary-green-light);
-  --button-primary-hover: var(--primary-green);
+  --button-primary: var(--primary-green);
+  --button-primary-hover: var(--primary-green-light);
   
   /* Contact stays black in both themes */
   --contact-bg: #000000;
   --contact-text: #ffffff;
-  --contact-text-secondary: #d1d5db;
+  --contact-text-secondary: #e5e5e5;
 }
 
 /* Auto Dark Theme (system preference) */
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) {
-    --bg-primary: #0f172a;
-    --bg-secondary: #1e293b;
-    --bg-tertiary: #334155;
-    --text-primary: #f8fafc;
-    --text-secondary: #cbd5e1;
-    --text-tertiary: #94a3b8;
-    --border-color: #475569;
+    --bg-primary: #000000;
+    --bg-secondary: #1a1a1a;
+    --bg-tertiary: #2a2a2a;
+    --text-primary: #ffffff;
+    --text-secondary: #e5e5e5;
+    --text-tertiary: #cccccc;
+    --border-color: #404040;
     --shadow-light: 0 1px 3px 0 rgba(0, 0, 0, 0.3), 0 1px 2px 0 rgba(0, 0, 0, 0.2);
     --shadow-medium: 0 4px 6px -1px rgba(0, 0, 0, 0.3), 0 2px 4px -1px rgba(0, 0, 0, 0.2);
     --shadow-large: 0 10px 15px -3px rgba(0, 0, 0, 0.3), 0 4px 6px -2px rgba(0, 0, 0, 0.2);
     
-    --nav-bg: rgba(15, 23, 42, 0.95);
+    --nav-bg: rgba(0, 0, 0, 0.98);
     --card-bg: var(--bg-secondary);
     --input-bg: var(--bg-tertiary);
-    --button-primary: var(--primary-green-light);
-    --button-primary-hover: var(--primary-green);
+    --button-primary: var(--primary-green);
+    --button-primary-hover: var(--primary-green-light);
   }
 }
 
@@ -558,15 +589,15 @@ body {
 
 /* Green project tags */
 .project-tag-green {
-  background-color: rgba(22, 163, 74, 0.1);
+  background-color: rgba(132, 217, 23, 0.1);
   color: var(--primary-green);
-  border: 1px solid rgba(22, 163, 74, 0.2);
+  border: 1px solid rgba(132, 217, 23, 0.2);
 }
 
 [data-theme="dark"] .project-tag-green {
-  background-color: rgba(34, 197, 94, 0.2);
-  color: #22c55e;
-  border: 1px solid rgba(34, 197, 94, 0.3);
+  background-color: rgba(148, 227, 39, 0.2);
+  color: #94e327;
+  border: 1px solid rgba(148, 227, 39, 0.3);
 }
 
 /* Purple project tags */
@@ -627,7 +658,9 @@ body {
 
 .skill-bar {
   transition: width 1.5s ease-in-out;
-  background-color: var(--bg-tertiary);
+  background: linear-gradient(90deg, #84d917, #94e327) !important;
+  border-radius: 6px;
+  box-shadow: 0 2px 8px rgba(132, 217, 23, 0.3);
 }
 
 .skill-cards {
@@ -1317,7 +1350,7 @@ a:focus, button:focus, input:focus {
   top: 0;
   width: 4px;
   height: 0;
-  background: linear-gradient(to bottom, #16a34a, #22c55e);
+  background: linear-gradient(to bottom, #84d917, #94e327);
   transition: height 0.4s ease;
 }
 
@@ -1325,7 +1358,7 @@ a:focus, button:focus, input:focus {
 #experience-personal .bg-white:hover {
   transform: translateX(15px) scale(1.02);
   box-shadow: 
-    -5px 10px 30px rgba(22, 163, 74, 0.1),
+    -5px 10px 30px rgba(132, 217, 23, 0.1),
     0 5px 20px rgba(0, 0, 0, 0.05);
 }
 
@@ -1569,7 +1602,7 @@ section:last-of-type .bg-white:hover i {
   position: absolute;
   width: 4px;
   height: 4px;
-  background: radial-gradient(circle, #16a34a, #22c55e);
+  background: radial-gradient(circle, #84d917, #94e327);
   border-radius: 50%;
   animation: particle-float 3s ease-in-out infinite;
   opacity: 0;
@@ -1634,7 +1667,7 @@ section {
 #experience .bg-white:focus,
 #experience-personal .bg-white:focus,
 .education-card:focus {
-  outline: 3px solid #16a34a;
+  outline: 3px solid #84d917;
   outline-offset: 2px;
   transform: scale(1.02);
 }
@@ -2131,7 +2164,9 @@ body {
 
 .skill-bar {
   transition: width 1.5s ease-in-out;
-  background-color: var(--bg-tertiary);
+  background: linear-gradient(90deg, #84d917, #94e327) !important;
+  border-radius: 6px;
+  box-shadow: 0 2px 8px rgba(132, 217, 23, 0.3);
 }
 
 .skill-cards {

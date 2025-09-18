@@ -1,0 +1,251 @@
+/* =========================================
+   TEMAS UNIVERSAIS - DITKO BRANDING
+   ========================================= */
+
+/* Variáveis CSS para cores do tema */
+:root {
+  --primary-green: #84d917;
+  --secondary-green: #94e327;
+  --accent-green: #a8f030;
+  --dark-bg: #000000;
+  --dark-secondary: #111111;
+  --light-bg: #ffffff;
+  --light-secondary: #f8f9fa;
+  --text-dark: #000000;
+  --text-light: #ffffff;
+  --text-gray: #666666;
+}
+
+/* Tema Claro (Padrão) */
+[data-theme="light"],
+.light {
+  --bg-primary: var(--light-bg);
+  --bg-secondary: var(--light-secondary);
+  --text-primary: var(--text-dark);
+  --text-secondary: var(--text-gray);
+  --border-color: rgba(132, 217, 23, 0.3);
+}
+
+/* Tema Escuro */
+[data-theme="dark"],
+.dark {
+  --bg-primary: var(--dark-bg);
+  --bg-secondary: var(--dark-secondary);
+  --text-primary: var(--text-light);
+  --text-secondary: #cccccc;
+  --border-color: rgba(132, 217, 23, 0.5);
+}
+
+/* Aplicar cores do tema */
+body {
+  background-color: var(--bg-primary) !important;
+  color: var(--text-primary) !important;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Headers e Navigation */
+header,
+nav,
+.navbar {
+  background-color: var(--bg-primary) !important;
+  border-bottom: 2px solid var(--primary-green) !important;
+  transition: all 0.3s ease;
+}
+
+/* Links de navegação */
+.navbar a,
+.nav-menu a,
+nav a {
+  color: var(--text-primary) !important;
+  transition: color 0.3s ease;
+}
+
+.navbar a:hover,
+.nav-menu a:hover,
+nav a:hover {
+  color: var(--primary-green) !important;
+}
+
+.current-page a {
+  color: var(--primary-green) !important;
+  font-weight: 600;
+}
+
+/* Cards e containers */
+.card,
+.project-card,
+.skill-card,
+.education-card,
+.experience-card,
+.project-card-modern,
+.skill-card-modern,
+.education-card-modern {
+  background-color: var(--bg-secondary) !important;
+  color: var(--text-primary) !important;
+  border: 1px solid var(--border-color) !important;
+  transition: all 0.3s ease;
+}
+
+/* Títulos */
+h1, h2, h3, h4, h5, h6 {
+  color: var(--text-primary) !important;
+}
+
+/* Texto com gradiente Ditko */
+.text-gradient-ditko {
+  background: linear-gradient(45deg, var(--primary-green), var(--secondary-green));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Ícones - sempre verde lima */
+i[class*="fa"],
+.icon,
+.fas,
+.far,
+.fab,
+.fal {
+  color: var(--primary-green) !important;
+}
+
+/* Botões */
+.btn,
+button {
+  transition: all 0.3s ease;
+}
+
+.btn-primary,
+.project-link-primary {
+  background-color: var(--primary-green) !important;
+  color: var(--dark-bg) !important;
+  border-color: var(--primary-green) !important;
+}
+
+.btn-secondary,
+.project-link-secondary {
+  background-color: transparent !important;
+  color: var(--primary-green) !important;
+  border: 2px solid var(--primary-green) !important;
+}
+
+.btn:hover,
+button:hover {
+  transform: translateY(-2px);
+}
+
+/* Timeline (para página de experiências) */
+.timeline-item {
+  border-left: 3px solid var(--primary-green) !important;
+}
+
+.timeline-item::before {
+  background-color: var(--primary-green) !important;
+}
+
+/* Skills tags */
+.skill-tag,
+.project-tech {
+  background-color: rgba(132, 217, 23, 0.1) !important;
+  color: var(--primary-green) !important;
+  border: 1px solid rgba(132, 217, 23, 0.3) !important;
+}
+
+/* Barras de progresso/proficiência */
+.skill-bar,
+.progress-bar,
+[class*="progress"],
+div[style*="bg-gradient-to-r from-green"] {
+  background: linear-gradient(90deg, #84d917, #94e327) !important;
+  border-radius: 6px !important;
+  box-shadow: 0 2px 8px rgba(132, 217, 23, 0.3) !important;
+}
+
+/* Container das barras de progresso */
+.progress-container,
+.skill-progress,
+div[class*="bg-gray-200"] {
+  background-color: var(--bg-secondary) !important;
+  border: 1px solid var(--border-color) !important;
+}
+
+/* Inputs e forms */
+input,
+textarea,
+select {
+  background-color: var(--bg-secondary) !important;
+  color: var(--text-primary) !important;
+  border: 2px solid var(--border-color) !important;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  border-color: var(--primary-green) !important;
+  box-shadow: 0 0 0 3px rgba(132, 217, 23, 0.1) !important;
+}
+
+/* Scrollbar personalizada */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-secondary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--primary-green);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--secondary-green);
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+  .theme-toggle {
+    position: fixed !important;
+    top: 20px !important;
+    right: 20px !important;
+    z-index: 1000 !important;
+    background: var(--bg-primary) !important;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1) !important;
+  }
+}
+
+/* Animações suaves */
+* {
+  transition: color 0.3s ease, background-color 0.3s ease, border-color 0.3s ease;
+}
+
+/* Footer */
+footer {
+  background-color: var(--bg-secondary) !important;
+  color: var(--text-primary) !important;
+  border-top: 2px solid var(--primary-green) !important;
+}
+
+/* Links em geral */
+a {
+  color: var(--primary-green) !important;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: var(--secondary-green) !important;
+}
+
+/* Seções */
+section {
+  background-color: var(--bg-primary) !important;
+  color: var(--text-primary) !important;
+}
+
+/* Destacar elementos ativos */
+.active,
+.selected {
+  background-color: rgba(132, 217, 23, 0.1) !important;
+  border-color: var(--primary-green) !important;
+}

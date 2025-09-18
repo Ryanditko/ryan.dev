@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Skills e Tecnologias - Ryan Rodrigues">
+  <meta name="theme-color" content="#84d917">
+  <title>Skills | Ryan Rodrigues</title>
+  
+  <!-- External CDNs -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/devicon.min.css">
+  <link rel="icon" type="image/png" href="./src/img/icons/Kali_Logo.png">
+  
+  <!-- Custom Styles -->
+  <link rel="stylesheet" href="./src/css/portfolio.css">
+  <link rel="stylesheet" href="./src/css/custom-cursor.css">
+  <link rel="stylesheet" href="./src/css/ditko-theme.css">
+  <link rel="stylesheet" href="./src/css/navigation.css">
+  <link rel="stylesheet" href="./src/css/theme-universal.css">
+  <link rel="stylesheet" href="./src/css/header-sticky.css">
+  <link rel="stylesheet" href="./src/css/dark-cards-fix.css">
+  <link rel="stylesheet" href="./src/css/button-fix.css">
+  <link rel="stylesheet" href="./src/css/back-to-top-fix.css">
+  <link rel="stylesheet" href="./src/css/mobile-menu-fix.css">
+  <link rel="stylesheet" href="./src/css/cards-black-fix.css">
+  <link rel="stylesheet" href="./src/css/gradient-lima-fix.css">
+  <link rel="stylesheet" href="./src/css/modern-cards-unified.css">
+  
+  <style>
+    .skill-category {
+      margin-bottom: 4rem;
+    }
+    
+    .skill-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+    
+    .skill-card-modern {
+      background: #000000;
+      color: #ffffff;
+      padding: 2rem;
+      border-radius: 20px;
+      border: 1px solid rgba(132, 217, 23, 0.3);
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5);
+      transition: all 0.4s ease;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .skill-card-modern::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(132, 217, 23, 0.1), transparent);
+      transition: left 0.6s ease;
+    }
+    
+    .skill-card-modern:hover::before {
+      left: 100%;
+    }
+    
+    .skill-card-modern:hover {
+      transform: translateY(-10px) scale(1.03);
+      border-color: #84d917;
+      box-shadow: 0 20px 50px rgba(132, 217, 23, 0.4);
+    }
+    
+    .skill-icon {
+      font-size: 3rem;
+      color: #84d917;
+      margin-bottom: 1rem;
+      display: block;
+    }
+    
+    .skill-title {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #ffffff;
+      margin-bottom: 0.5rem;
+    }
+    
+    .skill-subtitle {
+      color: #84d917;
+      font-weight: 600;
+      margin-bottom: 1rem;
+    }
+    
+    .skill-description {
+      color: #cccccc;
+      line-height: 1.6;
+      margin-bottom: 1.5rem;
+    }
+    
+    .skill-tech-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+    
+    .skill-tech {
+      background: rgba(132, 217, 23, 0.2);
+      color: #84d917;
+      padding: 0.3rem 0.8rem;
+      border-radius: 15px;
+      font-size: 0.8rem;
+      font-weight: 500;
+      border: 1px solid rgba(132, 217, 23, 0.3);
+    }
+    
+    .page-transition {
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeInUp 0.6s ease forwards;
+    }
+    
+    @keyframes fadeInUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    
+    .section-title {
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: #000000;
+      margin-bottom: 1rem;
+      text-align: center;
+    }
+    
+    .section-subtitle {
+      color: #666666;
+      text-align: center;
+      font-size: 1.1rem;
+      max-width: 600px;
+      margin: 0 auto 3rem;
+    }
+  </style>
+</head>
+<body>
+  <!-- Cursor customizado -->
+  <div class="custom-cursor"></div>
+  <div class="cursor-trail"></div>
+  
+  <!-- Navigation -->
+  <nav class="navbar fixed w-full z-50" aria-label="Navegação principal">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between h-16">
+        <div class="flex items-center">
+          <a href="index.html" class="navbar-brand">Software Engineer | Ryandikto</a>
+        </div>
+        <div class="hidden md:flex items-center space-x-8">
+          <button class="theme-toggle" aria-label="Alternar tema">
+            <i class="fas fa-moon" aria-hidden="true"></i>
+          </button>
+          <a href="index.html" class="nav-link">Início</a>
+          <a href="skills.html" class="nav-link current-page">Skills</a>
+          <a href="experiences.html" class="nav-link">Experiências</a>
+          <a href="projects.html" class="nav-link">Projetos</a>
+          <a href="education.html" class="nav-link">Educação</a>
+          <a href="index.html#contact" class="px-6 py-3 bg-green-600 text-white rounded-md hover:bg-green-700 transition transform hover:scale-105">Contato</a>
+        </div>
+        <div class="md:hidden flex items-center">
+          <button class="hamburger" aria-label="Abrir menu" aria-expanded="false">
+            <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Mobile menu -->
+    <div id="mobile-menu" class="mobile-menu hidden md:hidden">
+      <a href="index.html" class="mobile-menu-item">Início</a>
+      <a href="skills.html" class="mobile-menu-item">Skills</a>
+      <a href="experiences.html" class="mobile-menu-item">Experiências</a>
+      <a href="projects.html" class="mobile-menu-item">Projetos</a>
+      <a href="education.html" class="mobile-menu-item">Educação</a>
+      <a href="index.html#contact" class="mobile-menu-item contact-btn">Contato</a>
+    </div>
+  </nav>
+
+  <!-- Main Content -->
+  <main id="main-content" class="pt-32 min-h-screen bg-secondary text-primary">
+    <div class="container mx-auto px-6 py-12 page-transition">
+      <!-- Header -->
+      <div class="text-center mb-16">
+        <h1 class="text-4xl md:text-5xl font-bold mb-4">
+          <span class="gradient-text">Minhas</span> <span class="text-primary">Stacks</span>
+        </h1>
+        <p class="text-lg text-secondary max-w-3xl mx-auto">
+          Tecnologias e ferramentas que domino para criar soluções inovadoras e eficientes
+        </p>
+      </div>
+
+      <!-- Frontend Section -->
+      <div class="skill-category">
+        <h2 class="section-title">Frontend</h2>
+        <p class="section-subtitle">Desenvolvimento Web</p>
+        <div class="skill-grid">
+          <div class="skill-card-modern">
+            <i class="devicon-javascript-plain skill-icon"></i>
+            <h3 class="skill-title">JavaScript</h3>
+            <p class="skill-subtitle">Linguagem Principal</p>
+            <p class="skill-description">
+              Desenvolvimento moderno com ES6+, programação assíncrona e manipulação do DOM.
+            </p>
+            <div class="skill-tech-list">
+              <span class="skill-tech">ES6+</span>
+              <span class="skill-tech">Async/Await</span>
+              <span class="skill-tech">DOM</span>
+            </div>
+          </div>
+          
+          <div class="skill-card-modern">
+            <i class="devicon-typescript-plain skill-icon"></i>
+            <h3 class="skill-title">TypeScript</h3>
+            <p class="skill-subtitle">Tipagem Estática</p>
+            <p class="skill-description">
+              Desenvolvimento escalável com tipagem forte e recursos avançados do TypeScript.
+            </p>
+            <div class="skill-tech-list">
+              <span class="skill-tech">Types</span>
+              <span class="skill-tech">Interfaces</span>
+              <span class="skill-tech">Generics</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Backend Section -->
+      <div class="skill-category">
+        <h2 class="section-title">Backend</h2>
+        <p class="section-subtitle">APIs, Microserviços</p>
+        <div class="skill-grid">
+          <div class="skill-card-modern">
+            <i class="devicon-nodejs-plain skill-icon"></i>
+            <h3 class="skill-title">Node.js</h3>
+            <p class="skill-subtitle">Runtime JavaScript</p>
+            <p class="skill-description">
+              Desenvolvimento de APIs robustas e aplicações server-side performáticas.
+            </p>
+            <div class="skill-tech-list">
+              <span class="skill-tech">Express.js</span>
+              <span class="skill-tech">REST API</span>
+              <span class="skill-tech">Middleware</span>
+            </div>
+          </div>
+          
+          <div class="skill-card-modern">
+            <i class="devicon-python-plain skill-icon"></i>
+            <h3 class="skill-title">Python</h3>
+            <p class="skill-subtitle">Versatilidade Total</p>
+            <p class="skill-description">
+              Automação, análise de dados, machine learning e desenvolvimento web.
+            </p>
+            <div class="skill-tech-list">
+              <span class="skill-tech">Django</span>
+              <span class="skill-tech">FastAPI</span>
+              <span class="skill-tech">Pandas</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Database Section -->
+      <div class="skill-category">
+        <h2 class="section-title">Banco de Dados</h2>
+        <p class="section-subtitle">SQL e gerenciamento de dados</p>
+        <div class="skill-grid">
+          <div class="skill-card-modern">
+            <i class="devicon-mysql-plain skill-icon"></i>
+            <h3 class="skill-title">MySQL</h3>
+            <p class="skill-subtitle">Banco Relacional</p>
+            <p class="skill-description">
+              Modelagem, otimização de queries e administração de bancos de dados relacionais.
+            </p>
+            <div class="skill-tech-list">
+              <span class="skill-tech">Stored Procedures</span>
+              <span class="skill-tech">Indexação</span>
+              <span class="skill-tech">Backup</span>
+            </div>
+          </div>
+          
+          <div class="skill-card-modern">
+            <i class="devicon-mongodb-plain skill-icon"></i>
+            <h3 class="skill-title">MongoDB</h3>
+            <p class="skill-subtitle">NoSQL</p>
+            <p class="skill-description">
+              Banco de dados não-relacional para aplicações escaláveis e flexíveis.
+            </p>
+            <div class="skill-tech-list">
+              <span class="skill-tech">Aggregation</span>
+              <span class="skill-tech">Atlas</span>
+              <span class="skill-tech">Mongoose</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- DevOps Section -->
+      <div class="skill-category">
+        <h2 class="section-title">DevOps</h2>
+        <p class="section-subtitle">Infraestrutura automatizada</p>
+        <div class="skill-grid">
+          <div class="skill-card-modern">
+            <i class="devicon-docker-plain skill-icon"></i>
+            <h3 class="skill-title">Docker</h3>
+            <p class="skill-subtitle">Containerização</p>
+            <p class="skill-description">
+              Criação e gerenciamento de containers para ambientes consistentes e escaláveis.
+            </p>
+            <div class="skill-tech-list">
+              <span class="skill-tech">Docker Compose</span>
+              <span class="skill-tech">Dockerfile</span>
+              <span class="skill-tech">Volumes</span>
+            </div>
+          </div>
+          
+          <div class="skill-card-modern">
+            <i class="devicon-amazonwebservices-original skill-icon"></i>
+            <h3 class="skill-title">AWS</h3>
+            <p class="skill-subtitle">Cloud Computing</p>
+            <p class="skill-description">
+              Implementação e gerenciamento de soluções em nuvem na Amazon Web Services.
+            </p>
+            <div class="skill-tech-list">
+              <span class="skill-tech">EC2</span>
+              <span class="skill-tech">S3</span>
+              <span class="skill-tech">Lambda</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- CTA Section -->
+      <div class="text-center mt-16">
+        <a href="experiences.html" class="btn-ditko inline-flex items-center space-x-2">
+          <span>Ver Experiências</span>
+          <i class="fas fa-arrow-right"></i>
+        </a>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-black text-white py-8">
+    <div class="container mx-auto px-6 text-center">
+      <p>&copy; 2025 Ryan Rodrigues. Todos os direitos reservados.</p>
+    </div>
+  </footer>
+
+  <script>
+    // Smooth transitions and scroll animations
+    document.addEventListener('DOMContentLoaded', function() {
+      const skillCards = document.querySelectorAll('.skill-card-modern');
+      
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry, index) => {
+          if (entry.isIntersecting) {
+            setTimeout(() => {
+              entry.target.style.opacity = '1';
+              entry.target.style.transform = 'translateY(0)';
+            }, index * 100);
+          }
+        });
+      });
+      
+      skillCards.forEach(card => {
+        card.style.opacity = '0';
+        card.style.transform = 'translateY(30px)';
+        card.style.transition = 'all 0.6s ease';
+        observer.observe(card);
+      });
+    });
+  </script>
+  
+  <!-- Navigation Script -->
+  <script src="./src/js/navigation.js"></script>
+  <script src="./src/js/custom-cursor.js"></script>
+  <script src="./src/js/theme-manager.js"></script>
+  <script src="./src/js/icon-colors.js"></script>
+  <script src="./src/js/header-sticky.js"></script>
+  <script src="./src/js/back-to-top.js"></script>
+  
+  <!-- Botão "Voltar ao Topo" -->
+  <a href="#" id="back-to-top" 
+     class="fixed bottom-6 right-6 w-12 h-12 bg-green-600 rounded-full flex items-center justify-center text-white shadow-lg hover:bg-green-700 transition duration-300 ease-in-out opacity-0 invisible" 
+     aria-label="Voltar ao topo"
+>
+    <i class="fa-solid fa-arrow-up"></i> 
+  </a>
+</body>
+</html>

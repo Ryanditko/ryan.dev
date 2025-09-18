@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Projetos Desenvolvidos - Ryan Rodrigues">
+  <meta name="theme-color" content="#84d917">
+  <title>Projetos | Ryan Rodrigues</title>
+  
+  <!-- External CDNs -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="icon" type="image/png" href="./src/img/icons/Kali_Logo.png">
+  
+  <!-- Custom Styles -->
+  <link rel="stylesheet" href="./src/css/portfolio.css">
+  <link rel="stylesheet" href="./src/css/custom-cursor.css">
+  <link rel="stylesheet" href="./src/css/ditko-theme.css">
+  <link rel="stylesheet" href="./src/css/navigation.css">
+  <link rel="stylesheet" href="./src/css/theme-universal.css">
+  <link rel="stylesheet" href="./src/css/header-sticky.css">
+  <link rel="stylesheet" href="./src/css/button-fix.css">
+  <link rel="stylesheet" href="./src/css/back-to-top-fix.css">
+  <link rel="stylesheet" href="./src/css/mobile-menu-fix.css">
+  <link rel="stylesheet" href="./src/css/cards-black-fix.css">
+  <link rel="stylesheet" href="./src/css/gradient-lima-fix.css">
+  <link rel="stylesheet" href="./src/css/modern-cards-unified.css">
+  
+  <style>
+    .project-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+      gap: 2rem;
+      margin-top: 3rem;
+    }
+    
+    .project-card-modern {
+      background: #000000;
+      color: #ffffff;
+      border-radius: 20px;
+      border: 1px solid rgba(132, 217, 23, 0.3);
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5);
+      overflow: hidden;
+      transition: all 0.4s ease;
+      position: relative;
+    }
+    
+    .project-card-modern:hover {
+      transform: translateY(-10px) scale(1.02);
+      border-color: #84d917;
+      box-shadow: 0 20px 50px rgba(132, 217, 23, 0.4);
+    }
+    
+    .project-image {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-bottom: 1px solid rgba(132, 217, 23, 0.3);
+    }
+    
+    .project-content {
+      padding: 2rem;
+    }
+    
+    .project-title {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #ffffff;
+      margin-bottom: 0.5rem;
+    }
+    
+    .project-category {
+      color: #84d917;
+      font-weight: 600;
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 1rem;
+    }
+    
+    .project-description {
+      color: #cccccc;
+      line-height: 1.6;
+      margin-bottom: 1.5rem;
+    }
+    
+    .project-tech-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-bottom: 1.5rem;
+    }
+    
+    .project-tech {
+      background: rgba(132, 217, 23, 0.2);
+      color: #84d917;
+      padding: 0.3rem 0.8rem;
+      border-radius: 15px;
+      font-size: 0.8rem;
+      font-weight: 500;
+      border: 1px solid rgba(132, 217, 23, 0.3);
+    }
+    
+    .project-links {
+      display: flex;
+      gap: 1rem;
+    }
+    
+    .project-link {
+      padding: 0.5rem 1rem;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: all 0.3s ease;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    
+    .project-link-primary {
+      background: linear-gradient(135deg, #84d917, #94e327);
+      color: #000000;
+    }
+    
+    .project-link-primary:hover {
+      transform: scale(1.05);
+      box-shadow: 0 4px 15px rgba(132, 217, 23, 0.4);
+    }
+    
+    .project-link-secondary {
+      border: 1px solid rgba(132, 217, 23, 0.5);
+      color: #84d917;
+    }
+    
+    .project-link-secondary:hover {
+      background: rgba(132, 217, 23, 0.1);
+    }
+    
+    .page-transition {
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeInUp 0.6s ease forwards;
+    }
+    
+    @keyframes fadeInUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    
+    .section-title {
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: #000000;
+      margin-bottom: 1rem;
+      text-align: center;
+    }
+    
+    .section-subtitle {
+      color: #666666;
+      text-align: center;
+      font-size: 1.1rem;
+      max-width: 600px;
+      margin: 0 auto 3rem;
+    }
+    
+    @media (max-width: 768px) {
+      .project-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Cursor customizado -->
+  <div class="custom-cursor"></div>
+  <div class="cursor-trail"></div>
+  
+  <!-- Navigation -->
+  <nav class="navbar fixed w-full z-50" aria-label="Navegação principal">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between h-16">
+        <div class="flex items-center">
+          <a href="index.html" class="navbar-brand">Software Engineer | Ryandikto</a>
+        </div>
+        <div class="hidden md:flex items-center space-x-8">
+          <button class="theme-toggle" aria-label="Alternar tema">
+            <i class="fas fa-moon" aria-hidden="true"></i>
+          </button>
+          <a href="index.html" class="nav-link">Início</a>
+          <a href="skills.html" class="nav-link">Skills</a>
+          <a href="experiences.html" class="nav-link">Experiências</a>
+          <a href="projects.html" class="nav-link current-page">Projetos</a>
+          <a href="education.html" class="nav-link">Educação</a>
+          <a href="index.html#contact" class="px-6 py-3 bg-green-600 text-white rounded-md hover:bg-green-700 transition transform hover:scale-105">Contato</a>
+        </div>
+        <div class="md:hidden flex items-center">
+          <button class="hamburger" aria-label="Abrir menu" aria-expanded="false">
+            <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Mobile menu -->
+    <div id="mobile-menu" class="mobile-menu hidden md:hidden">
+      <div class="mobile-menu-header">
+        <span class="mobile-brand">Software Engineer | Ryandikto</span>
+      </div>
+      <a href="index.html" class="mobile-menu-item">Início</a>
+      <a href="skills.html" class="mobile-menu-item">Skills</a>
+      <a href="experiences.html" class="mobile-menu-item">Experiências</a>
+      <a href="projects.html" class="mobile-menu-item">Projetos</a>
+      <a href="education.html" class="mobile-menu-item">Educação</a>
+      <a href="index.html#contact" class="mobile-menu-item contact-btn">Contato</a>
+    </div>
+  </nav>
+
+  <!-- Main Content -->
+  <main id="main-content" class="pt-32 min-h-screen bg-secondary text-primary">
+    <div class="container mx-auto px-6 py-12 page-transition">
+      <!-- Header -->
+      <div class="text-center mb-16">
+        <h1 class="text-4xl md:text-5xl font-bold mb-4">
+          <span class="gradient-text">Meus</span> <span class="text-primary">Projetos</span>
+        </h1>
+        <p class="text-lg text-secondary max-w-3xl mx-auto">
+          Conheça alguns dos projetos que desenvolvi, desde aplicações web até soluções de automação e análise de dados
+        </p>
+      </div>
+
+      <!-- Projects Grid -->
+      <div class="project-grid">
+        
+        <!-- Project 1 -->
+        <div class="project-card-modern">
+          <img src="./src/img/projetos/20Pilla.png" alt="20Pilla" class="project-image">
+          <div class="project-content">
+            <div class="project-category">Web Application</div>
+            <h3 class="project-title">20Pilla</h3>
+            <p class="project-description">
+              Plataforma web completa para gerenciamento de medicamentos com sistema de lembretes, 
+              acompanhamento médico e interface intuitiva para pacientes e profissionais de saúde.
+            </p>
+            <div class="project-tech-list">
+              <span class="project-tech">HTML</span>
+              <span class="project-tech">CSS</span>
+              <span class="project-tech">JavaScript</span>
+            </div>
+            <div class="project-links">
+              <a href="https://20-pilla.vercel.app" class="project-link project-link-primary">
+                <i class="fas fa-external-link-alt"></i>
+                Ver Demo
+              </a>
+              <a href="#" class="project-link project-link-secondary">
+                <i class="fab fa-github"></i>
+                Código
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 2 -->
+        <div class="project-card-modern">
+          <img src="./src/img/projetos/ditko.co-porfolio.jpg" alt="Ditko.co" class="project-image">
+          <div class="project-content">
+            <div class="project-category">Startup</div>
+            <h3 class="project-title">Ditko.co</h3>
+            <p class="project-description">
+              Minha startup de soluções digitais brasileiras. Plataforma completa para automação, 
+              landing pages e produtos SaaS para empresas que querem crescer com tecnologia de qualidade mundial.
+            </p>
+            <div class="project-tech-list">
+              <span class="project-tech">TypeScript</span>
+              <span class="project-tech">React</span>
+              <span class="project-tech">Tailwind</span>
+            </div>
+            <div class="project-links">
+              <a href="https://ditkotech.vercel.app" class="project-link project-link-primary">
+                <i class="fas fa-external-link-alt"></i>
+                Ver Site
+              </a>
+              <a href="#" class="project-link project-link-secondary">
+                <i class="fab fa-github"></i>
+                Código
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 3 -->
+        <div class="project-card-modern">
+          <img src="./src/img/projetos/Portal-Das-Equipes-portfolio.jpg" alt="Portal das Equipes" class="project-image">
+          <div class="project-content">
+            <div class="project-category">Web Platform</div>
+            <h3 class="project-title">Portal das Equipes</h3>
+            <p class="project-description">
+              Plataforma colaborativa para gestão de equipes e projetos. Sistema completo com 
+              dashboard, comunicação em tempo real e ferramentas de produtividade para times remotos.
+            </p>
+            <div class="project-tech-list">
+              <span class="project-tech">HTML</span>
+              <span class="project-tech">CSS</span>
+              <span class="project-tech">JavaScript</span>
+            </div>
+            <div class="project-links">
+              <a href="https://portal-equipes-deac.vercel.app" class="project-link project-link-primary">
+                <i class="fas fa-external-link-alt"></i>
+                Ver Demo
+              </a>
+              <a href="#" class="project-link project-link-secondary">
+                <i class="fab fa-github"></i>
+                Código
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 4 -->
+        <div class="project-card-modern">
+          <img src="./src/img/projetos/merlin-portfolio.jpg" alt="Merlin" class="project-image">
+          <div class="project-content">
+            <div class="project-category">AI Integration</div>
+            <h3 class="project-title">Merlin</h3>
+            <p class="project-description">
+              Aplicação web inteligente que integra APIs de IA para criar 
+              uma experiência personalizada e mágica de apresentação de portfólios profissionais.
+            </p>
+            <div class="project-tech-list">
+              <span class="project-tech">Base64</span>
+              <span class="project-tech">React</span>
+              <span class="project-tech">JavaScript</span>
+            </div>
+            <div class="project-links">
+              <span class="project-link project-link-primary" style="opacity: 0.7; cursor: not-allowed;">
+                <i class="fas fa-lock"></i>
+                Acesso Restrito
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 5 -->
+        <div class="project-card-modern">
+          <img src="./src/img/projetos/powerbi-portfolio.jpg" alt="Power BI Analytics" class="project-image">
+          <div class="project-content">
+            <div class="project-category">Data Analytics</div>
+            <h3 class="project-title">Power BI Analytics</h3>
+            <p class="project-description">
+              Coleção de dashboards e relatórios analíticos desenvolvidos em Power BI, 
+              demonstrando expertise em visualização de dados e business intelligence.
+            </p>
+            <div class="project-tech-list">
+              <span class="project-tech">Power BI</span>
+              <span class="project-tech">DAX</span>
+              <span class="project-tech">Power Query</span>
+              <span class="project-tech">SQL</span>
+            </div>
+            <div class="project-links">
+              <a href="#" class="project-link project-link-primary">
+                <i class="fas fa-external-link-alt"></i>
+                Ver Dashboards
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 6 -->
+        <div class="project-card-modern">
+          <img src="./src/img/projetos/kernal-portfolio.jpg" alt="Kernal" class="project-image">
+          <div class="project-content">
+            <div class="project-category">Bot Discord</div>
+            <h3 class="project-title">Kernal</h3>
+            <p class="project-description">
+              Bot Discord desenvolvido para segurança remota, com funcionalidades avançadas de monitoramento, 
+              controle de acesso e proteção de servidores. Implementa sistemas de moderação automática e ferramentas de administração remota.
+            </p>
+            <div class="project-tech-list">
+              <span class="project-tech">TypeScript</span>
+              <span class="project-tech">Discord.js</span>
+              <span class="project-tech">Segurança</span>
+              <span class="project-tech">Automação</span>
+            </div>
+            <div class="project-links">
+              <a href="https://discordapp.com/oauth2/authorize?client_id=1300981248554041344" class="project-link project-link-primary">
+                <i class="fab fa-discord"></i>
+                Adicionar Bot
+              </a>
+              <a href="https://github.com/Ryanditko/Kernal" class="project-link project-link-secondary" target="_blank" rel="noopener noreferrer">
+                <i class="fab fa-github"></i>
+                Código
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 7 -->
+        <div class="project-card-modern">
+          <img src="./src/img/projetos/iniciação-cientifica.jpg" alt="Iniciação Científica" class="project-image">
+          <div class="project-content">
+            <div class="project-category">Research</div>
+            <h3 class="project-title">Projeto de Iniciação Científica</h3>
+            <p class="project-description">
+              Pesquisa acadêmica sobre aplicação de machine learning em sistemas de recomendação, 
+              com desenvolvimento de algoritmos e análise de performance.
+            </p>
+            <div class="project-tech-list">
+              <span class="project-tech">Python</span>
+              <span class="project-tech">Scikit-learn</span>
+              <span class="project-tech">Pandas</span>
+              <span class="project-tech">Jupyter</span>
+            </div>
+            <div class="project-links">
+              <a href="#" class="project-link project-link-primary">
+                <i class="fas fa-file-pdf"></i>
+                Paper
+              </a>
+              <a href="#" class="project-link project-link-secondary">
+                <i class="fab fa-github"></i>
+                Código
+              </a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- CTA Section -->
+      <div class="text-center mt-16">
+        <a href="education.html" class="btn-ditko inline-flex items-center space-x-2">
+          <span>Ver Educação</span>
+          <i class="fas fa-arrow-right"></i>
+        </a>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-black text-white py-8">
+    <div class="container mx-auto px-6 text-center">
+      <p>&copy; 2025 Ryan Rodrigues. Todos os direitos reservados.</p>
+    </div>
+  </footer>
+
+  <script>
+    // Smooth transitions and scroll animations
+    document.addEventListener('DOMContentLoaded', function() {
+      const projectCards = document.querySelectorAll('.project-card-modern');
+      
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry, index) => {
+          if (entry.isIntersecting) {
+            setTimeout(() => {
+              entry.target.style.opacity = '1';
+              entry.target.style.transform = 'translateY(0)';
+            }, index * 150);
+          }
+        });
+      });
+      
+      projectCards.forEach(card => {
+        card.style.opacity = '0';
+        card.style.transform = 'translateY(30px)';
+        card.style.transition = 'all 0.6s ease';
+        observer.observe(card);
+      });
+    });
+  </script>
+  
+  <!-- Botão "Voltar ao Topo" -->
+  <a href="#" id="back-to-top" 
+     class="fixed bottom-6 right-6 w-12 h-12 bg-green-600 rounded-full flex items-center justify-center text-white shadow-lg hover:bg-green-700 transition duration-300 ease-in-out opacity-0 invisible" 
+     aria-label="Voltar ao topo"
+>
+    <i class="fa-solid fa-arrow-up"></i> 
+  </a>
+
+  <!-- Navigation Script -->
+  <script src="./src/js/navigation.js"></script>
+  <script src="./src/js/custom-cursor.js"></script>
+  <script src="./src/js/theme-manager.js"></script>
+  <script src="./src/js/icon-colors.js"></script>
+  <script src="./src/js/header-sticky.js"></script>
+  <script src="./src/js/back-to-top.js"></script>
+</body>
+</html>

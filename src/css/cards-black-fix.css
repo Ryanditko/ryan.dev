@@ -1,0 +1,124 @@
+/* Cards Fix - Consistent Black Theme */
+
+/* Skills Cards - Forçar fundo preto */
+.skill-card-modern {
+  background: #000000 !important;
+  border: 1px solid rgba(132, 217, 23, 0.3) !important;
+  color: #ffffff !important;
+}
+
+.skill-card-modern:hover {
+  background: #000000 !important;
+  border-color: #84d917 !important;
+  box-shadow: 0 20px 50px rgba(132, 217, 23, 0.4) !important;
+}
+
+/* Education Cards - Aplicar mesmo estilo dos skills */
+.education-card,
+.certification-item {
+  background: #000000 !important;
+  border: 1px solid rgba(132, 217, 23, 0.3) !important;
+  color: #ffffff !important;
+  border-radius: 12px !important;
+  padding: 2rem !important;
+  transition: all 0.3s ease !important;
+  position: relative !important;
+  overflow: hidden !important;
+}
+
+.education-card::before,
+.certification-item::before {
+  content: '' !important;
+  position: absolute !important;
+  top: 0 !important;
+  left: -100% !important;
+  width: 100% !important;
+  height: 100% !important;
+  background: linear-gradient(90deg, transparent, rgba(132, 217, 23, 0.1), transparent) !important;
+  transition: left 0.6s ease !important;
+}
+
+.education-card:hover::before,
+.certification-item:hover::before {
+  left: 100% !important;
+}
+
+.education-card:hover,
+.certification-item:hover {
+  transform: translateY(-10px) scale(1.03) !important;
+  border-color: #84d917 !important;
+  box-shadow: 0 20px 50px rgba(132, 217, 23, 0.4) !important;
+  background: #000000 !important;
+}
+
+/* Títulos dos cards de educação */
+.education-card h3,
+.certification-item h3 {
+  color: #ffffff !important;
+  font-weight: 700 !important;
+  margin-bottom: 0.5rem !important;
+}
+
+/* Subtítulos e instituições */
+.education-card .institution,
+.education-card .period,
+.certification-item .institution,
+.certification-item .period {
+  color: #84d917 !important;
+  font-weight: 600 !important;
+}
+
+/* Descrições */
+.education-card p,
+.certification-item p {
+  color: #cccccc !important;
+  line-height: 1.6 !important;
+}
+
+/* Ícones de educação */
+.education-card i,
+.certification-item i {
+  color: #84d917 !important;
+  font-size: 2rem !important;
+  margin-bottom: 1rem !important;
+}
+
+/* Experience cards também */
+.experience-card {
+  background: #000000 !important;
+  border: 1px solid rgba(132, 217, 23, 0.3) !important;
+  color: #ffffff !important;
+}
+
+.experience-card:hover {
+  background: #000000 !important;
+  border-color: #84d917 !important;
+  box-shadow: 0 20px 50px rgba(132, 217, 23, 0.4) !important;
+}
+
+/* Project cards */
+.project-card {
+  background: #000000 !important;
+  border: 1px solid rgba(132, 217, 23, 0.3) !important;
+  color: #ffffff !important;
+}
+
+.project-card:hover {
+  background: #000000 !important;
+  border-color: #84d917 !important;
+  box-shadow: 0 20px 50px rgba(132, 217, 23, 0.4) !important;
+}
+
+/* Força todos os cards a serem pretos */
+.card,
+.bg-card {
+  background: #000000 !important;
+  border: 1px solid rgba(132, 217, 23, 0.3) !important;
+  color: #ffffff !important;
+}
+
+.card:hover,
+.bg-card:hover {
+  background: #000000 !important;
+  border-color: #84d917 !important;
+}

@@ -647,7 +647,7 @@ function addSkillCardInteraction(card) {
         
         // Efeito de borda gradiente
         card.style.background = 'linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%)';
-        card.style.borderImage = 'linear-gradient(45deg, #16a34a, #22c55e) 1';
+        card.style.borderImage = 'linear-gradient(45deg, #84d917, #94e327) 1';
     });
 
     card.addEventListener('mouseleave', () => {
@@ -754,7 +754,7 @@ function addExperienceCardInteraction(card) {
                 transform: translateY(-50%);
                 width: 10px;
                 height: 60%;
-                background: linear-gradient(to bottom, #16a34a, #22c55e);
+                background: linear-gradient(to bottom, #84d917, #94e327);
                 border-radius: 0 5px 5px 0;
                 opacity: 0;
                 transition: all 0.3s ease;
@@ -790,7 +790,7 @@ function addEducationCardInteraction(card) {
     card.addEventListener('mouseenter', () => {
         if (icon) {
             icon.style.animation = 'bounce 1s infinite';
-            icon.style.color = '#16a34a';
+            icon.style.color = '#84d917';
         }
 
         // Efeito de brilho
@@ -933,7 +933,7 @@ function createParticles(container) {
             position: absolute;
             width: 3px;
             height: 3px;
-            background: radial-gradient(circle, #16a34a, #22c55e);
+            background: radial-gradient(circle, #84d917, #94e327);
             border-radius: 50%;
             pointer-events: none;
             animation: particle-float 2s ease-out infinite;

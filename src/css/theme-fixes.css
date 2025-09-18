@@ -16,8 +16,8 @@ html[data-theme="dark"] .skill-cards div:hover,
 html[data-theme="dark"] #skills .skill-cards > div:hover,
 body[data-theme="dark"] .skill-cards > div:hover,
 body[data-theme="dark"] .skill-cards div:hover {
-  background: #1e293b !important;
-  background-color: #1e293b !important;
+  background: #1a1a1a !important;
+  background-color: #1a1a1a !important;
   background-image: none !important;
   background-repeat: no-repeat !important;
   background-attachment: scroll !important;
@@ -27,11 +27,11 @@ body[data-theme="dark"] .skill-cards div:hover {
   background-clip: border-box !important;
   transform: translateY(-8px) scale(1.02) !important;
   box-shadow: 
-    0 25px 50px rgba(34, 197, 94, 0.4),
+    0 25px 50px rgba(148, 227, 39, 0.4),
     0 15px 35px rgba(0, 0, 0, 0.6),
     inset 0 1px 0 rgba(255, 255, 255, 0.15) !important;
-  border-color: #22c55e !important;
-  border: 1px solid #22c55e !important;
+  border-color: #94e327 !important;
+  border: 1px solid #94e327 !important;
 }
 
 /* ANULAR HOVER BRANCO NO SISTEMA AUTO DARK */
@@ -42,8 +42,8 @@ body[data-theme="dark"] .skill-cards div:hover {
   :root:not([data-theme="light"]) .skill-cards > div.bg-white:hover,
   :root:not([data-theme="light"]) .skill-cards > div.bg-gray-100:hover,
   :root:not([data-theme="light"]) .skill-cards > div.interactive-card:hover {
-    background: #1e293b !important;
-    background-color: #1e293b !important;
+    background: #1a1a1a !important;
+    background-color: #1a1a1a !important;
     background-image: none !important;
     background-repeat: no-repeat !important;
     background-attachment: scroll !important;
@@ -53,10 +53,10 @@ body[data-theme="dark"] .skill-cards div:hover {
     background-clip: border-box !important;
     transform: translateY(-8px) scale(1.02) !important;
     box-shadow: 
-      0 25px 50px rgba(34, 197, 94, 0.4),
+      0 25px 50px rgba(148, 227, 39, 0.4),
       0 15px 35px rgba(0, 0, 0, 0.6),
       inset 0 1px 0 rgba(255, 255, 255, 0.15) !important;
-    border-color: #22c55e !important;
+    border-color: #94e327 !important;
   }
 }
 
@@ -88,8 +88,8 @@ body[data-theme="dark"] .skill-cards div:hover {
 [data-theme="dark"] .skill-cards > div.bg-white.interactive-card:hover,
 [data-theme="dark"] .skill-cards > div.card-hover.interactive-card:hover,
 [data-theme="dark"] .skill-cards > div.bg-white.card-hover.interactive-card:hover {
-  background: #1e293b !important;
-  background-color: #1e293b !important;
+  background: #1a1a1a !important;
+  background-color: #1a1a1a !important;
   background-image: none !important;
 }
 
@@ -97,15 +97,15 @@ body[data-theme="dark"] .skill-cards div:hover {
 body[class*="bg-"] [data-theme="dark"] .skill-cards > div:hover,
 body [data-theme="dark"] .skill-cards > div:hover,
 html body [data-theme="dark"] .skill-cards > div:hover {
-  background: #1e293b !important;
-  background-color: #1e293b !important;
+  background: #1a1a1a !important;
+  background-color: #1a1a1a !important;
   background-image: none !important;
 }
 
 /* ÚLTIMA TENTATIVA - INLINE STYLE LEVEL */
 [data-theme="dark"] .skill-cards > div[style]:hover {
-  background: #1e293b !important;
-  background-color: #1e293b !important;
+  background: #1a1a1a !important;
+  background-color: #1a1a1a !important;
 }
 
 /* =========================================
@@ -140,7 +140,7 @@ html body [data-theme="dark"] .skill-cards > div:hover {
   background-color: #f9fafb !important;
   transform: translateY(-8px) scale(1.02) !important;
   box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04) !important;
-  border-color: #22c55e !important;
+  border-color: #94e327 !important;
 }
 
 /* TEXTO TEMA CLARO */
@@ -189,14 +189,14 @@ html[data-theme="dark"] .skill-cards div.bg-gray-100 {
 html[data-theme="dark"] .skill-cards > div:hover,
 html[data-theme="dark"] .skill-cards div.bg-white:hover,
 html[data-theme="dark"] .skill-cards div.bg-gray-100:hover {
-  background-color: #1e293b !important;
+  background-color: #1a1a1a !important;
   background-image: none !important;
   transform: translateY(-8px) scale(1.02) !important;
   box-shadow: 
-    0 25px 50px rgba(34, 197, 94, 0.4),
+    0 25px 50px rgba(148, 227, 39, 0.4),
     0 15px 35px rgba(0, 0, 0, 0.6),
     inset 0 1px 0 rgba(255, 255, 255, 0.15) !important;
-  border-color: #22c55e !important;
+  border-color: #94e327 !important;
 }
 
 /* TEXTO TEMA ESCURO */
@@ -214,15 +214,15 @@ html[data-theme="dark"] .skill-cards > div p {
 
 /* Ícones das stacks no tema escuro */
 [data-theme="dark"] .skill-cards > div i {
-  color: #22c55e !important;
+  color: #94e327 !important;
   filter: brightness(1.2) !important;
-  text-shadow: 0 0 8px rgba(34, 197, 94, 0.3) !important;
+  text-shadow: 0 0 8px rgba(148, 227, 39, 0.3) !important;
 }
 
 [data-theme="dark"] .skill-cards > div:hover i {
   color: #16a34a !important;
   filter: brightness(1.4) !important;
-  text-shadow: 0 0 12px rgba(34, 197, 94, 0.5) !important;
+  text-shadow: 0 0 12px rgba(148, 227, 39, 0.5) !important;
   transform: scale(1.15) !important;
 }
 
@@ -252,14 +252,14 @@ html[data-theme="dark"] .skill-cards > div p {
   :root:not([data-theme="light"]) .skill-cards div.card-hover:hover,
   :root:not([data-theme="light"]) #skills .skill-cards > div:hover,
   :root:not([data-theme="light"]) #skills .skill-cards div.bg-white:hover {
-    background-color: #1e293b !important;
+    background-color: #1a1a1a !important;
     background-image: none !important;
     transform: translateY(-8px) scale(1.02) !important;
     box-shadow: 
-      0 25px 50px rgba(34, 197, 94, 0.4),
+      0 25px 50px rgba(148, 227, 39, 0.4),
       0 15px 35px rgba(0, 0, 0, 0.6),
       inset 0 1px 0 rgba(255, 255, 255, 0.15) !important;
-    border-color: #22c55e !important;
+    border-color: #94e327 !important;
   }
 
   :root:not([data-theme="light"]) .skill-cards > div h3,
@@ -274,25 +274,25 @@ html[data-theme="dark"] .skill-cards > div p {
 
   /* Ícones no sistema auto dark theme */
   :root:not([data-theme="light"]) .skill-cards > div i {
-    color: #22c55e !important;
+    color: #94e327 !important;
     filter: brightness(1.2) !important;
-    text-shadow: 0 0 8px rgba(34, 197, 94, 0.3) !important;
+    text-shadow: 0 0 8px rgba(148, 227, 39, 0.3) !important;
   }
 
   :root:not([data-theme="light"]) .skill-cards > div:hover i {
-    color: #22c55e !important;
+    color: #94e327 !important;
     filter: brightness(1.4) !important;
-    text-shadow: 0 0 12px rgba(34, 197, 94, 0.5) !important;
+    text-shadow: 0 0 12px rgba(148, 227, 39, 0.5) !important;
     transform: scale(1.15) !important;
   }
 
   /* Garantir ícones verdes no auto dark theme */
   :root:not([data-theme="light"]) .skill-cards > div i[class*="devicon-"] {
-    color: #22c55e !important;
+    color: #94e327 !important;
   }
 
   :root:not([data-theme="light"]) .skill-cards > div:hover i[class*="devicon-"] {
-    color: #22c55e !important;
+    color: #94e327 !important;
   }
 }
 
@@ -302,7 +302,7 @@ html[data-theme="dark"] .skill-cards > div p {
 
 /* Ícones sempre verdes - tema claro */
 .skill-cards > div i {
-  color: #22c55e !important;
+  color: #94e327 !important;
   transition: all 0.3s ease !important;
 }
 
@@ -313,16 +313,16 @@ html[data-theme="dark"] .skill-cards > div p {
 
 /* Ícones no tema escuro - SEMPRE VERDES */
 [data-theme="dark"] .skill-cards > div i {
-  color: #22c55e !important;
+  color: #94e327 !important;
   filter: brightness(1.2) !important;
-  text-shadow: 0 0 8px rgba(34, 197, 94, 0.3) !important;
+  text-shadow: 0 0 8px rgba(148, 227, 39, 0.3) !important;
   transition: all 0.3s ease !important;
 }
 
 [data-theme="dark"] .skill-cards > div:hover i {
-  color: #22c55e !important;
+  color: #94e327 !important;
   filter: brightness(1.4) !important;
-  text-shadow: 0 0 12px rgba(34, 197, 94, 0.5) !important;
+  text-shadow: 0 0 12px rgba(148, 227, 39, 0.5) !important;
   transform: scale(1.15) !important;
 }
 
@@ -342,7 +342,7 @@ html[data-theme="dark"] .skill-cards > div p {
 [data-theme="dark"] .skill-cards > div i.devicon-kubernetes-plain,
 [data-theme="dark"] .skill-cards > div i.devicon-amazonwebservices-plain,
 [data-theme="dark"] .skill-cards > div i.devicon-terraform-plain {
-  color: #22c55e !important;
+  color: #94e327 !important;
 }
 
 [data-theme="dark"] .skill-cards > div:hover i.devicon-javascript-plain,
@@ -360,7 +360,7 @@ html[data-theme="dark"] .skill-cards > div p {
 [data-theme="dark"] .skill-cards > div:hover i.devicon-kubernetes-plain,
 [data-theme="dark"] .skill-cards > div:hover i.devicon-amazonwebservices-plain,
 [data-theme="dark"] .skill-cards > div:hover i.devicon-terraform-plain {
-  color: #22c55e !important;
+  color: #94e327 !important;
 }
 
 /* ========================================= 
@@ -394,7 +394,7 @@ html[data-theme="dark"] .skill-cards > div p {
 [data-theme="dark"] .skill-cards > div.bg-gray-100:hover,
 [data-theme="dark"] .skill-cards > div.interactive-card:hover,
 [data-theme="dark"] .skill-cards > div.card-hover:hover {
-  background-color: #1e293b !important;
+  background-color: #1a1a1a !important;
 }
 
 /* Remover qualquer background linear-gradient */
@@ -424,7 +424,7 @@ html[data-theme="dark"] .skill-cards > div p {
   background-color: #f9fafb !important;
   transform: translateY(-8px) scale(1.02) !important;
   box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04) !important;
-  border-color: #22c55e !important;
+  border-color: #94e327 !important;
 }
 
 /* Texto dos education cards no tema claro */
@@ -438,7 +438,7 @@ html[data-theme="dark"] .skill-cards > div p {
 
 /* Ícones dos education cards - sempre verdes */
 #education .bg-white i {
-  color: #22c55e !important;
+  color: #94e327 !important;
   transition: all 0.3s ease !important;
 }
 
@@ -461,13 +461,13 @@ html[data-theme="dark"] .skill-cards > div p {
 
 /* Hover para education cards - tema escuro */
 [data-theme="dark"] #education .bg-white:hover {
-  background-color: #1e293b !important;
+  background-color: #1a1a1a !important;
   transform: translateY(-8px) scale(1.02) !important;
   box-shadow: 
-    0 25px 50px rgba(34, 197, 94, 0.4),
+    0 25px 50px rgba(148, 227, 39, 0.4),
     0 15px 35px rgba(0, 0, 0, 0.6),
     inset 0 1px 0 rgba(255, 255, 255, 0.15) !important;
-  border-color: #22c55e !important;
+  border-color: #94e327 !important;
 }
 
 /* Texto dos education cards no tema escuro */
@@ -481,16 +481,16 @@ html[data-theme="dark"] .skill-cards > div p {
 
 /* Ícones dos education cards no tema escuro */
 [data-theme="dark"] #education .bg-white i {
-  color: #22c55e !important;
+  color: #94e327 !important;
   filter: brightness(1.2) !important;
-  text-shadow: 0 0 8px rgba(34, 197, 94, 0.3) !important;
+  text-shadow: 0 0 8px rgba(148, 227, 39, 0.3) !important;
   transition: all 0.3s ease !important;
 }
 
 [data-theme="dark"] #education .bg-white:hover i {
-  color: #22c55e !important;
+  color: #94e327 !important;
   filter: brightness(1.4) !important;
-  text-shadow: 0 0 12px rgba(34, 197, 94, 0.5) !important;
+  text-shadow: 0 0 12px rgba(148, 227, 39, 0.5) !important;
   transform: scale(1.15) rotate(12deg) !important;
 }
 
@@ -504,13 +504,13 @@ html[data-theme="dark"] .skill-cards > div p {
   }
 
   :root:not([data-theme="light"]) #education .bg-white:hover {
-    background-color: #1e293b !important;
+    background-color: #1a1a1a !important;
     transform: translateY(-8px) scale(1.02) !important;
     box-shadow: 
-      0 25px 50px rgba(34, 197, 94, 0.4),
+      0 25px 50px rgba(148, 227, 39, 0.4),
       0 15px 35px rgba(0, 0, 0, 0.6),
       inset 0 1px 0 rgba(255, 255, 255, 0.15) !important;
-    border-color: #22c55e !important;
+    border-color: #94e327 !important;
   }
 
   :root:not([data-theme="light"]) #education .bg-white h3 {
@@ -522,15 +522,15 @@ html[data-theme="dark"] .skill-cards > div p {
   }
 
   :root:not([data-theme="light"]) #education .bg-white i {
-    color: #22c55e !important;
+    color: #94e327 !important;
     filter: brightness(1.2) !important;
-    text-shadow: 0 0 8px rgba(34, 197, 94, 0.3) !important;
+    text-shadow: 0 0 8px rgba(148, 227, 39, 0.3) !important;
   }
 
   :root:not([data-theme="light"]) #education .bg-white:hover i {
-    color: #22c55e !important;
+    color: #94e327 !important;
     filter: brightness(1.4) !important;
-    text-shadow: 0 0 12px rgba(34, 197, 94, 0.5) !important;
+    text-shadow: 0 0 12px rgba(148, 227, 39, 0.5) !important;
     transform: scale(1.15) rotate(12deg) !important;
   }
 }

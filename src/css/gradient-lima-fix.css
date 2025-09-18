@@ -1,0 +1,90 @@
+/* Background Gradient Fix - Ditko Lima Theme */
+
+/* Corrigir gradientes de fundo para cores lima Ditko */
+.particles {
+  background: radial-gradient(circle at center, rgba(132, 217, 23, 0.15) 0%, transparent 70%) !important;
+  animation: particlePulse 4s infinite alternate !important;
+}
+
+.abstract-bg {
+  background: linear-gradient(135deg, rgba(132, 217, 23, 0.08) 0%, rgba(148, 227, 39, 0.08) 100%) !important;
+  clip-path: polygon(30% 0, 100% 0, 100% 100%, 0% 100%) !important;
+}
+
+.floating-shapes {
+  position: absolute !important;
+  width: 100% !important;
+  height: 100% !important;
+  background-image: 
+    radial-gradient(circle at 70% 30%, rgba(132, 217, 23, 0.2) 0%, transparent 25%),
+    radial-gradient(circle at 30% 70%, rgba(148, 227, 39, 0.2) 0%, transparent 25%) !important;
+  animation: float 12s infinite ease-in-out !important;
+}
+
+/* Ajustar qualquer outro gradiente no hero */
+.hero-bg-gradient {
+  background: linear-gradient(135deg, rgba(132, 217, 23, 0.1) 0%, rgba(148, 227, 39, 0.1) 100%) !important;
+}
+
+/* Gradientes de cards também */
+.project-card-modern::before,
+.skill-card-modern::before {
+  background: linear-gradient(90deg, transparent, rgba(132, 217, 23, 0.1), transparent) !important;
+}
+
+/* Blush/glow effect na seção hero */
+.hero-section::before {
+  content: '' !important;
+  position: absolute !important;
+  top: -50% !important;
+  left: -50% !important;
+  width: 200% !important;
+  height: 200% !important;
+  background: radial-gradient(circle at 30% 40%, rgba(132, 217, 23, 0.15) 0%, transparent 50%) !important;
+  pointer-events: none !important;
+  z-index: 0 !important;
+}
+
+/* Garantir que o conteúdo fique por cima */
+.hero-section > * {
+  position: relative !important;
+  z-index: 1 !important;
+}
+
+/* Gradiente sutil no fundo geral da página */
+body::before {
+  content: '' !important;
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  background: radial-gradient(ellipse at top left, rgba(132, 217, 23, 0.03) 0%, transparent 60%) !important;
+  pointer-events: none !important;
+  z-index: -1 !important;
+}
+
+/* Animação do pulso */
+@keyframes particlePulse {
+  0% {
+    opacity: 0.3;
+    transform: scale(1);
+  }
+  100% {
+    opacity: 0.6;
+    transform: scale(1.1);
+  }
+}
+
+/* Animação de flutuação */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  33% {
+    transform: translateY(-30px) rotate(120deg);
+  }
+  66% {
+    transform: translateY(-15px) rotate(240deg);
+  }
+}
