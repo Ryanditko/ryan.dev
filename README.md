@@ -4,7 +4,7 @@
 
 Portfolio profissional desenvolvido com tecnologias modernas para mostrar meus projetos e habilidades como desenvolvedor.
 
-![Preview do Portfolio](https://i.imgur.com/TsaAjpz.png)
+![Preview do Portfolio](https://i.imgur.com/AaOVhSf.png)
 
 ## ✨ Features Principais
 
@@ -39,3 +39,4 @@ Portfolio profissional desenvolvido com tecnologias modernas para mostrar meus p
 1. Clone o repositório:
 ```bash
 git clone https://github.com/Ryanditko/ryan.dev.git
+
