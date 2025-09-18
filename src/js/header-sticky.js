@@ -1,29 +1,42 @@
-// Header Sticky Behavior - Enhanced
+// Header Sticky Behavior - Always Visible
 document.addEventListener('DOMContentLoaded', function() {
   const navbar = document.querySelector('.navbar');
   let lastScrollTop = 0;
-  let isScrollingDown = false;
-  let isAtTop = true;
 
   // Function to handle scroll behavior
   function handleScroll() {
     const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
     
-    // Check if we're at the top
-    isAtTop = scrollTop <= 50;
+    // Always keep navbar visible and fixed at top
+    navbar.style.position = 'fixed';
+    navbar.style.top = '0';
+    navbar.style.transform = 'translateY(0)';
+    navbar.style.opacity = '1';
+    navbar.style.zIndex = '9999';
     
-    // Add scrolled class when scrolling down
+    // Add scrolled class for visual effects when scrolling
     if (scrollTop > 50) {
       navbar.classList.add('scrolled');
     } else {
       navbar.classList.remove('scrolled');
     }
 
-    // Always keep navbar visible - remove hide/show behavior
-    navbar.style.transform = 'translateY(0)';
-    navbar.style.opacity = '1';
-
     lastScrollTop = scrollTop;
+  }
+
+  // Initialize navbar as fixed immediately
+  function initializeNavbar() {
+    if (navbar) {
+      navbar.style.position = 'fixed';
+      navbar.style.top = '0';
+      navbar.style.left = '0';
+      navbar.style.right = '0';
+      navbar.style.width = '100%';
+      navbar.style.zIndex = '9999';
+      navbar.style.transform = 'translateY(0)';
+      navbar.style.opacity = '1';
+      navbar.classList.add('navbar-fixed');
+    }
   }
 
   // Throttled scroll handler for performance
@@ -40,6 +53,12 @@ document.addEventListener('DOMContentLoaded', function() {
 
   // Add scroll event listener
   window.addEventListener('scroll', onScroll, { passive: true });
+
+  // Initialize navbar immediately
+  initializeNavbar();
+
+  // Run handle scroll once to set initial state
+  handleScroll();
 
   // Smooth scroll for navigation links
   const navLinks = document.querySelectorAll('.nav-link[href^="#"], .mobile-menu-item[href^="#"]');

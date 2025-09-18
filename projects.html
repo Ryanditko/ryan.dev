@@ -21,7 +21,7 @@
   <link rel="stylesheet" href="./src/css/header-sticky.css">
   <link rel="stylesheet" href="./src/css/button-fix.css">
   <link rel="stylesheet" href="./src/css/back-to-top-fix.css">
-  <link rel="stylesheet" href="./src/css/mobile-menu-fix.css">
+  <link rel="stylesheet" href="./src/css/mobile-menu-functional.css">
   <link rel="stylesheet" href="./src/css/cards-black-fix.css">
   <link rel="stylesheet" href="./src/css/gradient-lima-fix.css">
   <link rel="stylesheet" href="./src/css/modern-cards-unified.css">
@@ -207,9 +207,6 @@
     
     <!-- Mobile menu -->
     <div id="mobile-menu" class="mobile-menu hidden md:hidden">
-      <div class="mobile-menu-header">
-        <span class="mobile-brand">Software Engineer | Ryandikto</span>
-      </div>
       <a href="index.html" class="mobile-menu-item">Início</a>
       <a href="skills.html" class="mobile-menu-item">Skills</a>
       <a href="experiences.html" class="mobile-menu-item">Experiências</a>
@@ -295,16 +292,18 @@
         <div class="project-card-modern">
           <img src="./src/img/projetos/Portal-Das-Equipes-portfolio.jpg" alt="Portal das Equipes" class="project-image">
           <div class="project-content">
-            <div class="project-category">Web Platform</div>
+            <div class="project-category">Portal de Links</div>
             <h3 class="project-title">Portal das Equipes</h3>
             <p class="project-description">
-              Plataforma colaborativa para gestão de equipes e projetos. Sistema completo com 
-              dashboard, comunicação em tempo real e ferramentas de produtividade para times remotos.
+              Site estilo LinkTree que centraliza de forma inteligente todos os links utilizados 
+              por cada uma das equipes da Diretoria de Experiência Cliente, organizando recursos 
+              e ferramentas em um único local acessível.
             </p>
             <div class="project-tech-list">
-              <span class="project-tech">HTML</span>
-              <span class="project-tech">CSS</span>
+              <span class="project-tech">LinkTree</span>
+              <span class="project-tech">Portal</span>
               <span class="project-tech">JavaScript</span>
+              <span class="project-tech">Organização</span>
             </div>
             <div class="project-links">
               <a href="https://portal-equipes-deac.vercel.app" class="project-link project-link-primary">
@@ -323,16 +322,18 @@
         <div class="project-card-modern">
           <img src="./src/img/projetos/merlin-portfolio.jpg" alt="Merlin" class="project-image">
           <div class="project-content">
-            <div class="project-category">AI Integration</div>
+            <div class="project-category">Automação & Scripts</div>
             <h3 class="project-title">Merlin</h3>
             <p class="project-description">
-              Aplicação web inteligente que integra APIs de IA para criar 
-              uma experiência personalizada e mágica de apresentação de portfólios profissionais.
+              Plataforma de automação e criação de scripts desenvolvida para otimizar o tempo de trabalho. 
+              Integra APIs de IA para gerar soluções automatizadas, scripts personalizados e fluxos de trabalho 
+              eficientes para equipes e projetos profissionais.
             </p>
             <div class="project-tech-list">
-              <span class="project-tech">Base64</span>
+              <span class="project-tech">Automação</span>
+              <span class="project-tech">Scripts</span>
               <span class="project-tech">React</span>
-              <span class="project-tech">JavaScript</span>
+              <span class="project-tech">AI APIs</span>
             </div>
             <div class="project-links">
               <span class="project-link project-link-primary" style="opacity: 0.7; cursor: not-allowed;">
@@ -480,6 +481,7 @@
 
   <!-- Navigation Script -->
   <script src="./src/js/navigation.js"></script>
+  <script src="./src/js/mobile-menu-universal.js"></script>
   <script src="./src/js/custom-cursor.js"></script>
   <script src="./src/js/theme-manager.js"></script>
   <script src="./src/js/icon-colors.js"></script>

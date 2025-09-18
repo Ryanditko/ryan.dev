@@ -1,16 +1,19 @@
 /* Header Sticky Improvements */
 .navbar {
-  position: fixed;
-  top: 0;
+  position: fixed !important;
+  top: 0 !important;
   left: 0;
   right: 0;
-  z-index: 1000;
-  background: rgba(0, 0, 0, 0.95);
+  width: 100% !important;
+  z-index: 9999 !important;
+  background: rgba(0, 0, 0, 0.98) !important;
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
-  border-bottom: 1px solid rgba(132, 217, 23, 0.2);
+  border-bottom: 1px solid rgba(132, 217, 23, 0.3);
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  transform: translateY(0) !important;
+  opacity: 1 !important;
 }
 
 /* Scroll behavior enhancements */
@@ -173,12 +176,19 @@ html {
 
 /* Body offset for fixed header */
 body {
-  padding-top: 0;
+  padding-top: 0 !important;
+  margin-top: 0 !important;
 }
 
-/* Main content offset */
-main {
-  padding-top: 80px;
+/* Main content offset - universal for all pages */
+main, .main-content, #main-content {
+  padding-top: 80px !important;
+  min-height: calc(100vh - 80px);
+}
+
+/* Hero sections that might need extra padding */
+.hero-section, section:first-of-type {
+  padding-top: 100px !important;
 }
 
 /* Animation for navbar appearance */
@@ -203,8 +213,12 @@ main {
     font-size: 1.1rem;
   }
   
-  main {
-    padding-top: 70px;
+  main, .main-content, #main-content {
+    padding-top: 75px !important;
+  }
+  
+  .hero-section, section:first-of-type {
+    padding-top: 95px !important;
   }
 }
 
@@ -213,7 +227,11 @@ main {
     font-size: 1rem;
   }
   
-  main {
-    padding-top: 65px;
+  main, .main-content, #main-content {
+    padding-top: 70px !important;
+  }
+  
+  .hero-section, section:first-of-type {
+    padding-top: 90px !important;
   }
 }

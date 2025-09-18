@@ -202,12 +202,15 @@ document.addEventListener('DOMContentLoaded', function() {
   function enhanceMobileMenu() {
     const hamburger = document.querySelector('.hamburger');
     const mobileMenu = document.querySelector('#mobile-menu');
+    const mobileMenuItems = document.querySelectorAll('.mobile-menu-item');
     
     if (hamburger && mobileMenu) {
-      hamburger.addEventListener('click', function() {
+      // Toggle menu function
+      function toggleMenu() {
         const isOpen = mobileMenu.classList.contains('hidden');
         
         if (isOpen) {
+          // Show menu
           mobileMenu.classList.remove('hidden');
           mobileMenu.style.opacity = '0';
           mobileMenu.style.transform = 'translateY(-10px)';
@@ -216,13 +219,68 @@ document.addEventListener('DOMContentLoaded', function() {
             mobileMenu.style.opacity = '1';
             mobileMenu.style.transform = 'translateY(0)';
           }, 10);
+          
+          hamburger.setAttribute('aria-expanded', 'true');
         } else {
+          // Hide menu
           mobileMenu.style.opacity = '0';
           mobileMenu.style.transform = 'translateY(-10px)';
           
           setTimeout(() => {
             mobileMenu.classList.add('hidden');
           }, 200);
+          
+          hamburger.setAttribute('aria-expanded', 'false');
+        }
+      }
+      
+      // Hamburger click event
+      hamburger.addEventListener('click', toggleMenu);
+      
+      // Close menu when clicking on menu items
+      mobileMenuItems.forEach(item => {
+        item.addEventListener('click', () => {
+          // Close menu after a small delay to allow navigation
+          setTimeout(() => {
+            mobileMenu.style.opacity = '0';
+            mobileMenu.style.transform = 'translateY(-10px)';
+            
+            setTimeout(() => {
+              mobileMenu.classList.add('hidden');
+            }, 200);
+            
+            hamburger.setAttribute('aria-expanded', 'false');
+          }, 100);
+        });
+      });
+      
+      // Close menu when clicking outside
+      document.addEventListener('click', (e) => {
+        if (!hamburger.contains(e.target) && !mobileMenu.contains(e.target)) {
+          if (!mobileMenu.classList.contains('hidden')) {
+            mobileMenu.style.opacity = '0';
+            mobileMenu.style.transform = 'translateY(-10px)';
+            
+            setTimeout(() => {
+              mobileMenu.classList.add('hidden');
+            }, 200);
+            
+            hamburger.setAttribute('aria-expanded', 'false');
+          }
+        }
+      });
+      
+      // Close menu on escape key
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && !mobileMenu.classList.contains('hidden')) {
+          mobileMenu.style.opacity = '0';
+          mobileMenu.style.transform = 'translateY(-10px)';
+          
+          setTimeout(() => {
+            mobileMenu.classList.add('hidden');
+          }, 200);
+          
+          hamburger.setAttribute('aria-expanded', 'false');
         }
       });
     }
