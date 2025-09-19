@@ -276,7 +276,7 @@ class PortfolioApp {
         } else {
             extraProjects.classList.remove('grid');
             extraProjects.classList.add('hidden');
-            toggleButton.textContent = 'Ver todos os projetos';
+            toggleButton.textContent = 'Ver mais projetos';
         }
     }
 

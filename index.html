@@ -73,43 +73,40 @@
   </a>
 
   <!-- Navigation -->
-  <nav class="navbar fixed w-full z-50" aria-label="Navegação principal">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="flex justify-between h-16">
-        <div class="flex items-center">
-          <a href="#" class="navbar-brand">Software Engineer | Ryandikto</a>
-        </div>
-        <div class="hidden md:flex items-center space-x-8">
-          <button class="theme-toggle" aria-label="Alternar tema">
-            <i class="fas fa-moon" aria-hidden="true"></i>
-          </button>
-          <a href="#about" class="nav-link">Sobre</a>
-          <a href="skills.html" class="nav-link">Skills</a>
-          <a href="experiences.html" class="nav-link">Experiências</a> 
-          <a href="projects.html" class="nav-link">Projetos</a>
-          <a href="education.html" class="nav-link">Educação</a>
-          <a href="#contact" class="px-6 py-3 bg-green-600 text-white rounded-md hover:bg-green-700 transition transform hover:scale-105">Contato</a>
-        </div>
-        <div class="md:hidden flex items-center">
-          <button class="hamburger" aria-label="Abrir menu" aria-expanded="false">
-            <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-            </svg>
-          </button>
-        </div>
+  <nav id="navbar" class="fixed top-0 left-0 w-full z-50 bg-black bg-opacity-95 backdrop-blur-md transition">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between h-16 items-center">
+      <!-- Brand -->
+      <a href="#" class="font-bold text-green-500 text-xl">Software Engineer | Ryandikto</a>
+
+      <!-- Desktop Links -->
+      <div class="hidden md:flex space-x-6 items-center">
+        <a href="#about" class="nav-link text-white">Sobre</a>
+        <a href="skills.html" class="nav-link text-white">Skills</a>
+        <a href="experiences.html" class="nav-link text-white">Experiências</a>
+        <a href="projects.html" class="nav-link text-white">Projetos</a>
+        <a href="education.html" class="nav-link text-white">Educação</a>
+        <a href="#contact" class="px-4 py-2 bg-green-600 text-black rounded hover:bg-green-700 transition">Contato</a>
       </div>
+
+      <!-- Mobile Hamburger -->
+      <button id="hamburger" class="md:hidden text-white focus:outline-none" aria-label="Abrir menu" aria-expanded="false">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+        </svg>
+      </button>
     </div>
-    
-    <!-- Mobile menu -->
-    <div id="mobile-menu" class="mobile-menu hidden md:hidden">
-      <a href="#about" class="mobile-menu-item">Sobre</a>
-      <a href="skills.html" class="mobile-menu-item">Skills</a>
-      <a href="experiences.html" class="mobile-menu-item">Experiências</a>
-      <a href="projects.html" class="mobile-menu-item">Projetos</a>
-      <a href="education.html" class="mobile-menu-item">Educação</a>
-      <a href="#contact" class="mobile-menu-item contact-btn">Contato</a>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="hidden flex-col bg-black bg-opacity-95 backdrop-blur-md md:hidden">
+      <a href="#about" class="p-4 border-b border-gray-700 text-white">Sobre</a>
+      <a href="skills.html" class="p-4 border-b border-gray-700 text-white">Skills</a>
+      <a href="experiences.html" class="p-4 border-b border-gray-700 text-white">Experiências</a>
+      <a href="projects.html" class="p-4 border-b border-gray-700 text-white">Projetos</a>
+      <a href="education.html" class="p-4 border-b border-gray-700 text-white">Educação</a>
+      <a href="#contact" class="p-4 text-black bg-green-600 hover:bg-green-700 transition">Contato</a>
     </div>
   </nav>
+
 
   <!-- Main Content -->
   <main id="main-content">
@@ -349,22 +346,24 @@
         <h2 class="text-3xl font-bold text-center mb-12">
           <span>Projetos </span><span class="gradient-text">Realizados</span>
         </h2>
+
+        <!-- Grid principal (Projetos 1–3) -->
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 projects-grid">
-          
+
           <!-- Project 1 - Leroy Merlin BI -->
           <div class="bg-white rounded-lg overflow-hidden shadow-sm card-hover transition project-card interactive-card">
             <div class="relative h-48 overflow-hidden">
-              <img src="./src/img/projetos/leroy-BI.jpg" 
-                   alt="Dashboard de Analytics da Leroy Merlin mostrando gráficos e métricas" 
-                   loading="lazy" 
-                   class="w-full h-full object-cover">
+              <img src="./src/img/projetos/leroy-BI.jpg"
+                  alt="Dashboard de Analytics da Leroy Merlin mostrando gráficos e métricas"
+                  loading="lazy"
+                  class="w-full h-full object-cover">
               <div class="project-overlay project-overlay-gray absolute inset-0 flex items-center justify-center opacity-0 transition" aria-hidden="true">
                 <span class="text-white px-4 py-2 border-2 border-white rounded-md">Apenas Expositivo</span>
               </div>
             </div>
             <div class="p-6">
               <h3 class="font-semibold text-xl mb-2">Leroy Merlin Dashboard Analytics</h3>
-              <p class="text-gray-600 mb-4">Aplicação de análise de dados com visualizações em tempo real construída para a diretoria de experiência cliente com DAX e Power BI.</p>
+              <p class="text-gray-600 mb-4">Aplicação de análise de dados com visualizações em tempo real construída para a Diretoria de Experiência do Cliente com DAX e Power BI.</p>
               <div class="flex flex-wrap gap-2">
                 <span class="project-tag project-tag-green">Power BI</span>
                 <span class="project-tag project-tag-green">Genesys Cloud</span>
@@ -373,19 +372,18 @@
               </div>
             </div>
           </div>
-          
+
           <!-- Project 2 - 20Pilla -->
           <div class="bg-white rounded-lg overflow-hidden shadow-sm card-hover transition project-card interactive-card">
             <div class="relative h-48 overflow-hidden">
-              <img src="./src/img/projetos/20Pilla.png" 
-                   alt="Página inicial da loja 20Pilla Headshop" 
-                   loading="lazy" 
-                   class="w-full h-full object-cover">
+              <img src="./src/img/projetos/20Pilla.png"
+                  alt="Página inicial da loja 20Pilla Headshop"
+                  loading="lazy"
+                  class="w-full h-full object-cover">
               <div class="project-overlay project-overlay-purple absolute inset-0 flex items-center justify-center opacity-0 transition" aria-hidden="true">
-                <a href="https://20-pilla.vercel.app" 
-                   class="text-white px-4 py-2 border-2 border-white rounded-md hover:bg-white hover:text-purple-600 transition" 
-                   aria-label="Visitar site 20Pilla"
->Ver Detalhes</a>
+                <a href="https://20-pilla.vercel.app"
+                  class="text-white px-4 py-2 border-2 border-white rounded-md hover:bg-white hover:text-purple-600 transition"
+                  aria-label="Visitar site 20Pilla">Ver Detalhes</a>
               </div>
             </div>
             <div class="p-6">
@@ -399,151 +397,155 @@
               </div>
             </div>
           </div>
-          
-          <!-- Project 3 - Portal das Equipes -->
-            <div class="bg-white rounded-lg overflow-hidden shadow-sm card-hover transition">
-              <div class="relative h-48 overflow-hidden">
-                <img src="./src/img/projetos/ditko.co-porfolio.jpg" 
-                     alt="Site da startup Ditko" 
-                     loading="lazy" 
-                     class="w-full h-full object-cover">
-                <div class="project-overlay project-overlay-green absolute inset-0 flex items-center justify-center opacity-0 transition" aria-hidden="true">
-                  <a href="https://ditkotech.vercel.app" 
-                     class="text-white px-4 py-2 border-2 border-white rounded-md hover:bg-white hover:text-green-600 transition" 
-                     aria-label="Visitar site Ditko"
->Ver Detalhes</a>
-                </div>
-              </div>
-              <div class="p-6">
-                <h3 class="font-semibold text-xl mb-2">Ditko - Startup</h3>
-                <p class="text-gray-600 mb-4">Minha startup de soluções digitais brasileiras. Plataforma completa para automação, landing pages e produtos SaaS para empresas que querem crescer com tecnologia de qualidade mundial.</p>
-                <div class="flex flex-wrap gap-2">
-                  <span class="project-tag project-tag-green">TypeScript</span>
-                  <span class="project-tag project-tag-green">React</span>
-                  <span class="project-tag project-tag-green">Tailwind</span>
-                  <span class="project-tag project-tag-green">SaaS</span>
-                </div>
+
+          <!-- Project 3 - Ditko -->
+          <div class="bg-white rounded-lg overflow-hidden shadow-sm card-hover transition">
+            <div class="relative h-48 overflow-hidden">
+              <img src="./src/img/projetos/ditko.co-porfolio.jpg"
+                  alt="Site da startup Ditko"
+                  loading="lazy"
+                  class="w-full h-full object-cover">
+              <div class="project-overlay project-overlay-green absolute inset-0 flex items-center justify-center opacity-0 transition" aria-hidden="true">
+                <a href="https://ditkotech.vercel.app"
+                  class="text-white px-4 py-2 border-2 border-white rounded-md hover:bg-white hover:text-green-600 transition"
+                  aria-label="Visitar site Ditko">Ver Detalhes</a>
               </div>
             </div>
-
-            <!-- Project 3 - Portal das Equipes -->
-            <div class="bg-white rounded-lg overflow-hidden shadow-sm card-hover transition">
-              <div class="relative h-48 overflow-hidden">
-                <img src="./src/img/projetos/Portal-Das-Equipes-portfolio.jpg" 
-                     alt="Portal das Equipes - Sistema colaborativo" 
-                     loading="lazy" 
-                     class="w-full h-full object-cover">
-                <div class="project-overlay project-overlay-blue absolute inset-0 flex items-center justify-center opacity-0 transition" aria-hidden="true">
-                  <a href="https://portal-equipes-deac.vercel.app" 
-                     class="text-white px-4 py-2 border-2 border-white rounded-md hover:bg-white hover:text-blue-600 transition" 
-                     aria-label="Visitar Portal das Equipes"
->Ver Detalhes</a>
-                </div>
-              </div>
-              <div class="p-6">
-                <h3 class="font-semibold text-xl mb-2">Portal das Equipes</h3>
-                <p class="text-gray-600 mb-4">Site estilo LinkTree que centraliza de forma inteligente todos os links utilizados por cada uma das equipes da Diretoria de Experiência Cliente, organizando recursos e ferramentas em um único local acessível.</p>
-                <div class="flex flex-wrap gap-2">
-                  <span class="project-tag project-tag-blue">LinkTree</span>
-                  <span class="project-tag project-tag-blue">Portal</span>
-                  <span class="project-tag project-tag-blue">JavaScript</span>
-                  <span class="project-tag project-tag-blue">Organização</span>
-                </div>
-              </div>
-            </div>
-
-            <!-- Project 4 - Merlin -->
-            <div class="bg-white rounded-lg overflow-hidden shadow-sm card-hover transition">
-              <div class="relative h-48 overflow-hidden">
-                <img src="./src/img/projetos/merlin-portfolio.jpg" 
-                     alt="Aplicação Merlin com IA" 
-                     loading="lazy" 
-                     class="w-full h-full object-cover">
-                <div class="project-overlay project-overlay-purple absolute inset-0 flex items-center justify-center opacity-0 transition" aria-hidden="true">
-                  <span class="text-white px-4 py-2 border-2 border-white rounded-md">Acesso Restrito</span>
-                </div>
-              </div>
-              <div class="p-6">
-                <h3 class="font-semibold text-xl mb-2">Merlin</h3>
-                <p class="text-gray-600 mb-4">Plataforma de automação e criação de scripts desenvolvida para otimizar o tempo de trabalho. Integra APIs de IA para gerar soluções automatizadas, scripts personalizados e fluxos de trabalho eficientes para equipes e projetos profissionais.</p>
-                <div class="flex flex-wrap gap-2">
-                  <span class="project-tag project-tag-purple">Automação</span>
-                  <span class="project-tag project-tag-purple">Scripts</span>
-                  <span class="project-tag project-tag-purple">React</span>
-                  <span class="project-tag project-tag-purple">AI APIs</span>
-                </div>
-              </div>
-            </div>
-
-            <!-- Project 5 - Kernal -->
-            <div class="bg-white rounded-lg overflow-hidden shadow-sm card-hover transition">
-              <div class="relative h-48 overflow-hidden">
-                <img src="./src/img/projetos/kernal-portfolio.jpg" 
-                     alt="Bot Kernal para Discord" 
-                     loading="lazy" 
-                     class="w-full h-full object-cover">
-                <div class="project-overlay project-overlay-orange absolute inset-0 flex items-center justify-center opacity-0 transition" aria-hidden="true">
-                  <a href="https://discordapp.com/oauth2/authorize?client_id=1300981248554041344" 
-                     class="text-white px-4 py-2 border-2 border-white rounded-md hover:bg-white hover:text-orange-600 transition" 
-                     aria-label="Adicionar Kernal ao Discord"
->Ver Detalhes</a>
-                </div>
-              </div>
-              <div class="p-6">
-                <h3 class="font-semibold text-xl mb-2">Kernal</h3>
-                <p class="text-gray-600 mb-4">Bot Discord desenvolvido para segurança remota, com funcionalidades avançadas de monitoramento, controle de acesso e proteção de servidores. Implementa sistemas de moderação automática e ferramentas de administração remota.</p>
-                <div class="flex flex-wrap gap-2">
-                  <span class="project-tag project-tag-orange">TypeScript</span>
-                  <span class="project-tag project-tag-orange">Discord.js</span>
-                  <span class="project-tag project-tag-orange">Segurança</span>
-                  <span class="project-tag project-tag-orange">Automação</span>
-                </div>
-                <div class="mt-4 flex gap-2">
-                  <a href="https://github.com/Ryanditko/Kernal" 
-                     class="text-gray-600 hover:text-orange-600 transition inline-flex items-center gap-1"
-                     target="_blank" rel="noopener noreferrer">
-                    <i class="fab fa-github"></i>
-                    Código
-                  </a>
-                  <a href="https://discordapp.com/oauth2/authorize?client_id=1300981248554041344" 
-                     class="text-gray-600 hover:text-orange-600 transition inline-flex items-center gap-1"
-                     target="_blank" rel="noopener noreferrer">
-                    <i class="fab fa-discord"></i>
-                    Adicionar Bot
-                  </a>
-                </div>
-              </div>
-            </div>
-
-            <!-- Project 8 - Machine Learning -->
-            <div class="bg-white rounded-lg overflow-hidden shadow-sm card-hover transition">
-              <div class="relative h-48 overflow-hidden">
-                <img src="./src/img/projetos/iniciação-cientifica.jpg" 
-                     alt="Diagrama de aprendizado federado em machine learning" 
-                     loading="lazy" 
-                     class="w-full h-full object-cover">
-                <div class="project-overlay project-overlay-pink absolute inset-0 flex items-center justify-center opacity-0 transition" aria-hidden="true">
-                  <a href="https://www.linkedin.com/in/ryan-rodrigues-592a27313/details/projects" 
-                     class="text-white px-4 py-2 border-2 border-white rounded-md hover:bg-white hover:text-pink-600 transition" 
-                     aria-label="Ver projeto no LinkedIn"
->Ver Detalhes</a>
-                </div>
-              </div>
-              <div class="p-6">
-                <h3 class="font-semibold text-xl mb-2">Iniciação Científica</h3>
-                <p class="text-gray-600 mb-4">Pesquisa aplicada na área de segurança em aprendizado federado, com foco na simulação de cenários de ataque e aplicação de técnicas de defesa como Privacidade Diferencial.</p>
-                <div class="flex flex-wrap gap-2">
-                  <span class="project-tag project-tag-pink">Machine Learning</span>
-                  <span class="project-tag project-tag-pink">Python</span>
-                  <span class="project-tag project-tag-pink">Scikit-learn</span>
-                  <span class="project-tag project-tag-pink">Jupyter</span>
-                </div>
+            <div class="p-6">
+              <h3 class="font-semibold text-xl mb-2">Ditko - Startup</h3>
+              <p class="text-gray-600 mb-4">Minha startup de soluções digitais brasileiras. Plataforma completa para automação, landing pages e produtos SaaS para empresas que querem crescer com tecnologia de qualidade mundial.</p>
+              <div class="flex flex-wrap gap-2">
+                <span class="project-tag project-tag-green">TypeScript</span>
+                <span class="project-tag project-tag-green">React</span>
+                <span class="project-tag project-tag-green">Tailwind</span>
+                <span class="project-tag project-tag-green">SaaS</span>
               </div>
             </div>
           </div>
-          
-          <a href="#" id="toggle-projects" 
-             class="px-6 py-3 border border-green-600 text-green-600 rounded-md hover:bg-green-50 transition">Ver todos os projetos</a>
+        </div> <!-- fim grid inicial -->
+
+        <!-- Projetos extras (4 a 7) -->
+        <div id="extra-projects" class="hidden grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-8">
+
+          <!-- Project 4 - Portal das Equipes -->
+          <div class="bg-white rounded-lg overflow-hidden shadow-sm card-hover transition">
+            <div class="relative h-48 overflow-hidden">
+              <img src="./src/img/projetos/Portal-Das-Equipes-portfolio.jpg"
+                  alt="Portal das Equipes - Sistema colaborativo"
+                  loading="lazy"
+                  class="w-full h-full object-cover">
+              <div class="project-overlay project-overlay-blue absolute inset-0 flex items-center justify-center opacity-0 transition" aria-hidden="true">
+                <a href="https://portal-equipes-deac.vercel.app"
+                  class="text-white px-4 py-2 border-2 border-white rounded-md hover:bg-white hover:text-blue-600 transition"
+                  aria-label="Visitar Portal das Equipes">Ver Detalhes</a>
+              </div>
+            </div>
+            <div class="p-6">
+              <h3 class="font-semibold text-xl mb-2">Portal das Equipes</h3>
+              <p class="text-gray-600 mb-4">Site estilo LinkTree que centraliza de forma inteligente todos os links utilizados por cada uma das equipes da Diretoria de Experiência do Cliente, organizando recursos e ferramentas em um único local acessível.</p>
+              <div class="flex flex-wrap gap-2">
+                <span class="project-tag project-tag-blue">LinkTree</span>
+                <span class="project-tag project-tag-blue">Portal</span>
+                <span class="project-tag project-tag-blue">JavaScript</span>
+                <span class="project-tag project-tag-blue">Organização</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 5 - Merlin -->
+          <div class="bg-white rounded-lg overflow-hidden shadow-sm card-hover transition">
+            <div class="relative h-48 overflow-hidden">
+              <img src="./src/img/projetos/merlin-portfolio.jpg"
+                  alt="Aplicação Merlin com IA"
+                  loading="lazy"
+                  class="w-full h-full object-cover">
+              <div class="project-overlay project-overlay-purple absolute inset-0 flex items-center justify-center opacity-0 transition" aria-hidden="true">
+                <span class="text-white px-4 py-2 border-2 border-white rounded-md">Acesso Restrito</span>
+              </div>
+            </div>
+            <div class="p-6">
+              <h3 class="font-semibold text-xl mb-2">Merlin</h3>
+              <p class="text-gray-600 mb-4">Plataforma de automação e criação de scripts desenvolvida para otimizar o tempo de trabalho. Integra APIs de IA para gerar soluções automatizadas, scripts personalizados e fluxos de trabalho eficientes para equipes e projetos profissionais.</p>
+              <div class="flex flex-wrap gap-2">
+                <span class="project-tag project-tag-purple">Automação</span>
+                <span class="project-tag project-tag-purple">Scripts</span>
+                <span class="project-tag project-tag-purple">React</span>
+                <span class="project-tag project-tag-purple">AI APIs</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 6 - Kernal -->
+          <div class="bg-white rounded-lg overflow-hidden shadow-sm card-hover transition">
+            <div class="relative h-48 overflow-hidden">
+              <img src="./src/img/projetos/kernal-portfolio.jpg"
+                  alt="Bot Kernal para Discord"
+                  loading="lazy"
+                  class="w-full h-full object-cover">
+              <div class="project-overlay project-overlay-orange absolute inset-0 flex items-center justify-center opacity-0 transition" aria-hidden="true">
+                <a href="https://discordapp.com/oauth2/authorize?client_id=1300981248554041344"
+                  class="text-white px-4 py-2 border-2 border-white rounded-md hover:bg-white hover:text-orange-600 transition"
+                  aria-label="Adicionar Kernal ao Discord">Ver Detalhes</a>
+              </div>
+            </div>
+            <div class="p-6">
+              <h3 class="font-semibold text-xl mb-2">Kernal</h3>
+              <p class="text-gray-600 mb-4">Bot Discord desenvolvido para segurança remota, com funcionalidades avançadas de monitoramento, controle de acesso e proteção de servidores. Implementa sistemas de moderação automática e ferramentas de administração remota.</p>
+              <div class="flex flex-wrap gap-2">
+                <span class="project-tag project-tag-orange">TypeScript</span>
+                <span class="project-tag project-tag-orange">Discord.js</span>
+                <span class="project-tag project-tag-orange">Segurança</span>
+                <span class="project-tag project-tag-orange">Automação</span>
+              </div>
+              <div class="mt-4 flex gap-2">
+                <a href="https://github.com/Ryanditko/Kernal"
+                  class="text-gray-600 hover:text-orange-600 transition inline-flex items-center gap-1"
+                  target="_blank" rel="noopener noreferrer">
+                  <i class="fab fa-github"></i>
+                  Código
+                </a>
+                <a href="https://discordapp.com/oauth2/authorize?client_id=1300981248554041344"
+                  class="text-gray-600 hover:text-orange-600 transition inline-flex items-center gap-1"
+                  target="_blank" rel="noopener noreferrer">
+                  <i class="fab fa-discord"></i>
+                  Adicionar Bot
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 7 - Machine Learning -->
+          <div class="bg-white rounded-lg overflow-hidden shadow-sm card-hover transition">
+            <div class="relative h-48 overflow-hidden">
+              <img src="./src/img/projetos/iniciação-cientifica.jpg"
+                  alt="Diagrama de aprendizado federado em machine learning"
+                  loading="lazy"
+                  class="w-full h-full object-cover">
+              <div class="project-overlay project-overlay-pink absolute inset-0 flex items-center justify-center opacity-0 transition" aria-hidden="true">
+                <a href="https://www.linkedin.com/in/ryan-rodrigues-592a27313/details/projects"
+                  class="text-white px-4 py-2 border-2 border-white rounded-md hover:bg-white hover:text-pink-600 transition"
+                  aria-label="Ver projeto no LinkedIn">Ver Detalhes</a>
+              </div>
+            </div>
+            <div class="p-6">
+              <h3 class="font-semibold text-xl mb-2">Iniciação Científica</h3>
+              <p class="text-gray-600 mb-4">Pesquisa aplicada na área de segurança em aprendizado federado, com foco na simulação de cenários de ataque e aplicação de técnicas de defesa como Privacidade Diferencial.</p>
+              <div class="flex flex-wrap gap-2">
+                <span class="project-tag project-tag-pink">Machine Learning</span>
+                <span class="project-tag project-tag-pink">Python</span>
+                <span class="project-tag project-tag-pink">Scikit-learn</span>
+                <span class="project-tag project-tag-pink">Jupyter</span>
+              </div>
+            </div>
+          </div>
+        </div> <!-- fim extra-projects -->
+
+        <!-- Botão -->
+        <div class="text-center mt-8">
+          <a href="#" id="toggle-projects"
+            class="px-6 py-3 border border-green-600 text-green-600 rounded-md hover:bg-green-50 transition">
+            Ver mais projetos
+          </a>
         </div>
       </div>
     </section>
@@ -865,6 +867,7 @@
   <script src="./src/js/icon-colors.js"></script>
   <script src="./src/js/header-sticky.js"></script>
   <script src="./src/js/back-to-top.js"></script>
+
 
 </body>
 </html>
