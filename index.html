@@ -9,7 +9,7 @@
   <meta property="og:image" content="/src/img/icons/Kali_Logo.png">
   <meta property="og:url" content="https://ryandev-murex.vercel.app">
   <meta name="theme-color" content="#84d917">
-  <title>Portfólio | Ryan Rodrigues - Desenvolvedor Fullstack</title>
+  <title>Portfólio | Ryan Rodrigues - Engenheiro de Software</title>
   
   <!-- PWA Manifest -->
   <link rel="manifest" href="/manifest.json">
@@ -87,29 +87,64 @@
         <a href="education.html" class="nav-link text-white">Educação</a>
         <a href="#contact" class="px-4 py-2 bg-green-600 text-black rounded hover:bg-green-700 transition">Contato</a>
       </div>
-
-      <!-- Mobile Hamburger -->
-      <button id="hamburger" class="md:hidden text-white focus:outline-none" aria-label="Abrir menu" aria-expanded="false">
-        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+      <!-- O menu mobile antigo foi removido para substituição -->
+      <!-- Novo Menu Mobile -->
+  <button id="hamburger-new" class="hamburger block md:hidden" aria-label="Abrir menu" aria-expanded="false">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="3" y1="6" x2="21" y2="6" />
+          <line x1="3" y1="12" x2="21" y2="12" />
+          <line x1="3" y1="18" x2="21" y2="18" />
         </svg>
       </button>
     </div>
 
-    <!-- Mobile Menu -->
-    <div id="mobile-menu" class="hidden flex-col bg-black bg-opacity-95 backdrop-blur-md md:hidden">
-      <a href="#about" class="p-4 border-b border-gray-700 text-white">Sobre</a>
-      <a href="skills.html" class="p-4 border-b border-gray-700 text-white">Skills</a>
-      <a href="experiences.html" class="p-4 border-b border-gray-700 text-white">Experiências</a>
-      <a href="projects.html" class="p-4 border-b border-gray-700 text-white">Projetos</a>
-      <a href="education.html" class="p-4 border-b border-gray-700 text-white">Educação</a>
-      <a href="#contact" class="p-4 text-black bg-green-600 hover:bg-green-700 transition">Contato</a>
+    <div id="mobile-menu-new" class="mobile-menu hidden md:hidden flex flex-col">
+      <a href="#about" class="mobile-menu-item">Sobre</a>
+      <a href="skills.html" class="mobile-menu-item">Skills</a>
+      <a href="experiences.html" class="mobile-menu-item">Experiências</a>
+      <a href="projects.html" class="mobile-menu-item">Projetos</a>
+      <a href="education.html" class="mobile-menu-item">Educação</a>
+      <a href="#contact" class="mobile-menu-item bg-green-600 text-black hover:bg-green-700 transition">Contato</a>
     </div>
+      </div>
   </nav>
 
 
   <!-- Main Content -->
   <main id="main-content">
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const hamburger = document.getElementById('hamburger-new');
+      const mobileMenu = document.getElementById('mobile-menu-new');
+      
+      function closeMenu() {
+        mobileMenu.classList.add('hidden');
+        hamburger.setAttribute('aria-expanded', 'false');
+      }
+
+      hamburger.addEventListener('click', function(e) {
+        const expanded = hamburger.getAttribute('aria-expanded') === 'true';
+        if (expanded) {
+          closeMenu();
+        } else {
+          mobileMenu.classList.remove('hidden');
+          hamburger.setAttribute('aria-expanded', 'true');
+        }
+      });
+
+      // Fecha o menu ao clicar em um item
+      mobileMenu.querySelectorAll('.mobile-menu-item').forEach(function(item) {
+        item.addEventListener('click', closeMenu);
+      });
+
+      // Fecha o menu ao clicar fora
+      document.addEventListener('click', function(e) {
+        if (!mobileMenu.classList.contains('hidden') && !mobileMenu.contains(e.target) && !hamburger.contains(e.target)) {
+          closeMenu();
+        }
+      });
+    });
+  </script>
 
     <!-- Hero Section -->
     <section class="pt-32 pb-20 px-4 animate-fade-in relative overflow-hidden">

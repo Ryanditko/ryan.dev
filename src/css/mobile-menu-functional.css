@@ -13,6 +13,12 @@
   justify-content: center !important;
 }
 
+@media (min-width: 768px) {
+  .hamburger {
+    display: none !important;
+  }
+}
+
 .hamburger:hover {
   color: #84d917 !important;
   transform: scale(1.1) !important;
