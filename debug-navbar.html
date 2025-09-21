@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Debug Navbar Fixed</title>
+  <style>
+    html,body { margin:0; padding:0; font-family:system-ui,Arial,sans-serif; }
+    #navbar-wrapper { position:fixed; top:0; left:0; right:0; z-index:9999; background:#111; color:#fff; padding:16px 24px; box-shadow:0 4px 18px rgba(0,0,0,.35); display:flex; gap:24px; }
+    #navbar-wrapper a { color:#84d917; text-decoration:none; font-weight:600; }
+    main { margin-top:76px; padding:24px; line-height:1.5; }
+    .block { height:1000px; background:linear-gradient(#222,#444); margin-bottom:32px; border:1px solid #333; border-radius:8px; }
+    .note { background:#202b10; color:#cfeead; padding:12px 16px; border-left:4px solid #84d917; margin-bottom:24px; }
+  </style>
+</head>
+<body>
+  <div id="navbar-wrapper">
+    <strong>Navbar FIX Teste</strong>
+    <a href="#">Link 1</a>
+    <a href="#">Link 2</a>
+    <a href="#">Link 3</a>
+  </div>
+  <main>
+    <div class="note">Se ESTE navbar não ficar fixo ao rolar, seu navegador/ambiente está interferindo (extensão, zoom extremo, modo leitor, etc). Se ELE fica fixo aqui mas não nas outras páginas, então alguma folha de estilo/script das páginas reais está sobrescrevendo o wrapper.</div>
+    <div class="block"></div>
+    <div class="block"></div>
+    <div class="block"></div>
+  </main>
+</body>
+</html>

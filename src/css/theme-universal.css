@@ -44,13 +44,7 @@ body {
 }
 
 /* Headers e Navigation */
-header,
-nav,
-.navbar {
-  background-color: var(--bg-primary) !important;
-  border-bottom: 2px solid var(--primary-green) !important;
-  transition: all 0.3s ease;
-}
+/* nav/.navbar regras removidas para evitar sobrescrita do sticky */
 
 /* Links de navegação */
 .navbar a,
@@ -106,7 +100,7 @@ i[class*="fa"],
 .far,
 .fab,
 .fal {
-  color: var(--primary-green) !important;
+  color: var(--text-dark) !important;
 }
 
 /* Botões */

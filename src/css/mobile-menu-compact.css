@@ -4,28 +4,10 @@
 
 @media (max-width: 768px) {
   /* Navbar sempre fixo no topo */
-  .navbar {
-    position: fixed !important;
-    top: 0 !important;
-    left: 0 !important;
-    right: 0 !important;
-    z-index: 100 !important;
-    background: rgba(255, 255, 255, 0.95) !important;
-    backdrop-filter: blur(10px) !important;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.1) !important;
-    transition: all 0.3s ease !important;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1) !important;
-  }
-
-  /* Navbar no tema escuro */
-  [data-theme="dark"] .navbar {
-    background: rgba(31, 41, 55, 0.95) !important;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3) !important;
-  }
+  /* Regras fixas do #navbar removidas - wrapper controla */
 
   /* Garantir que o conteúdo não fique atrás do navbar */
-  .navbar + main {
+  #navbar + main {
     padding-top: 4rem !important;
   }
 
@@ -158,11 +140,11 @@
   }
 
   /* Scroll behavior otimizado */
-  .navbar-scrolled {
+  #navbar.scrolled {
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15) !important;
   }
 
-  [data-theme="dark"] .navbar-scrolled {
+  [data-theme="dark"] #navbar.scrolled {
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5) !important;
   }
 

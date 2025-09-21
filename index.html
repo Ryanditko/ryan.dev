@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Portfólio de Ryan Rodrigues, Desenvolvedor Fullstack com experiência em DevWeb, RPA, Cloud e Data Analytics">
-  <meta name="keywords" content="desenvolvedor fullstack, Ryan Rodrigues, portfólio, desenvolvimento web, RPA, cloud computing">
+  <meta name="description" content="Portfólio de Ryan Rodrigues, Engenheiro de Software com experiência em DevWeb, RPA, Cloud e Data Analytics">
+  <meta name="keywords" content="engenheiro de software, Ryan Rodrigues, portfólio, desenvolvimento web, RPA, cloud computing">
   <meta name="author" content="Ryan Rodrigues">
   <meta property="og:image" content="/src/img/icons/Kali_Logo.png">
   <meta property="og:url" content="https://ryandev-murex.vercel.app">
@@ -61,6 +61,7 @@
   </script>
 </head>
 
+
 <body class="bg-secondary text-primary">
   <!-- Cursor customizado -->
   <div class="custom-cursor"></div>
@@ -72,7 +73,7 @@
   </a>
 
   <!-- Navigation -->
-  <nav id="navbar" class="fixed top-0 left-0 w-full z-50 bg-black bg-opacity-95 backdrop-blur-md transition">
+  <nav id="navbar" class="navbar fixed top-0 left-0 w-full z-50 bg-black bg-opacity-95 backdrop-blur-md transition">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between h-16 items-center">
       <!-- Brand -->
       <a href="#" class="font-bold text-green-500 text-xl">Software Engineer | Ryandikto</a>
@@ -88,7 +89,7 @@
       </div>
       <!-- O menu mobile antigo foi removido para substituição -->
       <!-- Novo Menu Mobile -->
-  <button id="hamburger-new" class="hamburger block md:hidden" aria-label="Abrir menu" aria-expanded="false">
+  <button id="hamburger" class="hamburger block md:hidden" aria-label="Abrir menu" aria-expanded="false">
         <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
           <line x1="3" y1="6" x2="21" y2="6" />
           <line x1="3" y1="12" x2="21" y2="12" />
@@ -97,7 +98,7 @@
       </button>
     </div>
 
-    <div id="mobile-menu-new" class="mobile-menu hidden md:hidden flex flex-col">
+  <div id="mobile-menu" class="mobile-menu hidden md:hidden flex flex-col">
   <a href="index.html" class="mobile-menu-item">Início</a>
   <a href="skills.html" class="mobile-menu-item">Skills</a>
   <a href="experiences.html" class="mobile-menu-item">Experiências</a>
@@ -105,45 +106,12 @@
   <a href="education.html" class="mobile-menu-item">Educação</a>
   <a href="#contact" class="mobile-menu-item">Contato</a>
     </div>
-      </div>
   </nav>
 
 
   <!-- Main Content -->
   <main id="main-content">
-  <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      const hamburger = document.getElementById('hamburger-new');
-      const mobileMenu = document.getElementById('mobile-menu-new');
-      
-      function closeMenu() {
-        mobileMenu.classList.add('hidden');
-        hamburger.setAttribute('aria-expanded', 'false');
-      }
-
-      hamburger.addEventListener('click', function(e) {
-        const expanded = hamburger.getAttribute('aria-expanded') === 'true';
-        if (expanded) {
-          closeMenu();
-        } else {
-          mobileMenu.classList.remove('hidden');
-          hamburger.setAttribute('aria-expanded', 'true');
-        }
-      });
-
-      // Fecha o menu ao clicar em um item
-      mobileMenu.querySelectorAll('.mobile-menu-item').forEach(function(item) {
-        item.addEventListener('click', closeMenu);
-      });
-
-      // Fecha o menu ao clicar fora
-      document.addEventListener('click', function(e) {
-        if (!mobileMenu.classList.contains('hidden') && !mobileMenu.contains(e.target) && !hamburger.contains(e.target)) {
-          closeMenu();
-        }
-      });
-    });
-  </script>
+  
 
     <!-- Hero Section -->
     <section class="pt-32 pb-20 px-4 animate-fade-in relative overflow-hidden">
@@ -159,7 +127,7 @@
           <div class="flex space-x-4">
             <a href="https://www.linkedin.com/in/ryan-rodrigues-592a27313/details/honors" 
                class="px-6 py-3 bg-green-600 text-white rounded-md hover:bg-green-700 transition transform hover:scale-105">Marcos</a>
-            <a href="/src/docs/Ryan_Curriculo..docx" download 
+            <a href="/src/docs/Ryan_Curriculo.pdf" download 
                class="px-6 py-3 border border-green-600 text-green-600 rounded-md hover:bg-blue-50 transition transform hover:scale-105">Currículo</a>
           </div>
         </div>
@@ -886,7 +854,7 @@
 
   <!-- Botão "Voltar ao Topo" -->
   <a href="#" id="back-to-top" 
-     class="fixed bottom-6 right-6 w-12 h-12 bg-green-600 rounded-full flex items-center justify-center text-white shadow-lg hover:bg-green-700 transition duration-300 ease-in-out opacity-0 invisible" 
+     class="fixed bottom-6 right-6 w-12 h-12 bg-green-600 rounded-full flex items-center justify-center text-white shadow-lg hover:bg-green-700 transition duration-300 ease-in-out opacity-0" 
      aria-label="Voltar ao topo"
 >
     <i class="fa-solid fa-arrow-up"></i> 
@@ -895,7 +863,7 @@
   <!-- Custom JavaScript -->
   <script src="./src/js/portfolio.js"></script>
   <script src="./src/js/navigation.js"></script>
-  <script src="./src/js/mobile-menu-universal.js"></script>
+  <script src="./src/js/mobile-menu-universal.js?v=2"></script>
   <script src="./src/js/custom-cursor.js"></script>
   <script src="./src/js/theme-manager.js"></script>
   <script src="./src/js/icon-colors.js"></script>

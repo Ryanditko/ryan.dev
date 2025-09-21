@@ -149,27 +149,7 @@
 }
 
 /* Header Background for Mobile - PRETO TOTAL */
-@media (max-width: 768px) {
-  .navbar {
-    background-color: #000000 !important;
-    background: #000000 !important;
-    border-bottom: 1px solid #84d917 !important;
-    backdrop-filter: none !important;
-    -webkit-backdrop-filter: none !important;
-  }
-  
-  .navbar.scrolled {
-    background-color: #000000 !important;
-    background: #000000 !important;
-  }
-  
-  /* Remove qualquer transparência ou cor cinza */
-  .navbar,
-  .navbar * {
-    filter: none !important;
-    opacity: 1 !important;
-  }
-}
+/* Regras de navbar removidas - unificadas */
 
 /* Mobile Navigation Links */
 @media (max-width: 768px) {

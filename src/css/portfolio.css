@@ -164,65 +164,7 @@ body {
   -webkit-text-fill-color: transparent;
 }
 
-/* =========================================
-   NAVIGATION STYLES
-   ========================================= */
-
-.navbar {
-  background-color: var(--nav-bg);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  border-bottom: 1px solid var(--border-color);
-  box-shadow: var(--shadow-light);
-  transition: all var(--transition-normal);
-}
-
-.navbar-brand {
-  background: linear-gradient(90deg, var(--gradient-start), var(--gradient-end));
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-  -webkit-text-fill-color: transparent;
-  font-weight: 700;
-  font-size: 1.25rem;
-  text-decoration: none;
-  transition: opacity var(--transition-fast);
-}
-
-.navbar-brand:hover {
-  opacity: 0.8;
-}
-
-.nav-link {
-  color: var(--text-secondary);
-  text-decoration: none;
-  font-weight: 500;
-  padding: 0.5rem 1rem;
-  border-radius: 0.375rem;
-  transition: all var(--transition-fast);
-  position: relative;
-}
-
-.nav-link:hover {
-  color: var(--primary-green);
-  background-color: rgba(22, 163, 74, 0.1);
-}
-
-.nav-link:focus {
-  outline: 2px solid var(--primary-green);
-  outline-offset: 2px;
-}
-
-.contact-btn {
-  background-color: var(--button-primary) !important;
-  color: white !important;
-  border: none;
-}
-
-.contact-btn:hover {
-  background-color: var(--button-primary-hover) !important;
-  color: white !important;
-}
+/* Navigation styles removidos aqui e centralizados em header-sticky.css */
 
 /* =========================================
    MOBILE MENU STYLES

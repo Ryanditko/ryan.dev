@@ -172,13 +172,13 @@
     }
   </style>
 </head>
-<body>
+<body data-has-navbar="true">
   <!-- Cursor customizado -->
   <div class="custom-cursor"></div>
   <div class="cursor-trail"></div>
   
   <!-- Navigation -->
-  <nav class="navbar fixed w-full z-50" aria-label="Navegação principal">
+  <nav id="navbar" class="navbar fixed top-0 left-0 w-full z-50" aria-label="Navegação principal">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between h-16 items-center">
       <a href="index.html" class="font-bold text-green-500 text-xl">Software Engineer | Ryandikto</a>
       <div class="hidden md:flex space-x-6 items-center">
@@ -189,7 +189,7 @@
         <a href="education.html" class="nav-link text-white">Educação</a>
         <a href="index.html#contact" class="px-4 py-2 bg-green-600 text-black rounded hover:bg-green-700 transition">Contato</a>
       </div>
-      <button id="hamburger-new" class="hamburger block md:hidden" aria-label="Abrir menu" aria-expanded="false">
+  <button id="hamburger" class="hamburger block md:hidden" aria-label="Abrir menu" aria-expanded="false">
         <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
           <line x1="3" y1="6" x2="21" y2="6" />
           <line x1="3" y1="12" x2="21" y2="12" />
@@ -197,7 +197,7 @@
         </svg>
       </button>
     </div>
-    <div id="mobile-menu-new" class="mobile-menu hidden md:hidden flex flex-col">
+  <div id="mobile-menu" class="mobile-menu hidden md:hidden flex flex-col">
       <a href="index.html" class="mobile-menu-item">Início</a>
       <a href="skills.html" class="mobile-menu-item">Skills</a>
       <a href="experiences.html" class="mobile-menu-item">Experiências</a>
@@ -439,36 +439,7 @@
   <script src="./src/js/custom-cursor.js"></script>
   <script src="./src/js/theme-manager.js"></script>
   <script src="./src/js/icon-colors.js"></script>
-  <script src="./src/js/header-sticky.js"></script>
   <script src="./src/js/back-to-top.js"></script>
-  <script>
-    // Menu mobile funcional (carregado por último)
-    document.addEventListener('DOMContentLoaded', function() {
-      const hamburger = document.getElementById('hamburger-new');
-      const mobileMenu = document.getElementById('mobile-menu-new');
-      function closeMenu() {
-        mobileMenu.classList.add('hidden');
-        hamburger.setAttribute('aria-expanded', 'false');
-      }
-      hamburger.addEventListener('click', function(e) {
-        const expanded = hamburger.getAttribute('aria-expanded') === 'true';
-        if (expanded) {
-          closeMenu();
-        } else {
-          mobileMenu.classList.remove('hidden');
-          hamburger.setAttribute('aria-expanded', 'true');
-        }
-      });
-      mobileMenu.querySelectorAll('.mobile-menu-item').forEach(function(item) {
-        item.addEventListener('click', closeMenu);
-      });
-      document.addEventListener('click', function(e) {
-        if (!mobileMenu.classList.contains('hidden') && !mobileMenu.contains(e.target) && !hamburger.contains(e.target)) {
-          closeMenu();
-        }
-      });
-    });
-  </script>
 
   <script>
     // Smooth transitions and scroll animations
@@ -505,11 +476,11 @@
 
   <!-- Navigation Script -->
   <script src="./src/js/navigation.js"></script>
-  <script src="./src/js/mobile-menu-universal.js"></script>
+  <script src="./src/js/mobile-menu-universal.js?v=2"></script>
+  <script src="./src/js/header-sticky.js"></script>
   <script src="./src/js/custom-cursor.js"></script>
   <script src="./src/js/theme-manager.js"></script>
   <script src="./src/js/icon-colors.js"></script>
-  <script src="./src/js/header-sticky.js"></script>
   <script src="./src/js/back-to-top.js"></script>
 </body>
 </html>

@@ -6,7 +6,7 @@
   width: 48px !important;
   height: 48px !important;
   background: linear-gradient(135deg, #84d917, #94e327) !important;
-  color: #000000 !important;
+  color: #f1f !important;
   border-radius: 50% !important;
   display: flex !important;
   align-items: center !important;
@@ -41,6 +41,6 @@
 }
 
 #back-to-top i {
-  color: #000000 !important;
+  color: #f1f !important;
   font-size: 16px !important;
 }

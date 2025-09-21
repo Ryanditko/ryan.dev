@@ -1,23 +1,19 @@
 /* Mobile Menu Universal Handler */
 document.addEventListener('DOMContentLoaded', function() {
-  console.log('🔧 Inicializando menu mobile...');
-  
-  const hamburger = document.querySelector('.hamburger');
-  const mobileMenu = document.querySelector('#mobile-menu');
-  const mobileMenuItems = document.querySelectorAll('.mobile-menu-item');
-  
-  if (!hamburger) {
-    console.error('❌ Botão hamburger não encontrado');
-    return;
-  }
-  
-  if (!mobileMenu) {
-    console.error('❌ Menu mobile não encontrado');
-    return;
-  }
-  
-  console.log('✅ Elementos do menu mobile encontrados');
-  
+  // Seletores padronizados (#hamburger / #mobile-menu); fallback para antigos se ainda existirem
+  const hamburger = document.getElementById('hamburger') || document.getElementById('hamburger-new') || document.querySelector('.hamburger');
+  const mobileMenu = document.getElementById('mobile-menu') || document.getElementById('mobile-menu-new');
+  const mobileMenuItems = mobileMenu ? mobileMenu.querySelectorAll('.mobile-menu-item') : [];
+
+  if (!hamburger || !mobileMenu) return; // Falha silenciosa para não poluir console
+
+  // Reset de estilos (garantia)
+  mobileMenu.classList.add('hidden');
+  mobileMenu.style.opacity = '';
+  mobileMenu.style.transform = '';
+  mobileMenu.style.visibility = '';
+  mobileMenu.style.pointerEvents = '';
+
   // Função para mostrar/ocultar menu
   function toggleMobileMenu() {
     const isHidden = mobileMenu.classList.contains('hidden');
@@ -37,7 +33,6 @@ document.addEventListener('DOMContentLoaded', function() {
       mobileMenu.style.pointerEvents = 'all';
       
       hamburger.setAttribute('aria-expanded', 'true');
-      console.log('📱 Menu aberto');
     } else {
       // Ocultar menu
       mobileMenu.style.opacity = '0';
@@ -50,7 +45,6 @@ document.addEventListener('DOMContentLoaded', function() {
       }, 300);
       
       hamburger.setAttribute('aria-expanded', 'false');
-      console.log('📱 Menu fechado');
     }
   }
   
@@ -115,5 +109,4 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   });
   
-  console.log('✅ Menu mobile inicializado com sucesso!');
 });
