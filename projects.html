@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Projetos Desenvolvidos - Ryan Rodrigues">
+  <meta name="theme-color" content="#22704a">
+  <title>Projetos | Ryan Rodrigues</title>
+  
+  <!-- External CDNs -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="icon" type="image/png" href="./src/img/icons/Kali_Logo.png">
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  
+  <!-- Custom Styles -->
+  <link rel="stylesheet" href="./src/css/portfolio.css">
+  <link rel="stylesheet" href="./src/css/tailwind-overrides.css">
+  <link rel="stylesheet" href="./src/css/custom-cursor.css">
+  <link rel="stylesheet" href="./src/css/ditko-theme.css">
+  <link rel="stylesheet" href="./src/css/navigation.css">
+  <link rel="stylesheet" href="./src/css/theme-universal.css">
+  <link rel="stylesheet" href="./src/css/header-sticky.css">
+  <link rel="stylesheet" href="./src/css/button-fix.css">
+  <link rel="stylesheet" href="./src/css/back-to-top-fix.css">
+  <link rel="stylesheet" href="./src/css/mobile-menu-functional.css">
+  <link rel="stylesheet" href="./src/css/cards-black-fix.css">
+  <link rel="stylesheet" href="./src/css/gradient-lima-fix.css">
+  <link rel="stylesheet" href="./src/css/modern-cards-unified.css">
+  
+  <style>
+    .project-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+      gap: 2rem;
+      margin-top: 3rem;
+    }
+    
+    .project-card-modern {
+      background: #000000;
+      color: #ffffff;
+      border-radius: 20px;
+      border: 1px solid rgba(26, 77, 46, 0.3);
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5);
+      overflow: hidden;
+      transition: all 0.6s ease;
+      position: relative;
+      transform: translateY(30px);
+      opacity: 0;
+    }
+    
+    .project-card-modern:hover {
+      transform: translateY(-10px) scale(1.02);
+      border-color: #22704a;
+      box-shadow: 0 20px 50px rgba(26, 77, 46, 0.4);
+    }
+    
+    .project-image {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-bottom: 1px solid rgba(26, 77, 46, 0.3);
+    }
+    
+    .project-content {
+      padding: 2rem;
+      background: var(--dark-bg) !important;
+    }
+    
+    .project-title {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #ffffff;
+      margin-bottom: 0.5rem;
+    }
+    
+    .project-category {
+      color: #22704a;
+      font-weight: 600;
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 1rem;
+    }
+    
+    .project-description {
+      color: #cccccc;
+      line-height: 1.6;
+      margin-bottom: 1.5rem;
+    }
+    
+    .project-tech-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-bottom: 1.5rem;
+    }
+    
+    .project-tech {
+      background: rgba(26, 77, 46, 0.2);
+      color: #22704a;
+      padding: 0.3rem 0.8rem;
+      border-radius: 15px;
+      font-size: 0.8rem;
+      font-weight: 500;
+      border: 1px solid rgba(26, 77, 46, 0.3);
+    }
+    
+    .project-links {
+      display: flex;
+      gap: 1rem;
+    }
+    
+    .project-link {
+      padding: 0.5rem 1rem;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: all 0.3s ease;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    
+    .project-link-primary {
+      background: linear-gradient(135deg, #22704a, #1a5838);
+      color: #000000;
+    }
+    
+    .project-link-primary:hover {
+      transform: scale(1.05);
+      box-shadow: 0 4px 15px rgba(26, 77, 46, 0.4);
+    }
+    
+    .project-link-secondary {
+      border: 1px solid rgba(26, 77, 46, 0.5);
+      color: #22704a;
+    }
+    
+    .project-link-secondary:hover {
+      background: rgba(26, 77, 46, 0.1);
+    }
+    
+    .page-transition {
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeInUp 0.6s ease forwards;
+    }
+    
+    @keyframes fadeInUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    
+    .section-title {
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: #000000;
+      margin-bottom: 1rem;
+      text-align: center;
+    }
+    
+    .section-subtitle {
+      color: #666666;
+      text-align: center;
+      font-size: 1.1rem;
+      max-width: 600px;
+      margin: 0 auto 3rem;
+    }
+    
+    @media (max-width: 768px) {
+      .project-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body data-has-navbar="true">
+  <!-- Cursor customizado -->
+  <div class="custom-cursor"></div>
+  <div class="cursor-trail"></div>
+  
+  <!-- Navigation -->
+  <nav id="navbar" class="navbar fixed top-0 left-0 w-full z-50" aria-label="Navegação principal">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between h-16 items-center">
+      <a href="index.html" class="font-bold text-green-500 text-xl">Software Engineer | Ryandikto</a>
+      <div class="hidden md:flex space-x-6 items-center">
+        <a href="index.html" class="nav-link text-white">Início</a>
+        <a href="skills.html" class="nav-link text-white">Skills</a>
+        <a href="experiences.html" class="nav-link text-white">Experiências</a>
+        <a href="projects.html" class="nav-link text-white current-page">Projetos</a>
+        <a href="education.html" class="nav-link text-white">Educação</a>
+        <a href="index.html#contact" class="px-6 py-3 bg-green-600 text-white rounded-md hover:bg-green-700 transition transform hover:scale-105">Contato</a>
+      </div>
+  <button id="hamburger" class="hamburger block md:hidden" aria-label="Abrir menu" aria-expanded="false">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="3" y1="6" x2="21" y2="6" />
+          <line x1="3" y1="12" x2="21" y2="12" />
+          <line x1="3" y1="18" x2="21" y2="18" />
+        </svg>
+      </button>
+    </div>
+  <div id="mobile-menu" class="mobile-menu hidden md:hidden flex flex-col">
+      <a href="index.html" class="mobile-menu-item">Início</a>
+      <a href="skills.html" class="mobile-menu-item">Skills</a>
+      <a href="experiences.html" class="mobile-menu-item">Experiências</a>
+      <a href="projects.html" class="mobile-menu-item current-page">Projetos</a>
+      <a href="education.html" class="mobile-menu-item">Educação</a>
+      <a href="index.html#contact" class="mobile-menu-item bg-green-600 text-black hover:bg-green-700 transition">Contato</a>
+    </div>
+  </nav>
+
+  <!-- Main Content -->
+  <main id="main-content" class="pt-32 min-h-screen bg-secondary text-primary">
+    <div class="container mx-auto px-6 py-12 page-transition">
+      <!-- Header -->
+      <div class="text-center mb-16">
+        <h1 class="text-4xl md:text-5xl font-bold mb-4">
+          <span class="gradient-text">Meus</span> <span class="text-primary">Projetos</span>
+        </h1>
+        <p class="text-lg text-secondary max-w-3xl mx-auto">
+          Conheça alguns dos projetos que desenvolvi, desde aplicações web até soluções de automação e análise de dados
+        </p>
+      </div>
+
+      <!-- Projects Grid -->
+      <div class="project-grid">
+        
+        <!-- Project 1 -->
+        <div class="project-card-modern">
+          <img src="./src/img/projetos/20Pilla.png" alt="20Pilla" class="project-image">
+          <div class="project-content">
+            <div class="project-category">Web Application</div>
+            <h3 class="project-title">20Pilla Headshop</h3>
+            <p class="project-description">
+              Landing page moderna desenvolvida para a marca de headshop 20Pilla, com design responsivo e identidade visual única. 
+              A aplicação implementa newsletter automatizada via Email.js para gestão de leads, sistema de atendimento inteligente 
+              integrado e interface otimizada para alta conversão. Foco total em experiência do usuário com navegação fluida, 
+              carregamento rápido e visual impactante que reflete a essência da marca.
+            </p>
+            <div class="project-tech-list">
+              <span class="project-tech">HTML5</span>
+              <span class="project-tech">CSS3</span>
+              <span class="project-tech">JavaScript</span>
+              <span class="project-tech">Email.js</span>
+            </div>
+            <div class="project-links">
+              <a href="https://20-pilla.vercel.app" class="project-link project-link-primary" target="_blank" rel="noopener noreferrer">
+                <i class="fas fa-external-link-alt"></i>
+                Ver Demo
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 2 -->
+        <div class="project-card-modern">
+          <img src="./src/img/projetos/ditko-portfolio.jpg" alt="Ditko.co" class="project-image">
+          <div class="project-content">
+            <div class="project-category">Startup & SaaS</div>
+            <h3 class="project-title">Ditko - Tech Solutions</h3>
+            <p class="project-description">
+              Startup brasileira inovadora focada em soluções digitais escaláveis e inteligência artificial aplicada. 
+              A Ditko oferece desenvolvimento completo de landing pages sob medida com design moderno, automação avançada 
+              de processos empresariais utilizando IA, criação de ferramentas SaaS personalizadas para diferentes nichos 
+              e consultoria estratégica em transformação digital. Ajudamos empresas a alcançarem excelência tecnológica 
+              através de inovação, agilidade e soluções de ponta que geram resultados mensuráveis.
+            </p>
+            <div class="project-tech-list">
+              <span class="project-tech">TypeScript</span>
+              <span class="project-tech">React</span>
+              <span class="project-tech">Tailwind CSS</span>
+              <span class="project-tech">SaaS</span>
+            </div>
+            <div class="project-links">
+              <a href="https://ditkotech.vercel.app" class="project-link project-link-primary" target="_blank" rel="noopener noreferrer">
+                <i class="fas fa-external-link-alt"></i>
+                Ver Site
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 3 -->
+        <div class="project-card-modern">
+          <img src="./src/img/projetos/cosmicbloom-portfolio.jpg" alt="Cosmic Bloom - NASA Space Apps 2025" class="project-image">
+          <div class="project-content">
+            <div class="project-category">NASA Space Apps 2025</div>
+            <h3 class="project-title">Cosmic Bloom</h3>
+            <p class="project-description">
+              Aplicação desenvolvida durante o prestigiado hackathon NASA Space Apps Challenge 2025, representando 
+              oficialmente a cidade de São Paulo no Brasil. Projeto inovador que apresenta soluções criativas para 
+              desafios espaciais reais propostos pela NASA, combinando tecnologia de ponta com foco em sustentabilidade 
+              ambiental. A aplicação explora e visualiza dados astronômicos complexos de forma acessível, promovendo 
+              conscientização ecológica e educação científica através de uma interface interativa e envolvente.
+            </p>
+            <div class="project-tech-list">
+              <span class="project-tech">NASA</span>
+              <span class="project-tech">Hackathon</span>
+              <span class="project-tech">Innovation</span>
+              <span class="project-tech">Space Tech</span>
+            </div>
+            <div class="project-links">
+              <a href="https://cosmic-bloom-2aefcf98.base44.app/" class="project-link project-link-primary" target="_blank" rel="noopener noreferrer">
+                <i class="fas fa-external-link-alt"></i>
+                Ver Projeto
+              </a>
+              <a href="https://cosmic-bloom-2aefcf98.base44.app/" class="project-link project-link-secondary" target="_blank" rel="noopener noreferrer">
+                <i class="fas fa-rocket"></i>
+                Demo
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 4 -->
+        <div class="project-card-modern">
+          <img src="./src/img/projetos/Portal-Das-Equipes-portfolio.jpg" alt="Portal das Equipes" class="project-image">
+          <div class="project-content">
+            <div class="project-category">Internal Tool</div>
+            <h3 class="project-title">Portal das Equipes DEAC</h3>
+            <p class="project-description">
+              Portal corporativo interno desenvolvido especialmente para a Diretoria de Experiência do Cliente (DEAC) 
+              da Leroy Merlin Brasil. A ferramenta centraliza de forma estratégica todos os recursos essenciais, 
+              documentações importantes, ferramentas operacionais e links úteis em uma interface limpa e intuitiva 
+              inspirada no conceito LinkTree. Otimiza significativamente o acesso à informação crítica, reduz tempo 
+              de busca por recursos e aumenta a produtividade das equipes através de navegação simplificada e design responsivo.
+            </p>
+            <div class="project-tech-list">
+              <span class="project-tech">HTML5</span>
+              <span class="project-tech">CSS3</span>
+              <span class="project-tech">JavaScript</span>
+              <span class="project-tech">Responsive Design</span>
+            </div>
+            <div class="project-links">
+              <a href="https://portal-equipes-deac.vercel.app" class="project-link project-link-primary" target="_blank" rel="noopener noreferrer">
+                <i class="fas fa-external-link-alt"></i>
+                Ver Demo
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 5 -->
+        <div class="project-card-modern">
+          <img src="./src/img/projetos/merlin-portfolio.jpg" alt="Merlin" class="project-image">
+          <div class="project-content">
+            <div class="project-category">AI Automation Platform</div>
+            <h3 class="project-title">Merlin</h3>
+            <p class="project-description">
+              Aplicação desenvolvida na plataforma Base44, projetada para automatizar tarefas repetitivas e otimizar 
+              fluxos de trabalho complexos. A plataforma capacita usuários a criar templates inteligentes e reutilizáveis, 
+              gerenciar equipes com controle de permissões granular, e executar automações escaláveis que aumentam 
+              significativamente a agilidade operacional, produtividade e padronização em processos internos corporativos. 
+              Ao reduzir trabalho manual e padronizar operações, o Merlin permite que organizações foquem em iniciativas 
+              estratégicas mantendo consistência e eficiência em escala.
+            </p>
+            <div class="project-tech-list">
+              <span class="project-tech">Base44</span>
+              <span class="project-tech">Automation</span>
+              <span class="project-tech">Workflows</span>
+              <span class="project-tech">Templates</span>
+            </div>
+            <div class="project-links">
+              <span class="project-link project-link-primary" style="opacity: 0.7; cursor: not-allowed;">
+                <i class="fas fa-lock"></i>
+                Acesso Restrito
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 6 -->
+        <div class="project-card-modern">
+          <img src="./src/img/projetos/powerbi-portfolio.jpg" alt="Power BI Analytics" class="project-image">
+          <div class="project-content">
+            <div class="project-category">Data Analytics & BI</div>
+            <h3 class="project-title">Leroy Merlin Dashboard Analytics</h3>
+            <p class="project-description">
+              Dashboard corporativo de analytics desenvolvido exclusivamente para a Diretoria de Experiência do Cliente 
+              da Leroy Merlin Brasil. A solução integra perfeitamente dados complexos provenientes do Genesys Cloud CX 
+              e Salesforce CRM, oferecendo visualizações interativas em tempo real através de fórmulas DAX avançadas. 
+              Permite análise profunda de métricas críticas de Customer Experience (CSAT, NPS, FCR), automação completa 
+              de relatórios gerenciais e geração de insights estratégicos acionáveis que apoiam decisões de negócio 
+              baseadas em dados concretos e tendências identificadas.
+            </p>
+            <div class="project-tech-list">
+              <span class="project-tech">Power BI</span>
+              <span class="project-tech">DAX</span>
+              <span class="project-tech">Genesys Cloud</span>
+              <span class="project-tech">Salesforce</span>
+            </div>
+            <div class="project-links">
+              <span class="project-link project-link-primary" style="opacity: 0.7; cursor: not-allowed;">
+                <i class="fas fa-lock"></i>
+                Projeto Confidencial
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 7 -->
+        <div class="project-card-modern">
+          <img src="./src/img/projetos/iniciação-cientifica.jpg" alt="Iniciação Científica" class="project-image">
+          <div class="project-content">
+            <div class="project-category">Scientific Research</div>
+            <h3 class="project-title">Iniciação Científica em Machine Learning</h3>
+            <p class="project-description">
+              Projeto de pesquisa científica aplicada focado em segurança de sistemas de aprendizado federado (Federated Learning) 
+              e aplicações de machine learning em cibersegurança. O trabalho envolve desenvolvimento e execução de simulações 
+              computacionais de diversos cenários de ataque adversarial, implementação prática de técnicas avançadas de defesa 
+              como Privacidade Diferencial (Differential Privacy), e exploração sistemática de vulnerabilidades em modelos de ML 
+              distribuídos. Contribui para o avanço do conhecimento em segurança de IA através de experimentação rigorosa, 
+              análise de dados e documentação científica detalhada.
+            </p>
+            <div class="project-tech-list">
+              <span class="project-tech">Machine Learning</span>
+              <span class="project-tech">Python</span>
+              <span class="project-tech">Scikit-learn</span>
+              <span class="project-tech">Jupyter</span>
+              <span class="project-tech">Federated Learning</span>
+            </div>
+            <div class="project-links">
+              <a href="https://github.com/Ryanditko/IC-aprendizado-federado-e-machine-learning-em-cybersecurity" class="project-link project-link-primary" target="_blank" rel="noopener noreferrer">
+                <i class="fab fa-github"></i>
+                Ver Repositório
+              </a>
+              <a href="https://www.linkedin.com/in/ryan-rodrigues-592a27313/details/projects" class="project-link project-link-secondary" target="_blank" rel="noopener noreferrer">
+                <i class="fab fa-linkedin"></i>
+                Detalhes
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 8 -->
+        <div class="project-card-modern">
+          <img src="./src/img/projetos/kernal-portfolio.jpg" alt="Kernal" class="project-image">
+          <div class="project-content">
+            <div class="project-category">Bot Discord</div>
+            <h3 class="project-title">Kernal</h3>
+            <p class="project-description">
+              Bot Discord robusto e versátil desenvolvido com TypeScript e Discord.js, focado em segurança remota e 
+              gestão inteligente de comunidades. Oferece funcionalidades avançadas de monitoramento em tempo real, 
+              controle granular de acesso e permissões, proteção multicamadas de servidores contra spam e raids, 
+              sistemas de moderação automática com machine learning, logs detalhados de atividades e ferramentas 
+              completas de administração remota. Ideal para comunidades que buscam segurança, organização e automação 
+              sem comprometer a experiência dos usuários.
+            </p>
+            <div class="project-tech-list">
+              <span class="project-tech">TypeScript</span>
+              <span class="project-tech">Discord.js</span>
+              <span class="project-tech">Segurança</span>
+              <span class="project-tech">Automação</span>
+            </div>
+            <div class="project-links">
+              <a href="https://discordapp.com/oauth2/authorize?client_id=1300981248554041344" class="project-link project-link-primary">
+                <i class="fab fa-discord"></i>
+                Adicionar Bot
+              </a>
+              <a href="https://github.com/Ryanditko/Kernal" class="project-link project-link-secondary" target="_blank" rel="noopener noreferrer">
+                <i class="fab fa-github"></i>
+                Código
+              </a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- CTA Section -->
+      <div class="text-center mt-12">
+        <a href="education.html" class="btn-ditko inline-flex items-center space-x-2">
+          <span>Ver Educação</span>
+          <i class="fas fa-arrow-right"></i>
+        </a>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-black text-white py-8">
+    <div class="container mx-auto px-6 text-center">
+      <p>&copy; 2025 Ryan Rodrigues. Todos os direitos reservados.</p>
+    </div>
+  </footer>
+  <script src="./src/js/navigation.js"></script>
+  <script src="./src/js/custom-cursor.js"></script>
+  <script src="./src/js/theme-manager.js"></script>
+  <script src="./src/js/icon-colors.js"></script>
+  <script src="./src/js/back-to-top.js"></script>
+
+  <!-- Botão "Voltar ao Topo" -->
+  <a href="#" id="back-to-top" 
+     class="fixed bottom-6 right-6 w-12 h-12 bg-green-600 rounded-full flex items-center justify-center text-white shadow-lg hover:bg-green-700 transition duration-300 ease-in-out opacity-0 invisible" 
+     aria-label="Voltar ao topo"
+>
+    <i class="fa-solid fa-arrow-up"></i> 
+  </a>
+
+  <!-- Navigation Script -->
+  <script src="./src/js/navigation.js"></script>
+  <script src="./src/js/mobile-menu-universal.js?v=2"></script>
+  <script src="./src/js/header-sticky.js"></script>
+  <script src="./src/js/custom-cursor.js"></script>
+  <script src="./src/js/theme-manager.js"></script>
+  <script src="./src/js/icon-colors.js"></script>
+  <script src="./src/js/back-to-top.js"></script>
+</body>
+</html>

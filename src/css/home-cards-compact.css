@@ -1,0 +1,103 @@
+/* Cards Compactos para Página Inicial */
+
+/* Skills e Education cards compactos na home */
+#skills .skill-card-modern,
+#education .education-card-modern {
+  min-height: 280px !important;
+  max-height: 320px !important;
+  padding: 1.5rem !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: space-between !important;
+}
+
+/* Ícones menores na home */
+#skills .skill-icon,
+#education .education-icon {
+  font-size: 2.5rem !important;
+  margin-bottom: 1rem !important;
+}
+
+/* Títulos menores na home */
+#skills .skill-title,
+#education .education-title {
+  font-size: 1.2rem !important;
+  margin-bottom: 0.5rem !important;
+  line-height: 1.3 !important;
+}
+
+/* Subtítulos menores na home */
+#skills .skill-subtitle,
+#education .education-institution,
+#education .education-period {
+  font-size: 0.8rem !important;
+  margin-bottom: 0.5rem !important;
+}
+
+/* Descrições compactas na home */
+#education .education-description {
+  font-size: 0.85rem !important;
+  line-height: 1.4 !important;
+  margin-top: 1rem !important;
+  margin-bottom: 0 !important;
+  overflow: hidden !important;
+  display: -webkit-box !important;
+  -webkit-line-clamp: 3 !important;
+  line-clamp: 3 !important;
+  -webkit-box-orient: vertical !important;
+}
+
+/* Tech tags menores na home */
+#skills .skill-tech-list {
+  margin-top: 1rem !important;
+  margin-bottom: 0 !important;
+}
+
+#skills .skill-tech {
+  font-size: 0.7rem !important;
+  padding: 0.2rem 0.6rem !important;
+}
+
+/* Grid responsivo otimizado para home */
+#skills .grid {
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)) !important;
+  gap: 1.5rem !important;
+}
+
+#education .grid {
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)) !important;
+  gap: 1.5rem !important;
+}
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+  #skills .skill-card-modern,
+  #education .education-card-modern {
+    min-height: 250px !important;
+    max-height: 280px !important;
+    padding: 1.2rem !important;
+  }
+  
+  #skills .skill-icon,
+  #education .education-icon {
+    font-size: 2rem !important;
+  }
+  
+  #skills .skill-title,
+  #education .education-title {
+    font-size: 1.1rem !important;
+  }
+  
+  #education .education-description {
+    -webkit-line-clamp: 2 !important;
+    line-clamp: 2 !important;
+  }
+}
+
+@media (max-width: 480px) {
+  #skills .grid,
+  #education .grid {
+    grid-template-columns: 1fr !important;
+    gap: 1rem !important;
+  }
+}

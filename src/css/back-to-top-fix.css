@@ -1,0 +1,46 @@
+/* Back to Top Button Fix */
+#back-to-top {
+  position: fixed !important;
+  bottom: 10px !important;
+  right: 10px !important;
+  width: 48px !important;
+  height: 48px !important;
+  background: linear-gradient(135deg, #22704a, #22704a) !important;
+  color: #000000 !important;
+  border-radius: 50% !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  font-size: 18px !important;
+  font-weight: bold !important;
+  box-shadow: 0 4px 20px rgba(26, 77, 46, 0.4) !important;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  z-index: 999 !important;
+  opacity: 0 !important;
+  visibility: hidden !important;
+  transform: translateY(20px) !important;
+  text-decoration: none !important;
+  border: none !important;
+}
+
+#back-to-top.visible {
+  opacity: 1 !important;
+  visibility: visible !important;
+  transform: translateY(0) !important;
+}
+
+#back-to-top:hover {
+  background: linear-gradient(135deg, #22704a, #22704a) !important;
+  transform: translateY(-2px) scale(1.1) !important;
+  box-shadow: 0 8px 30px rgba(26, 77, 46, 0.6) !important;
+  color: #000000 !important;
+}
+
+#back-to-top:active {
+  transform: translateY(0) scale(1.05) !important;
+}
+
+#back-to-top i {
+  color: #000000 !important;
+  font-size: 16px !important;
+}

@@ -1,0 +1,249 @@
+/* =========================================
+   TEMA DITKO - CORES BRANCO, PRETO E VERDE LIMA
+   ========================================= */
+
+/* Melhorias específicas para o tema Ditko */
+body {
+  background: linear-gradient(135deg, #ffffff 0%, #f8f8f8 100%);
+}
+
+[data-theme="dark"] body {
+  background: linear-gradient(135deg, #000000 0%, #1a1a1a 100%);
+}
+
+/* Botões com estilo Ditko */
+.btn-ditko {
+  background: linear-gradient(135deg, #22704a 0%, #22704a 100%);
+  color: #000000;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  padding: 12px 24px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(26, 77, 46, 0.3);
+}
+
+.btn-ditko:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(26, 77, 46, 0.4);
+  background: linear-gradient(135deg, #22704a 0%, #22704a 100%);
+}
+
+/* Destaque para seções importantes */
+.ditko-highlight {
+  border-left: 4px solid #22704a;
+  padding-left: 16px;
+  background: linear-gradient(90deg, rgba(26, 77, 46, 0.05) 0%, transparent 100%);
+}
+
+[data-theme="dark"] .ditko-highlight {
+  background: linear-gradient(90deg, rgba(26, 77, 46, 0.1) 0%, transparent 100%);
+}
+
+/* Cards com bordas Ditko */
+.ditko-card {
+  border: 1px solid rgba(26, 77, 46, 0.2);
+  background: #ffffff;
+  transition: all 0.3s ease;
+}
+
+.ditko-card:hover {
+  border-color: #22704a;
+  box-shadow: 0 8px 30px rgba(26, 77, 46, 0.15);
+}
+
+[data-theme="dark"] .ditko-card {
+  background: #1a1a1a;
+  border-color: rgba(26, 77, 46, 0.3);
+}
+
+[data-theme="dark"] .ditko-card:hover {
+  border-color: #22704a;
+  box-shadow: 0 8px 30px rgba(148, 227, 39, 0.2);
+}
+
+/* Texto de destaque verde lima */
+.text-ditko {
+  color: #22704a;
+  font-weight: 600;
+}
+
+[data-theme="dark"] .text-ditko {
+  color: #22704a;
+}
+
+/* Gradiente de texto Ditko */
+.text-gradient-ditko {
+  background: linear-gradient(135deg, #22704a 0%, #22704a 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-weight: 700;
+}
+
+/* Loading spinner com cores Ditko */
+.ditko-spinner {
+  border: 3px solid rgba(26, 77, 46, 0.3);
+  border-radius: 50%;
+  border-top: 3px solid #22704a;
+  width: 24px;
+  height: 24px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Separadores com estilo Ditko */
+.ditko-divider {
+  height: 1px;
+  background: linear-gradient(90deg, transparent 0%, #22704a 50%, transparent 100%);
+  margin: 24px 0;
+}
+
+/* Efeito de hover para links */
+.ditko-link {
+  color: var(--text-primary);
+  text-decoration: none;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.ditko-link::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -2px;
+  left: 0;
+  background: linear-gradient(90deg, #22704a, #22704a);
+  transition: width 0.3s ease;
+}
+
+.ditko-link:hover {
+  color: #22704a;
+}
+
+.ditko-link:hover::after {
+  width: 100%;
+}
+
+[data-theme="dark"] .ditko-link:hover {
+  color: #22704a;
+}
+
+/* Badge com estilo Ditko */
+.ditko-badge {
+  background: rgba(26, 77, 46, 0.1);
+  color: #22704a;
+  border: 1px solid rgba(26, 77, 46, 0.3);
+  padding: 4px 8px;
+  border-radius: 12px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+[data-theme="dark"] .ditko-badge {
+  background: rgba(148, 227, 39, 0.15);
+  color: #22704a;
+  border-color: rgba(148, 227, 39, 0.4);
+}
+
+/* Animação de pulso para elementos importantes */
+.ditko-pulse {
+  animation: ditko-pulse 2s infinite;
+}
+
+@keyframes ditko-pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(26, 77, 46, 0.7);
+  }
+  70% {
+    box-shadow: 0 0 0 10px rgba(26, 77, 46, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(26, 77, 46, 0);
+  }
+}
+
+/* Melhorias na navegação */
+nav {
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+/* Efeito glassmorphism para cards */
+.glass-ditko {
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(26, 77, 46, 0.2);
+}
+
+[data-theme="dark"] .glass-ditko {
+  background: rgba(26, 26, 26, 0.9);
+  border-color: rgba(148, 227, 39, 0.3);
+}
+
+/* Cards de educação e skills com fundo preto */
+.education-card,
+.skill-cards > div {
+  background: #000000 !important;
+  color: #ffffff !important;
+  border: 1px solid rgba(26, 77, 46, 0.3) !important;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5) !important;
+}
+
+.education-card:hover,
+.skill-cards > div:hover {
+  border-color: #22704a !important;
+  box-shadow: 
+    0 8px 30px rgba(26, 77, 46, 0.4),
+    0 4px 15px rgba(0, 0, 0, 0.6) !important;
+  transform: translateY(-8px) scale(1.02) !important;
+}
+
+/* Ícones em verde lima */
+.education-card i,
+.skill-cards > div i {
+  color: #22704a !important;
+}
+
+/* Texto secundário em cinza claro */
+.education-card .text-gray-600,
+.skill-cards > div .text-gray-600 {
+  color: #cccccc !important;
+}
+
+/* Títulos em branco */
+.education-card h3,
+.education-card h4,
+.skill-cards > div h3,
+.skill-cards > div h4 {
+  color: #ffffff !important;
+}
+
+[data-theme="light"] .education-card,
+[data-theme="light"] .skill-cards > div {
+  background: #000000 !important;
+  color: #ffffff !important;
+}
+
+[data-theme="dark"] .education-card,
+[data-theme="dark"] .skill-cards > div {
+  background: #000000 !important;
+  color: #ffffff !important;
+  border-color: rgba(148, 227, 39, 0.4) !important;
+}
+
+[data-theme="dark"] .education-card:hover,
+[data-theme="dark"] .skill-cards > div:hover {
+  border-color: #22704a !important;
+  box-shadow: 
+    0 8px 30px rgba(148, 227, 39, 0.5),
+    0 4px 15px rgba(0, 0, 0, 0.7) !important;
+}
