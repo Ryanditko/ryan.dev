@@ -1,0 +1,854 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Portfólio de Ryan Rodrigues, Engenheiro de Software com experiência em DevWeb, RPA, Cloud e Data Analytics">
+  <meta name="keywords" content="engenheiro de software, Ryan Rodrigues, portfólio, desenvolvimento web, RPA, cloud computing">
+  <meta name="author" content="Ryan Rodrigues">
+  <meta property="og:image" content="/src/img/icons/Kali_Logo.png">
+  <meta property="og:url" content="https://ryandev-murex.vercel.app">
+  <meta name="theme-color" content="#22704a">
+  <title>Portfólio | Ryan Rodrigues - Engenheiro de Software</title>
+  
+  <!-- PWA Manifest -->
+  <link rel="manifest" href="/manifest.json">
+  
+  <!-- External CDNs -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/devicon.min.css">
+  <link rel="icon" type="image/png" href="./src/img/icons/Kali_Logo.png">
+  
+  <!-- Custom Styles -->
+  <link rel="stylesheet" href="./src/css/portfolio.css">
+  <link rel="stylesheet" href="./src/css/tailwind-overrides.css">
+  <link rel="stylesheet" href="./src/css/custom-cursor.css">
+  <link rel="stylesheet" href="./src/css/theme-fixes.css">
+  <link rel="stylesheet" href="./src/css/ditko-theme.css">
+  <link rel="stylesheet" href="./src/css/navigation.css">
+  <link rel="stylesheet" href="./src/css/header-sticky.css">
+  <link rel="stylesheet" href="./src/css/back-to-top-fix.css">
+  <link rel="stylesheet" href="./src/css/mobile-menu-functional.css">
+  <link rel="stylesheet" href="./src/css/cards-black-fix.css">
+  <link rel="stylesheet" href="./src/css/gradient-lima-fix.css">
+  <link rel="stylesheet" href="./src/css/modern-cards-unified.css">
+  <link rel="stylesheet" href="./src/css/home-cards-compact.css">
+  
+  <!-- External Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+  
+  <!-- Theme Initialization Script -->
+  <script>
+    // Verificar tema ao carregar a página
+    const getStoredTheme = () => {
+      const stored = localStorage.getItem('portfolio-theme');
+      return ['light', 'dark', 'auto'].includes(stored) ? stored : 'auto';
+    };
+    
+    const getEffectiveTheme = (theme) => {
+      if (theme === 'auto') {
+        return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      }
+      return theme;
+    };
+    
+    const storedTheme = getStoredTheme();
+    const effectiveTheme = getEffectiveTheme(storedTheme);
+    
+    document.documentElement.setAttribute('data-theme', effectiveTheme);
+    document.documentElement.classList.add(effectiveTheme);
+  </script>
+</head>
+
+
+<body class="bg-secondary text-primary">
+  <!-- Cursor customizado -->
+  <div class="custom-cursor"></div>
+  <div class="cursor-trail"></div>
+  
+  <!-- Skip to main content link for accessibility -->
+  <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:px-4 focus:py-2 focus:bg-primary focus:text-white focus:rounded">
+    Pular para o conteúdo principal
+  </a>
+
+  <!-- Navigation -->
+  <nav id="navbar" class="navbar fixed top-0 left-0 w-full z-50 bg-black bg-opacity-95 backdrop-blur-md transition">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between h-16 items-center">
+      <!-- Brand -->
+      <a href="#" class="font-bold text-green-500 text-xl">Software Engineer | Ryandikto</a>
+
+      <!-- Desktop Links -->
+      <div class="hidden md:flex space-x-6 items-center">
+        <a href="#about" class="nav-link text-white">Sobre</a>
+        <a href="skills.html" class="nav-link text-white">Skills</a>
+        <a href="experiences.html" class="nav-link text-white">Experiências</a>
+        <a href="projects.html" class="nav-link text-white">Projetos</a>
+        <a href="education.html" class="nav-link text-white">Educação</a>
+        <a href="#contact" class="px-6 py-3 bg-green-600 text-white rounded-md hover:bg-green-700 transition transform hover:scale-105">Contato</a>
+      </div>
+      <!-- O menu mobile antigo foi removido para substituição -->
+      <!-- Novo Menu Mobile -->
+  <button id="hamburger" class="hamburger block md:hidden" aria-label="Abrir menu" aria-expanded="false">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="3" y1="6" x2="21" y2="6" />
+          <line x1="3" y1="12" x2="21" y2="12" />
+          <line x1="3" y1="18" x2="21" y2="18" />
+        </svg>
+      </button>
+    </div>
+
+  <div id="mobile-menu" class="mobile-menu hidden md:hidden flex flex-col">
+  <a href="index.html" class="mobile-menu-item">Início</a>
+  <a href="skills.html" class="mobile-menu-item">Skills</a>
+  <a href="experiences.html" class="mobile-menu-item">Experiências</a>
+  <a href="projects.html" class="mobile-menu-item">Projetos</a>
+  <a href="education.html" class="mobile-menu-item">Educação</a>
+  <a href="#contact" class="mobile-menu-item">Contato</a>
+    </div>
+  </nav>
+
+
+  <!-- Main Content -->
+  <main id="main-content">
+  
+
+    <!-- Hero Section -->
+  <section class="pt-32 pb-20 px-4 animate-fade-in relative overflow-hidden">
+      <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center hero-content">
+        <div class="md:w-1/2 mb-10 md:mb-0 z-10">
+          <h1 class="text-4xl md:text-5xl font-bold mb-4">
+            <span class="gradient-text">Prazer, eu sou</span> <br />
+            <span id="typed-text" class="text-black"></span>
+          </h1>
+          <p class="text-lg text-gray-600 mb-8">
+            Engenheiro de Software com conhecimento em Web Development, RPA, Cloud Computing e Data Analytics. Transformando problemas complexos em soluções escaláveis e orientadas a resultados.
+          </p>
+          <div class="flex space-x-4">
+            <a href="https://www.linkedin.com/in/ryan-rodrigues-592a27313/details/honors" 
+               class="px-6 py-3 bg-green-600 text-white rounded-md hover:bg-green-700 transition transform hover:scale-105">Marcos</a>
+            <a href="/src/docs/Ryan_Curriculo.pdf" download 
+               class="px-6 py-3 border border-green-600 text-green-600 rounded-md hover:bg-blue-50 transition transform hover:scale-105">Currículo</a>
+          </div>
+        </div>
+        
+        <div class="md:w-1/2 flex justify-center relative z-10">
+          <!-- Efeito de partículas estáticas (sem animação) -->
+          <div class="particles-static absolute inset-0 w-full h-full"></div>
+          
+          <!-- Moldura holográfica -->
+          <div class="holographic-frame absolute rounded-full border-8 border-transparent animate-rotate">
+            <div class="holographic-border"></div>
+          </div>
+          
+          <!-- Foto de perfil com distorção futurista -->
+          <div class="profile-container relative group">
+            <img src="./src/img/pfp/ryan-green-linkedin.jpg" 
+                 alt="Ryan Rodrigues - Software Engineer" 
+                 class="rounded-full border-4 border-white shadow-2xl w-64 h-64 md:w-80 md:h-80 object-cover 
+                        transform transition duration-700 group-hover:scale-105
+                        filter group-hover:brightness-110 group-hover:contrast-110"
+                 loading="lazy">
+            
+            <!-- Efeito de reflexo dinâmico -->
+            <div class="glare absolute inset-0 rounded-full bg-gradient-to-br from-white/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Efeito de fundo verde estático (sem animação) -->
+      <div class="abstract-bg-static absolute right-0 top-1/2 transform -translate-y-1/2 w-1/2 h-full -z-0">
+        <div class="floating-shapes-static"></div>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 px-4 bg-white animate-fade-in">
+      <div class="max-w-7xl mx-auto">
+        <h2 class="text-3xl font-bold text-center mb-12">
+          <span>Sobre</span><span class="gradient-text"> Mim</span>
+        </h2>
+        <div class="flex flex-col md:flex-row">
+          <div class="md:w-1/2 mb-8 md:mb-0 md:pr-8">
+            <h3 class="text-2xl font-semibold mb-4">Quem sou eu?</h3>
+            <p class="text-gray-600 mb-6">
+              Sou um desenvolvedor fullstack de 20 anos de idade apaixonado por criar aplicações escaláveis. Por meio de diversas experiências combino habilidades técnicas com uma abordagem centrada no usuário para entregar produtos de alta qualidade.
+            </p>
+            <p class="text-gray-600 mb-6">
+              Minha jornada começou com desenvolvimento back end em python, porém, logo me apaixonei pela integração entre frontend e backend, o que me levou a me tornar um estudante assíduo em desenvolvimento web também. Por meio disso, atualmente estou construindo meu primeiro negócio pessoal pela startup <strong>DITKO.</strong> 
+            </p>
+            <div class="flex space-x-4">
+              <a href="https://github.com/Ryandikto" class="text-green-600 hover:text-green-800" aria-label="GitHub">
+                <i class="fab fa-github fa-lg"></i> 
+              </a>
+              <a href="https://www.linkedin.com/in/ryan-rodrigues-592a27313" class="text-green-600 hover:text-green-800" aria-label="LinkedIn">
+                <i class="fab fa-linkedin fa-lg"></i>
+              </a>
+              <a href="https://www.instagram.com/ditko.br" class="text-green-600 hover:text-green-800" aria-label="Instagram">
+                <i class="fab fa-instagram fa-lg"></i>
+              </a>
+            </div>
+          </div>
+          <div class="md:w-1/2">
+            <div class="bg-white p-8 rounded-2xl shadow-xl transition hover:shadow-2xl border border-gray-200">
+              <h3 class="text-2xl font-bold text-white-800 mb-6 text-center">Nível de Proficiência</h3>
+              
+              <!-- Skill -->
+              <div class="mb-6">
+                <div class="flex justify-between mb-1">
+                  <span class="text-sm font-semibold text-white-700">Frontend</span>
+                  <span class="text-sm font-semibold text-white-600">80%</span>
+                </div>
+                <div class="w-full h-3 bg-gray-200 rounded-full overflow-hidden">
+                  <div class="h-3 bg-gradient-to-r from-green-500 to-green-600 skill-bar" style="width: 80%; background: linear-gradient(90deg, #22704a, #1a5838) !important;"></div>
+                </div>
+              </div>
+          
+              <!-- Skill -->
+              <div class="mb-6">
+                <div class="flex justify-between mb-1">
+                  <span class="text-sm font-semibold text-white-700">Backend</span>
+                  <span class="text-sm font-semibold text-white-600">100%</span>
+                </div>
+                <div class="w-full h-3 bg-gray-200 rounded-full overflow-hidden">
+                  <div class="h-3 bg-gradient-to-r from-green-500 to-green-600 skill-bar" style="width: 100%; background: linear-gradient(90deg, #22704a, #1a5838) !important;"></div>
+                </div>
+              </div>
+          
+              <!-- Skill -->
+              <div class="mb-6">
+                <div class="flex justify-between mb-1">
+                  <span class="text-sm font-semibold text-white-700">Banco de Dados</span>
+                  <span class="text-sm font-semibold text-white-600">90%</span>
+                </div>
+                <div class="w-full h-3 bg-gray-200 rounded-full overflow-hidden">
+                  <div class="h-3 bg-gradient-to-r from-green-500 to-green-600 skill-bar" style="width: 90%; background: linear-gradient(90deg, #22704a, #1a5838) !important;"></div>
+                </div>
+              </div>
+          
+              <!-- Skill -->
+              <div class="mb-0">
+                <div class="flex justify-between mb-1">
+                  <span class="text-sm font-semibold text-white-700">DevOps</span>
+                  <span class="text-sm font-semibold text-white-600">75%</span>
+                </div>
+                <div class="w-full h-3 bg-gray-200 rounded-full overflow-hidden">
+                  <div class="h-3 bg-gradient-to-r from-green-500 to-green-600 skill-bar" style="width: 75%; background: linear-gradient(90deg, #22704a, #1a5838) !important;"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-20 px-4 bg-gray-50">
+      <div class="max-w-7xl mx-auto">
+        <h2 class="text-3xl font-bold text-center mb-12">
+          <span>Minhas </span><span class="gradient-text">Stacks</span>
+        </h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+
+          <!-- JavaScript -->
+          <div class="skill-card-modern" style="min-height: auto; padding: 1.5rem;">
+            <i class="devicon-javascript-plain skill-icon" style="font-size: 2.5rem; margin-bottom: 1rem;"></i>
+            <h3 class="skill-title" style="font-size: 1.2rem;">JavaScript</h3>
+            <p class="skill-subtitle" style="font-size: 0.8rem;">Linguagem Principal</p>
+            <div class="skill-tech-list" style="margin-top: 1rem;">
+              <span class="skill-tech" style="font-size: 0.7rem;">ES6+</span>
+              <span class="skill-tech" style="font-size: 0.7rem;">Async/Await</span>
+            </div>
+          </div>
+
+          <!-- TypeScript -->
+          <div class="skill-card-modern" style="min-height: auto; padding: 1.5rem;">
+            <i class="devicon-typescript-plain skill-icon" style="font-size: 2.5rem; margin-bottom: 1rem;"></i>
+            <h3 class="skill-title" style="font-size: 1.2rem;">TypeScript</h3>
+            <p class="skill-subtitle" style="font-size: 0.8rem;">Tipagem Estática</p>
+            <div class="skill-tech-list" style="margin-top: 1rem;">
+              <span class="skill-tech" style="font-size: 0.7rem;">Types</span>
+              <span class="skill-tech" style="font-size: 0.7rem;">Interfaces</span>
+            </div>
+          </div>
+
+          <!-- Python -->
+          <div class="skill-card-modern" style="min-height: auto; padding: 1.5rem;">
+            <i class="devicon-python-plain skill-icon" style="font-size: 2.5rem; margin-bottom: 1rem;"></i>
+            <h3 class="skill-title" style="font-size: 1.2rem;">Python</h3>
+            <p class="skill-subtitle" style="font-size: 0.8rem;">Data Science & Backend</p>
+            <div class="skill-tech-list" style="margin-top: 1rem;">
+              <span class="skill-tech" style="font-size: 0.7rem;">FastAPI</span>
+              <span class="skill-tech" style="font-size: 0.7rem;">Pandas</span>
+            </div>
+          </div>
+
+          <!-- Node.js -->
+          <div class="skill-card-modern" style="min-height: auto; padding: 1.5rem;">
+            <i class="devicon-nodejs-plain skill-icon" style="font-size: 2.5rem; margin-bottom: 1rem;"></i>
+            <h3 class="skill-title" style="font-size: 1.2rem;">Node.js</h3>
+            <p class="skill-subtitle" style="font-size: 0.8rem;">Runtime JavaScript</p>
+            <div class="skill-tech-list" style="margin-top: 1rem;">
+              <span class="skill-tech" style="font-size: 0.7rem;">Express.js</span>
+              <span class="skill-tech" style="font-size: 0.7rem;">REST API</span>
+            </div>
+          </div>
+
+          <!-- AWS -->
+          <div class="skill-card-modern" style="min-height: auto; padding: 1.5rem;">
+            <i class="devicon-amazonwebservices-plain skill-icon" style="font-size: 2.5rem; margin-bottom: 1rem;"></i>
+            <h3 class="skill-title" style="font-size: 1.2rem;">AWS</h3>
+            <p class="skill-subtitle" style="font-size: 0.8rem;">Cloud Computing</p>
+            <div class="skill-tech-list" style="margin-top: 1rem;">
+              <span class="skill-tech" style="font-size: 0.7rem;">EC2</span>
+              <span class="skill-tech" style="font-size: 0.7rem;">S3</span>
+            </div>
+          </div>
+
+          <!-- Docker -->
+          <div class="skill-card-modern" style="min-height: auto; padding: 1.5rem;">
+            <i class="devicon-docker-plain skill-icon" style="font-size: 2.5rem; margin-bottom: 1rem;"></i>
+            <h3 class="skill-title" style="font-size: 1.2rem;">Docker</h3>
+            <p class="skill-subtitle" style="font-size: 0.8rem;">Containerização</p>
+            <div class="skill-tech-list" style="margin-top: 1rem;">
+              <span class="skill-tech" style="font-size: 0.7rem;">Containers</span>
+              <span class="skill-tech" style="font-size: 0.7rem;">Compose</span>
+            </div>
+          </div>
+
+          <!-- PostgreSQL -->
+          <div class="skill-card-modern" style="min-height: auto; padding: 1.5rem;">
+            <i class="devicon-postgresql-plain skill-icon" style="font-size: 2.5rem; margin-bottom: 1rem;"></i>
+            <h3 class="skill-title" style="font-size: 1.2rem;">PostgreSQL</h3>
+            <p class="skill-subtitle" style="font-size: 0.8rem;">Banco de Dados</p>
+            <div class="skill-tech-list" style="margin-top: 1rem;">
+              <span class="skill-tech" style="font-size: 0.7rem;">SQL</span>
+              <span class="skill-tech" style="font-size: 0.7rem;">Queries</span>
+            </div>
+          </div>
+
+          <!-- Git -->
+          <div class="skill-card-modern" style="min-height: auto; padding: 1.5rem;">
+            <i class="devicon-git-plain skill-icon" style="font-size: 2.5rem; margin-bottom: 1rem;"></i>
+            <h3 class="skill-title" style="font-size: 1.2rem;">Git</h3>
+            <p class="skill-subtitle" style="font-size: 0.8rem;">Controle de Versão</p>
+            <div class="skill-tech-list" style="margin-top: 1rem;">
+              <span class="skill-tech" style="font-size: 0.7rem;">GitHub</span>
+              <span class="skill-tech" style="font-size: 0.7rem;">CI/CD</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-20 px-4 bg-white animate-fade-in">
+      <div class="max-w-7xl mx-auto">
+        <h2 class="text-3xl font-bold text-center mb-12">
+          <span>Projetos </span><span class="gradient-text">Realizados</span>
+        </h2>
+
+        <!-- Grid principal (Projetos 1–3) -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 projects-grid">
+
+          <!-- Project 1 - Ditko -->
+          <div class="bg-white rounded-lg overflow-hidden shadow-sm card-hover transition project-card interactive-card">
+            <div class="relative h-48 overflow-hidden">
+              <img src="./src/img/projetos/ditko-portfolio.jpg"
+                  alt="Site da startup Ditko"
+                  loading="lazy"
+                  class="w-full h-full object-cover">
+              <div class="project-overlay project-overlay-green absolute inset-0 flex items-center justify-center opacity-0 transition" aria-hidden="true">
+                <a href="https://ditkotech.vercel.app"
+                  class="text-white px-4 py-2 border-2 border-white rounded-md hover:bg-white hover:text-green-600 transition"
+                  aria-label="Visitar site Ditko">Ver Detalhes</a>
+              </div>
+            </div>
+            <div class="p-6">
+              <h3 class="font-semibold text-xl mb-2">Ditko - Startup</h3>
+              <p class="text-gray-600 mb-4">Minha startup de soluções digitais brasileiras. Plataforma completa para automação, landing pages e produtos SaaS para empresas que querem crescer com tecnologia de qualidade mundial.</p>
+              <div class="flex flex-wrap gap-2">
+                <span class="project-tag project-tag-green">TypeScript</span>
+                <span class="project-tag project-tag-green">React</span>
+                <span class="project-tag project-tag-green">Tailwind</span>
+                <span class="project-tag project-tag-green">SaaS</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 2 - Leroy Merlin BI -->
+          <div class="bg-white rounded-lg overflow-hidden shadow-sm card-hover transition project-card interactive-card">
+            <div class="relative h-48 overflow-hidden">
+              <img src="./src/img/projetos/powerbi-portfolio.jpg"
+                  alt="Dashboard de Analytics da Leroy Merlin mostrando gráficos e métricas"
+                  loading="lazy"
+                  class="w-full h-full object-cover">
+              <div class="project-overlay project-overlay-gray absolute inset-0 flex items-center justify-center opacity-0 transition" aria-hidden="true">
+                <span class="text-white px-4 py-2 border-2 border-white rounded-md">Apenas Expositivo</span>
+              </div>
+            </div>
+            <div class="p-6">
+              <h3 class="font-semibold text-xl mb-2">Leroy Merlin Dashboard Analytics</h3>
+              <p class="text-gray-600 mb-4">Dashboard corporativo com integração Genesys Cloud e Salesforce. Visualizações em tempo real com DAX avançado para análise de CX e insights estratégicos.</p>
+              <div class="flex flex-wrap gap-2">
+                <span class="project-tag project-tag-green">Power BI</span>
+                <span class="project-tag project-tag-green">DAX</span>
+                <span class="project-tag project-tag-green">Genesys Cloud</span>
+                <span class="project-tag project-tag-green">Salesforce</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 3 - Cosmic Bloom -->
+          <div class="bg-white rounded-lg overflow-hidden shadow-sm card-hover transition project-card interactive-card">
+            <div class="relative h-48 overflow-hidden">
+              <img src="./src/img/projetos/cosmicbloom-portfolio.jpg"
+                  alt="Cosmic Bloom - NASA Space Apps 2025"
+                  loading="lazy"
+                  class="w-full h-full object-cover">
+              <div class="project-overlay project-overlay-blue absolute inset-0 flex items-center justify-center opacity-0 transition" aria-hidden="true">
+                <a href="https://cosmic-bloom-2aefcf98.base44.app/"
+                  class="text-white px-4 py-2 border-2 border-white rounded-md hover:bg-white hover:text-blue-600 transition"
+                  aria-label="Ver detalhes Cosmic Bloom">Ver Detalhes</a>
+              </div>
+            </div>
+            <div class="p-6">
+              <h3 class="font-semibold text-xl mb-2">Cosmic Bloom</h3>
+              <p class="text-gray-600 mb-4">Aplicação desenvolvida durante o NASA Space Apps 2025, representando São Paulo no Brasil. Solução inovadora para desafios espaciais com foco em tecnologia e sustentabilidade.</p>
+              <div class="flex flex-wrap gap-2">
+                <span class="project-tag project-tag-blue">NASA</span>
+                <span class="project-tag project-tag-blue">Hackathon</span>
+                <span class="project-tag project-tag-blue">Innovation</span>
+                <span class="project-tag project-tag-blue">Space Tech</span>
+              </div>
+            </div>
+          </div>
+        </div> <!-- fim grid inicial -->
+
+        <!-- Projetos extras (4 a 8) -->
+        <div id="extra-projects" class="hidden grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-8">
+
+          <!-- Project 4 - 20Pilla -->
+          <div class="bg-white rounded-lg overflow-hidden shadow-sm card-hover transition project-card interactive-card">
+            <div class="relative h-48 overflow-hidden">
+              <img src="./src/img/projetos/20Pilla.png"
+                  alt="Página inicial da loja 20Pilla Headshop"
+                  loading="lazy"
+                  class="w-full h-full object-cover">
+              <div class="project-overlay project-overlay-purple absolute inset-0 flex items-center justify-center opacity-0 transition" aria-hidden="true">
+                <a href="https://20-pilla.vercel.app"
+                  class="text-white px-4 py-2 border-2 border-white rounded-md hover:bg-green-700 hover:text-purple-600 transition"
+                  aria-label="Visitar site 20Pilla">Ver Detalhes</a>
+              </div>
+            </div>
+            <div class="p-6">
+              <h3 class="font-semibold text-xl mb-2">20Pilla Headshop</h3>
+              <p class="text-gray-600 mb-4">Landing page moderna com newsletter automatizada via Email.js e sistema de atendimento inteligente. Interface otimizada para conversão e identidade visual única.</p>
+              <div class="flex flex-wrap gap-2">
+                <span class="project-tag project-tag-purple">HTML5</span>
+                <span class="project-tag project-tag-purple">CSS3</span>
+                <span class="project-tag project-tag-purple">JavaScript</span>
+                <span class="project-tag project-tag-purple">Email.js</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 5 - Portal das Equipes -->
+          <div class="bg-white rounded-lg overflow-hidden shadow-sm card-hover transition project-card interactive-card">
+            <div class="relative h-48 overflow-hidden">
+              <img src="./src/img/projetos/Portal-Das-Equipes-portfolio.jpg"
+                  alt="Portal das Equipes - Sistema colaborativo"
+                  loading="lazy"
+                  class="w-full h-full object-cover">
+              <div class="project-overlay project-overlay-blue absolute inset-0 flex items-center justify-center opacity-0 transition" aria-hidden="true">
+                <a href="https://portal-equipes-deac.vercel.app"
+                  class="text-white px-4 py-2 border-2 border-white rounded-md hover:bg-white hover:text-blue-600 transition"
+                  aria-label="Visitar Portal das Equipes">Ver Detalhes</a>
+              </div>
+            </div>
+            <div class="p-6">
+              <h3 class="font-semibold text-xl mb-2">Portal das Equipes DEAC</h3>
+              <p class="text-gray-600 mb-4">Portal corporativo para a Leroy Merlin que centraliza recursos e ferramentas da Diretoria de Experiência do Cliente em interface intuitiva estilo LinkTree.</p>
+              <div class="flex flex-wrap gap-2">
+                <span class="project-tag project-tag-blue">HTML5</span>
+                <span class="project-tag project-tag-blue">CSS3</span>
+                <span class="project-tag project-tag-blue">JavaScript</span>
+                <span class="project-tag project-tag-blue">Responsive Design</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 6 - Merlin -->
+          <div class="bg-white rounded-lg overflow-hidden shadow-sm card-hover transition project-card interactive-card">
+            <div class="relative h-48 overflow-hidden">
+              <img src="./src/img/projetos/merlin-portfolio.jpg"
+                  alt="Aplicação Merlin com IA"
+                  loading="lazy"
+                  class="w-full h-full object-cover">
+              <div class="project-overlay project-overlay-purple absolute inset-0 flex items-center justify-center opacity-0 transition" aria-hidden="true">
+                <span class="text-white px-4 py-2 border-2 border-white rounded-md">Acesso Restrito</span>
+              </div>
+            </div>
+            <div class="p-6">
+              <h3 class="font-semibold text-xl mb-2">Merlin</h3>
+              <p class="text-gray-600 mb-4">Aplicação desenvolvida na plataforma Base44 para automatizar tarefas repetitivas e otimizar fluxos de trabalho. Permite criar templates inteligentes, gerenciar equipes e executar automações escaláveis, aumentando agilidade e produtividade.</p>
+              <div class="flex flex-wrap gap-2">
+                <span class="project-tag project-tag-purple">Base44</span>
+                <span class="project-tag project-tag-purple">Automation</span>
+                <span class="project-tag project-tag-purple">Workflows</span>
+                <span class="project-tag project-tag-purple">Templates</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 6 - Kernal -->
+          <div class="bg-white rounded-lg overflow-hidden shadow-sm card-hover transition project-card interactive-card">
+            <div class="relative h-48 overflow-hidden">
+              <img src="./src/img/projetos/kernal-portfolio.jpg"
+                  alt="Bot Kernal para Discord"
+                  loading="lazy"
+                  class="w-full h-full object-cover">
+              <div class="project-overlay project-overlay-orange absolute inset-0 flex items-center justify-center opacity-0 transition" aria-hidden="true">
+                <a href="https://discordapp.com/oauth2/authorize?client_id=1300981248554041344"
+                  class="text-white px-4 py-2 border-2 border-white rounded-md hover:bg-white hover:text-orange-600 transition"
+                  aria-label="Adicionar Kernal ao Discord">Ver Detalhes</a>
+              </div>
+            </div>
+            <div class="p-6">
+              <h3 class="font-semibold text-xl mb-2">Kernal</h3>
+              <p class="text-gray-600 mb-4">Bot Discord desenvolvido para segurança remota, com funcionalidades avançadas de monitoramento, controle de acesso e proteção de servidores. Implementa sistemas de moderação automática e ferramentas de administração remota.</p>
+              <div class="flex flex-wrap gap-2">
+                <span class="project-tag project-tag-orange">TypeScript</span>
+                <span class="project-tag project-tag-orange">Discord.js</span>
+                <span class="project-tag project-tag-orange">Segurança</span>
+                <span class="project-tag project-tag-orange">Automação</span>
+              </div>
+              <div class="mt-4 flex gap-2">
+                <a href="https://github.com/Ryanditko/Kernal"
+                  class="text-gray-600 hover:text-orange-600 transition inline-flex items-center gap-1"
+                  target="_blank" rel="noopener noreferrer">
+                  <i class="fab fa-github"></i>
+                  Código
+                </a>
+                <a href="https://discordapp.com/oauth2/authorize?client_id=1300981248554041344"
+                  class="text-gray-600 hover:text-orange-600 transition inline-flex items-center gap-1"
+                  target="_blank" rel="noopener noreferrer">
+                  <i class="fab fa-discord"></i>
+                  Adicionar Bot
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 7 - Machine Learning -->
+          <div class="bg-white rounded-lg overflow-hidden shadow-sm card-hover transition project-card interactive-card">
+            <div class="relative h-48 overflow-hidden">
+              <img src="./src/img/projetos/iniciação-cientifica.jpg"
+                  alt="Diagrama de aprendizado federado em machine learning"
+                  loading="lazy"
+                  class="w-full h-full object-cover">
+              <div class="project-overlay project-overlay-pink absolute inset-0 flex items-center justify-center opacity-0 transition" aria-hidden="true">
+                <a href="https://github.com/Ryanditko/IC-aprendizado-federado-e-machine-learning-em-cybersecurity"
+                  class="text-white px-4 py-2 border-2 border-white rounded-md hover:bg-white hover:text-pink-600 transition"
+                  target="_blank" rel="noopener noreferrer"
+                  aria-label="Ver repositório da Iniciação Científica">Ver Detalhes</a>
+              </div>
+            </div>
+            <div class="p-6">
+              <h3 class="font-semibold text-xl mb-2">Iniciação Científica ML</h3>
+              <p class="text-gray-600 mb-4">Pesquisa em segurança de aprendizado federado e ML em cibersegurança. Simulações de cenários de ataque e defesa com Privacidade Diferencial.</p>
+              <div class="flex flex-wrap gap-2">
+                <span class="project-tag project-tag-pink">Machine Learning</span>
+                <span class="project-tag project-tag-pink">Python</span>
+                <span class="project-tag project-tag-pink">Scikit-learn</span>
+                <span class="project-tag project-tag-pink">Federated Learning</span>
+              </div>
+            </div>
+          </div>
+        </div> <!-- fim extra-projects -->
+
+        <!-- Botão -->
+        <div class="text-center mt-8">
+          <a href="#" id="toggle-projects"
+            class="px-6 py-3 border border-green-600 text-green-600 rounded-md hover:bg-green-50 transition">
+            Ver mais projetos
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="py-20 px-4 bg-gray-50 animate-fade-in">
+      <div class="max-w-7xl mx-auto">
+        <h2 class="text-3xl font-bold text-center mb-12">
+          <span>Experiência </span><span class="gradient-text">Profissional</span>
+        </h2>
+        <div class="space-y-8">
+          <!-- Experience 1 -->
+          <div class="bg-white p-6 rounded-lg shadow-sm">
+            <div class="flex flex-col md:flex-row md:items-center justify-between mb-2">
+              <h3 class="font-semibold text-xl">Analista de Informações Gerenciais Jr</h3>
+              <span class="text-green-600">Junho 2025 - Momento Atual</span>
+            </div>
+            <p class="text-gray-500 mb-4">Leroy Merlin Brasil</p>
+            <ul class="list-disc list-inside text-gray-600 space-y-2">
+              <li>Atuação diretamente no tratamento, análise exploratória e visualização de dados</li>
+              <li>Utilização de Python, ferramentas de BI e integração com o Genesys Cloud. </li>
+              <li>O objetivo é gerar insights estratégicos para a operação, com foco em CX Analytics, automação de relatórios e construção de dashboards que apoiam a tomada de decisão.</li>
+              <div class="flex flex-wrap gap-2 mt-3">
+                <span class="project-tag project-tag-green">Salesforce</span>
+                <span class="project-tag project-tag-green">R</span>
+                <span class="project-tag project-tag-green">Power BI</span>
+                <span class="project-tag project-tag-green">Exploratory & Operational Data Science </span>
+                <span class="project-tag project-tag-green"> CX Analytics</span>
+                <span class="project-tag project-tag-green">Dashboard Design </span>
+                <span class="project-tag project-tag-green">Genesys Cloud</span>
+              </div>
+            </ul>
+          </div>
+          
+          <!-- Experience 2 -->
+          <div class="bg-white p-6 rounded-lg shadow-sm">
+            <div class="flex flex-col md:flex-row md:items-center justify-between mb-2">
+              <h3 class="font-semibold text-xl">Assistente de Relacionamento com o cliente</h3>
+              <span class="text-green-600">Março 2025 - Junho 2025</span>
+            </div>
+            <p class="text-gray-500 mb-4">Leroy Merlin Brasil</p>
+            <ul class="list-disc list-inside text-gray-600 space-y-2">
+              <li>Imersão prática no setor de Ouvidoria.</li>
+              <li>Atuação no programa "EU PROTAGONISTA" dentro da diretoria de experiência do cliente</li>
+              <li>Habilidades em comunicação estratégica, escuta ativa, resolução de conflitos e atuação consultiva voltada à jornada do cliente.</li>
+              <div class="flex flex-wrap gap-2 mt-3">
+                <span class="project-tag project-tag-green">Customer Experience</span>
+                <span class="project-tag project-tag-green">CRM </span>
+                <span class="project-tag project-tag-green">Business Research</span>
+                <span class="project-tag project-tag-green">Ouvidoria Strategy</span>
+                <span class="project-tag project-tag-green"> CX Analytics</span>
+                <span class="project-tag project-tag-green"> Atendimento Consultivo</span>
+              </div>
+            </ul>
+          </div>
+          
+          <!-- Experience 3 -->
+          <div class="bg-white p-6 rounded-lg shadow-sm">
+            <div class="flex flex-col md:flex-row md:items-center justify-between mb-2">
+              <h3 class="font-semibold text-xl">Atendimento ao cliente</h3>
+              <span class="text-green-600">Junho de 2024 - Março de 2025</span>
+            </div>
+            <p class="text-gray-500 mb-4">Leroy Merlin Brasil</p>
+            <ul class="list-disc list-inside text-gray-600 space-y-2">
+              <li>Desenvolvimento de soluções personalizadas para automação de processos</li>
+              <li>Intermediando clientes, transportadoras e lojas para garantir fluidez no processo de entrega</li>
+              <li>Suporte completo no pós-venda</li>
+              <div class="flex flex-wrap gap-2 mt-3">
+                <span class="project-tag project-tag-green">Customer Support</span>
+                <span class="project-tag project-tag-green">Process Automation</span>
+                <span class="project-tag project-tag-green">Problem Solving</span>
+                <span class="project-tag project-tag-green">Logistics Operations</span>
+                <span class="project-tag project-tag-green"> Insights Operacionais</span>
+                <span class="project-tag project-tag-green"> Atendimento Consultivo</span>
+              </div>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Personal Experience Section -->
+    <section id="experience-personal" class="py-20 px-4 bg-white animate-fade-in">
+      <div class="max-w-7xl mx-auto">
+        <h2 class="text-3xl font-bold text-center mb-12">
+          <span>Experiência</span><span class="gradient-text"> Pessoal</span>
+        </h2>
+        <div class="space-y-8">
+          <!-- Experience 1 -->
+          <div class="personal-xp bg-white p-6 rounded-lg shadow-sm interactive-card" style="border: solid 1px #1a5838;">
+              <div class="flex flex-col md:flex-row md:items-center justify-between mb-2">
+                <h3 class="font-semibold text-xl">CEO & Founder</h3>
+                <span class="text-green-600">Julho 2025 - Momento Atual</span>
+              </div>
+              <p class="text-gray-500 mb-4">Ditko</p>
+              <ul class="list-disc list-inside text-gray-600 space-y-2">
+                <li>Startup de automação e IA</li>
+                <li>Inovação e inteligência aplicada</li>
+                <li>Tools para SaaS e Desenvolvimento de sistemas</li>
+                <div class="flex flex-wrap gap-2 mt-3">
+                  <span class="project-tag project-tag-green">Software Enginnering</span>
+                  <span class="project-tag project-tag-green">Gateways</span>
+                  <span class="project-tag project-tag-green">Bussiness</span>
+                  <span class="project-tag project-tag-green">Enterprising</span>
+                </div>
+              </ul>
+            </div>
+
+            <!-- Experience 2 -->
+            <div class="bg-white p-6 rounded-lg shadow-sm interactive-card" style="border: solid 1px #1a5838;">
+                <div class="flex flex-col md:flex-row md:items-center justify-between mb-2">
+                  <h3 class="font-semibold text-xl">Desenvolvedor Web Fullstack</h3>
+                  <span class="text-green-600">Novembro 2024- Momento Atual</span>
+                </div>
+                <p class="text-gray-500 mb-4">Ditko</p>
+                <ul class="list-disc list-inside text-gray-600 space-y-2">
+                  <li>Landing Pages e UI design</li>
+                  <li>Freelancing </li>
+                  <li>API e Ferramentas</li>
+                  <div class="flex flex-wrap gap-2 mt-3">
+                    <span class="project-tag project-tag-green">Software Developing</span>
+                    <span class="project-tag project-tag-green">HTML</span>
+                    <span class="project-tag project-tag-green">CSS</span>
+                    <span class="project-tag project-tag-green">JavaScript</span>
+                    <span class="project-tag project-tag-green">React</span>
+                    <span class="project-tag project-tag-green">Node.js</span>
+                    <span class="project-tag project-tag-green">Sqlite</span>
+                    <span class="project-tag project-tag-green">Express</span>
+                    <span class="project-tag project-tag-green">Docker</span>
+                    <span class="project-tag project-tag-green">Git</span>
+                    <span class="project-tag project-tag-green">GitHub</span>
+                    <span class="project-tag project-tag-green">Tailwind CSS</span>
+                    <span class="project-tag project-tag-green">Bootstrap</span>
+                    <span class="project-tag project-tag-green">Material-UI</span>
+                    <span class="project-tag project-tag-green"> Figma & Canva</span>
+                  </div>
+                </ul>
+              </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education" class="py-20 px-4 bg-gray-50 animate-fade-in">
+      <div class="max-w-7xl mx-auto">
+        <h2 class="text-3xl font-bold text-center mb-12">
+          <span>Formação </span><span class="gradient-text">Acadêmica</span>
+        </h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          
+          <!-- Current Education -->
+          <div class="education-card-modern" style="min-height: auto; padding: 1.5rem;">
+            <i class="fas fa-university education-icon" style="font-size: 2.5rem; margin-bottom: 1rem;"></i>
+            <h3 class="education-title" style="font-size: 1.2rem;">Tecnólogo em ADS</h3>
+            <div class="education-institution" style="font-size: 0.8rem;">Impacta Tecnologia</div>
+            <div class="education-period" style="font-size: 0.8rem;">2024 - 2026</div>
+            <p class="education-description" style="font-size: 0.85rem; margin-top: 1rem;">
+              Formação focada em desenvolvimento de software e metodologias ágeis.
+            </p>
+          </div>
+
+          <!-- High School -->
+          <div class="education-card-modern" style="min-height: auto; padding: 1.5rem;">
+            <i class="fas fa-graduation-cap education-icon" style="font-size: 2.5rem; margin-bottom: 1rem;"></i>
+            <h3 class="education-title" style="font-size: 1.2rem;">Ensino Médio</h3>
+            <div class="education-institution" style="font-size: 0.8rem;">Colégio Gondim</div>
+            <div class="education-period" style="font-size: 0.8rem;">2020 - 2023</div>
+            <p class="education-description" style="font-size: 0.85rem; margin-top: 1rem;">
+              Ensino médio com foco em ciências exatas e pensamento lógico.
+            </p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 px-4 bg-black text-white animate-fade-in">
+      <div class="max-w-7xl mx-auto">
+        <h2 class="text-3xl font-bold text-center mb-12">
+          <span>Entre em </span><span class="gradient-text">Contato</span>
+        </h2>
+        <div class="flex flex-col md:flex-row gap-8 contact-section">
+          <div class="md:w-1/2">
+            <h3 class="text-xl font-semibold mb-4">Vamos trabalhar juntos!</h3>
+            <p class="text-gray-400 mb-6">Estou disponível para oportunidades freelance e projetos desafiadores. Envie uma mensagem e vamos conversar sobre como posso ajudar no seu próximo projeto.</p>
+
+            <div class="space-y-4">
+              <div class="flex items-center">
+                <i class="fas fa-envelope text-green-400 mr-4"></i>
+                <span>yryurodriguess@gmail.com</span>
+              </div>
+              <div class="flex items-center">
+                <i class="fas fa-map-marker-alt text-green-400 mr-4"></i>
+                <span>São Paulo, Brasil</span>
+              </div>
+            </div>
+
+            <div class="flex space-x-4 mt-8">
+              <a href="https://github.com/Ryanditko" class="w-10 h-10 bg-black-800 rounded-full flex items-center justify-center hover:bg-green-600 transition" aria-label="GitHub">
+                <i class="fab fa-github"></i>
+              </a>
+              <a href="https://www.linkedin.com/in/ryan-rodrigues-592a27313" class="w-10 h-10 bg-black-800 rounded-full flex items-center justify-center hover:bg-green-600 transition" aria-label="LinkedIn">
+                <i class="fab fa-linkedin-in"></i>
+              </a>
+              <a href="https://www.instagram.com/ditko.br" class="w-10 h-10 bg-black-800 rounded-full flex items-center justify-center hover:bg-green-600 transition" aria-label="Instagram">
+                <i class="fab fa-instagram"></i>
+              </a>
+            </div>
+          </div>
+
+          <div class="md:w-1/2 contact-form">
+            <form action="https://formspree.io/f/mqalpjvz" method="POST" class="bg-black p-6 rounded-lg">
+              <div class="mb-4">
+                <label for="name" class="block text-white mb-2" id="name-label">Nome</label>
+                <input type="text" id="name" name="name" required aria-labelledby="name-label" class="w-full px-4 py-2 bg-white-800 text-black border border-gray-700 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500">
+              </div>
+              <div class="mb-4">
+                <label for="email" class="block text-white mb-2" id="email-label">Email</label>
+                <input type="email" id="email" name="email" required aria-labelledby="email-label" class="w-full px-4 py-2 bg-white-800 text-black border border-gray-700 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500">
+              </div>
+              <div class="mb-4">
+                <label for="subject" class="block text-white mb-2" id="subject-label">Assunto</label>
+                <input type="text" id="subject" name="subject" required aria-labelledby="subject-label" class="w-full px-4 py-2 bg-white-800 text-black border border-gray-700 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500">
+              </div>
+              <div class="mb-6">
+                <label for="message" class="block text-white mb-2" id="message-label">Mensagem</label>
+                <textarea id="message" name="message" rows="4" required aria-labelledby="message-label" class="w-full px-4 py-2 bg-white-800 text-black border border-gray-700 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500"></textarea>
+              </div>
+              <button type="submit" class="w-full px-6 py-3 bg-green-600 text-white rounded-md hover:bg-green-700 transition">Enviar Mensagem</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-black text-gray-400 py-10 px-4" itemscope itemtype="http://schema.org/Person">
+      <div class="max-w-7xl mx-auto">
+        <div class="flex flex-col md:flex-row justify-between items-center">
+          <div class="mb-4 md:mb-0">
+            <a href="#" class="text-xl font-bold gradient-text" itemprop="name">@Ditko.br</a>
+            <p class="text-sm mt-2">© <span itemprop="copyrightYear">2025</span> <span itemprop="name">Ryan Rodrigues Cordeiro</span>. Todos os direitos reservados.</p>
+          </div>
+          <div class="flex space-x-6">
+            <a href="#about" class="hover:text-white transition">Sobre</a>
+            <a href="#skills" class="hover:text-white transition">Stacks</a>
+            <a href="#projects" class="hover:text-white transition">Projetos</a>
+            <a href="#contact" class="hover:text-white transition">Contato</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+  </main>
+
+  <!-- Botão "Voltar ao Topo" -->
+  <a href="#" id="back-to-top" 
+     class="fixed bottom-6 right-6 w-12 h-12 bg-green-600 rounded-full flex items-center justify-center text-white shadow-lg hover:bg-green-700 transition duration-300 ease-in-out opacity-0" 
+     aria-label="Voltar ao topo"
+>
+    <i class="fa-solid fa-arrow-up"></i> 
+  </a>
+
+  <!-- Custom JavaScript -->
+  <script src="./src/js/portfolio.js"></script>
+  <script src="./src/js/navigation.js"></script>
+  <script src="./src/js/mobile-menu-universal.js?v=2"></script>
+  <script src="./src/js/custom-cursor.js"></script>
+  <script src="./src/js/theme-manager.js"></script>
+  <script src="./src/js/icon-colors.js"></script>
+  <script src="./src/js/header-sticky.js"></script>
+  <script src="./src/js/back-to-top.js"></script>
+
+
+</body>
+</html>

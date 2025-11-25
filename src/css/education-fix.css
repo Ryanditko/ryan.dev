@@ -1,0 +1,73 @@
+/* =========================================
+   EDUCATION SECTION FIX - TEMA ESPECÍFICO
+   ========================================= */
+
+/* Education cards tema claro - Fix para remover fundo branco */
+.education-card {
+  background-color: #f3f4f6 !important;
+  border: 1px solid #d1d5db !important;
+  transition: all 0.3s ease !important;
+}
+
+.education-card:hover {
+  background-color: #e5e7eb !important;
+  border-color: #22c55e !important;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05) !important;
+  transform: translateY(-2px) !important;
+}
+
+/* Education cards tema escuro */
+[data-theme="dark"] .education-card {
+  background-color: #374151 !important;
+  border: 1px solid #4b5563 !important;
+  color: #f9fafb !important;
+}
+
+[data-theme="dark"] .education-card:hover {
+  background-color: #4b5563 !important;
+  border-color: #22c55e !important;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3), 0 4px 6px -2px rgba(0, 0, 0, 0.2) !important;
+  transform: translateY(-2px) !important;
+}
+
+[data-theme="dark"] .education-card h3,
+[data-theme="dark"] .education-card p {
+  color: #f9fafb !important;
+}
+
+[data-theme="dark"] .education-card .text-gray-500 {
+  color: #9ca3af !important;
+}
+
+[data-theme="dark"] .education-card .text-gray-600 {
+  color: #d1d5db !important;
+}
+
+/* Sistema de preferência de tema automatico */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .education-card {
+    background-color: #374151 !important;
+    border: 1px solid #4b5563 !important;
+    color: #f9fafb !important;
+  }
+
+  :root:not([data-theme="light"]) .education-card:hover {
+    background-color: #4b5563 !important;
+    border-color: #22c55e !important;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3), 0 4px 6px -2px rgba(0, 0, 0, 0.2) !important;
+    transform: translateY(-2px) !important;
+  }
+
+  :root:not([data-theme="light"]) .education-card h3,
+  :root:not([data-theme="light"]) .education-card p {
+    color: #f9fafb !important;
+  }
+
+  :root:not([data-theme="light"]) .education-card .text-gray-500 {
+    color: #9ca3af !important;
+  }
+
+  :root:not([data-theme="light"]) .education-card .text-gray-600 {
+    color: #d1d5db !important;
+  }
+}

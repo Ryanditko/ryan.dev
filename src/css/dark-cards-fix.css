@@ -1,0 +1,94 @@
+/* Dark Cards Theme - Remove Blue and Keep Dark */
+
+/* Skills Cards */
+.skill-card {
+  background: #1a1a1a !important;
+  border: 1px solid rgba(26, 77, 46, 0.3) !important;
+  color: #ffffff !important;
+}
+
+.skill-card:hover {
+  background: #222222 !important;
+  border-color: rgba(26, 77, 46, 0.5) !important;
+  box-shadow: 0 8px 25px rgba(26, 77, 46, 0.2) !important;
+}
+
+/* Education Cards */
+.education-card,
+.education-card-modern {
+  background: #1a1a1a !important;
+  border: 1px solid rgba(26, 77, 46, 0.3) !important;
+  color: #ffffff !important;
+}
+
+.education-card:hover,
+.education-card-modern:hover {
+  background: #222222 !important;
+  border-color: rgba(26, 77, 46, 0.5) !important;
+  box-shadow: 0 8px 25px rgba(26, 77, 46, 0.2) !important;
+}
+
+/* Project Cards */
+.project-card,
+.project-card-modern {
+  background: #1a1a1a !important;
+  border: 1px solid rgba(26, 77, 46, 0.3) !important;
+  color: #ffffff !important;
+}
+
+.project-card:hover,
+.project-card-modern:hover {
+  background: #222222 !important;
+  border-color: rgba(26, 77, 46, 0.5) !important;
+  box-shadow: 0 8px 25px rgba(26, 77, 46, 0.2) !important;
+}
+
+/* Timeline Cards */
+.timeline-content {
+  background: #1a1a1a !important;
+  border: 1px solid rgba(26, 77, 46, 0.3) !important;
+  color: #ffffff !important;
+}
+
+/* Remove any blue backgrounds */
+.bg-blue-50,
+.bg-blue-100,
+.bg-blue-600,
+.bg-blue-700,
+.bg-blue-800 {
+  background: #1a1a1a !important;
+}
+
+/* Card titles and text */
+.education-title,
+.timeline-title,
+.project-title,
+.skill-title {
+  color: #ffffff !important;
+}
+
+.education-description,
+.timeline-description,
+.project-description,
+.skill-description {
+  color: #cccccc !important;
+}
+
+/* Institution and company names */
+.education-institution,
+.timeline-company,
+.project-category {
+  color: #22704a !important;
+}
+
+/* Certification items */
+.certification-item {
+  background: #1a1a1a !important;
+  border: 1px solid rgba(26, 77, 46, 0.3) !important;
+  color: #ffffff !important;
+}
+
+.certification-item:hover {
+  background: #222222 !important;
+  border-color: rgba(26, 77, 46, 0.5) !important;
+}

@@ -1,0 +1,234 @@
+/* Header Sticky Improvements */
+/* Aplicar tanto ao #navbar (index) quanto a .navbar (outras páginas) */
+#navbar, .navbar { position: fixed !important; top:0 !important; left:0 !important; right:0 !important; width:100% !important; z-index:9999 !important; min-height:64px; transform:none !important; }
+
+/* Scroll behavior enhancements */
+.navbar.scrolled, #navbar.scrolled { background: rgba(0,0,0,0.98); box-shadow:0 8px 32px rgba(0,0,0,0.2); border-bottom:1px solid rgba(132,217,23,0.3); }
+
+/* Light theme navbar */
+[data-theme="light"] .navbar, [data-theme="light"] #navbar { background: rgba(255,255,255,0.95); border-bottom:1px solid rgba(132,217,23,0.2); }
+[data-theme="light"] .navbar.scrolled, [data-theme="light"] #navbar.scrolled { background: rgba(255,255,255,0.98); box-shadow:0 8px 32px rgba(0,0,0,0.1); }
+
+/* Navbar brand improvements */
+#navbar-brand {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #22704a;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  background: linear-gradient(45deg, #22704a, #1a5838);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+#navbar-brand:hover {
+  transform: scale(1.05);
+  filter: brightness(1.2);
+}
+
+/* Navigation links improvements */
+.nav-link {
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 500;
+  position: relative;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+[data-theme="light"] .nav-link {
+  color: #333333;
+}
+
+.nav-link:hover {
+  color: #22704a;
+  background: rgba(26, 77, 46, 0.1);
+  transform: translateY(-2px);
+}
+
+.nav-link.current-page {
+  color: #22704a;
+  background: rgba(26, 77, 46, 0.15);
+  border: 1px solid rgba(26, 77, 46, 0.3);
+}
+
+/* Theme toggle button improvements */
+.theme-toggle {
+  background: rgba(26, 77, 46, 0.2);
+  border: 1px solid rgba(26, 77, 46, 0.3);
+  color: #22704a;
+}
+/* removidos estilos estruturais duplicados do nav */
+
+.theme-toggle:hover {
+  background: rgba(26, 77, 46, 0.3);
+  transform: rotate(180deg) scale(1.1);
+  box-shadow: 0 4px 15px rgba(26, 77, 46, 0.4);
+}
+
+/* Mobile menu improvements */
+.mobile-menu {
+  background: rgba(0, 0, 0, 0.98);
+  backdrop-filter: blur(20px);
+  border-top: 1px solid rgba(26, 77, 46, 0.2);
+  padding: 1rem 0;
+}
+
+[data-theme="light"] .mobile-menu {
+  background: rgba(255, 255, 255, 0.98);
+}
+
+.mobile-menu-item {
+  display: block;
+  padding: 0.75rem 1.5rem;
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  border-left: 3px solid transparent;
+}
+
+[data-theme="light"] .mobile-menu-item {
+  color: #333333;
+}
+
+.mobile-menu-item:hover {
+  background: rgba(26, 77, 46, 0.1);
+  border-left-color: #22704a;
+  color: #22704a;
+  transform: translateX(5px);
+}
+
+/* Hamburger menu improvements */
+.hamburger {
+  background: none;
+  border: none;
+  color: #ffffff;
+  cursor: pointer;
+  padding: 0.5rem;
+  transition: all 0.3s ease;
+}
+
+[data-theme="light"] .hamburger {
+  color: #333333;
+}
+
+.hamburger:hover {
+  color: #22704a;
+  transform: scale(1.1);
+}
+
+/* Contact button improvements */
+.contact-btn {
+  background: linear-gradient(135deg, #22704a, #1a5838);
+  color: #000000 !important;
+  font-weight: 600;
+  padding: 0.75rem 1.5rem !important;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(26, 77, 46, 0.3);
+}
+
+.contact-btn:hover {
+  transform: translateY(-2px) scale(1.05);
+  box-shadow: 0 8px 25px rgba(26, 77, 46, 0.5);
+  filter: brightness(1.1);
+}
+
+/* Smooth scroll behavior */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Body offset for fixed header */
+body {
+  padding-top: 0 !important;
+  margin-top: 0 !important;
+}
+
+/* Removido offset universal: será aplicado manualmente via classe utilitária se necessário */
+main, .main-content, #main-content { min-height: 100vh; }
+
+
+/* Animation for navbar appearance */
+@keyframes slideDown {
+  from {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Animação slide removida para não aplicar transform no container fixo */
+
+/* Responsive improvements */
+@media (max-width: 768px) {
+  #navbar-brand {
+    font-size: 1.1rem;
+  }
+  
+  main, .main-content, #main-content {
+    padding-top: 75px !important;
+  }
+  
+}
+
+@media (max-width: 480px) {
+  #navbar-brand {
+    font-size: 1rem;
+  }
+  
+  main, .main-content, #main-content {
+    padding-top: 70px !important;
+  }
+}
+
+/* Classe utilitária caso JS adicione .navbar-fixed */
+.navbar-fixed { position: fixed !important; top:0 !important; left:0 !important; right:0 !important; }
+
+/* Reforço defensivo quando a página já traz class="navbar fixed" (Tailwind) */
+.navbar.fixed {
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  margin: 0 auto !important;
+  transform: translateY(0) !important;
+}
+
+/* Ajuste global de offset se quisermos marcar no body */
+/* body[data-has-navbar] offset removido para investigar salto inicial */
+/* placeholder removido: nenhuma regra aplicada quando data-has-navbar=true */
+
+/* Reforço final de especificidade (colocado no fim do arquivo) para evitar overrides tardios */
+/* reforço final somente no wrapper */
+/* wrapper removido */
+
+/* Fallback: se por algum motivo fixed for ignorado (ex: modo leitor), ainda manter sticky */
+@supports (position: sticky) {
+  #navbar.is-sticky-fallback, .navbar.is-sticky-fallback {
+    position: sticky !important;
+    top: 0 !important;
+  }
+}
+
+/* Evitar colapso de altura inadvertida */
+/* min-height já ajustado */
+
+/* Garantir espaço do conteúdo sem depender apenas de data attr */
+/* offset condicional removido */
+/* placeholder removido: offsets desativados para depuração */
+
+/* Neutralizar transforms globais que possam quebrar fixed (ex: animações de entrada) */
+html, body { transform: none !important; }
+body.page-enter, .page-enter { transform: none !important; }
+
+/* Regra consolidada extra para qualquer estado inesperado */
+#navbar.scrolled.navbar-fixed, .navbar.navbar-fixed.scrolled { transform: none !important; }

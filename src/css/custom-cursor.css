@@ -1,0 +1,19 @@
+/* =========================================
+   CURSOR PERSONALIZADO DESABILITADO
+   ========================================= */
+
+/* Restaurar cursor padrão em todos os dispositivos */
+* {
+  cursor: auto !important;
+}
+
+/* Remover todos os elementos de cursor personalizado */
+.custom-cursor,
+.cursor-trail,
+.cursor-particle {
+  display: none !important;
+  opacity: 0 !important;
+  visibility: hidden !important;
+}
+
+/* Cursor personalizado completamente desabilitado */

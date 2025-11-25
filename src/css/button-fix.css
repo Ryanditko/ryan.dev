@@ -1,0 +1,41 @@
+/* Navigation Buttons Fix */
+.btn-ditko {
+  background: linear-gradient(135deg, #22704a, #22704a) !important;
+  color: #000000 !important;
+  padding: 12px 24px !important;
+  border-radius: 8px !important;
+  font-weight: 600 !important;
+  text-decoration: none !important;
+  transition: all 0.3s ease !important;
+  border: none !important;
+  box-shadow: 0 4px 15px rgba(26, 77, 46, 0.3) !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+}
+
+.btn-ditko:hover {
+  transform: translateY(-2px) scale(1.05) !important;
+  box-shadow: 0 8px 25px rgba(26, 77, 46, 0.5) !important;
+  filter: brightness(1.1) !important;
+  color: #000000 !important;
+}
+
+.btn-ditko:active {
+  transform: translateY(0) scale(1.02) !important;
+}
+
+/* Ensure text is visible */
+.btn-ditko span {
+  color: #000000 !important;
+  font-weight: 600 !important;
+}
+
+.btn-ditko i {
+  color: #000000 !important;
+}
+
+/* CTA Section buttons */
+.text-center .btn-ditko {
+  margin: 0 auto !important;
+}

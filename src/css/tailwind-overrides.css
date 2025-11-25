@@ -1,0 +1,87 @@
+/* =========================================
+   TAILWIND CSS OVERRIDES - Dark Emerald Green & Black Theme
+   ========================================= */
+
+/* Dark green color overrides for consistent professional theming */
+.text-green-400,
+.text-green-500,
+.text-green-600 {
+  color: #22704a !important;
+}
+
+/* Keep text-gray in white/light colors */
+.text-gray-600 {
+  color: #ffffff !important;
+}
+
+.text-gray-700 {
+  color: #f3f4f6 !important;
+}
+
+.text-green-800 {
+  color: #1a5838 !important;
+}
+
+.border-green-600 {
+  border-color: #22704a !important;
+}
+
+.hover\:bg-green-50:hover {
+  background-color: rgba(26, 77, 46, 0.05) !important;
+}
+
+.hover\:bg-blue-50:hover {
+  background-color: rgba(26, 77, 46, 0.05) !important;
+}
+
+.hover\:text-green-600:hover {
+  color: #22704a !important;
+}
+
+.hover\:text-green-800:hover {
+  color: #1a5838 !important;
+}
+
+/* Additional color overrides */
+.bg-green-500,
+.bg-green-600 {
+  background-color: #22704a !important;
+}
+
+.bg-gray-600 {
+  background-color: #4b5563 !important;
+}
+
+.border-gray-600 {
+  border-color: #4b5563 !important;
+}
+
+.bg-green-700 {
+  background-color: #1a5838 !important;
+}
+
+.hover\:bg-green-700:hover {
+  background-color: #1a5838 !important;
+}
+
+/* Typography overrides with Montserrat and Playfair Display */
+h1, .text-xl {
+  font-family: 'Playfair Display', 'Montserrat', serif !important;
+  font-weight: 700 !important;
+}
+
+h2, .text-2xl {
+  font-family: 'Playfair Display', 'Montserrat', serif !important;
+  font-weight: 600 !important;
+}
+
+h3, h4, .text-lg, .font-semibold {
+  font-family: 'Montserrat', 'Inter', sans-serif !important;
+  font-weight: 600 !important;
+}
+
+/* Garantir que todos os títulos de cards usem Montserrat */
+.timeline-title, .timeline-company, .education-title, .education-institution, .project-title, .skill-title, .card-title {
+  font-family: 'Montserrat', 'Inter', sans-serif !important;
+  font-weight: 700 !important;
+}
