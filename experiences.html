@@ -1,22 +1,25 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Experiências Profissionais - Ryan Rodrigues">
   <meta name="theme-color" content="#22704a">
   <title>Experiências | Ryan Rodrigues</title>
-  
+
   <!-- External CDNs -->
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <link rel="icon" type="image/png" href="./src/img/icons/Kali_Logo.png">
-  
+
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-  
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700;800;900&display=swap"
+    rel="stylesheet">
+
   <!-- Custom Styles -->
   <link rel="stylesheet" href="./src/css/portfolio.css">
   <link rel="stylesheet" href="./src/css/tailwind-overrides.css">
@@ -31,14 +34,15 @@
   <link rel="stylesheet" href="./src/css/cards-black-fix.css">
   <link rel="stylesheet" href="./src/css/gradient-lima-fix.css">
   <link rel="stylesheet" href="./src/css/modern-cards-unified.css">
-  
+  <link rel="stylesheet" href="./src/css/smooth-animations.css">
+
   <style>
     /* Timeline específico para experiências */
     .timeline {
       position: relative;
       padding: 20px 0;
     }
-    
+
     .timeline::before {
       content: '';
       position: absolute;
@@ -49,17 +53,17 @@
       background: linear-gradient(to bottom, #22704a, #1a5838);
       transform: translateX(-50%);
     }
-    
+
     .timeline-item {
       position: relative;
       margin: 40px 0;
       width: 45%;
     }
-    
+
     .timeline-item:nth-child(even) {
       margin-left: 55%;
     }
-    
+
     .timeline-item::before {
       content: '';
       position: absolute;
@@ -72,15 +76,15 @@
       z-index: 10;
       box-shadow: 0 0 0 4px rgba(26, 77, 46, 0.3);
     }
-    
+
     .timeline-item:nth-child(odd)::before {
       right: -60px;
     }
-    
+
     .timeline-item:nth-child(even)::before {
       left: -60px;
     }
-    
+
     .timeline-content {
       background: #000000;
       color: #ffffff;
@@ -91,7 +95,7 @@
       transition: all 0.3s ease;
       position: relative;
     }
-    
+
     .timeline-content::before {
       content: '';
       position: absolute;
@@ -100,23 +104,23 @@
       top: 30px;
       border: 15px solid transparent;
     }
-    
+
     .timeline-item:nth-child(odd) .timeline-content::before {
       right: -30px;
       border-left-color: #000000;
     }
-    
+
     .timeline-item:nth-child(even) .timeline-content::before {
       left: -30px;
       border-right-color: #000000;
     }
-    
+
     .timeline-content:hover {
       transform: scale(1.02);
       border-color: #22704a;
       box-shadow: 0 12px 40px rgba(26, 77, 46, 0.4);
     }
-    
+
     .timeline-date {
       background: linear-gradient(135deg, #22704a, #1a5838);
       color: #000000;
@@ -127,33 +131,33 @@
       margin-bottom: 15px;
       font-size: 0.9rem;
     }
-    
+
     .timeline-title {
       color: #22704a;
       font-size: 1.4rem;
       font-weight: 700;
       margin-bottom: 10px;
     }
-    
+
     .timeline-company {
       color: #ffffff;
       font-size: 1.1rem;
       font-weight: 600;
       margin-bottom: 15px;
     }
-    
+
     .timeline-description {
       color: #cccccc;
       line-height: 1.6;
       margin-bottom: 20px;
     }
-    
+
     .timeline-skills {
       display: flex;
       flex-wrap: wrap;
       gap: 8px;
     }
-    
+
     .timeline-skill {
       background: rgba(26, 77, 46, 0.2);
       color: #22704a;
@@ -162,36 +166,36 @@
       font-size: 0.8rem;
       font-weight: 500;
     }
-    
+
     /* Mobile adaptations */
     @media (max-width: 768px) {
       .timeline::before {
         left: 30px;
       }
-      
+
       .timeline-item {
         width: calc(100% - 80px);
         margin-left: 80px !important;
       }
-      
+
       .timeline-item::before {
         left: -60px !important;
       }
-      
+
       .timeline-content::before {
         left: -30px !important;
         border-right-color: #000000 !important;
         border-left-color: transparent !important;
       }
     }
-    
+
     /* Navigation transitions */
     .page-transition {
       opacity: 0;
       transform: translateY(20px);
       animation: fadeInUp 0.6s ease forwards;
     }
-    
+
     @keyframes fadeInUp {
       to {
         opacity: 1;
@@ -200,11 +204,12 @@
     }
   </style>
 </head>
+
 <body data-has-navbar="true">
   <!-- Cursor customizado -->
   <div class="custom-cursor"></div>
   <div class="cursor-trail"></div>
-  
+
   <!-- Navigation -->
   <nav id="navbar" class="navbar fixed top-0 left-0 w-full z-50" aria-label="Navegação principal">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between h-16 items-center">
@@ -215,23 +220,26 @@
         <a href="experiences.html" class="nav-link text-white current-page">Experiências</a>
         <a href="projects.html" class="nav-link text-white">Projetos</a>
         <a href="education.html" class="nav-link text-white">Educação</a>
-        <a href="index.html#contact" class="px-6 py-3 bg-green-600 text-white rounded-md hover:bg-green-700 transition transform hover:scale-105">Contato</a>
+        <a href="index.html#contact"
+          class="px-6 py-3 bg-green-600 text-white rounded-md hover:bg-green-700 transition transform hover:scale-105">Contato</a>
       </div>
-  <button id="hamburger" class="hamburger block md:hidden" aria-label="Abrir menu" aria-expanded="false">
-        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <button id="hamburger" class="hamburger block md:hidden" aria-label="Abrir menu" aria-expanded="false">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+          stroke-linecap="round" stroke-linejoin="round">
           <line x1="3" y1="6" x2="21" y2="6" />
           <line x1="3" y1="12" x2="21" y2="12" />
           <line x1="3" y1="18" x2="21" y2="18" />
         </svg>
       </button>
     </div>
-  <div id="mobile-menu" class="mobile-menu hidden md:hidden flex flex-col">
+    <div id="mobile-menu" class="mobile-menu hidden md:hidden flex flex-col">
       <a href="index.html" class="mobile-menu-item">Início</a>
       <a href="skills.html" class="mobile-menu-item">Skills</a>
       <a href="experiences.html" class="mobile-menu-item current-page">Experiências</a>
       <a href="projects.html" class="mobile-menu-item">Projetos</a>
       <a href="education.html" class="mobile-menu-item">Educação</a>
-      <a href="index.html#contact" class="mobile-menu-item bg-green-600 text-black hover:bg-green-700 transition">Contato</a>
+      <a href="index.html#contact"
+        class="mobile-menu-item bg-green-600 text-black hover:bg-green-700 transition">Contato</a>
     </div>
   </nav>
 
@@ -250,7 +258,7 @@
 
       <!-- Timeline -->
       <div class="timeline max-w-6xl mx-auto">
-        
+
         <!-- Experience 1 - Atual -->
         <div class="timeline-item">
           <div class="timeline-content">
@@ -258,9 +266,9 @@
             <h3 class="timeline-title">Analista de Informações Gerenciais Jr</h3>
             <h4 class="timeline-company">Leroy Merlin Brasil</h4>
             <p class="timeline-description">
-              Atuação diretamente no tratamento, análise exploratória e visualização de dados. 
-              Utilização de Python, ferramentas de BI e integração com o Genesys Cloud. 
-              O objetivo é gerar insights estratégicos para a operação, com foco em CX Analytics, 
+              Atuação diretamente no tratamento, análise exploratória e visualização de dados.
+              Utilização de Python, ferramentas de BI e integração com o Genesys Cloud.
+              O objetivo é gerar insights estratégicos para a operação, com foco em CX Analytics,
               automação de relatórios e construção de dashboards que apoiam a tomada de decisão.
             </p>
             <div class="timeline-skills">
@@ -282,7 +290,7 @@
             <h3 class="timeline-title">CEO & Founder</h3>
             <h4 class="timeline-company">Ditko</h4>
             <p class="timeline-description">
-              Startup de automação e IA. Inovação e inteligência aplicada. 
+              Startup de automação e IA. Inovação e inteligência aplicada.
               Tools para SaaS e Desenvolvimento de sistemas.
             </p>
             <div class="timeline-skills">
@@ -301,8 +309,8 @@
             <h3 class="timeline-title">Assistente de Relacionamento com o Cliente</h3>
             <h4 class="timeline-company">Leroy Merlin Brasil</h4>
             <p class="timeline-description">
-              Imersão prática no setor de Ouvidoria. Atuação no programa "EU PROTAGONISTA" 
-              dentro da diretoria de experiência do cliente. Habilidades em comunicação estratégica, 
+              Imersão prática no setor de Ouvidoria. Atuação no programa "EU PROTAGONISTA"
+              dentro da diretoria de experiência do cliente. Habilidades em comunicação estratégica,
               escuta ativa, resolução de conflitos e atuação consultiva voltada à jornada do cliente.
             </p>
             <div class="timeline-skills">
@@ -323,8 +331,8 @@
             <h3 class="timeline-title">Atendimento ao Cliente</h3>
             <h4 class="timeline-company">Leroy Merlin Brasil</h4>
             <p class="timeline-description">
-              Desenvolvimento de soluções personalizadas para automação de processos. 
-              Intermediando clientes, transportadoras e lojas para garantir fluidez no processo de entrega. 
+              Desenvolvimento de soluções personalizadas para automação de processos.
+              Intermediando clientes, transportadoras e lojas para garantir fluidez no processo de entrega.
               Suporte completo no pós-venda.
             </p>
             <div class="timeline-skills">
@@ -337,19 +345,19 @@
             </div>
           </div>
         </div>
-            </div>
-          </div>
-        </div>
-
       </div>
+    </div>
+    </div>
 
-      <!-- CTA Section -->
-      <div class="text-center mt-1">
-        <a href="projects.html" class="btn-ditko inline-flex items-center space-x-2">
-          <span>Ver Meus Projetos</span>
-          <i class="fas fa-arrow-right"></i>
-        </a>
-      </div>
+    </div>
+
+    <!-- CTA Section -->
+    <div class="text-center mt-1">
+      <a href="projects.html" class="btn-ditko inline-flex items-center space-x-2">
+        <span>Ver Meus Projetos</span>
+        <i class="fas fa-arrow-right"></i>
+      </a>
+    </div>
     </div>
   </main>
 
@@ -367,9 +375,9 @@
 
   <script>
     // Smooth transitions
-    document.addEventListener('DOMContentLoaded', function() {
+    document.addEventListener('DOMContentLoaded', function () {
       const timelineItems = document.querySelectorAll('.timeline-item');
-      
+
       const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
           if (entry.isIntersecting) {
@@ -378,7 +386,7 @@
           }
         });
       });
-      
+
       timelineItems.forEach(item => {
         item.style.opacity = '0';
         item.style.transform = 'translateY(30px)';
@@ -387,13 +395,12 @@
       });
     });
   </script>
-  
+
   <!-- Botão "Voltar ao Topo" -->
-  <a href="#" id="back-to-top" 
-     class="fixed bottom-6 right-6 w-12 h-12 bg-green-600 rounded-full flex items-center justify-center text-white shadow-lg hover:bg-green-700 transition duration-300 ease-in-out opacity-0 invisible" 
-     aria-label="Voltar ao topo"
->
-    <i class="fa-solid fa-arrow-up"></i> 
+  <a href="#" id="back-to-top"
+    class="fixed bottom-6 right-6 w-12 h-12 bg-green-600 rounded-full flex items-center justify-center text-white shadow-lg hover:bg-green-700 transition duration-300 ease-in-out opacity-0 invisible"
+    aria-label="Voltar ao topo">
+    <i class="fa-solid fa-arrow-up"></i>
   </a>
 
   <!-- Navigation Script -->
@@ -405,4 +412,5 @@
   <script src="./src/js/icon-colors.js"></script>
   <script src="./src/js/back-to-top.js"></script>
 </body>
+
 </html>

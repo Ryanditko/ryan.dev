@@ -11,13 +11,13 @@ class PortfolioApp {
         this.projectsExpanded = false;
         this.lastScrollY = 0;
         this.scrollTimeout = null;
-        
+
         // Bind methods
         this.toggleTheme = this.toggleTheme.bind(this);
         this.toggleMobileMenu = this.toggleMobileMenu.bind(this);
         this.closeMobileMenu = this.closeMobileMenu.bind(this);
         this.toggleProjects = this.toggleProjects.bind(this);
-        
+
         this.init();
     }
 
@@ -28,7 +28,7 @@ class PortfolioApp {
     init() {
         this.initTheme();
         this.setupEventListeners();
-        
+
         // Wait for DOM to be fully loaded
         if (document.readyState === 'loading') {
             document.addEventListener('DOMContentLoaded', () => {
@@ -45,10 +45,10 @@ class PortfolioApp {
         this.initBackToTop();
         this.initProjectsToggle();
         this.handleResponsive();
-        
+
         // Mark as loaded
         document.body.classList.add('loaded');
-        
+
         console.log('Portfolio App initialized successfully');
     }
 
@@ -66,10 +66,10 @@ class PortfolioApp {
 
     applyTheme(theme) {
         const root = document.documentElement;
-        
+
         // Remove existing theme classes
         root.removeAttribute('data-theme');
-        
+
         if (theme === 'auto') {
             // Use system preference
             const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
@@ -79,24 +79,24 @@ class PortfolioApp {
         } else {
             root.setAttribute('data-theme', theme);
         }
-        
+
         this.updateThemeIcons(theme);
     }
 
     updateThemeIcons(theme) {
         const themeButtons = document.querySelectorAll('.theme-toggle, .mobile-theme-toggle');
-        
+
         themeButtons.forEach(button => {
             const icon = button.querySelector('i');
             if (!icon) return;
-            
+
             // Add rotation effect
             button.classList.add('rotating');
             setTimeout(() => button.classList.remove('rotating'), 300);
-            
+
             // Update icon based on current effective theme
             const isDark = this.isCurrentlyDark();
-            
+
             icon.className = '';
             if (theme === 'auto') {
                 icon.className = 'fas fa-adjust';
@@ -118,17 +118,17 @@ class PortfolioApp {
         const themes = ['light', 'dark', 'auto'];
         const currentIndex = themes.indexOf(this.currentTheme);
         const nextIndex = (currentIndex + 1) % themes.length;
-        
+
         this.currentTheme = themes[nextIndex];
         localStorage.setItem('portfolio-theme', this.currentTheme);
         this.applyTheme(this.currentTheme);
-        
+
         console.log(`Theme changed to: ${this.currentTheme}`);
     }
 
     initTheme() {
         this.applyTheme(this.currentTheme);
-        
+
         // Listen for system theme changes
         window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => {
             if (this.currentTheme === 'auto') {
@@ -156,7 +156,7 @@ class PortfolioApp {
             'Um Desenvolvedor Full Stack.',
             'Apaixonado por inovação.',
         ];
-        
+
         this.typedInstance = new Typed('#typed-text', {
             strings: strings,
             typeSpeed: 50,
@@ -176,11 +176,11 @@ class PortfolioApp {
 
     toggleMobileMenu() {
         this.mobileMenuOpen = !this.mobileMenuOpen;
-        
+
         const mobileMenu = document.getElementById('mobile-menu');
         const hamburger = document.querySelector('.hamburger');
         const body = document.body;
-        
+
         if (mobileMenu) {
             if (this.mobileMenuOpen) {
                 mobileMenu.classList.remove('hidden');
@@ -198,7 +198,7 @@ class PortfolioApp {
                 body.style.overflow = '';
             }
         }
-        
+
         if (hamburger) {
             if (this.mobileMenuOpen) {
                 hamburger.classList.add('active');
@@ -206,7 +206,7 @@ class PortfolioApp {
                 hamburger.classList.remove('active');
             }
         }
-        
+
         // Update ARIA
         const menuButton = document.querySelector('[aria-expanded]');
         if (menuButton) {
@@ -216,16 +216,16 @@ class PortfolioApp {
 
     createMobileOverlay() {
         if (document.querySelector('.mobile-menu-overlay')) return;
-        
+
         const overlay = document.createElement('div');
         overlay.className = 'mobile-menu-overlay';
         document.body.appendChild(overlay);
-        
+
         // Ativar overlay após um pequeno delay para animação
         setTimeout(() => {
             overlay.classList.add('active');
         }, 50);
-        
+
         // Fechar menu ao clicar no overlay
         overlay.addEventListener('click', () => {
             this.closeMobileMenu();
@@ -261,14 +261,14 @@ class PortfolioApp {
 
     toggleProjects(e) {
         e.preventDefault();
-        
+
         const extraProjects = document.getElementById('extra-projects');
         const toggleButton = document.getElementById('toggle-projects');
-        
+
         if (!extraProjects || !toggleButton) return;
-        
+
         this.projectsExpanded = !this.projectsExpanded;
-        
+
         if (this.projectsExpanded) {
             extraProjects.classList.remove('hidden');
             extraProjects.classList.add('grid');
@@ -310,8 +310,8 @@ class PortfolioApp {
 
         // Close mobile menu on outside click
         document.addEventListener('click', (e) => {
-            if (this.mobileMenuOpen && 
-                !e.target.closest('#mobile-menu') && 
+            if (this.mobileMenuOpen &&
+                !e.target.closest('#mobile-menu') &&
                 !e.target.closest('.hamburger')) {
                 this.closeMobileMenu();
             }
@@ -323,7 +323,7 @@ class PortfolioApp {
                 e.preventDefault();
                 const targetId = e.target.getAttribute('href').substring(1);
                 const targetElement = document.getElementById(targetId);
-                
+
                 if (targetElement) {
                     const offsetTop = targetElement.offsetTop - 80; // Account for fixed header
                     window.scrollTo({
@@ -401,7 +401,7 @@ class PortfolioApp {
                 }
             }, 300);
         }
-        
+
         this.lastScrollY = window.scrollY;
     }
 
@@ -411,15 +411,15 @@ class PortfolioApp {
 
     initObserver() {
         const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
+            threshold: 0.15,
+            rootMargin: '0px 0px -20px 0px'
         };
 
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     entry.target.classList.add('animate-fade-in');
-                    
+
                     // Animate skill bars
                     if (entry.target.classList.contains('skill-item')) {
                         this.animateSkillBar(entry.target);
@@ -432,7 +432,7 @@ class PortfolioApp {
         const elementsToObserve = document.querySelectorAll(
             '.card-hover, .project-card, .skill-item, .contact-form'
         );
-        
+
         elementsToObserve.forEach(el => observer.observe(el));
     }
 
@@ -481,7 +481,7 @@ let portfolioApp;
 
 document.addEventListener('DOMContentLoaded', () => {
     portfolioApp = new PortfolioApp();
-    
+
     // Make app available globally for debugging
     if (typeof window !== 'undefined') {
         window.portfolioApp = portfolioApp;
@@ -492,10 +492,10 @@ document.addEventListener('DOMContentLoaded', () => {
 window.addEventListener('load', () => {
     // Remove any loading states
     document.body.classList.add('loaded');
-    
+
     // Initialize animations
     initializeAnimations();
-    
+
     // Initialize any additional features that require full page load
     console.log('Portfolio fully loaded');
 });
@@ -507,71 +507,71 @@ window.addEventListener('load', () => {
 function initializeAnimations() {
     // Intersection Observer para animar elementos quando entram na tela
     const observerOptions = {
-        threshold: 0.1,
-        rootMargin: '0px 0px -50px 0px'
+        threshold: 0.15,
+        rootMargin: '0px 0px -20px 0px'
     };
 
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 const target = entry.target;
-                
+
                 // Skills Cards - Animação com flip
                 if (target.classList.contains('skill-cards')) {
                     const skillCards = target.querySelectorAll('div');
                     skillCards.forEach((card, index) => {
                         setTimeout(() => {
-                            card.classList.add('animate-flip-in');
+                            card.classList.add('animate-slide-in-up');
                             // Adicionar hover interativo (sem floating)
                             addSkillCardInteraction(card);
-                        }, index * 150);
+                        }, index * 80);
                     });
                 }
-                
+
                 // Project Cards - Animação escalonada com bounce
                 if (target.classList.contains('project-card') || target.closest('.grid')) {
                     if (target.classList.contains('project-card')) {
                         setTimeout(() => {
-                            target.classList.add('animate-zoom-in-rotate');
+                            target.classList.add('animate-slide-in-scale');
                             addProjectCardInteraction(target);
-                        }, 100);
+                        }, 50);
                     } else {
                         const projectCards = target.querySelectorAll('.project-card');
                         projectCards.forEach((card, index) => {
                             setTimeout(() => {
-                                card.classList.add('animate-zoom-in-rotate');
+                                card.classList.add('animate-slide-in-scale');
                                 addProjectCardInteraction(card);
-                            }, index * 120);
+                            }, index * 80);
                         });
                     }
                 }
-                
+
                 // Experience Cards - Animação suave e harmoniosa
                 if (target.id === 'experience' || target.closest('#experience')) {
-                    const experienceCards = target.querySelectorAll('.bg-white') || 
-                                          target.closest('#experience')?.querySelectorAll('.bg-white');
+                    const experienceCards = target.querySelectorAll('.bg-white') ||
+                        target.closest('#experience')?.querySelectorAll('.bg-white');
                     if (experienceCards) {
                         experienceCards.forEach((card, index) => {
                             setTimeout(() => {
                                 // Animação mais suave, sem alternância excessiva
                                 card.classList.add('animate-slide-in-scale');
                                 addExperienceCardInteraction(card);
-                            }, index * 150);
+                            }, index * 100);
                         });
                     }
                 }
 
                 // Personal Experience Cards - Animação mais suave
                 if (target.id === 'experience-personal' || target.closest('#experience-personal')) {
-                    const personalCards = target.querySelectorAll('.bg-white') || 
-                                        target.closest('#experience-personal')?.querySelectorAll('.bg-white');
+                    const personalCards = target.querySelectorAll('.bg-white') ||
+                        target.closest('#experience-personal')?.querySelectorAll('.bg-white');
                     if (personalCards) {
                         personalCards.forEach((card, index) => {
                             setTimeout(() => {
                                 // Animação mais suave e consistente
                                 card.classList.add('animate-slide-in-scale');
                                 addExperienceCardInteraction(card);
-                            }, index * 150);
+                            }, index * 100);
                         });
                     }
                 }
@@ -579,13 +579,13 @@ function initializeAnimations() {
                 // Education Cards - Animação com escala
                 if (target.id === 'education' || target.closest('#education')) {
                     const educationCards = target.querySelectorAll('.education-card') ||
-                                         target.closest('#education')?.querySelectorAll('.education-card');
+                        target.closest('#education')?.querySelectorAll('.education-card');
                     if (educationCards) {
                         educationCards.forEach((card, index) => {
                             setTimeout(() => {
                                 card.classList.add('animate-slide-in-scale');
                                 addEducationCardInteraction(card);
-                            }, index * 180);
+                            }, index * 120);
                         });
                     }
                 }
@@ -597,15 +597,15 @@ function initializeAnimations() {
                         setTimeout(() => {
                             card.classList.add('animate-slide-in-scale');
                             addEducationCardInteraction(card);
-                        }, index * 180);
+                        }, index * 120);
                     });
                 }
-                
+
                 // Generic fade-in for other elements
                 if (target.dataset.animate === 'fade-in') {
                     target.classList.add('animate-fade-in');
                 }
-                
+
                 observer.unobserve(target);
             }
         });
@@ -644,7 +644,7 @@ function addSkillCardInteraction(card) {
                 icon.style.animation = 'pulse 0.6s ease-in-out';
             }, index * 100);
         });
-        
+
         // Efeito de borda gradiente
         card.style.background = 'linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%)';
         card.style.borderImage = 'linear-gradient(45deg, #1a4d2e, #0d2818) 1';
@@ -693,7 +693,7 @@ function addProjectCardInteraction(card) {
             tag.style.transform = '';
             tag.style.boxShadow = '';
         });
-        
+
         if (image) {
             image.style.transform = '';
         }
@@ -761,7 +761,7 @@ function addExperienceCardInteraction(card) {
             `;
             card.style.position = 'relative';
             card.appendChild(newIndicator);
-            
+
             setTimeout(() => {
                 newIndicator.style.opacity = '1';
             }, 100);
@@ -859,7 +859,7 @@ function initializeCursorEffects() {
             const rect = element.getBoundingClientRect();
             const x = ((e.clientX - rect.left) / rect.width) * 100;
             const y = ((e.clientY - rect.top) / rect.height) * 100;
-            
+
             element.style.setProperty('--mouse-x', `${x}%`);
             element.style.setProperty('--mouse-y', `${y}%`);
         });
@@ -877,14 +877,14 @@ function initializeCursorEffects() {
 
 function initializeParallaxEffects() {
     const parallaxElements = document.querySelectorAll('.skill-cards > div, .project-card');
-    
+
     const handleScroll = () => {
         const scrollTop = window.pageYOffset;
-        
+
         parallaxElements.forEach((element, index) => {
             const rect = element.getBoundingClientRect();
             const isVisible = rect.top < window.innerHeight && rect.bottom > 0;
-            
+
             if (isVisible) {
                 const speed = 0.5 + (index * 0.1);
                 const yPos = scrollTop * speed * 0.1;
@@ -914,7 +914,7 @@ function initializeParallaxEffects() {
 
 function addParticleEffects() {
     const cards = document.querySelectorAll('.skill-cards > div, .project-card');
-    
+
     cards.forEach(card => {
         card.addEventListener('mouseenter', () => {
             createParticles(card);
@@ -925,7 +925,7 @@ function addParticleEffects() {
 function createParticles(container) {
     const particles = document.createElement('div');
     particles.className = 'card-particles';
-    
+
     // Criar múltiplas partículas
     for (let i = 0; i < 3; i++) {
         const particle = document.createElement('div');
@@ -943,10 +943,10 @@ function createParticles(container) {
         `;
         particles.appendChild(particle);
     }
-    
+
     container.style.position = 'relative';
     container.appendChild(particles);
-    
+
     // Remover partículas após animação
     setTimeout(() => {
         if (particles.parentNode) {
@@ -961,7 +961,7 @@ function createParticles(container) {
 
 function initializeLazyLoading() {
     const images = document.querySelectorAll('img[loading="lazy"]');
-    
+
     if ('IntersectionObserver' in window) {
         const imageObserver = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
@@ -984,16 +984,16 @@ function initializeLazyLoading() {
 function initializePerformanceOptimizations() {
     // Detectar dispositivos com baixa performance
     const isLowPerformance = () => {
-        return navigator.hardwareConcurrency <= 2 || 
-               navigator.deviceMemory <= 4 ||
-               /Android|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+        return navigator.hardwareConcurrency <= 2 ||
+            navigator.deviceMemory <= 4 ||
+            /Android|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
     };
 
     if (isLowPerformance()) {
         // Reduzir animações em dispositivos baixa performance
         document.documentElement.style.setProperty('--animation-duration', '0.3s');
         document.documentElement.classList.add('low-performance');
-        
+
         // Desabilitar parallax em mobile
         const style = document.createElement('style');
         style.textContent = `
@@ -1012,13 +1012,13 @@ function initializePerformanceOptimizations() {
 
 function initializeSmoothNavigation() {
     const navLinks = document.querySelectorAll('a[href^="#"]');
-    
+
     navLinks.forEach(link => {
         link.addEventListener('click', (e) => {
             e.preventDefault();
             const targetId = link.getAttribute('href').slice(1);
             const targetElement = document.getElementById(targetId);
-            
+
             if (targetElement) {
                 // Adicionar efeito de highlight ao target
                 targetElement.style.boxShadow = '0 0 20px rgba(22, 163, 74, 0.3)';
@@ -1051,10 +1051,10 @@ function initializeCustomCursor() {
 
     const cursor = document.createElement('div');
     const cursorTrail = document.createElement('div');
-    
+
     cursor.className = 'custom-cursor';
     cursorTrail.className = 'cursor-trail';
-    
+
     document.body.appendChild(cursor);
     document.body.appendChild(cursorTrail);
 
@@ -1069,11 +1069,11 @@ function initializeCustomCursor() {
         const now = performance.now();
         if (now - lastMoveTime < 6) return; // ~165fps max
         lastMoveTime = now;
-        
+
         mouseX = e.clientX;
         mouseY = e.clientY;
         isMoving = true;
-        
+
         // Cursor principal segue imediatamente usando transform
         cursorX = mouseX;
         cursorY = mouseY;
@@ -1083,7 +1083,7 @@ function initializeCustomCursor() {
     // Animação ultra-suave do trail com RAF otimizado
     let rafId;
     let lastFrame = 0;
-    
+
     function animateTrail(currentTime) {
         // Limitar a 120fps para suavidade
         if (currentTime - lastFrame < 8.33) {
@@ -1091,14 +1091,14 @@ function initializeCustomCursor() {
             return;
         }
         lastFrame = currentTime;
-        
+
         // Trail segue com easing dinâmico
         const ease = isMoving ? 0.28 : 0.12;
         trailX += (mouseX - trailX) * ease;
         trailY += (mouseY - trailY) * ease;
-        
+
         cursorTrail.style.transform = `translate(${trailX}px, ${trailY}px) translate(-50%, -50%)`;
-        
+
         // Controle inteligente da animação
         const distance = Math.abs(mouseX - trailX) + Math.abs(mouseY - trailY);
         if (distance > 0.5) {
@@ -1112,7 +1112,7 @@ function initializeCustomCursor() {
 
     // Cache de seletores para performance máxima
     const interactiveSelector = 'a, button, .project-card, .skill-cards > div, .mobile-menu-item, .theme-toggle, input, textarea, [role="button"], .interactive-card, .contact-btn, .btn, .skill-card, .social-link';
-    
+
     let currentState = '';
     let isClicking = false;
 
@@ -1120,16 +1120,16 @@ function initializeCustomCursor() {
     document.addEventListener('mouseover', (e) => {
         const element = e.target.closest(interactiveSelector);
         if (!element) return;
-        
+
         let newState = 'hover';
-        
+
         // Determinar estado específico baseado no elemento
         if (element.matches('button, .btn, a[href], .contact-btn, .social-link')) {
             newState = 'button';
         } else if (element.matches('input[type="text"], input[type="email"], textarea')) {
             newState = 'text';
         }
-        
+
         // Aplicar apenas se o estado mudou
         if (currentState !== newState) {
             cursor.className = `custom-cursor ${newState}`;
@@ -1141,7 +1141,7 @@ function initializeCustomCursor() {
     document.addEventListener('mouseout', (e) => {
         const element = e.target.closest(interactiveSelector);
         if (!element) return;
-        
+
         cursor.className = 'custom-cursor';
         cursorTrail.className = 'cursor-trail';
         currentState = '';
@@ -1151,10 +1151,10 @@ function initializeCustomCursor() {
     document.addEventListener('mousedown', (e) => {
         if (isClicking) return;
         isClicking = true;
-        
+
         cursor.classList.add('click');
         cursorTrail.classList.add('click');
-        
+
         // Criar partículas com base na performance do dispositivo
         const particleCount = navigator.hardwareConcurrency > 4 ? 8 : 6;
         createParticleEffect(mouseX, mouseY, particleCount);
@@ -1163,7 +1163,7 @@ function initializeCustomCursor() {
     document.addEventListener('mouseup', () => {
         if (!isClicking) return;
         isClicking = false;
-        
+
         // Delay mínimo para transição suave
         setTimeout(() => {
             cursor.classList.remove('click');
@@ -1192,49 +1192,49 @@ function createParticleEffect(x, y, count = 6) {
     // Pool de partículas para reutilização e melhor performance
     const particlePool = window.particlePool || [];
     window.particlePool = particlePool;
-    
+
     for (let i = 0; i < count; i++) {
         setTimeout(() => {
             let particle = particlePool.pop();
-            
+
             if (!particle) {
                 particle = document.createElement('div');
                 particle.className = 'cursor-particle';
             }
-            
+
             // Posicionamento mais dinâmico
             const angle = (i / count) * Math.PI * 2 + (Math.random() - 0.5) * 0.8;
             const velocity = 18 + Math.random() * 25;
             const offsetX = Math.cos(angle) * velocity;
             const offsetY = Math.sin(angle) * velocity;
-            
+
             // Reset inicial
             particle.style.left = x + 'px';
             particle.style.top = y + 'px';
             particle.style.opacity = '1';
             particle.style.transform = 'scale(1) translateY(0)';
-            
+
             document.body.appendChild(particle);
-            
+
             // Forçar reflow para garantir posição inicial
             particle.offsetHeight;
-            
+
             // Aplicar animação final
             particle.style.transform = `translate(${offsetX}px, ${offsetY - 35}px) scale(0.3)`;
             particle.style.opacity = '0';
-            
+
             // Cleanup e retorno ao pool
             setTimeout(() => {
                 if (particle.parentNode) {
                     particle.parentNode.removeChild(particle);
                 }
-                
+
                 // Reset para reutilização
                 particle.style.transform = '';
                 particle.style.opacity = '';
                 particle.style.left = '';
                 particle.style.top = '';
-                
+
                 // Retornar ao pool (máximo 15 para não usar muita memória)
                 if (particlePool.length < 15) {
                     particlePool.push(particle);
@@ -1248,7 +1248,7 @@ function createParticleEffect(x, y, count = 6) {
 window.addEventListener('load', () => {
     // Remove any loading states
     document.body.classList.add('loaded');
-    
+
     // Initialize all advanced features
     initializeAnimations();
     initializeCursorEffects();
@@ -1258,7 +1258,7 @@ window.addEventListener('load', () => {
     initializePerformanceOptimizations();
     initializeSmoothNavigation();
     initializeCustomCursor(); // Adicionar cursor customizado
-    
+
     // Initialize any additional features that require full page load
     console.log('Portfolio fully loaded with advanced interactions and custom cursor');
 });

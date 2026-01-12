@@ -1,22 +1,25 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Formação Acadêmica - Ryan Rodrigues">
   <meta name="theme-color" content="#22704a">
   <title>Educação | Ryan Rodrigues</title>
-  
+
   <!-- External CDNs -->
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <link rel="icon" type="image/png" href="./src/img/icons/Kali_Logo.png">
-  
+
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-  
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700;800;900&display=swap"
+    rel="stylesheet">
+
   <!-- Custom Styles -->
   <link rel="stylesheet" href="./src/css/portfolio.css">
   <link rel="stylesheet" href="./src/css/tailwind-overrides.css">
@@ -32,7 +35,8 @@
   <link rel="stylesheet" href="./src/css/cards-black-fix.css">
   <link rel="stylesheet" href="./src/css/gradient-lima-fix.css">
   <link rel="stylesheet" href="./src/css/modern-cards-unified.css">
-  
+  <link rel="stylesheet" href="./src/css/smooth-animations.css">
+
   <style>
     .education-grid {
       display: grid;
@@ -40,7 +44,7 @@
       gap: 2rem;
       margin-top: 3rem;
     }
-    
+
     .education-card-modern {
       background: #000000;
       color: #ffffff;
@@ -55,7 +59,7 @@
       flex-direction: column;
       justify-content: flex-start;
     }
-    
+
     .education-card-modern::before {
       content: '';
       position: absolute;
@@ -66,25 +70,25 @@
       background: linear-gradient(90deg, transparent, rgba(26, 77, 46, 0.1), transparent);
       transition: left 0.6s ease;
     }
-    
+
     .education-card-modern:hover::before {
       left: 100%;
     }
-    
+
     .education-card-modern:hover {
       transform: translateY(-10px) scale(1.03);
       border-color: #22704a;
       box-shadow: 0 20px 50px rgba(26, 77, 46, 0.4);
       background: #000000 !important;
     }
-    
+
     .education-icon {
       font-size: 3rem;
       color: #22704a;
       margin-bottom: 1.5rem;
       display: block;
     }
-    
+
     .education-title {
       font-size: 1.6rem;
       font-weight: 700;
@@ -96,7 +100,7 @@
       text-align: center;
       justify-content: center;
     }
-    
+
     .education-institution {
       color: #22704a;
       font-weight: 600;
@@ -104,7 +108,7 @@
       margin-bottom: 1.25rem;
       text-align: center;
     }
-    
+
     .education-period {
       background: rgba(26, 77, 46, 0.2);
       color: #22704a;
@@ -115,21 +119,21 @@
       margin: 0 auto 1.5rem auto;
       font-size: 0.9rem;
     }
-    
+
     .education-description {
       color: #cccccc;
       line-height: 1.6;
       margin-bottom: 1.25rem;
       text-align: center;
     }
-    
+
     .education-highlights {
       display: flex;
       flex-wrap: wrap;
       gap: 0.5rem;
       justify-content: center;
     }
-    
+
     .education-highlight {
       background: rgba(26, 77, 46, 0.15);
       color: #22704a;
@@ -139,11 +143,11 @@
       font-weight: 500;
       border: 1px solid rgba(26, 77, 46, 0.3);
     }
-    
+
     .certifications-section {
       margin-top: 4rem;
     }
-    
+
     .certifications-grid {
       display: flex;
       flex-wrap: wrap;
@@ -154,41 +158,41 @@
       margin-left: auto;
       margin-right: auto;
     }
-    
+
     .certifications-grid .education-card-modern {
       flex: 0 1 350px;
     }
-    
+
     .certification-name {
       color: #22704a;
       font-weight: 700;
       margin-bottom: 0.5rem;
     }
-    
+
     .certification-issuer {
       color: #ffffff;
       font-weight: 600;
       margin-bottom: 0.5rem;
     }
-    
+
     .certification-date {
       color: #cccccc;
       font-size: 0.9rem;
     }
-    
+
     .page-transition {
       opacity: 0;
       transform: translateY(20px);
       animation: fadeInUp 0.6s ease forwards;
     }
-    
+
     @keyframes fadeInUp {
       to {
         opacity: 1;
         transform: translateY(0);
       }
     }
-    
+
     .section-title {
       font-size: 2.5rem;
       font-weight: 700;
@@ -196,7 +200,7 @@
       margin-bottom: 1rem;
       text-align: center;
     }
-    
+
     .section-subtitle {
       color: #666666;
       text-align: center;
@@ -204,23 +208,24 @@
       max-width: 600px;
       margin: 0 auto 3rem;
     }
-    
+
     @media (max-width: 768px) {
       .education-grid {
         grid-template-columns: 1fr;
       }
-      
+
       .certifications-grid {
         grid-template-columns: 1fr;
       }
     }
   </style>
 </head>
+
 <body data-has-navbar="true">
   <!-- Cursor customizado -->
   <div class="custom-cursor"></div>
   <div class="cursor-trail"></div>
-  
+
   <!-- Navigation -->
   <nav id="navbar" class="navbar fixed top-0 left-0 w-full z-50" aria-label="Navegação principal">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between h-16 items-center">
@@ -231,23 +236,26 @@
         <a href="experiences.html" class="nav-link text-white">Experiências</a>
         <a href="projects.html" class="nav-link text-white">Projetos</a>
         <a href="education.html" class="nav-link text-white current-page">Educação</a>
-        <a href="index.html#contact" class="px-6 py-3 bg-green-600 text-white rounded-md hover:bg-green-700 transition transform hover:scale-105">Contato</a>
+        <a href="index.html#contact"
+          class="px-6 py-3 bg-green-600 text-white rounded-md hover:bg-green-700 transition transform hover:scale-105">Contato</a>
       </div>
-  <button id="hamburger" class="hamburger block md:hidden" aria-label="Abrir menu" aria-expanded="false">
-        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <button id="hamburger" class="hamburger block md:hidden" aria-label="Abrir menu" aria-expanded="false">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+          stroke-linecap="round" stroke-linejoin="round">
           <line x1="3" y1="6" x2="21" y2="6" />
           <line x1="3" y1="12" x2="21" y2="12" />
           <line x1="3" y1="18" x2="21" y2="18" />
         </svg>
       </button>
     </div>
-  <div id="mobile-menu" class="mobile-menu hidden md:hidden flex flex-col">
+    <div id="mobile-menu" class="mobile-menu hidden md:hidden flex flex-col">
       <a href="index.html" class="mobile-menu-item">Início</a>
       <a href="skills.html" class="mobile-menu-item">Skills</a>
       <a href="experiences.html" class="mobile-menu-item">Experiências</a>
       <a href="projects.html" class="mobile-menu-item">Projetos</a>
       <a href="education.html" class="mobile-menu-item current-page">Educação</a>
-      <a href="index.html#contact" class="mobile-menu-item bg-green-600 text-black hover:bg-green-700 transition">Contato</a>
+      <a href="index.html#contact"
+        class="mobile-menu-item bg-green-600 text-black hover:bg-green-700 transition">Contato</a>
     </div>
   </nav>
 
@@ -266,7 +274,7 @@
 
       <!-- Education Grid -->
       <div class="education-grid">
-        
+
         <!-- Current Education -->
         <div class="education-card-modern">
           <i class="fas fa-university education-icon"></i>
@@ -274,7 +282,8 @@
           <div class="education-institution">Faculdade Impacta Tecnologia</div>
           <div class="education-period">Agosto 2024 - Dezembro 2026</div>
           <p class="education-description">
-            Formação focada em desenvolvimento de software, banco de dados, arquitetura de sistemas e metodologias ágeis.
+            Formação focada em desenvolvimento de software, banco de dados, arquitetura de sistemas e metodologias
+            ágeis.
           </p>
           <div class="skill-tech-list">
             <span class="skill-tech">Desenvolvimento Web</span>
@@ -299,48 +308,49 @@
             <span class="skill-tech">Ciências</span>
           </div>
         </div>
+      </div>
+
+    </div>
+
+    <!-- Certifications Section -->
+    <div class="certifications-section">
+      <h2 class="text-3xl font-bold text-black text-center mb-4">
+        <i class="fas fa-certificate text-green-500 mr-3"></i>
+        Certificações
+      </h2>
+      <p class="text-gray-600 text-center mb-8">
+        Certificações e cursos complementares que ampliam meu conhecimento técnico
+      </p>
+
+      <div class="certifications-grid">
+
+        <div class="education-card-modern">
+          <i class="fas fa-cloud education-icon"></i>
+          <h3 class="education-title">Cloud Foundations</h3>
+          <div class="education-institution">AWS Academy</div>
+          <div class="education-period">2025</div>
+          <p class="education-description">Fundamentos de computação em nuvem e serviços AWS.</p>
+        </div>
+
+        <div class="education-card-modern">
+          <i class="fas fa-rocket education-icon"></i>
+          <h3 class="education-title">NASA Space Apps 2025</h3>
+          <div class="education-institution">NASA</div>
+          <div class="education-period">2025</div>
+          <p class="education-description">Hackathon global de inovação e desenvolvimento de soluções para desafios
+            espaciais.</p>
         </div>
 
       </div>
+    </div>
 
-      <!-- Certifications Section -->
-      <div class="certifications-section">
-        <h2 class="text-3xl font-bold text-black text-center mb-4">
-          <i class="fas fa-certificate text-green-500 mr-3"></i>
-          Certificações
-        </h2>
-        <p class="text-gray-600 text-center mb-8">
-          Certificações e cursos complementares que ampliam meu conhecimento técnico
-        </p>
-        
-        <div class="certifications-grid">
-          
-          <div class="education-card-modern">
-            <i class="fas fa-cloud education-icon"></i>
-            <h3 class="education-title">Cloud Foundations</h3>
-            <div class="education-institution">AWS Academy</div>
-            <div class="education-period">2025</div>
-            <p class="education-description">Fundamentos de computação em nuvem e serviços AWS.</p>
-          </div>
-          
-          <div class="education-card-modern">
-            <i class="fas fa-rocket education-icon"></i>
-            <h3 class="education-title">NASA Space Apps 2025</h3>
-            <div class="education-institution">NASA</div>
-            <div class="education-period">2025</div>
-            <p class="education-description">Hackathon global de inovação e desenvolvimento de soluções para desafios espaciais.</p>
-          </div>
-
-        </div>
-      </div>
-
-      <!-- CTA Section -->
-      <div class="text-center mt-12 pb-12">
-        <a href="index.html#contact" class="btn-ditko inline-flex items-center space-x-2">
-          <span>Entre em Contato</span>
-          <i class="fas fa-arrow-right"></i>
-        </a>
-      </div>
+    <!-- CTA Section -->
+    <div class="text-center mt-12 pb-12">
+      <a href="index.html#contact" class="btn-ditko inline-flex items-center space-x-2">
+        <span>Entre em Contato</span>
+        <i class="fas fa-arrow-right"></i>
+      </a>
+    </div>
     </div>
   </main>
 
@@ -354,10 +364,10 @@
 
   <script>
     // Smooth transitions and scroll animations
-    document.addEventListener('DOMContentLoaded', function() {
+    document.addEventListener('DOMContentLoaded', function () {
       const educationCards = document.querySelectorAll('.education-card-modern');
       const certificationItems = document.querySelectorAll('.certification-item');
-      
+
       const observer = new IntersectionObserver((entries) => {
         entries.forEach((entry, index) => {
           if (entry.isIntersecting) {
@@ -368,7 +378,7 @@
           }
         });
       });
-      
+
       [...educationCards, ...certificationItems].forEach(item => {
         item.style.opacity = '0';
         item.style.transform = 'translateY(30px)';
@@ -377,7 +387,7 @@
       });
     });
   </script>
-  
+
   <!-- Navigation Script -->
   <script src="./src/js/navigation.js"></script>
   <script src="./src/js/custom-cursor.js"></script>
@@ -386,13 +396,13 @@
   <script src="./src/js/back-to-top.js"></script>
   <script src="./src/js/mobile-menu-universal.js?v=2"></script>
   <script src="./src/js/header-sticky.js"></script>
-  
+
   <!-- Botão "Voltar ao Topo" -->
-  <a href="#" id="back-to-top" 
-     class="fixed bottom-6 right-6 w-12 h-12 bg-green-600 rounded-full flex items-center justify-center text-white shadow-lg hover:bg-green-700 transition duration-300 ease-in-out opacity-0 invisible" 
-     aria-label="Voltar ao topo"
->
-    <i class="fa-solid fa-arrow-up"></i> 
+  <a href="#" id="back-to-top"
+    class="fixed bottom-6 right-6 w-12 h-12 bg-green-600 rounded-full flex items-center justify-center text-white shadow-lg hover:bg-green-700 transition duration-300 ease-in-out opacity-0 invisible"
+    aria-label="Voltar ao topo">
+    <i class="fa-solid fa-arrow-up"></i>
   </a>
 </body>
+
 </html>

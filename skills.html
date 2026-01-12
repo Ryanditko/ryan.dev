@@ -1,23 +1,26 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Skills e Tecnologias - Ryan Rodrigues">
   <meta name="theme-color" content="#22704a">
   <title>Skills | Ryan Rodrigues</title>
-  
+
   <!-- External CDNs -->
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/devicon.min.css">
   <link rel="icon" type="image/png" href="./src/img/icons/Kali_Logo.png">
-  
+
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-  
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700;800;900&display=swap"
+    rel="stylesheet">
+
   <!-- Custom Styles -->
   <link rel="stylesheet" href="./src/css/portfolio.css">
   <link rel="stylesheet" href="./src/css/tailwind-overrides.css">
@@ -33,19 +36,20 @@
   <link rel="stylesheet" href="./src/css/cards-black-fix.css">
   <link rel="stylesheet" href="./src/css/gradient-lima-fix.css">
   <link rel="stylesheet" href="./src/css/modern-cards-unified.css">
-  
+  <link rel="stylesheet" href="./src/css/smooth-animations.css">
+
   <style>
     .skill-category {
       margin-bottom: 4rem;
     }
-    
+
     .skill-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
       gap: 2rem;
       margin-top: 2rem;
     }
-    
+
     .skill-card-modern {
       background: #000000;
       color: #ffffff;
@@ -57,7 +61,7 @@
       position: relative;
       overflow: hidden;
     }
-    
+
     .skill-card-modern::before {
       content: '';
       position: absolute;
@@ -68,49 +72,49 @@
       background: linear-gradient(90deg, transparent, rgba(26, 77, 46, 0.1), transparent);
       transition: left 0.6s ease;
     }
-    
+
     .skill-card-modern:hover::before {
       left: 100%;
     }
-    
+
     .skill-card-modern:hover {
       transform: translateY(-10px) scale(1.03);
       border-color: #22704a;
       box-shadow: 0 20px 50px rgba(26, 77, 46, 0.4);
     }
-    
+
     .skill-icon {
       font-size: 3rem;
       color: #22704a;
       margin-bottom: 1rem;
       display: block;
     }
-    
+
     .skill-title {
       font-size: 1.5rem;
       font-weight: 700;
       color: #ffffff;
       margin-bottom: 0.5rem;
     }
-    
+
     .skill-subtitle {
       color: #22704a;
       font-weight: 600;
       margin-bottom: 1rem;
     }
-    
+
     .skill-description {
       color: #cccccc;
       line-height: 1.6;
       margin-bottom: 1.5rem;
     }
-    
+
     .skill-tech-list {
       display: flex;
       flex-wrap: wrap;
       gap: 0.5rem;
     }
-    
+
     .skill-tech {
       background: rgba(26, 77, 46, 0.2);
       color: #22704a;
@@ -120,20 +124,20 @@
       font-weight: 500;
       border: 1px solid rgba(26, 77, 46, 0.3);
     }
-    
+
     .page-transition {
       opacity: 0;
       transform: translateY(20px);
       animation: fadeInUp 0.6s ease forwards;
     }
-    
+
     @keyframes fadeInUp {
       to {
         opacity: 1;
         transform: translateY(0);
       }
     }
-    
+
     .section-title {
       font-size: 2.5rem;
       font-weight: 700;
@@ -141,7 +145,7 @@
       margin-bottom: 1rem;
       text-align: center;
     }
-    
+
     .section-subtitle {
       color: #666666;
       text-align: center;
@@ -151,11 +155,12 @@
     }
   </style>
 </head>
+
 <body data-has-navbar="true">
   <!-- Cursor customizado -->
   <div class="custom-cursor"></div>
   <div class="cursor-trail"></div>
-  
+
   <!-- Navigation -->
   <nav id="navbar" class="navbar fixed top-0 left-0 w-full z-50" aria-label="Navegação principal">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between h-16 items-center">
@@ -166,23 +171,26 @@
         <a href="experiences.html" class="nav-link text-white">Experiências</a>
         <a href="projects.html" class="nav-link text-white">Projetos</a>
         <a href="education.html" class="nav-link text-white">Educação</a>
-        <a href="index.html#contact" class="px-6 py-3 bg-green-600 text-white rounded-md hover:bg-green-700 transition transform hover:scale-105">Contato</a>
+        <a href="index.html#contact"
+          class="px-6 py-3 bg-green-600 text-white rounded-md hover:bg-green-700 transition transform hover:scale-105">Contato</a>
       </div>
-  <button id="hamburger" class="hamburger block md:hidden" aria-label="Abrir menu" aria-expanded="false">
-        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <button id="hamburger" class="hamburger block md:hidden" aria-label="Abrir menu" aria-expanded="false">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+          stroke-linecap="round" stroke-linejoin="round">
           <line x1="3" y1="6" x2="21" y2="6" />
           <line x1="3" y1="12" x2="21" y2="12" />
           <line x1="3" y1="18" x2="21" y2="18" />
         </svg>
       </button>
     </div>
-  <div id="mobile-menu" class="mobile-menu hidden md:hidden flex flex-col">
+    <div id="mobile-menu" class="mobile-menu hidden md:hidden flex flex-col">
       <a href="index.html" class="mobile-menu-item">Início</a>
       <a href="skills.html" class="mobile-menu-item current-page">Skills</a>
       <a href="experiences.html" class="mobile-menu-item">Experiências</a>
       <a href="projects.html" class="mobile-menu-item">Projetos</a>
       <a href="education.html" class="mobile-menu-item">Educação</a>
-      <a href="index.html#contact" class="mobile-menu-item bg-green-600 text-black hover:bg-green-700 transition">Contato</a>
+      <a href="index.html#contact"
+        class="mobile-menu-item bg-green-600 text-black hover:bg-green-700 transition">Contato</a>
     </div>
   </nav>
 
@@ -217,7 +225,7 @@
               <span class="skill-tech">DOM</span>
             </div>
           </div>
-          
+
           <div class="skill-card-modern">
             <i class="devicon-typescript-plain skill-icon"></i>
             <h3 class="skill-title">TypeScript</h3>
@@ -252,7 +260,7 @@
               <span class="skill-tech">Middleware</span>
             </div>
           </div>
-          
+
           <div class="skill-card-modern">
             <i class="devicon-python-plain skill-icon"></i>
             <h3 class="skill-title">Python</h3>
@@ -287,7 +295,7 @@
               <span class="skill-tech">Backup</span>
             </div>
           </div>
-          
+
           <div class="skill-card-modern">
             <i class="devicon-mongodb-plain skill-icon"></i>
             <h3 class="skill-title">MongoDB</h3>
@@ -322,7 +330,7 @@
               <span class="skill-tech">Volumes</span>
             </div>
           </div>
-          
+
           <div class="skill-card-modern">
             <i class="devicon-amazonwebservices-plain skill-icon"></i>
             <h3 class="skill-title">AWS</h3>
@@ -363,9 +371,9 @@
 
   <script>
     // Smooth transitions and scroll animations
-    document.addEventListener('DOMContentLoaded', function() {
+    document.addEventListener('DOMContentLoaded', function () {
       const skillCards = document.querySelectorAll('.skill-card-modern');
-      
+
       const observer = new IntersectionObserver((entries) => {
         entries.forEach((entry, index) => {
           if (entry.isIntersecting) {
@@ -376,7 +384,7 @@
           }
         });
       });
-      
+
       skillCards.forEach(card => {
         card.style.opacity = '0';
         card.style.transform = 'translateY(30px)';
@@ -385,7 +393,7 @@
       });
     });
   </script>
-  
+
   <!-- Navigation Script -->
   <script src="./src/js/navigation.js"></script>
   <script src="./src/js/mobile-menu-universal.js?v=2"></script>
@@ -394,13 +402,13 @@
   <script src="./src/js/theme-manager.js"></script>
   <script src="./src/js/icon-colors.js"></script>
   <script src="./src/js/back-to-top.js"></script>
-  
+
   <!-- Botão "Voltar ao Topo" -->
-  <a href="#" id="back-to-top" 
-     class="fixed bottom-6 right-6 w-12 h-12 bg-green-600 rounded-full flex items-center justify-center text-white shadow-lg hover:bg-green-700 transition duration-300 ease-in-out opacity-0 invisible" 
-     aria-label="Voltar ao topo"
->
-    <i class="fa-solid fa-arrow-up"></i> 
+  <a href="#" id="back-to-top"
+    class="fixed bottom-6 right-6 w-12 h-12 bg-green-600 rounded-full flex items-center justify-center text-white shadow-lg hover:bg-green-700 transition duration-300 ease-in-out opacity-0 invisible"
+    aria-label="Voltar ao topo">
+    <i class="fa-solid fa-arrow-up"></i>
   </a>
 </body>
+
 </html>
