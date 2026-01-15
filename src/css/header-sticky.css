@@ -1,13 +1,67 @@
-/* Header Sticky Improvements */
+/* Header Sticky Improvements - FORÇADO ABSOLUTO */
 /* Aplicar tanto ao #navbar (index) quanto a .navbar (outras páginas) */
-#navbar, .navbar { position: fixed !important; top:0 !important; left:0 !important; right:0 !important; width:100% !important; z-index:9999 !important; min-height:64px; transform:none !important; }
+#navbar,
+.navbar,
+nav#navbar,
+nav.navbar {
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  width: 100vw !important;
+  max-width: 100vw !important;
+  z-index: 99999 !important;
+  min-height: 64px !important;
+  height: 64px !important;
+  transform: translateZ(0) !important;
+  will-change: transform;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+/* Sobrescrever TUDO que possa conflitar */
+nav#navbar.navbar,
+nav.navbar.fixed,
+#navbar.fixed,
+.navbar.navbar,
+nav[id="navbar"] {
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+}
+
+/* Garantir que o body tenha padding-top para compensar o header fixo */
+body,
+body.bg-secondary,
+body[class*="bg-"],
+body[data-has-navbar="true"] {
+  padding-top: 64px !important;
+  margin-top: 0 !important;
+}
 
 /* Scroll behavior enhancements */
-.navbar.scrolled, #navbar.scrolled { background: rgba(0,0,0,0.98); box-shadow:0 8px 32px rgba(0,0,0,0.2); border-bottom:1px solid rgba(132,217,23,0.3); }
+.navbar.scrolled,
+#navbar.scrolled {
+  background: rgba(0, 0, 0, 0.98) !important;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2) !important;
+  border-bottom: 1px solid rgba(132, 217, 23, 0.3) !important;
+}
 
 /* Light theme navbar */
-[data-theme="light"] .navbar, [data-theme="light"] #navbar { background: rgba(255,255,255,0.95); border-bottom:1px solid rgba(132,217,23,0.2); }
-[data-theme="light"] .navbar.scrolled, [data-theme="light"] #navbar.scrolled { background: rgba(255,255,255,0.98); box-shadow:0 8px 32px rgba(0,0,0,0.1); }
+[data-theme="light"] .navbar,
+[data-theme="light"] #navbar {
+  background: rgba(255, 255, 255, 0.95);
+  border-bottom: 1px solid rgba(132, 217, 23, 0.2);
+}
+
+[data-theme="light"] .navbar.scrolled,
+[data-theme="light"] #navbar.scrolled {
+  background: rgba(255, 255, 255, 0.98);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
 
 /* Navbar brand improvements */
 #navbar-brand {
@@ -60,6 +114,7 @@
   border: 1px solid rgba(26, 77, 46, 0.3);
   color: #22704a;
 }
+
 /* removidos estilos estruturais duplicados do nav */
 
 .theme-toggle:hover {
@@ -142,14 +197,15 @@ html {
   scroll-behavior: smooth;
 }
 
-/* Body offset for fixed header */
-body {
-  padding-top: 0 !important;
-  margin-top: 0 !important;
-}
+/* Body offset for fixed header - CORRIGIDO */
+/* Remover padding-top: 0 que estava anulando o header fixo */
 
 /* Removido offset universal: será aplicado manualmente via classe utilitária se necessário */
-main, .main-content, #main-content { min-height: 100vh; }
+main,
+.main-content,
+#main-content {
+  min-height: 100vh;
+}
 
 
 /* Animation for navbar appearance */
@@ -158,6 +214,7 @@ main, .main-content, #main-content { min-height: 100vh; }
     transform: translateY(-100%);
     opacity: 0;
   }
+
   to {
     transform: translateY(0);
     opacity: 1;
@@ -171,25 +228,34 @@ main, .main-content, #main-content { min-height: 100vh; }
   #navbar-brand {
     font-size: 1.1rem;
   }
-  
-  main, .main-content, #main-content {
+
+  main,
+  .main-content,
+  #main-content {
     padding-top: 75px !important;
   }
-  
+
 }
 
 @media (max-width: 480px) {
   #navbar-brand {
     font-size: 1rem;
   }
-  
-  main, .main-content, #main-content {
+
+  main,
+  .main-content,
+  #main-content {
     padding-top: 70px !important;
   }
 }
 
 /* Classe utilitária caso JS adicione .navbar-fixed */
-.navbar-fixed { position: fixed !important; top:0 !important; left:0 !important; right:0 !important; }
+.navbar-fixed {
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+}
 
 /* Reforço defensivo quando a página já traz class="navbar fixed" (Tailwind) */
 .navbar.fixed {
@@ -213,7 +279,9 @@ main, .main-content, #main-content { min-height: 100vh; }
 
 /* Fallback: se por algum motivo fixed for ignorado (ex: modo leitor), ainda manter sticky */
 @supports (position: sticky) {
-  #navbar.is-sticky-fallback, .navbar.is-sticky-fallback {
+
+  #navbar.is-sticky-fallback,
+  .navbar.is-sticky-fallback {
     position: sticky !important;
     top: 0 !important;
   }
@@ -227,8 +295,18 @@ main, .main-content, #main-content { min-height: 100vh; }
 /* placeholder removido: offsets desativados para depuração */
 
 /* Neutralizar transforms globais que possam quebrar fixed (ex: animações de entrada) */
-html, body { transform: none !important; }
-body.page-enter, .page-enter { transform: none !important; }
+html,
+body {
+  transform: none !important;
+}
+
+body.page-enter,
+.page-enter {
+  transform: none !important;
+}
 
 /* Regra consolidada extra para qualquer estado inesperado */
-#navbar.scrolled.navbar-fixed, .navbar.navbar-fixed.scrolled { transform: none !important; }
+#navbar.scrolled.navbar-fixed,
+.navbar.navbar-fixed.scrolled {
+  transform: none !important;
+}

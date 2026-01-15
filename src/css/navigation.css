@@ -2,6 +2,16 @@
    NAVEGAÇÃO FLUIDA E TRANSIÇÕES ENTRE PÁGINAS
    ========================================= */
 
+/* Garantir que navbar fique fixo no topo */
+nav#navbar,
+nav.navbar {
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  width: 100% !important;
+  z-index: 9999 !important;
+}
+
 /* Transições suaves para mudança de página */
 body {
   transition: opacity 0.3s ease-in-out;
@@ -107,8 +117,13 @@ html {
 }
 
 @keyframes spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
 /* Navegação móvel melhorada */
@@ -135,7 +150,7 @@ html {
   .nav-link::after {
     display: none;
   }
-  
+
   .page-enter {
     animation-duration: 0.4s;
   }
@@ -183,12 +198,29 @@ html {
   animation: staggerIn 0.6s ease forwards;
 }
 
-.stagger-animation:nth-child(1) { animation-delay: 0.1s; }
-.stagger-animation:nth-child(2) { animation-delay: 0.2s; }
-.stagger-animation:nth-child(3) { animation-delay: 0.3s; }
-.stagger-animation:nth-child(4) { animation-delay: 0.4s; }
-.stagger-animation:nth-child(5) { animation-delay: 0.5s; }
-.stagger-animation:nth-child(6) { animation-delay: 0.6s; }
+.stagger-animation:nth-child(1) {
+  animation-delay: 0.1s;
+}
+
+.stagger-animation:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.stagger-animation:nth-child(3) {
+  animation-delay: 0.3s;
+}
+
+.stagger-animation:nth-child(4) {
+  animation-delay: 0.4s;
+}
+
+.stagger-animation:nth-child(5) {
+  animation-delay: 0.5s;
+}
+
+.stagger-animation:nth-child(6) {
+  animation-delay: 0.6s;
+}
 
 @keyframes staggerIn {
   to {

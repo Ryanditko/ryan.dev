@@ -31,7 +31,6 @@
   <link rel="stylesheet" href="./src/css/theme-fixes.css">
   <link rel="stylesheet" href="./src/css/ditko-theme.css">
   <link rel="stylesheet" href="./src/css/navigation.css">
-  <link rel="stylesheet" href="./src/css/header-sticky.css">
   <link rel="stylesheet" href="./src/css/back-to-top-fix.css">
   <link rel="stylesheet" href="./src/css/mobile-menu-functional.css">
   <link rel="stylesheet" href="./src/css/cards-black-fix.css">
@@ -39,6 +38,8 @@
   <link rel="stylesheet" href="./src/css/modern-cards-unified.css">
   <link rel="stylesheet" href="./src/css/home-cards-compact.css">
   <link rel="stylesheet" href="./src/css/smooth-animations.css">
+  <!-- Header sticky DEVE ser o último para ter prioridade máxima -->
+  <link rel="stylesheet" href="./src/css/header-sticky.css">
 
   <!-- External Scripts -->
   <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
@@ -67,7 +68,7 @@
 </head>
 
 
-<body class="bg-secondary text-primary">
+<body class="bg-secondary text-primary" data-has-navbar="true">
   <!-- Cursor customizado -->
   <div class="custom-cursor"></div>
   <div class="cursor-trail"></div>
@@ -79,7 +80,8 @@
   </a>
 
   <!-- Navigation -->
-  <nav id="navbar" class="navbar fixed top-0 left-0 w-full z-50 bg-black bg-opacity-95 backdrop-blur-md transition">
+  <nav id="navbar" class="navbar fixed top-0 left-0 w-full z-50 bg-black bg-opacity-95 backdrop-blur-md transition" 
+       style="position: fixed !important; top: 0 !important; left: 0 !important; right: 0 !important; width: 100% !important; z-index: 99999 !important;">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between h-16 items-center">
       <!-- Brand -->
       <a href="#" class="font-bold text-green-500 text-xl">Software Engineer | Ryandikto</a>
