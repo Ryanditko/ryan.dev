@@ -12,28 +12,28 @@ html body nav#navbar,
 html body #navbar,
 nav#navbar,
 #navbar {
-  position: fixed !important;
-  top: 0 !important;
-  left: 0 !important;
-  right: 0 !important;
-  width: 100% !important;
-  max-width: 100% !important;
-  margin: 0 !important;
-  z-index: 99999 !important;
-  transform: none !important;
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    z-index: 99999 !important;
+    transform: none !important;
 }
 
 /* Forçar body offset */
 html body[data-has-navbar="true"],
 html body {
-  padding-top: 64px !important;
+    padding-top: 64px !important;
 }
 
 /* Neutralizar qualquer transform que possa quebrar o fixed */
 html,
 html body,
 html body * {
-  transform: none !important;
+    transform: none !important;
 }
 
 /* Reativar transforms apenas para elementos que precisam */
@@ -43,5 +43,5 @@ button,
 a:hover,
 .card:hover,
 .project-card:hover {
-  transform: revert !important;
+    transform: revert !important;
 }
