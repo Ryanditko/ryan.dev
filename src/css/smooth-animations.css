@@ -1,34 +1,11 @@
 /* =========================================
-   ANIMAÇÕES SUAVES - PROJETOS
-   Sobrescreve animações exageradas
+   ANIMAÇÕES SUAVES - TRANSFORMS APENAS NOS CARDS
+   Transforms em cards individuais NÃO quebram position:fixed
+   Apenas transforms em containers pais (body, main) quebram
    ========================================= */
 
 /* Animações mais suaves para entrada */
-@keyframes slideInLeft {
-    from {
-        opacity: 0;
-        transform: translateX(-20px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateX(0);
-    }
-}
-
-@keyframes slideInRight {
-    from {
-        opacity: 0;
-        transform: translateX(20px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateX(0);
-    }
-}
-
-@keyframes slideInUp {
+@keyframes fadeInUp {
     from {
         opacity: 0;
         transform: translateY(15px);
@@ -40,91 +17,46 @@
     }
 }
 
-@keyframes scaleIn {
+@keyframes fadeIn {
     from {
         opacity: 0;
-        transform: scale(0.95);
     }
 
     to {
         opacity: 1;
-        transform: scale(1);
     }
 }
 
-@keyframes bounceInLeft {
-    0% {
+@keyframes slideUp {
+    from {
         opacity: 0;
-        transform: translateX(-30px) scale(0.95);
+        transform: translateY(20px);
     }
 
-    50% {
+    to {
         opacity: 1;
-        transform: translateX(3px) scale(1.01);
-    }
-
-    100% {
-        opacity: 1;
-        transform: translateX(0) scale(1);
-    }
-}
-
-@keyframes bounceInRight {
-    0% {
-        opacity: 0;
-        transform: translateX(30px) scale(0.95);
-    }
-
-    50% {
-        opacity: 1;
-        transform: translateX(-3px) scale(1.01);
-    }
-
-    100% {
-        opacity: 1;
-        transform: translateX(0) scale(1);
-    }
-}
-
-@keyframes slideInScale {
-    0% {
-        opacity: 0;
-        transform: translateY(20px) scale(0.95);
-    }
-
-    100% {
-        opacity: 1;
-        transform: translateY(0) scale(1);
+        transform: translateY(0);
     }
 }
 
 /* Classes de animação mais suaves */
-.animate-slide-in-left {
-    animation: slideInLeft 0.4s ease-out forwards !important;
-}
-
-.animate-slide-in-right {
-    animation: slideInRight 0.4s ease-out forwards !important;
-}
-
+.animate-slide-in-left,
+.animate-slide-in-right,
 .animate-slide-in-up {
-    animation: slideInUp 0.4s ease-out forwards !important;
+    animation: fadeInUp 0.4s ease-out forwards !important;
 }
 
 .animate-scale-in {
-    animation: scaleIn 0.3s ease-out forwards !important;
+    animation: fadeIn 0.3s ease-out forwards !important;
 }
 
-.animate-bounce-in-left {
-    animation: bounceInLeft 0.5s cubic-bezier(0.4, 0, 0.2, 1) forwards !important;
-}
-
+.animate-bounce-in-left,
 .animate-bounce-in-right {
-    animation: bounceInRight 0.5s cubic-bezier(0.4, 0, 0.2, 1) forwards !important;
+    animation: fadeInUp 0.5s cubic-bezier(0.4, 0, 0.2, 1) forwards !important;
 }
 
 .animate-slide-in-scale {
-    animation: slideInScale 0.4s ease-out forwards !important;
+    animation: fadeInUp 0.4s ease-out forwards !important;
 }
 
 /* Delays mais rápidos para projetos */
@@ -190,7 +122,7 @@
 #experience .bg-white,
 #experience-personal .bg-white {
     opacity: 1 !important;
-    transform: translateY(0) !important;
+    transform: none !important;
 }
 
 .education-card {
@@ -209,22 +141,25 @@
 /* Hover effects mais sutis */
 .skill-cards>div:hover {
     transform: translateY(-5px) scale(1.02) !important;
+    box-shadow: 0 10px 20px rgba(26, 77, 46, 0.3) !important;
     transition: all 0.3s ease !important;
 }
 
 .project-card:hover {
     transform: translateY(-5px) scale(1.01) !important;
+    box-shadow: 0 10px 20px rgba(26, 77, 46, 0.3) !important;
     transition: all 0.3s ease !important;
 }
 
 .project-card:hover img {
     transform: scale(1.05) !important;
-    filter: brightness(1.05) contrast(1.05) !important;
+    filter: brightness(1.1) contrast(1.05) !important;
 }
 
 #experience .bg-white:hover,
 #experience-personal .bg-white:hover {
     transform: translateX(8px) scale(1.01) !important;
+    box-shadow: 0 5px 15px rgba(26, 77, 46, 0.2) !important;
     transition: all 0.3s ease !important;
 }
 
@@ -243,18 +178,10 @@
     animation: none !important;
 }
 
-/* Animação de página mais suave */
+/* Animação de página - SEM TRANSFORM (pode ser container) */
 .page-transition {
     opacity: 0;
-    transform: translateY(10px);
-    animation: pageEnter 0.4s ease-out forwards;
-}
-
-@keyframes pageEnter {
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+    animation: fadeIn 0.4s ease-out forwards;
 }
 
 /* Responsive - ainda mais suave em mobile */
@@ -262,7 +189,7 @@
 
     .animate-slide-in-left,
     .animate-slide-in-right {
-        animation: slideInUp 0.3s ease-out forwards !important;
+        animation: fadeInUp 0.3s ease-out forwards !important;
     }
 
     .skill-cards>div:hover {

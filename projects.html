@@ -4,18 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  .page-transition {
-  opacity: 0;
-  transform: translateY(10px);
-  animation: pageEnter 0.4s ease-out forwards;
-  }
-
-  @keyframes pageEnter {
-  to {
-  opacity: 1;
-  transform: translateY(0);
-  }
-  }description" content="Projetos Desenvolvidos - Ryan Rodrigues">
+  <meta name="description" content="Projetos Desenvolvidos - Ryan Rodrigues">
   <meta name="theme-color" content="#22704a">
   <title>Projetos | Ryan Rodrigues</title>
 
@@ -205,7 +194,7 @@
   <!-- Navigation -->
   <nav id="navbar" class="navbar fixed top-0 left-0 w-full z-50" aria-label="Navegação principal">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between h-16 items-center">
-      <a href="index.html" class="font-bold text-green-500 text-xl">Software Engineer | Ryandikto</a>
+      <a href="index.html" id="brand-logo" class="font-bold text-xl" style="color: #22704a !important;">Software Engineer | Ryandikto</a>
       <div class="hidden md:flex space-x-6 items-center">
         <a href="index.html" class="nav-link text-white">Início</a>
         <a href="skills.html" class="nav-link text-white">Skills</a>
@@ -528,14 +517,59 @@
   <!-- Footer -->
   <footer class="bg-black text-white py-8">
     <div class="container mx-auto px-6 text-center">
-      <p>&copy; 2025 Ryan Rodrigues. Todos os direitos reservados.</p>
+      <p>&copy; <span id="current-year">2025</span> Ryan Rodrigues. Todos os direitos reservados.</p>
     </div>
   </footer>
-  <script src="./src/js/navigation.js"></script>
-  <script src="./src/js/custom-cursor.js"></script>
-  <script src="./src/js/theme-manager.js"></script>
-  <script src="./src/js/icon-colors.js"></script>
-  <script src="./src/js/back-to-top.js"></script>
+  
+  <script>
+    // Smooth transitions and scroll animations - Universal
+    document.addEventListener('DOMContentLoaded', function () {
+      const elements = document.querySelectorAll('.project-card-modern, .project-grid, section > div, .text-center, h1, h2');
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry, index) => {
+          if (entry.isIntersecting) {
+            const delay = Array.from(entry.target.parentElement?.children || []).indexOf(entry.target) * 100;
+            setTimeout(() => {
+              entry.target.style.opacity = '1';
+              entry.target.style.transform = 'translateY(0)';
+            }, delay);
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.1 });
+
+      elements.forEach(element => {
+        // Excluir elementos dentro do footer
+        if (element.closest('footer')) return;
+        
+        element.style.opacity = '0';
+        element.style.transform = 'translateY(30px)';
+        element.style.transition = 'all 0.6s ease';
+        observer.observe(element);
+      });
+      
+      // Forçar animação dos elementos já visíveis
+      setTimeout(() => {
+        elements.forEach((element, index) => {
+          if (element.closest('footer')) return;
+          
+          const rect = element.getBoundingClientRect();
+          if (rect.top < window.innerHeight && rect.bottom > 0) {
+            setTimeout(() => {
+              element.style.opacity = '1';
+              element.style.transform = 'translateY(0)';
+            }, index * 100);
+          }
+        });
+      }, 100);
+    });
+  </script>
+
+  <script>
+    // Atualizar ano automaticamente
+    document.getElementById('current-year').textContent = new Date().getFullYear();
+  </script>
 
   <!-- Botão "Voltar ao Topo" -->
   <a href="#" id="back-to-top"

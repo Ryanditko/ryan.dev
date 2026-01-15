@@ -26,6 +26,7 @@ class PortfolioApp {
     // =======================
 
     init() {
+        this.updateCurrentYear();
         this.initTheme();
         this.setupEventListeners();
 
@@ -37,6 +38,17 @@ class PortfolioApp {
         } else {
             this.initializeAfterDOM();
         }
+    }
+
+    // =======================
+    // YEAR UPDATE
+    // =======================
+    updateCurrentYear() {
+        const yearElements = document.querySelectorAll('#current-year');
+        const currentYear = new Date().getFullYear();
+        yearElements.forEach(el => {
+            if (el) el.textContent = currentYear;
+        });
     }
 
     initializeAfterDOM() {
@@ -418,7 +430,10 @@ class PortfolioApp {
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
-                    entry.target.classList.add('animate-fade-in');
+                    // Não aplicar animação se for elemento do hero
+                    if (!entry.target.closest('.hero-content')) {
+                        entry.target.classList.add('animate-fade-in');
+                    }
 
                     // Animate skill bars
                     if (entry.target.classList.contains('skill-item')) {

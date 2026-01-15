@@ -39,8 +39,23 @@
   <link rel="stylesheet" href="./src/css/home-cards-compact.css">
   <link rel="stylesheet" href="./src/css/smooth-animations.css">
   <link rel="stylesheet" href="./src/css/header-sticky.css">
-  <!-- FORÇA MÁXIMA - Este CSS DEVE ser o último de todos -->
-  <link rel="stylesheet" href="./src/css/force-fixed-nav.css">
+
+  <style>
+    nav#navbar, #navbar, .navbar {
+      position: fixed !important;
+      top: 0 !important;
+      z-index: 99999 !important;
+      transform: none !important;
+    }
+    
+    a#back-to-top, #back-to-top {
+      position: fixed !important;
+      bottom: 24px !important;
+      right: 24px !important;
+      z-index: 9998 !important;
+      transform: none !important;
+    }
+  </style>
 
   <!-- External Scripts -->
   <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
@@ -85,7 +100,7 @@
     style="position: fixed !important; top: 0 !important; left: 0 !important; right: 0 !important; width: 100% !important; z-index: 99999 !important;">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between h-16 items-center">
       <!-- Brand -->
-      <a href="#" class="font-bold text-green-500 text-xl">Software Engineer | Ryandikto</a>
+      <a href="#" id="brand-logo" class="font-bold text-xl" style="color: #22704a !important;">Software Engineer | Ryandikto</a>
 
       <!-- Desktop Links -->
       <div class="hidden md:flex space-x-6 items-center">
@@ -125,7 +140,7 @@
 
 
     <!-- Hero Section -->
-    <section class="pt-32 pb-20 px-4 animate-fade-in relative overflow-hidden">
+    <section id="hero" class="pt-32 pb-20 px-4 relative overflow-hidden">
       <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center hero-content">
         <div class="md:w-1/2 mb-10 md:mb-0 z-10">
           <h1 class="text-4xl md:text-5xl font-bold mb-4">
@@ -876,10 +891,10 @@
         <div class="flex flex-col md:flex-row justify-between items-center">
           <div class="mb-4 md:mb-0">
             <a href="#" class="text-xl font-bold gradient-text" itemprop="name">@Ditko.br</a>
-            <p class="text-sm mt-2">© <span itemprop="copyrightYear">2025</span> <span itemprop="name">Ryan Rodrigues
+            <p class="text-sm mt-2">© <span id="current-year" itemprop="copyrightYear">2025</span> <span itemprop="name">Ryan Rodrigues
                 Cordeiro</span>. Todos os direitos reservados.</p>
           </div>
-          <div class="flex space-x-6">
+          <div class="flex space-x-6 pr-16 pt-8">
             <a href="#about" class="hover:text-white transition">Sobre</a>
             <a href="#skills" class="hover:text-white transition">Stacks</a>
             <a href="#projects" class="hover:text-white transition">Projetos</a>
@@ -895,6 +910,68 @@
   <a href="#" id="back-to-top" aria-label="Voltar ao topo">
     <i class="fa-solid fa-arrow-up"></i>
   </a>
+
+  <script>
+    // Animação específica para o hero
+    const hero = document.querySelector('#hero');
+    if (hero) {
+      hero.style.opacity = '0';
+      hero.style.transform = 'translateY(20px)';
+      hero.style.transition = 'opacity 0.8s ease-out, transform 0.8s ease-out';
+      
+      requestAnimationFrame(() => {
+        requestAnimationFrame(() => {
+          hero.style.opacity = '1';
+          hero.style.transform = 'translateY(0)';
+        });
+      });
+    }
+  </script>
+
+  <script>
+    // Smooth transitions and scroll animations - Universal
+    document.addEventListener('DOMContentLoaded', function () {
+      const elements = document.querySelectorAll('.project-card, .skill-cards > div, #experience .bg-white, section > div > h1, section > div > h2, section > div > p, section > div > div');
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry, index) => {
+          if (entry.isIntersecting) {
+            const delay = Array.from(entry.target.parentElement?.children || []).indexOf(entry.target) * 80;
+            setTimeout(() => {
+              entry.target.style.opacity = '1';
+              entry.target.style.transform = 'translateY(0)';
+            }, delay);
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.1 });
+
+      elements.forEach(element => {
+        // Excluir elementos dentro do footer e do hero
+        if (element.closest('footer') || element.closest('#hero')) return;
+        
+        element.style.opacity = '0';
+        element.style.transform = 'translateY(30px)';
+        element.style.transition = 'all 0.6s ease';
+        observer.observe(element);
+      });
+      
+      // Forçar animação dos elementos já visíveis
+      setTimeout(() => {
+        elements.forEach((element, index) => {
+          if (element.closest('footer') || element.closest('#hero')) return;
+          
+          const rect = element.getBoundingClientRect();
+          if (rect.top < window.innerHeight && rect.bottom > 0) {
+            setTimeout(() => {
+              element.style.opacity = '1';
+              element.style.transform = 'translateY(0)';
+            }, index * 80);
+          }
+        });
+      }, 100);
+    });
+  </script>
 
   <!-- Custom JavaScript -->
   <script src="./src/js/portfolio.js"></script>

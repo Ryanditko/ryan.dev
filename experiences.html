@@ -37,6 +37,20 @@
   <link rel="stylesheet" href="./src/css/smooth-animations.css">
 
   <style>
+    nav#navbar, #navbar, .navbar {
+      position: fixed !important;
+      top: 0 !important;
+      z-index: 99999 !important;
+      transform: none !important;
+    }
+    
+    a#back-to-top, #back-to-top {
+      position: fixed !important;
+      bottom: 24px !important;
+      right: 24px !important;
+      z-index: 9998 !important;
+      transform: none !important;
+    }
     /* Timeline específico para experiências */
     .timeline {
       position: relative;
@@ -213,7 +227,7 @@
   <!-- Navigation -->
   <nav id="navbar" class="navbar fixed top-0 left-0 w-full z-50" aria-label="Navegação principal">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between h-16 items-center">
-      <a href="index.html" class="font-bold text-green-500 text-xl">Software Engineer | Ryandikto</a>
+      <a href="index.html" id="brand-logo" class="font-bold text-xl" style="color: #22704a !important;">Software Engineer | Ryandikto</a>
       <div class="hidden md:flex space-x-6 items-center">
         <a href="index.html" class="nav-link text-white">Início</a>
         <a href="skills.html" class="nav-link text-white">Skills</a>
@@ -364,36 +378,58 @@
   <!-- Footer -->
   <footer class="bg-black text-white py-8">
     <div class="container mx-auto px-6 text-center">
-      <p>&copy; 2025 Ryan Rodrigues. Todos os direitos reservados.</p>
+      <p>&copy; <span id="current-year">2025</span> Ryan Rodrigues. Todos os direitos reservados.</p>
     </div>
   </footer>
-  <script src="./src/js/navigation.js"></script>
-  <script src="./src/js/custom-cursor.js"></script>
-  <script src="./src/js/theme-manager.js"></script>
-  <script src="./src/js/icon-colors.js"></script>
-  <script src="./src/js/back-to-top.js"></script>
 
   <script>
-    // Smooth transitions
+    // Smooth transitions - Universal
     document.addEventListener('DOMContentLoaded', function () {
-      const timelineItems = document.querySelectorAll('.timeline-item');
+      const elements = document.querySelectorAll('.timeline-item, .timeline, section > div, .text-center, h1, h2, .btn-ditko');
 
       const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
           if (entry.isIntersecting) {
-            entry.target.style.opacity = '1';
-            entry.target.style.transform = 'translateY(0)';
+            const delay = Array.from(entry.target.parentElement?.children || []).indexOf(entry.target) * 100;
+            setTimeout(() => {
+              entry.target.style.opacity = '1';
+              entry.target.style.transform = 'translateY(0)';
+            }, delay);
+            observer.unobserve(entry.target);
           }
         });
-      });
+      }, { threshold: 0.1 });
 
-      timelineItems.forEach(item => {
-        item.style.opacity = '0';
-        item.style.transform = 'translateY(30px)';
-        item.style.transition = 'all 0.6s ease';
-        observer.observe(item);
+      elements.forEach(element => {
+        // Excluir elementos dentro do footer
+        if (element.closest('footer')) return;
+        
+        element.style.opacity = '0';
+        element.style.transform = 'translateY(30px)';
+        element.style.transition = 'all 0.6s ease';
+        observer.observe(element);
       });
+      
+      // Forçar animação dos elementos já visíveis
+      setTimeout(() => {
+        elements.forEach((element, index) => {
+          if (element.closest('footer')) return;
+          
+          const rect = element.getBoundingClientRect();
+          if (rect.top < window.innerHeight && rect.bottom > 0) {
+            setTimeout(() => {
+              element.style.opacity = '1';
+              element.style.transform = 'translateY(0)';
+            }, index * 100);
+          }
+        });
+      }, 100);
     });
+  </script>
+
+  <script>
+    // Atualizar ano automaticamente
+    document.getElementById('current-year').textContent = new Date().getFullYear();
   </script>
 
   <!-- Botão "Voltar ao Topo" -->

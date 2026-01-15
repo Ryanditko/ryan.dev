@@ -46,6 +46,17 @@ body {
 /* Headers e Navigation */
 /* nav/.navbar regras removidas para evitar sobrescrita do sticky */
 
+/* Brand logo - sempre verde */
+#brand-logo,
+a#brand-logo {
+  color: #22704a !important;
+}
+
+#brand-logo:hover,
+a#brand-logo:hover {
+  color: #1a5838 !important;
+}
+
 /* Links de navegação */
 .navbar a,
 .nav-menu a,
