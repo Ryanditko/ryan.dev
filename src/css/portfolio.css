@@ -1750,6 +1750,7 @@ body {
   border-bottom: 1px solid var(--border-color);
   box-shadow: var(--shadow-light);
   transition: all var(--transition-normal);
+  /* NÃO definir position aqui - deixar para header-sticky.css */
 }
 
 .navbar-brand {

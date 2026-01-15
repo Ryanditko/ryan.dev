@@ -1,0 +1,47 @@
+/* 
+ * FORÇA ABSOLUTA - Header Fixo
+ * Este arquivo DEVE ser o último CSS carregado
+ * Sobrescreve TUDO incluindo Tailwind CDN
+ */
+
+/* Máxima especificidade possível */
+html body nav#navbar.navbar.fixed.top-0.left-0.w-full.z-50,
+html body nav#navbar.navbar.fixed,
+html body nav#navbar.navbar,
+html body nav#navbar,
+html body #navbar,
+nav#navbar,
+#navbar {
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  margin: 0 !important;
+  z-index: 99999 !important;
+  transform: none !important;
+}
+
+/* Forçar body offset */
+html body[data-has-navbar="true"],
+html body {
+  padding-top: 64px !important;
+}
+
+/* Neutralizar qualquer transform que possa quebrar o fixed */
+html,
+html body,
+html body * {
+  transform: none !important;
+}
+
+/* Reativar transforms apenas para elementos que precisam */
+.transform-allowed,
+.transform-allowed *,
+button,
+a:hover,
+.card:hover,
+.project-card:hover {
+  transform: revert !important;
+}
