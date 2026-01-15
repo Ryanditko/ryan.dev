@@ -1,10 +1,10 @@
 /* 
- * FORÇA ABSOLUTA - Header Fixo
+ * FORÇA ABSOLUTA - Header e Back to Top Fixos
  * Este arquivo DEVE ser o último CSS carregado
  * Sobrescreve TUDO incluindo Tailwind CDN
  */
 
-/* Máxima especificidade possível */
+/* Máxima especificidade possível para NAVBAR */
 html body nav#navbar.navbar.fixed.top-0.left-0.w-full.z-50,
 html body nav#navbar.navbar.fixed,
 html body nav#navbar.navbar,
@@ -23,25 +23,26 @@ nav#navbar,
     transform: none !important;
 }
 
+/* Máxima especificidade para BACK TO TOP */
+html body a#back-to-top,
+a#back-to-top {
+    position: fixed !important;
+    bottom: 24px !important;
+    right: 24px !important;
+    z-index: 9998 !important;
+}
+
 /* Forçar body offset */
-html body[data-has-navbar="true"],
 html body {
     padding-top: 64px !important;
 }
 
-/* Neutralizar qualquer transform que possa quebrar o fixed */
-html,
-html body,
-html body * {
+/* NÃO neutralizar transforms globalmente - isso quebra position:fixed! */
+/* Apenas remover transform do HTML e BODY (contextos de stacking) */
+html {
     transform: none !important;
 }
 
-/* Reativar transforms apenas para elementos que precisam */
-.transform-allowed,
-.transform-allowed *,
-button,
-a:hover,
-.card:hover,
-.project-card:hover {
-    transform: revert !important;
+body {
+    transform: none !important;
 }
